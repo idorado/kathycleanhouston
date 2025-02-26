@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@hono/zod-validator": "^0.4.3",
+    "@hookform/resolvers": "^4.1.2",
+    "@radix-ui/react-label": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.2",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.49.1",
@@ -31,6 +33,7 @@
     "postgres": "^3.4.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
     "sonner": "^2.0.1",
     "superjson": "^2.2.2",
     "tailwind-merge": "^3.0.2",
