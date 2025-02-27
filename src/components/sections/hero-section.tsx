@@ -32,7 +32,7 @@ export function HeroSection() {
             transition={{ duration: 1 }}
             className="max-w-2xl bg-white/80 backdrop-blur-lg rounded-xl shadow-2xl p-10 gap-8"
           >
-            <h1 className="text-5xl md:text-7xl uppercase font-bold leading-tight mb-6 overflow-hidden ">
+            <h1 className="text-5xl md:text-7xl uppercase font-extrabold leading-tight mb-6 overflow-hidden ">
               <motion.span
                 className="relative inline-block text-primary px-2 py-1 mb-1 mt-1 rounded"
                 initial={{ opacity: 0.8, backgroundColor: "rgba(59, 130, 246, 0.05)" }}

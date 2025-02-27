@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Inter } from "next/font/google"
-
 
 import { cn } from "@/lib/utils"
 import { TopBar } from "@/components/layout/top-bar"
@@ -19,11 +17,11 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Kathy Clean",
   description: "Residential and commercial cleaning services",
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export default function RootLayout({
@@ -33,15 +31,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <body className={cn(`${geistSans.variable} ${geistMono.variable}`, "antialiased")}> */}
-      <body className={cn(inter.className, "antialiased")}>
+      <body className={cn(`${geistSans.variable} ${geistMono.variable}`, "antialiased")}> 
         <Providers>
           <div className="min-h-screen flex flex-col">
             <TopBar />
             <Header />
             <main className="flex-grow">
-          {children}
-
+              {children}
             </main>
             <Footer />
           </div>
