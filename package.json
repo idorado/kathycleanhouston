@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "biome lint",
     "db:generate": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
     "db:migrate": "drizzle-kit migrate"
@@ -39,13 +39,21 @@
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.8",
     "tailwindcss-animate": "^1.0.7",
+    "wrangler": "^3.111.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "^22.10.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^16.4.7",
     "drizzle-kit": "^0.30.4",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@biomejs/biome"
+    ]
   }
 }
