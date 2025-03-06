@@ -149,10 +149,9 @@ export function RequestHouseCleaningJobForm() {
                   <FormLabel>Service Frequency</FormLabel>
                   <div className="space-y-2">
                     {['one-time', 'weekly', 'bi-weekly', 'monthly'].map((option) => (
-                      <label key={option} className="flex items-center">
+                      <label key={option} htmlFor={`service-frequency-${option}`} className="flex items-center">
                         <Checkbox
-                          type="radio"
-                          value={option}
+                          id={`service-frequency-${option}`}
                           {...field}
                           className="mr-2"
                         />
@@ -176,10 +175,9 @@ export function RequestHouseCleaningJobForm() {
                       'Bedroom deep clean',
                       'Living areas'
                     ].map((area) => (
-                      <label key={area} className="flex items-center">
+                      <label key={area} htmlFor={`area-${area}`} className="flex items-center">
                         <Checkbox
-                          type="checkbox"
-                          value={area}
+                          id={`area-${area}`}
                           {...field}
                           className="mr-2"
                         />
@@ -203,10 +201,9 @@ export function RequestHouseCleaningJobForm() {
                       'Refrigerator cleaning',
                       'Oven cleaning'
                     ].map((service) => (
-                      <label key={service} className="flex items-center">
+                      <label key={service} htmlFor={`service-${service}`} className="flex items-center">
                         <Checkbox
-                          type="checkbox"
-                          value={service}
+                          id={`service-${service}`}
                           {...field}
                           className="mr-2"
                         />

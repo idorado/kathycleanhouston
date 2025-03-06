@@ -177,14 +177,15 @@ export function RequestBusinessCleaningJobForm() {
                     <FormLabel>Preferred Cleaning Times</FormLabel>
                     <div className="grid grid-cols-2 gap-2">
                       {['Early morning', 'After hours', 'Evening', 'Weekends'].map((time) => (
-                        <label key={time} className="flex items-center space-x-2">
+                        <label key={time} htmlFor={`time-${time}`} className="flex items-center space-x-2">
                           <Checkbox
+                            id={`time-${time}`} // Add unique ID
                             value={time}
                             checked={field.value?.includes(time)}
                             onCheckedChange={(checked) => {
                               const newValue = checked
                                 ? [...(field.value || []), time]
-                                : field.value?.filter((v) => v !== time)
+                                : field.value?.filter((v: string) => v !== time)
                               field.onChange(newValue)
                             }}
                           />
