@@ -34,11 +34,22 @@ export const Providers = ({ children }: PropsWithChildren) => {
 
 export function PostHogProvider({ children }: PropsWithChildren) {
   useEffect(() => {
-    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY ?? '', {
-      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? '',
-      capture_pageview: false // Disable automatic pageview capture, as we capture manually
-    })
+    if (process.env.NODE_ENV === 'production') {
+      posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY ?? '', {
+        api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? '',
+        capture_pageview: false,
+        loaded: (posthog) => {
+          if (process.env.NODE_ENV !== 'production') {
+            posthog.opt_out_capturing()
+          }
+        }
+      })
+    }
   }, [])
+
+  if (process.env.NODE_ENV !== 'production') {
+    return <>{children}</> // Bypass PostHog entirely
+  }
 
   return (
     <PHProvider client={posthog}>
