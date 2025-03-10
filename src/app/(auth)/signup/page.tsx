@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { signInWithGoogle } from "./actions";
+import { signInWithGoogle } from "@/app/(auth)/actions";
 import OneTapGoogle from "@/components/auth/onetapGoogle";
 
 export default function SignupPage() {

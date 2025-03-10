@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { createClient } from '@/utils/supabase-browser'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { signInWithGoogle } from './actions'
+import { signInWithGoogle } from '@/app/(auth)/actions'
 import OneTapGoogle from "@/components/auth/onetapGoogle"
 import Image from 'next/image'
 import Link from 'next/link'

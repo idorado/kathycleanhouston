@@ -1,13 +1,15 @@
 'use server'
 
 import { createClient } from '@/utils/supabase-server'
+import { redirect } from 'next/navigation'
 
 export async function signInWithGoogle() {
+  console.log('here')
   const supabase = await createClient()
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+      redirectTo: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/auth/callback` : 'http://localhost:3000/auth/callback'}`,
     },
   })
 
@@ -16,8 +18,8 @@ export async function signInWithGoogle() {
     throw new Error('Failed to sign in with Google')
   }
 
-  if(data.url){
-    return data.url
+  if (data.url){
+    redirect(data.url)
   }
 
   return data
