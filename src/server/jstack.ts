@@ -21,7 +21,6 @@ const databaseMiddleware = j.middleware(async ({ c, next }) => {
   const { DATABASE_URL } = env(c)
   const client = postgres(DATABASE_URL, {prepare: false})
   const db = drizzle(client, {schema})
-  console.log("schema", schema)
   return await next({ db })
 })
 
