@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
@@ -12,10 +14,8 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li>Residential Cleaning</li>
-              <li>Commercial Cleaning</li>
-              <li>Deep Cleaning</li>
-              <li>Move In/Out Cleaning</li>
+              <Link href="#residential">Residential Cleaning</Link>
+              <Link href="#commercial">Commercial Cleaning</Link>
             </ul>
           </div>
           <div>
