@@ -26,8 +26,23 @@ import { Separator } from '@/components/ui/separator'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
+
+type PriceTierRecurring = {
+  minSqFt: number
+  maxSqFt: number
+  weeklyBiweeklyPrice: number
+  monthlyPrice: number
+};
+
+type PriceTierDeep = {
+  minSqFt: number
+  maxSqFt: number
+  minPrice: number
+  maxPrice: number
+};
+
 // Pricing tables based on the provided information
-const RECURRING_CLEANING_PRICES = [
+const RECURRING_CLEANING_PRICES: PriceTierRecurring[] = [
   { minSqFt: 0, maxSqFt: 1500, weeklyBiweeklyPrice: 125, monthlyPrice: 155 },
   { minSqFt: 1500, maxSqFt: 2000, weeklyBiweeklyPrice: 135, monthlyPrice: 165 },
   { minSqFt: 2000, maxSqFt: 2500, weeklyBiweeklyPrice: 165, monthlyPrice: 195 },
@@ -40,7 +55,7 @@ const RECURRING_CLEANING_PRICES = [
   { minSqFt: 6000, maxSqFt: 10000, weeklyBiweeklyPrice: 385, monthlyPrice: 415 },
 ]
 
-const DEEP_CLEANING_PRICES = [
+const DEEP_CLEANING_PRICES: PriceTierDeep[] = [
   { minSqFt: 700, maxSqFt: 1500, minPrice: 425, maxPrice: 475 },
   { minSqFt: 1500, maxSqFt: 2800, minPrice: 525, maxPrice: 575 },
   { minSqFt: 2800, maxSqFt: 3800, minPrice: 625, maxPrice: 675 },
@@ -100,17 +115,20 @@ export function PriceCalculator() {
       // Find the appropriate price tier based on square footage
       const priceTier = RECURRING_CLEANING_PRICES.find(
         tier => squareFeet >= tier.minSqFt && squareFeet < tier.maxSqFt
-      ) || RECURRING_CLEANING_PRICES[RECURRING_CLEANING_PRICES.length - 1];
+      );
+      
+      // Get default tier if no match found
+      const finalPriceTier: PriceTierRecurring = priceTier || RECURRING_CLEANING_PRICES.at(-1) as PriceTierRecurring;
       
       // Apply pricing based on frequency
       if (frequency === 'monthly') {
-        base = priceTier.monthlyPrice;
+        base = finalPriceTier.monthlyPrice;
       } else if (frequency === 'one-time') {
         // One-time cleaning is $30 more than monthly
-        base = priceTier.monthlyPrice + 30;
+        base = finalPriceTier.monthlyPrice + 30;
       } else {
         // Weekly or bi-weekly
-        base = priceTier.weeklyBiweeklyPrice;
+        base = finalPriceTier.weeklyBiweeklyPrice;
       }
     } else if (serviceType === 'deep') {
       // Find the appropriate deep cleaning price tier
@@ -119,14 +137,13 @@ export function PriceCalculator() {
       );
       
       if (deepCleaningTier) {
-        // For deep cleaning, use the average of min and max price as an estimate
-        base = Math.round((deepCleaningTier.minPrice + deepCleaningTier.maxPrice) / 2);
+      // For deep cleaning, use the average of min and max price as an estimate
+      base = Math.round((deepCleaningTier.minPrice + deepCleaningTier.maxPrice) / 2);
       } else {
         // Default to the highest tier if no match is found
-        const lastTier = DEEP_CLEANING_PRICES[DEEP_CLEANING_PRICES.length - 1];
+        const lastTier: PriceTierDeep = DEEP_CLEANING_PRICES.at(-1) as PriceTierDeep;
         base = Math.round((lastTier.minPrice + lastTier.maxPrice) / 2);
-      }
-    } else if (serviceType === 'commercial') {
+      }    } else if (serviceType === 'commercial') {
       // Commercial pricing is simplified for now
       base = Math.max(200, squareFeet * 0.15);
       
