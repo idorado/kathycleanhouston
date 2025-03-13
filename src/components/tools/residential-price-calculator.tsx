@@ -72,12 +72,15 @@ const ADDITIONAL_SERVICES = [
 ]
 
 const calculatorSchema = z.object({
-  serviceType: z.enum(['recurring', 'deep']),
+  serviceType: z.enum(['residential', 'other']),
   squareFeet: z.number().min(700).max(10000),
   frequency: z.enum(['weekly', 'bi-weekly', 'monthly', 'one-time']),
-  additionalServices: z.array(z.string()).optional(),
+  otherService: z.enum(['deep', 'move-in-out', 'post-construction', 'pressure-washing', 'solar-panel', 'window-washing']).optional(),
   windowPanes: z.number().min(0).max(100).optional(),
   windowPanesOneSide: z.number().min(0).max(100).optional(),
+  hasPets: z.boolean().default(false),
+  numBathrooms: z.number().min(0).max(20).default(0),
+  numBedrooms: z.number().min(0).max(20).default(0)
 })
 
 export function ResidentialPriceCalculator() {
@@ -88,21 +91,27 @@ export function ResidentialPriceCalculator() {
   const form = useForm<z.infer<typeof calculatorSchema>>({
     resolver: zodResolver(calculatorSchema),
     defaultValues: {
-      serviceType: 'recurring',
+      serviceType: 'residential',
       squareFeet: 1500,
       frequency: 'weekly',
-      additionalServices: [],
+      otherService: 'deep',
       windowPanes: 0,
-      windowPanesOneSide: 0
+      windowPanesOneSide: 0,
+      hasPets: false,
+      numBathrooms: 0,
+      numBedrooms: 0
     }
   });
 
   const serviceType = form.watch('serviceType');
   const squareFeet = form.watch('squareFeet');
   const frequency = form.watch('frequency');
-  const additionalServices = form.watch('additionalServices') || [];
+  const otherService = form.watch('otherService');
   const windowPanes = form.watch('windowPanes') || 0;
   const windowPanesOneSide = form.watch('windowPanesOneSide') || 0;
+  const hasPets = form.watch('hasPets');
+  const numBathrooms = form.watch('numBathrooms') || 0;
+  const numBedrooms = form.watch('numBedrooms') || 0;
 
   // Define calculate function with useCallback to avoid dependency issues
   const calculateEstimate = useCallback(() => {
@@ -110,7 +119,7 @@ export function ResidentialPriceCalculator() {
     let addons = 0;
     
     // Calculate base price based on service type
-    if (serviceType === 'recurring') {
+    if (serviceType === 'residential') {
       // Find the appropriate price tier based on square footage
       const priceTier = RECURRING_CLEANING_PRICES.find(
         tier => squareFeet >= tier.minSqFt && squareFeet < tier.maxSqFt
@@ -129,7 +138,7 @@ export function ResidentialPriceCalculator() {
         // Weekly or bi-weekly
         base = finalPriceTier.weeklyBiweeklyPrice;
       }
-    } else if (serviceType === 'deep') {
+    } else if (serviceType === 'other' && otherService === 'deep') {
       // Find the appropriate deep cleaning price tier
       const deepCleaningTier = DEEP_CLEANING_PRICES.find(
         tier => squareFeet >= tier.minSqFt && squareFeet < tier.maxSqFt
@@ -143,14 +152,10 @@ export function ResidentialPriceCalculator() {
         const lastTier: PriceTierDeep = DEEP_CLEANING_PRICES.at(-1) as PriceTierDeep;
         base = Math.round((lastTier.minPrice + lastTier.maxPrice) / 2);
       }
-    }
-    
-    // Calculate additional services
-    for (const serviceId of additionalServices) {
-      const service = ADDITIONAL_SERVICES.find(s => s.id === serviceId);
-      if (service) {
-        addons += service.price;
-      }
+    } else {
+      // For other services, we'll just use a placeholder estimate
+      // In a real implementation, you would have pricing for each service type
+      base = 300; // Placeholder price
     }
     
     // Add window cleaning costs
@@ -159,7 +164,7 @@ export function ResidentialPriceCalculator() {
     setBasePrice(base);
     setAddonsPrice(addons);
     setEstimate(base + addons);
-  }, [serviceType, squareFeet, frequency, additionalServices, windowPanes, windowPanesOneSide]);
+  }, [serviceType, squareFeet, frequency, otherService, windowPanes, windowPanesOneSide]);
 
   // Calculate estimate on initial render
   useEffect(() => {
@@ -167,35 +172,66 @@ export function ResidentialPriceCalculator() {
   }, [calculateEstimate]);
 
   return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle>Residential Cleaning Price Calculator</CardTitle>
-        <CardDescription>
+    <Card className="w-full shadow-md">
+      <CardHeader className="bg-gradient-to-r from-accent-50 to-accent-100 rounded-t-lg">
+        <CardTitle className="text-2xl text-accent-800">Residential Cleaning Price Calculator</CardTitle>
+        <CardDescription className="text-accent-600">
           Get an instant estimate for your home cleaning needs
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-6">
         <Form {...form}>
-          <div className="space-y-6">
+          <div className="space-y-8">
             <Tabs 
-              defaultValue="recurring" 
+              defaultValue="residential" 
               value={serviceType}
-              onValueChange={(value) => form.setValue('serviceType', value as 'recurring' | 'deep')}
+              onValueChange={(value) => form.setValue('serviceType', value as 'residential' | 'other')}
               className="w-full"
             >
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="recurring">Recurring Cleaning</TabsTrigger>
-                <TabsTrigger value="deep">Deep Cleaning</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-2 mb-2 rounded-lg">
+                <TabsTrigger value="residential" className="data-[state=active]:bg-accent-600 data-[state=active]:text-white">Residential Cleaning</TabsTrigger>
+                <TabsTrigger value="other" className="data-[state=active]:bg-accent-600 data-[state=active]:text-white">Other Residential Services</TabsTrigger>
               </TabsList>
-              <TabsContent value="recurring" className="pt-4">
-                <p className="text-sm text-gray-500 mb-4">
-                  Our recurring cleaning services are perfect for maintaining a consistently clean home.
+              <TabsContent value="residential" className="pt-4 px-2">
+                <p className="text-sm text-gray-600 mb-4 italic border-l-4 border-accent-200 pl-3">
+                  Our residential cleaning services are perfect for maintaining a consistently clean home.
                 </p>
               </TabsContent>
-              <TabsContent value="deep" className="pt-4">
-                <p className="text-sm text-gray-500 mb-4">
-                  Deep cleaning addresses areas that need extra attention and is ideal for seasonal cleaning or before/after events.
+              <TabsContent value="other" className="pt-4 px-2">
+                <p className="text-sm text-gray-600 mb-4 italic border-l-4 border-accent-200 pl-3">
+                  We offer a variety of specialized residential services to meet your specific cleaning needs.
                 </p>
+                <FormField
+                  control={form.control}
+                  name="otherService"
+                  render={({ field }) => (
+                    <FormItem className="bg-gray-50 p-4 rounded-lg mb-4">
+                      <FormLabel htmlFor="otherService" className="text-accent-800">Select Service</FormLabel>
+                      <Select
+                        value={field.value}
+                        onValueChange={(value) => {
+                          field.onChange(value);
+                          calculateEstimate();
+                        }}
+                      >
+                        <FormControl>
+                          <SelectTrigger id="otherService" className="border-accent-200 focus:ring-accent-500">
+                            <SelectValue placeholder="Select a service" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          <SelectItem value="deep">Deep Cleaning</SelectItem>
+                          <SelectItem value="move-in-out">Move-In/Move-Out Cleaning</SelectItem>
+                          <SelectItem value="post-construction">Post-Construction Cleaning</SelectItem>
+                          <SelectItem value="pressure-washing">Pressure Washing</SelectItem>
+                          <SelectItem value="solar-panel">Solar Panel Cleaning</SelectItem>
+                          <SelectItem value="window-washing">Window Washing</SelectItem>
+                        </SelectContent>
+                      </Select>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
               </TabsContent>
             </Tabs>
 
@@ -203,10 +239,13 @@ export function ResidentialPriceCalculator() {
               control={form.control}
               name="squareFeet"
               render={({ field }) => (
-                <FormItem>
-                  <FormLabel htmlFor="squareFeet">Home Size (Square Feet): {field.value}</FormLabel>
+                <FormItem className="bg-gray-50 p-4 rounded-lg">
+                  <FormLabel htmlFor="squareFeet" className="text-accent-800 flex justify-between">
+                    <span>Home Size</span>
+                    <span className="font-semibold">{field.value} sq ft</span>
+                  </FormLabel>
                   <FormControl>
-                    <div className="pt-2">
+                    <div className="pt-4">
                       <Slider
                         id="squareFeet"
                         min={700}
@@ -217,21 +256,26 @@ export function ResidentialPriceCalculator() {
                           field.onChange(value[0]);
                           calculateEstimate();
                         }}
+                        className="cursor-pointer"
                       />
                     </div>
                   </FormControl>
+                  <div className="flex justify-between text-xs text-gray-500 mt-1">
+                    <span>700 sq ft</span>
+                    <span>10,000 sq ft</span>
+                  </div>
                   <FormMessage />
                 </FormItem>
               )}
             />
 
-            {serviceType === 'recurring' && (
+            {serviceType === 'residential' && (
               <FormField
                 control={form.control}
                 name="frequency"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="frequency">Cleaning Frequency</FormLabel>
+                  <FormItem className="bg-gray-50 p-4 rounded-lg">
+                    <FormLabel htmlFor="frequency" className="text-accent-800">Cleaning Frequency</FormLabel>
                     <Select
                       value={field.value}
                       onValueChange={(value) => {
@@ -240,13 +284,13 @@ export function ResidentialPriceCalculator() {
                       }}
                     >
                       <FormControl>
-                        <SelectTrigger id="frequency">
+                        <SelectTrigger id="frequency" className="border-accent-200 focus:ring-accent-500">
                           <SelectValue placeholder="Select frequency" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="weekly">Weekly</SelectItem>
-                        <SelectItem value="bi-weekly">Bi-Weekly</SelectItem>
+                        <SelectItem value="weekly">Weekly (Best Value)</SelectItem>
+                        <SelectItem value="bi-weekly">Bi-Weekly (Most Popular)</SelectItem>
                         <SelectItem value="monthly">Monthly</SelectItem>
                         <SelectItem value="one-time">One-Time</SelectItem>
                       </SelectContent>
@@ -257,50 +301,95 @@ export function ResidentialPriceCalculator() {
               />
             )}
 
-            <div>
-              <h3 className="text-sm font-medium mb-3">Additional Services</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {ADDITIONAL_SERVICES.slice(0, 4).map((service) => (
-                  <FormField
-                    key={service.id}
-                    control={form.control}
-                    name="additionalServices"
-                    render={({ field }) => (
-                      <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-3">
-                        <FormControl>
-                          <Checkbox
-                            checked={field.value?.includes(service.id)}
-                            onCheckedChange={(checked) => {
-                              const updatedValue = checked
-                                ? [...(field.value || []), service.id]
-                                : (field.value || []).filter((value) => value !== service.id);
-                              field.onChange(updatedValue);
-                              calculateEstimate();
-                            }}
-                          />
-                        </FormControl>
-                        <div className="space-y-1 leading-none">
-                          <FormLabel className="text-sm font-normal cursor-pointer">
-                            {service.name} <span className="text-gray-500 text-xs">+${service.price}</span>
-                          </FormLabel>
-                          <p className="text-xs text-gray-500">{service.details}</p>
-                        </div>
-                      </FormItem>
-                    )}
-                  />
-                ))}
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h3 className="text-accent-800 font-medium mb-3">Home Information</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <FormField
+                  control={form.control}
+                  name="numBedrooms"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel htmlFor="numBedrooms">Number of Bedrooms</FormLabel>
+                      <FormControl>
+                        <Input
+                          id="numBedrooms"
+                          type="number"
+                          min={0}
+                          max={20}
+                          {...field}
+                          onChange={(e) => {
+                            field.onChange(Number.parseInt(e.target.value) || 0);
+                            calculateEstimate();
+                          }}
+                          className="border-accent-200 focus:ring-accent-500"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="numBathrooms"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel htmlFor="numBathrooms">Number of Bathrooms</FormLabel>
+                      <FormControl>
+                        <Input
+                          id="numBathrooms"
+                          type="number"
+                          min={0}
+                          max={20}
+                          {...field}
+                          onChange={(e) => {
+                            field.onChange(Number.parseInt(e.target.value) || 0);
+                            calculateEstimate();
+                          }}
+                          className="border-accent-200 focus:ring-accent-500"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
               </div>
+              <FormField
+                control={form.control}
+                name="hasPets"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border border-gray-200 bg-white p-3 hover:bg-accent-50 transition-colors">
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={(checked) => {
+                          field.onChange(checked);
+                          calculateEstimate();
+                        }}
+                        className="data-[state=checked]:bg-accent-600 data-[state=checked]:border-accent-600"
+                      />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel className="text-sm font-medium cursor-pointer">
+                        Any pets in the home?
+                      </FormLabel>
+                    </div>
+                  </FormItem>
+                )}
+              />
             </div>
 
-            <div>
-              <h3 className="text-sm font-medium mb-3">Window Cleaning</h3>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h3 className="text-accent-800 font-medium mb-3">Window Cleaning</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
                   name="windowPanes"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="windowPanes">Window Panes (In & Out)</FormLabel>
+                      <FormLabel htmlFor="windowPanes" className="flex justify-between">
+                        <span>Window Panes (In & Out)</span>
+                        <span className="text-accent-600 font-semibold">$10 each</span>
+                      </FormLabel>
                       <FormControl>
                         <Input
                           id="windowPanes"
@@ -312,9 +401,9 @@ export function ResidentialPriceCalculator() {
                             field.onChange(Number.parseInt(e.target.value) || 0);
                             calculateEstimate();
                           }}
+                          className="border-accent-200 focus:ring-accent-500"
                         />
                       </FormControl>
-                      <p className="text-xs text-gray-500">$10 per pane</p>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -324,7 +413,10 @@ export function ResidentialPriceCalculator() {
                   name="windowPanesOneSide"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel htmlFor="windowPanesOneSide">Window Panes (One Side)</FormLabel>
+                      <FormLabel htmlFor="windowPanesOneSide" className="flex justify-between">
+                        <span>Window Panes (One Side)</span>
+                        <span className="text-accent-600 font-semibold">$5 each</span>
+                      </FormLabel>
                       <FormControl>
                         <Input
                           id="windowPanesOneSide"
@@ -336,9 +428,9 @@ export function ResidentialPriceCalculator() {
                             field.onChange(Number.parseInt(e.target.value) || 0);
                             calculateEstimate();
                           }}
+                          className="border-accent-200 focus:ring-accent-500"
                         />
                       </FormControl>
-                      <p className="text-xs text-gray-500">$5 per pane</p>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -346,28 +438,31 @@ export function ResidentialPriceCalculator() {
               </div>
             </div>
 
-            <Separator />
+            <Separator className="my-2" />
 
-            <div className="space-y-2">
-              <div className="flex justify-between text-sm">
-                <span>Base Price:</span>
-                <span>${basePrice}</span>
+            <div className="bg-accent-50 p-4 rounded-lg">
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm">
+                  <span>Base Price:</span>
+                  <span className="font-medium">${basePrice}</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span>Additional Services:</span>
+                  <span className="font-medium">${addonsPrice}</span>
+                </div>
+                <Separator className="my-2" />
+                <div className="flex justify-between text-xl font-bold text-accent-800">
+                  <span>Estimated Total:</span>
+                  <span>${estimate}</span>
+                </div>
+                <p className="text-xs text-gray-600 mt-2 italic">
+                  This is an estimate. Final pricing may vary based on specific home conditions and requirements.
+                </p>
               </div>
-              <div className="flex justify-between text-sm">
-                <span>Additional Services:</span>
-                <span>${addonsPrice}</span>
-              </div>
-              <div className="flex justify-between font-medium text-lg">
-                <span>Estimated Total:</span>
-                <span>${estimate}</span>
-              </div>
-              <p className="text-xs text-gray-500 mt-2">
-                This is an estimate. Final pricing may vary based on specific home conditions and requirements.
-              </p>
             </div>
 
-            <Button type="button" className="w-full">
-              Request a Quote
+            <Button type="button" className="w-full bg-accent-600 hover:bg-accent-700 text-white py-6 text-lg font-semibold transition-all hover:scale-[1.02]">
+              Request a Free Quote
             </Button>
           </div>
         </Form>
