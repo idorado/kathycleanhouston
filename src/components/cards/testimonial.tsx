@@ -3,16 +3,13 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { useQuery } from '@tanstack/react-query'
 import { Star } from 'lucide-react'
 import { client } from "@/lib/client"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function Testimonial() {
   const { data: testimonials, isPending } = useQuery({
     queryKey: ["testimonials-recent"],
     queryFn: async () => {
-      const res = await client.testimonials.recent.$get({
-        params: {
-          limit: 5
-        }
-      })
+      const res = await client.testimonials.recent.$get();
       return res.json()
     },
   })
@@ -39,12 +36,14 @@ export function Testimonial() {
               <div key={testimonial.id} className="border p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <p className="text-base italic mb-2">"{testimonial.quote}"</p>
                 <div className="flex items-center gap-3">
-                  {testimonial.avatar && (
-                    <img 
-                      src={testimonial.avatar} 
-                      alt={`${testimonial.author} avatar`} 
-                      className="size-10 rounded-full object-cover"
-                    />
+                  { (
+                    <Avatar className="size-10">
+                      <AvatarImage 
+                        src={`https://xsgames.co/randomusers/avatar.php?g=${testimonial.author.includes("Michael") || testimonial.author.includes("Jessica") || testimonial.author.includes("Maria") || testimonial.author.includes("Samantha") ? "female" : "male"}`}
+                        alt={`${testimonial.author} avatar`}
+                      />
+                      <AvatarFallback>{testimonial.author.charAt(0)}</AvatarFallback>
+                    </Avatar>
                   )}
                   <div>
                     <h4 className="font-semibold">{testimonial.author}</h4>
