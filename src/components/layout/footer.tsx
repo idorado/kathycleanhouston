@@ -1,59 +1,97 @@
 import Link from "next/link";
+import Image from "next/image";
+import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
+    <footer className="bg-accent text-white py-16">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <p>7500 East Arapahoe Road</p>
-            <p>Centennial, CO 80112</p>
-            <p className="mt-2">(303) 681-2559</p>
-            <div className="flex space-x-4 mt-4">
-              <a href="https://facebook.com" className="h-5 w-5 flex items-center justify-center">
-                <span className="sr-only">Visit our Facebook page</span>
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
+            <div className="mb-8">
+              <Image 
+                src="/logo.svg" 
+                alt="Kathy Clean Logo" 
+                width={170} 
+                height={40} 
+                className="text-cyan-500"
+              />
+            </div>
+            
+            <div className="mb-6">
+              <h4 className="text-cyan-500 font-medium mb-2">ADDRESS</h4>
+              <p className="text-white">7500 East Arapahoe Road,</p>
+              <p className="text-white">Centennial, CO 80112</p>
+            </div>
+            
+            <div className="mb-6">
+              <h4 className="text-cyan-500 font-medium mb-2">CONTACT US</h4>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="bg-cyan-500 rounded-full p-1.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-navy-900" aria-label="Phone icon">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <a href="tel:3036812559" className="text-white hover:text-cyan-500">(303) 681-2559</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="bg-cyan-500 rounded-full p-1.5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-navy-900" aria-label="Email icon">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </div>
+                <a href="mailto:support@kathyclean.com" className="text-white hover:text-cyan-500">support@kathyclean.com</a>
+              </div>
+            </div>
+            
+            <div className="flex space-x-3">
+              <a href="https://facebook.com" aria-label="Facebook" className="text-white hover:text-cyan-500">
+                <Facebook size={20} />
               </a>
-              <a href="https://linkedin.com" className="h-5 w-5 flex items-center justify-center">
-                <span className="sr-only">Visit our LinkedIn page</span>
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
+              <a href="https://instagram.com" aria-label="Instagram" className="text-white hover:text-cyan-500">
+                <Instagram size={20} />
               </a>
-              <a href="https://instagram.com" className="h-5 w-5 flex items-center justify-center">
-                <span className="sr-only">Visit our Instagram page</span>
-                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
+              <a href="https://twitter.com" aria-label="Twitter" className="text-white hover:text-cyan-500">
+                <Twitter size={20} />
+              </a>
+              <a href="https://linkedin.com" aria-label="LinkedIn" className="text-white hover:text-cyan-500">
+                <Linkedin size={20} />
+              </a>
+              <a href="https://youtube.com" aria-label="YouTube" className="text-white hover:text-cyan-500">
+                <Youtube size={20} />
               </a>
             </div>
           </div>
+          
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
-              <li><Link href="/residential" className="hover:text-gray-300">Residential Cleaning</Link></li>
-              <li><Link href="/commercial" className="hover:text-gray-300">Commercial Cleaning</Link></li>
-              <li><Link href="/windows" className="hover:text-gray-300">Window Washing</Link></li>
-              <li><Link href="/emergency" className="hover:text-gray-300">Emergency Cleaning</Link></li>
+            <h3 className="text-xl font-semibold text-white mb-6">Services</h3>
+            <ul className="space-y-4">
+              <li><Link href="/residential" className="text-white hover:text-cyan-500">Residential cleaning</Link></li>
+              <li><Link href="/commercial" className="text-white hover:text-cyan-500">Commercial cleaning</Link></li>
+              <li><Link href="/windows" className="text-white hover:text-cyan-500">Window washing</Link></li>
+              <li><Link href="/other-services" className="text-white hover:text-cyan-500">Other services</Link></li>
             </ul>
           </div>
+          
           <div>
-            <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
-            <p>Our cleaning services are available throughout Colorado, Houston, and Atlanta.</p>
-            <div className="mt-4">
-              <Link href="/contact" className="text-primary hover:underline">Contact Us</Link>
-            </div>
+            <h3 className="text-xl font-semibold text-white mb-6">Kathy Clean</h3>
+            <ul className="space-y-4">
+              <li><Link href="/about" className="text-white hover:text-cyan-500">About us</Link></li>
+              <li><Link href="/benefits" className="text-white hover:text-cyan-500">Benefits</Link></li>
+              <li><Link href="/testimonials" className="text-white hover:text-cyan-500">Testimonials</Link></li>
+              <li><Link href="/about-us" className="text-white hover:text-cyan-500">About Us</Link></li>
+            </ul>
           </div>
         </div>
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+        
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
           <p>© {new Date().getFullYear()} Kathy Clean. All rights reserved.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link href="/privacy" className="hover:text-cyan-500">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-cyan-500">Terms of Service</Link>
+            <button type="button" className="hover:text-cyan-500">Cookies Settings</button>
+          </div>
         </div>
       </div>
     </footer>
