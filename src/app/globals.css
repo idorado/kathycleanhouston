@@ -2,42 +2,56 @@
 
 @plugin "tailwindcss-animate";
 
+@import "uploadthing/tw/v4";
+@source "../../node_modules/@uploadthing/react/dist"; 
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.869 0.022 252.894);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;;
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.869 0.022 252.894);
+  /* Base colors from the new palette */
+  --space-cadet: hsla(227, 47%, 21%, 1);
+  --fluorescent-cyan: hsla(177, 98%, 50%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  
+  /* Theme variables mapped to the new palette */
+  --background: var(--white);
+  --foreground: var(--space-cadet);
+  --card: var(--white);
+  --card-foreground: var(--space-cadet);
+  --popover: var(--white);
+  --popover-foreground: var(--space-cadet);
+  --primary: var(--space-cadet);
+  --primary-foreground: var(--white);
+  --secondary: hsla(227, 47%, 95%, 1);
+  --secondary-foreground: var(--space-cadet);
+  --muted: hsla(227, 47%, 95%, 1);
+  --muted-foreground: hsla(227, 47%, 40%, 1);
+  --accent: var(--space-cadet);
+  --accent-foreground: var(--white);
+  --destructive: hsla(0, 84%, 60%, 1);
+  --destructive-foreground: var(--white);
+  --border: hsla(227, 47%, 90%, 1);
+  --input: hsla(227, 47%, 90%, 1);
+  --ring: var(--fluorescent-cyan);
+  
+  /* Chart colors */
+  --chart-1: hsla(45, 70%, 60%, 1);
+  --chart-2: hsla(177, 98%, 40%, 1);
+  --chart-3: hsla(227, 47%, 40%, 1);
+  --chart-4: hsla(120, 60%, 60%, 1);
+  --chart-5: hsla(0, 70%, 60%, 1);
+  
+  --radius: 0.625rem;
+  
+  /* Sidebar variables */
+  --sidebar: var(--white);
+  --sidebar-foreground: var(--space-cadet);
+  --sidebar-primary: var(--space-cadet);
+  --sidebar-primary-foreground: var(--white);
+  --sidebar-accent: hsla(227, 47%, 95%, 1);
+  --sidebar-accent-foreground: var(--space-cadet);
+  --sidebar-border: hsla(227, 47%, 90%, 1);
+  --sidebar-ring: var(--fluorescent-cyan);
 }
 
 .dark {
