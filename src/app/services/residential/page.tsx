@@ -2,33 +2,35 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { ResidentialPriceCalculator } from "@/components/tools/residential-price-calculator";
 
 export default async function ResidentialPage() {
   return (
     <div className="container py-8 max-w-7xl mx-auto">
       {/* Hero Section */}
-      <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold mb-4 text-primary">Residential Services</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Professional cleaning services tailored to your home
-        </p>
-        <div className="mt-6">
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            <Link href="#request-quote">Request a Quote</Link>
+      <div className="flex flex-col md:flex-row items-center gap-8 py-12 bg-[#1A2C51] text-white rounded-2xl overflow-hidden">
+        <div className="md:w-1/2 p-8 md:pl-12">
+          <div className="inline-block px-4 py-1 bg-[#00E5FF] text-[#1A2C51] rounded-full font-medium mb-4">
+            SERVICES
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Residential services</h1>
+          <p className="text-lg mb-6">
+            You work hard, so let us handle the cleaning. Enjoy a spotless home and spend your time on what truly matters.
+          </p>
+          <Button size="lg" className="bg-[#00E5FF] hover:bg-[#00E5FF]/90 text-[#1A2C51] font-medium">
+            <Link href="#request-quote">REQUEST A SERVICE</Link>
           </Button>
         </div>
-      </div>
-
-      {/* Hero Image */}
-      <div className="relative h-72 sm:h-96 md:h-[500px] lg:h-[600px] rounded-xl overflow-hidden shadow-xl my-8">
-        <Image 
-          src="/residential.png" 
-          alt="Professional residential cleaning service" 
-          fill
-          className="object-cover"
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1280px"
-          priority
-        />
+        <div className="md:w-1/2 relative h-72 md:h-[400px]">
+          <Image 
+            src="/residential.png" 
+            alt="Professional residential cleaning service" 
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+          />
+        </div>
       </div>
 
 
@@ -110,6 +112,10 @@ export default async function ResidentialPage() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="mt-12">
+        <ResidentialPriceCalculator />
       </div>
 
 
