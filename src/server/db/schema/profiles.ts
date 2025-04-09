@@ -5,8 +5,7 @@ import { createTable } from "./_table"
 
 export const profiles = createTable("profiles", {
     id: uuid("id").primaryKey().references(() => users.id, { onDelete: "cascade" }),
-    firstName: text("first_name").notNull(),
-    lastName: text("last_name").notNull(),
+    name: text("name").notNull(),
     image: text("image").notNull(),
     phone: text("phone").notNull(),
     email: text("email").notNull(),

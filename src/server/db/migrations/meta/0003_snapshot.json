@@ -1,6 +1,6 @@
 {
-  "id": "f13b1bea-a1a8-4952-970d-595390207351",
-  "prevId": "75c60de1-bffc-4cd4-8e5c-9552022cda65",
+  "id": "1ff04125-2c61-4ac0-9443-b7aa31b460be",
+  "prevId": "f13b1bea-a1a8-4952-970d-595390207351",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
@@ -33,14 +33,8 @@
           "primaryKey": true,
           "notNull": true
         },
-        "first_name": {
-          "name": "first_name",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "last_name": {
-          "name": "last_name",
+        "name": {
+          "name": "name",
           "type": "text",
           "primaryKey": false,
           "notNull": true
@@ -89,16 +83,16 @@
         "kathyclean_profiles_id_users_id_fk": {
           "name": "kathyclean_profiles_id_users_id_fk",
           "tableFrom": "kathyclean_profiles",
+          "tableTo": "users",
+          "schemaTo": "auth",
           "columnsFrom": [
             "id"
           ],
-          "tableTo": "users",
-          "schemaTo": "auth",
           "columnsTo": [
             "id"
           ],
-          "onUpdate": "no action",
-          "onDelete": "cascade"
+          "onDelete": "cascade",
+          "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {},
@@ -239,10 +233,10 @@
     }
   },
   "schemas": {},
-  "views": {},
   "sequences": {},
   "roles": {},
   "policies": {},
+  "views": {},
   "_meta": {
     "columns": {},
     "schemas": {},
