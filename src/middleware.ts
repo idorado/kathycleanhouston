@@ -1,5 +1,6 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import { protectedRoutes, publicRoutes } from '@/config/routes'
 
 export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
@@ -33,9 +34,7 @@ export async function middleware(request: NextRequest) {
 
   if (
     !user &&
-    request.nextUrl.pathname.startsWith('/app') &&
-    !request.nextUrl.pathname.startsWith('/login') &&
-    !request.nextUrl.pathname.startsWith('/signup')
+    !publicRoutes.includes(request.nextUrl.pathname)
   ) {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
