@@ -17,7 +17,7 @@ export function Header() {
   const pathname = usePathname();
   
   return (
-    <header className="sticky top-0 z-50 bg-primary text-white py-3">
+    <header className="sticky top-0 z-50 bg-foreground py-3">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-8">
@@ -34,7 +34,7 @@ export function Header() {
             <NavigationMenu className="hidden md:flex">
               <NavigationMenuList className="gap-1">
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-white hover:bg-primary-foreground/10 hover:text-ring">Services</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-white hover:bg-primary/10 hover:text-ring">Services</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       <li>
@@ -100,7 +100,7 @@ export function Header() {
             </NavigationMenu>
           </div>
 
-          <Button className="bg-ring hover:bg-ring/90 text-primary font-medium">
+          <Button variant="default" className="font-medium">
             CONTACT US
           </Button>
         </div>
