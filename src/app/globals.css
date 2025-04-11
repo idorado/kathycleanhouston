@@ -8,51 +8,65 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Base colors from the new palette */
+  /* Core color palette */
   --space-cadet: hsla(227, 47%, 21%, 1);
+  --space-cadet-light: hsla(227, 47%, 30%, 1);
+  --blue-ribbon: hsla(223, 100%, 50%, 1);
+  --blue-ribbon-light: hsla(223, 100%, 85%, 1);
   --fluorescent-cyan: hsla(177, 98%, 50%, 1);
   --white: hsla(0, 0%, 100%, 1);
+  --destructive: hsla(0, 84%, 60%, 1);
   
-  /* Theme variables mapped to the new palette */
+  /* Light theme mapping */
   --background: var(--white);
   --foreground: var(--space-cadet);
-  --card: var(--white);
-  --card-foreground: var(--space-cadet);
-  --popover: var(--white);
-  --popover-foreground: var(--space-cadet);
-  --primary: var(--space-cadet);
-  --primary-foreground: var(--white);
-  --secondary: hsla(227, 47%, 95%, 1);
+  
+  /* Card and popover */
+  --card: var(--space-cadet);
+  --card-foreground: var(--white);
+  --popover: var(--space-cadet);
+  --popover-foreground: var(--white);
+  
+  /* Primary and secondary */
+  --primary: var(--fluorescent-cyan);
+  --primary-foreground: var(--space-cadet);
+  --secondary: var(--white);
   --secondary-foreground: var(--space-cadet);
-  --muted: hsla(227, 47%, 95%, 1);
-  --muted-foreground: hsla(227, 47%, 40%, 1);
+  
+  /* Muted and accent */
+  --muted: var(--space-cadet-light);
+  --muted-foreground: var(--blue-ribbon-light);
   --accent: var(--space-cadet);
-  --accent-foreground: var(--white);
+  --accent-foreground: var(--fluorescent-cyan);
+  
+  /* Functional colors */
   --destructive: hsla(0, 84%, 60%, 1);
   --destructive-foreground: var(--white);
-  --border: hsla(227, 47%, 90%, 1);
-  --input: hsla(227, 47%, 90%, 1);
+  --border: var(--space-cadet);
+  --input: var(--space-cadet);
   --ring: var(--fluorescent-cyan);
   
   /* Chart colors */
-  --chart-1: hsla(45, 70%, 60%, 1);
-  --chart-2: hsla(177, 98%, 40%, 1);
-  --chart-3: hsla(227, 47%, 40%, 1);
-  --chart-4: hsla(120, 60%, 60%, 1);
-  --chart-5: hsla(0, 70%, 60%, 1);
+  --chart-1: hsla(45, 70%, 60%, 1);  /* Gold */
+  --chart-2: hsla(223, 100%, 40%, 1); /* Deep Blue */
+  --chart-3: hsla(227, 47%, 40%, 1);  /* Space Cadet Medium */
+  --chart-4: hsla(120, 60%, 60%, 1);  /* Green */
+  --chart-5: hsla(0, 70%, 60%, 1);    /* Red */
   
+  /* Border radius */
   --radius: 0.625rem;
   
   /* Sidebar variables */
-  --sidebar: var(--white);
-  --sidebar-foreground: var(--space-cadet);
-  --sidebar-primary: var(--space-cadet);
+  --sidebar: var(--space-cadet);
+  --sidebar-foreground: var(--white);
+  --sidebar-primary: var(--blue-ribbon);
   --sidebar-primary-foreground: var(--white);
-  --sidebar-accent: hsla(227, 47%, 95%, 1);
-  --sidebar-accent-foreground: var(--space-cadet);
-  --sidebar-border: hsla(227, 47%, 90%, 1);
+  --sidebar-accent: var(--space-cadet-light);
+  --sidebar-accent-foreground: var(--white);
+  --sidebar-border: var(--space-cadet-light);
   --sidebar-ring: var(--fluorescent-cyan);
 }
+
 
 .dark {
   --background: oklch(0.129 0.042 264.695);
@@ -61,13 +75,13 @@
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.129 0.042 264.695);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.984 0.003 247.858);
-  --primary-foreground: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.57 0.25 264.3);
+  --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
   --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
+  --accent: oklch(0.57 0.25 264.3);
   --accent-foreground: oklch(0.984 0.003 247.858);
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
@@ -75,13 +89,13 @@
   --input: oklch(0.279 0.041 260.031);
   --ring: oklch(0.446 0.043 257.281);
   --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-2: oklch(0.57 0.25 264.3);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.208 0.042 265.755);
   --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: oklch(0.57 0.25 264.3);
   --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
   --sidebar-accent: oklch(0.279 0.041 260.031);
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
