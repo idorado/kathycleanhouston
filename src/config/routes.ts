@@ -17,7 +17,7 @@ export const publicRoutes = [
   '/services/windows',
   '/services/emergency',
   '/contact',
-  '/about',
+  '/about-us',
   '/pricing',
   '/faq'
 ];
