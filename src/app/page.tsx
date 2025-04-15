@@ -7,54 +7,38 @@ import Link from "next/link"
 import { Testimonial } from "@/components/cards/testimonial"
 import OurServices from "@/components/sections/our-services"
 import WhyChooseUs from "@/components/sections/why-choose-us"
+import HeroSection from "@/components/HeroSection"
 
 export default async function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       {/* Hero Section */}
       
-      <section className="relative bg-foreground py-16 md:py-20 lg:py-24 overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 text-white">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight text-primary">
-                Clean <span className="text-background">Spaces</span>,<br />
-                <span className="text-background">Brighter </span>Lives
-              </h1>
-              <p className="text-lg">
-                We transform spaces into welcoming, safe, and productive environments where people thrive.
-              </p>
-              <div className="pt-4">
-                <Button size="lg" className="font-bold">
-                  CONTACT US
-                </Button>
-              </div>
-            </div>
-            <div className="relative hidden md:block">
-              <Image 
-                src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomFoIFS4XE8PxMQXu0OFsdjCva3UzSNcGfVBq1" 
-                alt="Professional cleaning service" 
-                width={500}
-                height={500}
-                className="relative"
-              />
-            </div>
+      <HeroSection>
+        <div className="space-y-4 md:space-y-6 text-white text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-primary">
+            Clean <span className="text-background">Spaces</span>,<br />
+            <span className="text-background">Brighter </span>Lives
+          </h1>
+          <p className="text-base sm:text-lg">
+            We transform spaces into welcoming, safe, and productive environments where people thrive.
+          </p>
+          <div className="pt-4">
+            <Button size="lg" className="font-bold w-full sm:w-auto">
+              CONTACT US
+            </Button>
           </div>
         </div>
-        {/* Background decorative elements */}
-        <div className="absolute top-20 right-[5%] w-32 h-32 text-primary ">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-label="Decorative large star shape" role="img">
-            <title>Large decorative star</title>
-            <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
-          </svg>
+        <div className="relative hidden md:block w-full h-full">
+          <Image 
+            src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu" 
+            alt="Professional cleaning service" 
+            width={400}
+            height={400}
+            className="relative w-full h-full object-cover rounded-lg shadow-md"
+          />
         </div>
-        <div className="absolute bottom-10 left-[10%] w-20 h-20 text-primary">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-label="Decorative medium star shape" role="img">
-            <title>Medium decorative star</title>
-            <path d="M12 0L14.59 8.41L23 11L14.59 13.59L12 22L9.41 13.59L1 11L9.41 8.41L12 0Z" />
-          </svg>
-        </div>
-      </section>
+      </HeroSection>
 
       <OurServices />
 
