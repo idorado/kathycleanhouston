@@ -9,9 +9,10 @@ interface ServiceCardProps {
   description: string;
   imageUrl: string;
   imageAlt: string;
+  link: string;
 }
 
-const ServiceCard: FC<ServiceCardProps> = ({ title, description, imageUrl, imageAlt }) => {
+const ServiceCard: FC<ServiceCardProps> = ({ title, description, imageUrl, imageAlt, link }) => {
   return (
     <div className="flex flex-col md:flex-row gap-4 bg-slate-50 rounded-lg overflow-hidden h-80">
       <div className="md:w-3/5 relative h-80 w-full md:h-auto">
@@ -28,7 +29,7 @@ const ServiceCard: FC<ServiceCardProps> = ({ title, description, imageUrl, image
           {description}
         </p>
         <Button asChild variant="default" className="self-start ">
-          <Link href="/estimate" className="flex items-center gap-2">
+          <Link href={link} className="flex items-center gap-2">
             ESTIMATE HERE
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -44,25 +45,29 @@ export default function OurServices() {
       title: "Residential cleaning",
       description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
       imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomWu0pGghvM9rmixlERctSJWydYD1B0G2wqHse",
-      imageAlt: "Professional cleaner with cleaning supplies in a modern kitchen"
+      imageAlt: "Professional cleaner with cleaning supplies in a modern kitchen",
+      link: "/services/residential"
     },
     {
       title: "Commercial cleaning",
       description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
       imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom8nF7NwKhMCiFKE7nTrZgcpJWtXBskwHlzmqf",
-      imageAlt: "Professional cleaners working in an office space"
+      imageAlt: "Professional cleaners working in an office space",
+      link: "/services/commercial"
     },
     {
       title: "Window washing",
       description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
       imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomM7ix4wYzdDOT26oVhPrB8Uy5g9WlSQn1sNEG",
-      imageAlt: "Professional window cleaner washing windows"
+      imageAlt: "Professional window cleaner washing windows",
+      link: "/services/windows"
     },
     {
       title: "Other services",
       description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
       imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUCbpszuxbLyY5TVln2vGePNI6BEHMuo4rXcz",
-      imageAlt: "Professional cleaner in protective gear providing sanitization services"
+      imageAlt: "Professional cleaner in protective gear providing sanitization services",
+      link: "/services/other-services"
     }
   ];
 
@@ -84,6 +89,7 @@ export default function OurServices() {
             description={service.description}
             imageUrl={service.imageUrl}
             imageAlt={service.imageAlt}
+            link={service.link}
           />
         ))}
       </div>
