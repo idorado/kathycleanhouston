@@ -116,7 +116,7 @@ export default async function ResidentialPage() {
 		<main className="flex flex-col min-h-screen">
 			{/* Hero Section */}
 			<HeroSection>
-				<div className="space-y-4 md:space-y-6 text-white text-center md:text-left">
+				<div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
 					<Badge className="bg-ring">SERVICES</Badge>
 					<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
 						Residential Services
@@ -135,13 +135,13 @@ export default async function ResidentialPage() {
 						</Link>
 					</Button>
 				</div>
-				<div className="relative hidden md:block w-full h-full">
+				<div className="relative hidden md:flex w-full justify-center items-center">
 					<Image
 						src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomWu0pGghvM9rmixlERctSJWydYD1B0G2wqHse"
 						alt="Professional residential cleaning service"
 						width={400}
 						height={400}
-						className="relative w-full h-full object-cover rounded-lg shadow-md"
+						className="object-cover rounded-lg shadow-md"
 						priority
 					/>
 				</div>
@@ -166,7 +166,7 @@ export default async function ResidentialPage() {
 				<ServiceCards />
 			</div>
 
-			<div className="mt-12 flex flex-col md:flex-row items-center gap-8">
+			<div className="py-16 flex flex-col md:flex-row items-center gap-8">
 				<div className="bg-white rounded-lg shadow-md p-6">
 					<h3 className="text-lg font-semibold mb-4">Request a Quote</h3>
 					<p className="text-gray-600 mb-4">
