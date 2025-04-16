@@ -35,7 +35,7 @@ export default async function Home() {
             alt="Professional cleaning service" 
             width={400}
             height={400}
-            className="relative w-full h-full object-cover rounded-lg shadow-md"
+            className="relative w-full h-full object-cover rounded-lg "
           />
         </div>
       </HeroSection>
