@@ -7,6 +7,149 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomMdGvOMYzdDOT26oVhPrB8Uy5g9WlSQn1sNEG') format('woff2');
+  font-weight: 600;
+  font-style: oblique;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomuJ9dV6ORAPXijlg8vVLbWSoDk4xMqEyCKh2B') format('woff2');
+  font-weight: 500;
+  font-style: oblique;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom8u3AFTTKhMCiFKE7nTrZgcpJWtXBskwHlzmq') format('woff2');
+  font-weight: 300;
+  font-style: oblique;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomslVeJIPv4Gml7jzqpuCQV5ZONW3Kk98Uwa0P') format('woff2');
+  font-weight: 700;
+  font-style: oblique;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomSExO96fStHrxLGmPWpE9eUN53FzskB4Kfnwa') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomv2GKWuqtywXV56cnFYgeLamS9QNPOGCWo7dR') format('woff2');
+  font-weight: 800;
+  font-style: oblique;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomqkKO0UlbtSMpBiao375hkLVcC0GgEJwNsWjP') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUULddauxbLyY5TVln2vGePNI6BEHMuo4rXcz') format('woff2');
+  font-weight: 400;
+  font-style: oblique;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomzRd0cLk4iZW8IOqjePsoa694DYKNxnrLwCf3') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomRjTmr9O2yJFOX0UapEADMgb9ks3NP81RBuj4') format('woff2');
+  font-weight: 450;
+  font-style: oblique;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomkUZw1QBMKEtR4Y9c3GgQrxuo7N6XZ2LnleTp') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom3JTx2hQ7wMhU5pckd8lfSqEHr2VL9OoNGxPs') format('woff2');
+  font-weight: 200;
+  font-style: oblique;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomW5DV0VhvM9rmixlERctSJWydYD1B0G2wqHse') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomwHZeyGNQAijzTI0JpfGRs6WMerYKm743VoaB') format('woff2');
+  font-weight: 550;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom1TPSmCbi0AF12cfU9NxXt6GPROaEWyeIhLd5') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom2Sp4BmJ6JbmpXdcT7olMHiQWCShrEqx84YZV') format('woff2');
+  font-weight: 550;
+  font-style: oblique;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomRS5rOs2yJFOX0UapEADMgb9ks3NP81RBuj4z') format('woff2');
+  font-weight: 450;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'allRoundGothic';
+  src: url('https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlombSueztkGctfxEFSjXR7am2eDqMn9h1wrd0OP') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  font-weight: 100 900;
+  font-style: normal italic;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --font-all-round-gothic: "All Round Gothic", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
+  }
+}
+
+
+
 :root {
   /* Core color palette */
   --space-cadet: hsla(227, 47%, 21%, 1);
