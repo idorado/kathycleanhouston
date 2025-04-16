@@ -5,7 +5,10 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { Button } from "@/components/ui/button"
+import HeroSection from "@/components/HeroSection";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import Link from "next/link"
 import {
   Form,
   FormControl,
@@ -135,40 +138,35 @@ export default function WindowsPage() {
 
   return (
     <main className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-white py-12 md:py-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-8">
-            <div className="max-w-2xl">
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Window Washing</h1>
-              <p className="text-lg text-gray-600 mb-6">
-                You work hard, so let us handle the cleaning. Enjoy a spotless home and spend your time on what truly matters.
-              </p>
-            </div>
-            <div>
-              <Button size="lg" className="bg-blue-800 hover:bg-blue-900" asChild>
-                <a href="#request-quote">REQUEST A SERVICE</a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Window Cleaning Hero Image */}
-      <section className="relative w-full overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="relative h-[250px] sm:h-[300px] md:h-[400px] w-full">
-            <Image  
-              src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomnSB6a6wNq3haW9IjyTl7dbP5tZX4mrvg1GQH"
-              alt="Professional window cleaning service"
-              fill
-              priority
-              className="object-cover rounded-lg shadow-md"
-            />
-          </div>
-        </div>
-      </section>
-     
+      <HeroSection>
+				<div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
+					<Badge className="bg-ring">SERVICES</Badge>
+					<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+						Window Washing
+					</h1>
+					<p className="text-base sm:text-lg">
+						You work hard, so let us handle the cleaning. Enjoy a spotless home and spend your time on what truly matters.
+					</p>
+					<Button size="lg" className="w-full sm:w-auto" asChild>
+						<Link
+							href="https://clienthub.getjobber.com/client_hubs/40b56a75-dbed-4f70-b807-d9a216f025a3/public/work_request/new?source=new_webpage"
+							className="w-full"
+						>
+							REQUEST A SERVICE
+						</Link>
+					</Button>
+				</div>
+				<div className="relative hidden md:flex w-full justify-center items-center">
+					<Image
+						src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomM7ix4wYzdDOT26oVhPrB8Uy5g9WlSQn1sNEG"
+						alt="Professional window washing service"
+						width={400}
+						height={400}
+						className="object-cover rounded-lg shadow-md"
+						priority
+					/>
+				</div>
+      </HeroSection>
 
 
       {/* Main Content */}
