@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,8 +12,10 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
+import { ContactUsModal } from "@/components/modals/contact-us";
+
 export function Header() {
-  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
   
   return (
     <header className="sticky top-0 z-50 bg-foreground py-3">
@@ -100,9 +101,7 @@ export function Header() {
             </NavigationMenu>
           </div>
 
-          <Button variant="default" className="font-medium">
-            CONTACT US
-          </Button>
+          <ContactUsModal open={open} onOpenChange={setOpen} />
         </div>
       </div>
     </header>
