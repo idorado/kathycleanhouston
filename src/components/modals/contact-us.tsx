@@ -46,10 +46,8 @@ export function ContactUsModal() {
     form.reset();
     console.log(values);
     const { fullName, email, phone } = values;
-    const { data, error } = await client.contact.create.$post({ fullName, email, phone });
-    if (error) {
-      console.error(error);
-    }
+    const res = await client.contact.create.$post({ fullName, email, phone });
+    console.log(res);
     setOpen(false);
   };
 

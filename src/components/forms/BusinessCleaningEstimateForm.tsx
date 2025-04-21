@@ -76,7 +76,6 @@ export default function BusinessCleaningEstimateForm() {
     console.log(data);
     const res = await client.request.create.$post(data);
     console.log(res);
-    alert("Form submitted! Check console for data.");
   }
 
   return (
