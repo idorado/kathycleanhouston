@@ -18,8 +18,6 @@ export default function LoginPage() {
     const { error } = await supabase.auth.signInWithOtp({ email })
     if (error) {
       console.error('Error sending magic link:', error)
-    } else {
-      alert('Check your email for the login link!')
     }
   }
 
