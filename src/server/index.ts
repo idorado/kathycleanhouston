@@ -2,6 +2,7 @@ import { j } from "./jstack"
 import { postRouter } from "./routers/post-router"
 import { testimonialsRouter } from "./routers/testimonials-router"
 import { requestRouter } from "./routers/request-router"
+import { contactRouter } from "./routers/contact-router"
 
 /**
  * This is your base API.
@@ -22,6 +23,7 @@ const api = j
  */
 const appRouter = j.mergeRouters(api, {
   post: postRouter,
+  contact: contactRouter,
   testimonials: testimonialsRouter,
   request: requestRouter,
 })
