@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -9,10 +10,16 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Button} from "@/components/ui/button"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Menu} from "lucide-react";
 
 import { ContactUsModal } from "@/components/modals/contact-us";
 
-export async function Header() {
+import { useState } from "react";
+
+export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 bg-foreground py-3">
       <div className="container mx-auto px-4">
@@ -28,6 +35,7 @@ export async function Header() {
               />
             </Link>
             
+            {/* Desktop Navigation */}
             <NavigationMenu className="hidden md:flex">
               <NavigationMenuList className="gap-1">
                 <NavigationMenuItem>
@@ -97,7 +105,48 @@ export async function Header() {
             </NavigationMenu>
           </div>
 
-          <ContactUsModal/>
+          {/* Mobile Hamburger */}
+          <div className="md:hidden flex items-center">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  aria-label="Open menu"
+                  variant="default"
+                  size="icon"
+                  className="text-white"
+                >
+                  <Menu size={20} className="text-foreground" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56 bg-white text-foreground">
+                <DropdownMenuItem asChild>
+                  <Link href="/services/residential" className="w-full">Residential Cleaning</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/services/commercial" className="w-full">Commercial Cleaning</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/services/windows" className="w-full">Window Washing</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/services/other" className="w-full">Other Services</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link href="/benefits" className="w-full">Benefits</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/testimonials" className="w-full">Testimonials</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/about-us" className="w-full">About Us</Link>
+                </DropdownMenuItem>
+             </DropdownMenuContent>
+           </DropdownMenu>
+          </div>
+          <div className="hidden md:block">
+            <ContactUsModal/>
+          </div>
         </div>
       </div>
     </header>
