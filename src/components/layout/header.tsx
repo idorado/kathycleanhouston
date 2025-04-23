@@ -145,7 +145,15 @@ export function Header() {
            </DropdownMenu>
           </div>
           <div className="hidden md:block">
-            <ContactUsModal/>
+            <Button 
+              variant="default" 
+              className="font-medium"
+              asChild
+            >
+              <Link href="https://clienthub.getjobber.com/client_hubs/40b56a75-dbed-4f70-b807-d9a216f025a3/public/work_request/new?source=new_webpage">
+                REQUEST A QUOTE
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

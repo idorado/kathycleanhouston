@@ -3,7 +3,8 @@ import { Testimonial } from "@/components/cards/testimonial"
 import OurServices from "@/components/sections/our-services"
 import WhyChooseUs from "@/components/sections/why-choose-us"
 import HeroSection from "@/components/HeroSection"
-import { ContactUsModal } from "@/components/modals/contact-us"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default async function Home() {
   return (
@@ -20,7 +21,15 @@ export default async function Home() {
             We transform spaces into welcoming, safe, and productive environments where people thrive.
           </p>
           <div className="pt-4">
-            <ContactUsModal/>
+            <Button 
+              variant="default" 
+              className="font-medium"
+              asChild
+            >
+              <Link href="https://clienthub.getjobber.com/client_hubs/40b56a75-dbed-4f70-b807-d9a216f025a3/public/work_request/new?source=new_webpage">
+                REQUEST A QUOTE
+              </Link>
+            </Button>
           </div>
         </div>
         <div className="relative hidden md:block w-full h-full">
