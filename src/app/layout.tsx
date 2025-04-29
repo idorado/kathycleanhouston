@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import {GoogleTagManager} from "next/third-parties/google"
 import "./globals.css";
 
 import { TopBar } from "@/components/layout/top-bar"
@@ -21,6 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-M3T7KSXH" />
       <body className="antialiased"> 
         <PostHogProvider>
 
