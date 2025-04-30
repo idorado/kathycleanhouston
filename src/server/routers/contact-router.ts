@@ -68,7 +68,7 @@ export const contactRouter = j.router({
         const resend = new Resend(process.env.RESEND_API_KEY);
         const { data, error } = await resend.emails.send({
             from: 'Kathy Clean <quotes@support.kathyclean.com>',
-            to: ['copydataai@gmail.com'],
+            to: ['ljaramillo@kathyclean.com'],
             subject: `New Price Estimate - ${serviceType} Cleaning`,
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
