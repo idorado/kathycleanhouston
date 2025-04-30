@@ -100,6 +100,13 @@ export function Footer() {
 							>
 								<Linkedin size={20} />
 							</a>
+							<a
+								href="https://www.instagram.com/kathycleandenver/"
+								aria-label="Instagram"
+								className="text-white hover:text-cyan-500"
+							>
+								<Instagram size={20} />
+							</a>
 						</div>
 					</div>
 
