@@ -166,7 +166,7 @@ export default async function ResidentialPage() {
 				<ServiceCards />
 			</div>
 
-			<section className="py-16 flex flex-col md:flex-row items-center gap-8">
+			<section className="p-16 flex flex-col md:flex-row items-center gap-8">
 				<div className="bg-white rounded-lg p-6 w-full md:w-1/2">
 					<h3 className="text-5xl font-bold mb-4">Request a Quote</h3>
 					<p className="text-gray-600 mb-4">
