@@ -114,38 +114,18 @@ const services = [
 export default async function ResidentialPage() {
 	return (
 		<main className="flex flex-col min-h-screen">
-			{/* Hero Section */}
-			<HeroSection>
-				<div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
-					<Badge className="bg-ring">SERVICES</Badge>
-					<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-						Residential Services
-					</h1>
-					<p className="text-base sm:text-lg">
-						A clean home protects your family, creates a comfortable
-						environment, and leaves a lasting impression. We help your home
-						thrive with top-quality professional cleaning.
-					</p>
-					<Button size="lg" className="w-full sm:w-auto">
-						<Link
-							href="https://clienthub.getjobber.com/client_hubs/40b56a75-dbed-4f70-b807-d9a216f025a3/public/work_request/new?source=new_webpage"
-							className="w-full"
-						>
-							REQUEST A SERVICE
-						</Link>
-					</Button>
-				</div>
-				<div className="relative hidden md:flex w-full justify-center items-center">
-					<Image
-						src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomWu0pGghvM9rmixlERctSJWydYD1B0G2wqHse"
-						alt="Professional residential cleaning service"
-						width={400}
-						height={400}
-						className="object-cover rounded-lg shadow-md"
-						priority
-					/>
-				</div>
-			</HeroSection>
+			<HeroSection
+				category="SERVICES"
+				title="Residential Services"
+				description="A clean home protects your family, creates a comfortable environment, and leaves a lasting impression. We help your home thrive with top-quality professional cleaning."
+				linkUrl="https://clienthub.getjobber.com/client_hubs/40b56a75-dbed-4f70-b807-d9a216f025a3/public/work_request/new?source=new_webpage"
+				linkText="REQUEST A SERVICE"
+				imgUrl="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomWu0pGghvM9rmixlERctSJWydYD1B0G2wqHse"
+				imgAlt="Professional residential cleaning service"
+				imgWidth={400}
+				imgHeight={400}
+				imgPriority
+			/>
 
 			{/* Our Residential Services */}
 			<div
