@@ -19,8 +19,6 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
-import { defaultRoutes } from "@/config/route";
-
 import { useState } from "react";
 
 export function Header() {
