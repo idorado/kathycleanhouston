@@ -1,11 +1,7 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import HeroSection from '@/components/HeroSection';
-import HouseCleaningPage from '@/app/services/residential/page';
-import CommercialCleaningPage from '@/app/services/commercial/page';
-import WindowCleaningPage from '@/app/services/windows/page';
+import CommercialServiceComponent from "@/components/CommercialServiceComponent";
+import WindowsServiceComponent from "@/components/WindowsServiceComponent";
+import ResidentialServiceComponent from "@/components/ResidentialServiceComponent";
 
 // Define services and locations
 const services = [
@@ -55,6 +51,37 @@ export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
   })));
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const {slug} = await params;
+  const { service, location } = getServiceAndLocation(slug);
+
+  if (service?.id === 'house-cleaning') {
+    return {
+      title: `House Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
+      description: `Looking for house cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
+    };
+  }
+
+  if (service?.id === 'commercial-cleaning') {
+    return {
+      title: `Commercial Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
+      description: `Looking for commercial cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
+    };
+  }
+
+  if (service?.id === 'window-cleaning') {
+    return {
+      title: `Window Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
+      description: `Looking for window cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
+    };
+  }
+
+  return {
+    title: '404 Not Found | Kathy Clean',
+    description: 'Page not found',
+  };
+} 
+
 export default async function ServiceLocationPage({ params }: { params: Promise<{ slug: string }> }) {
   // Check if slug is valid
   const {slug} = await params;
@@ -67,15 +94,15 @@ export default async function ServiceLocationPage({ params }: { params: Promise<
  
 
   if (service?.id === 'house-cleaning'){
-    return <HouseCleaningPage />
+    return <ResidentialServiceComponent location={location?.name || ''} />;
   }
 
   if (service?.id === 'commercial-cleaning'){
-    return <CommercialCleaningPage />
+    return <CommercialServiceComponent location={location?.name || ''} />
   }
 
   if (service?.id === 'window-cleaning'){
-    return <WindowCleaningPage />
+    return <WindowsServiceComponent location={location?.name || ''} />
   }
 
 
