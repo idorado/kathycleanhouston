@@ -86,27 +86,33 @@ export function Footer() {
 						</div>
 
 						<div className="flex space-x-3">
-							<a
+							<Link
 								href="https://www.facebook.com/KathyCleanProfessionalCleaningServices/"
 								aria-label="Facebook"
 								className="text-white hover:text-cyan-500"
+								target="_blank"
+								rel="noopener noreferrer"
 							>
 								<Facebook size={20} />
-							</a>
-							<a
+							</Link>
+							<Link
 								href="https://www.linkedin.com/company/kathyclean"
 								aria-label="LinkedIn"
 								className="text-white hover:text-cyan-500"
+								target="_blank"
+								rel="noopener noreferrer"
 							>
 								<Linkedin size={20} />
-							</a>
-							<a
+							</Link>
+							<Link
 								href="https://www.instagram.com/kathycleandenver/"
 								aria-label="Instagram"
 								className="text-white hover:text-cyan-500"
+								target="_blank"
+								rel="noopener noreferrer"
 							>
 								<Instagram size={20} />
-							</a>
+							</Link>
 						</div>
 					</div>
 
