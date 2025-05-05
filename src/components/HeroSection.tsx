@@ -40,7 +40,7 @@ const HeroSection: FC<HeroSectionProps> = ({
           ) : (
             <>
               <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
-                {category && <Badge className="bg-ring">{category}</Badge>}
+                {category && <Badge className="bg-primary">{category}</Badge>}
                 {title && <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">{title}</h1>}
                 {description && <p className="text-base sm:text-lg">{description}</p>}
                 {linkUrl && (
