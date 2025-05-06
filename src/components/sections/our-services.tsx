@@ -78,8 +78,7 @@ export default function OurServices() {
       <div className="text-center mb-8 md:mb-12">
         <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">Our services</h2>
         <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-          With over <span className="font-semibold">10 years of experience</span>, we deliver top-quality cleaning services backed by our <span className="font-semibold">48-hour satisfaction guarantee</span>.
-          Our rigorous cleaning standards and eco-friendly options ensure a healthy, sparkling clean environment.
+          With over 10 years of experience, Kathy Clean provides top-rated residential and commercial cleaning across Denver and surrounding areas, including Parker, Lone Tree, Highlands Ranch, Centennial, Central Park, Hilltop, Washington Park, Cherry Creek, University Park, Highland, and Castle Rock. We also specialize in window cleaning, pressure washing, and gutter cleaning, all backed by our 48-hour satisfaction guarantee. Our expert team follows strict cleaning standards and offers eco-friendly options to give your home or business a spotless, healthy shine—every time.
         </p>
       </div>
 
