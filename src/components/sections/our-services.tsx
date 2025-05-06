@@ -44,28 +44,41 @@ const ServiceCard: FC<ServiceCardProps> = ({ title, description, imageUrl, image
 export default function OurServices() {
   const services = [
     {
-      title: "Residential cleaning",
-      description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
-      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomWu0pGghvM9rmixlERctSJWydYD1B0G2wqHse",
+      title: "Residential Cleaning",
+      description: "Enjoy a spotless home with our professional residential cleaning services in Denver and nearby areas. We handle kitchens, bathrooms, bedrooms, and more with eco-friendly products and attention to detail. Perfect for weekly, bi-weekly, or one-time deep cleans.", imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomWu0pGghvM9rmixlERctSJWydYD1B0G2wqHse",
       imageAlt: "Professional cleaner with cleaning supplies in a modern kitchen",
       link: "/services/residential"
     },
     {
-      title: "Commercial cleaning",
-      description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
+      title: "Commercial Cleaning",
+      description: "Keep your workspace clean, healthy, and welcoming with our expert commercial cleaning services. We serve offices, clinics, retail spaces, and more across Denver and surrounding cities. Some of our clients include Whole Foods, Starbucks, Ikea, Rivian and Petsmart.",
       imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom8nF7NwKhMCiFKE7nTrZgcpJWtXBskwHlzmqf",
       imageAlt: "Professional cleaners working in an office space",
       link: "/services/commercial"
     },
     {
-      title: "Window washing",
-      description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
+      title: "Window Cleaning",
+      description: "Get crystal-clear windows that brighten your space and boost curb appeal. We provide streak-free window cleaning for homes and businesses, inside and out. Serving Denver, Parker, Castle Rock, and beyond with safe, professional care.",
       imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomM7ix4wYzdDOT26oVhPrB8Uy5g9WlSQn1sNEG",
       imageAlt: "Professional window cleaner washing windows",
       link: "/services/windows"
     },
     {
-      title: "Other services",
+      title: "Pressure Washing",
+      description: "Restore the look of your exterior surfaces with our high-powered pressure washing services. We clean driveways, patios, siding, fences, and more, removing dirt, grime, and buildup. Ideal for homes and commercial properties across the Denver area.",
+      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUCbpszuxbLyY5TVln2vGePNI6BEHMuo4rXcz",
+      imageAlt: "Professional using a pressure washer on an exterior surface",
+      link: "/services/pressure-washing"
+    },
+    {
+      title: "Gutter Cleaning",
+      description: "Prevent clogs and water damage with our thorough gutter cleaning service. We remove debris and ensure smooth drainage for homes and buildings of all sizes. Reliable, mess-free service across Denver, Highlands Ranch, Lone Tree, and more.",
+      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUCbpszuxbLyY5TVln2vGePNI6BEHMuo4rXcz",
+      imageAlt: "Technician cleaning residential gutters on a ladder",
+      link: "/services/gutter-cleaning"
+    },
+    {
+      title: "Other Services",
       description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time.",
       imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUCbpszuxbLyY5TVln2vGePNI6BEHMuo4rXcz",
       imageAlt: "Professional cleaner in protective gear providing sanitization services",
