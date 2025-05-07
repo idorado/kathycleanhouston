@@ -134,10 +134,13 @@ export async function Header() {
 								</NavigationMenuItem>
 
 								<NavigationMenuItem>
-									<NavigationMenuLink
-										className={`${navigationMenuTriggerStyle()} bg-transparent text-white hover:bg-primary-foreground/10 hover:text-ring`}
-									>
-										About Us
+									<NavigationMenuLink asChild>
+										<Link
+											href="/about-us"
+											className={`${navigationMenuTriggerStyle()} bg-transparent text-white hover:bg-primary-foreground/10 hover:text-ring`}
+										>
+											About Us
+										</Link>
 									</NavigationMenuLink>
 								</NavigationMenuItem>
 							</NavigationMenuList>
