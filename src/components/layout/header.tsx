@@ -115,9 +115,138 @@ export async function Header() {
 															Gutter Cleaning
 														</div>
 														<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-															Thorough cleaning and maintenance of gutters and
-															downspouts
+															Cleaning and maintenance of gutters and downspouts
 														</p>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+										</ul>
+									</NavigationMenuContent>
+								</NavigationMenuItem>
+
+								<NavigationMenuItem>
+									<NavigationMenuTrigger className="bg-transparent text-white hover:bg-primary/10 hover:text-ring">
+										Locations
+									</NavigationMenuTrigger>
+									<NavigationMenuContent>
+										<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-denver"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">Denver</div>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-parker"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">Parker</div>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-castle-rock"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">Castle Rock</div>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-lone-tree"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">Lone Tree</div>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-highlands-ranch"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">Highlands Ranch</div>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-centennial"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">Centennial</div>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-central-park"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">Central Park</div>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-hilltop"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">Hilltop</div>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-washington-park"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">Washington Park</div>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-cherry-creek"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">Cherry Creek</div>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-university-park"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">University Park</div>
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/house-cleaning-highland"
+														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														<div className="text-sm font-medium leading-none">Highland</div>
 													</Link>
 												</NavigationMenuLink>
 											</li>
@@ -165,31 +294,31 @@ export async function Header() {
 								className="w-56 bg-white text-foreground"
 							>
 								<DropdownMenuItem asChild>
-									<Link href="/services/residential" className="w-full">
+									<Link href="/house-cleaning-denver" className="w-full">
 										Residential Cleaning
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem asChild>
-									<Link href="/services/commercial" className="w-full">
+									<Link href="/commercial-cleaning-denver" className="w-full">
 										Commercial Cleaning
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem asChild>
-									<Link href="/services/windows" className="w-full">
+									<Link href="/window-cleaning-denver" className="w-full">
 										Window Cleaning
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuItem asChild>
-									<Link href="/services/other" className="w-full">
-										Other Services
+									<Link href="/pressure-washing-denver" className="w-full">
+										Pressure Washing
+									</Link>
+								</DropdownMenuItem>
+								<DropdownMenuItem asChild>
+									<Link href="/gutter-cleaning-denver" className="w-full">
+										Gutter Cleaning
 									</Link>
 								</DropdownMenuItem>
 								<DropdownMenuSeparator />
-								<DropdownMenuItem asChild>
-									<Link href="/resources" className="w-full">
-										Resources
-									</Link>
-								</DropdownMenuItem>
 								<DropdownMenuItem asChild>
 									<Link href="/about-us" className="w-full">
 										About Us

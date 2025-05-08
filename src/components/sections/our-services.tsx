@@ -66,14 +66,14 @@ export default function OurServices() {
     {
       title: "Pressure Washing",
       description: "Restore the look of your exterior surfaces with our high-powered pressure washing services. We clean driveways, patios, siding, fences, and more, removing dirt, grime, and buildup. Ideal for homes and commercial properties across the Denver area.",
-      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUCbpszuxbLyY5TVln2vGePNI6BEHMuo4rXcz",
+      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomNysLnp8Qqho34HzWAgdjRlcDPJntsL1f2TIb",
       imageAlt: "Professional using a pressure washer on an exterior surface",
       link: "/pressure-washing-denver"
     },
     {
       title: "Gutter Cleaning",
       description: "Prevent clogs and water damage with our thorough gutter cleaning service. We remove debris and ensure smooth drainage for homes and buildings of all sizes. Reliable, mess-free service across Denver, Highlands Ranch, Lone Tree, and more.",
-      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomUCbpszuxbLyY5TVln2vGePNI6BEHMuo4rXcz",
+      imageUrl: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomeqbllFgQpAgcBK3Nd2aXOnqjJo4Lvf0YytD6",
       imageAlt: "Technician cleaning residential gutters on a ladder",
       link: "/gutter-cleaning-denver"
     },
