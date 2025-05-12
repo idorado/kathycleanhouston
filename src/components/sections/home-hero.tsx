@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
+import PhoneButton from "@/components/PhoneButton";
 
 const HomeHero = () => {
   return (
     <HeroSection>
       <div className="space-y-2 text-white text-center p-4 md:text-left">
-        <Badge className="">Clean Spaces, Brighter Lives</Badge>
         <h1 className="text-4xl md:text-5xl font-bold leading-tight text-primary">
           Top-rated <span className="text-background">Residential & Commercial</span><br />
           Cleaning Services<span className="text-background"> in Denver</span> 
@@ -16,7 +16,7 @@ const HomeHero = () => {
         <p className="text-lg">
           We deliver spotless, healthy, and welcoming environments—perfect for busy homes, productive offices, and everything in between.
         </p>
-        <div className="pt-4">
+        <div className="pt-4 flex flex-col md:flex-row gap-4">
           <Button
             variant="default"
             className="font-medium"
@@ -26,6 +26,7 @@ const HomeHero = () => {
               REQUEST A QUOTE
             </Link>
           </Button>
+          <PhoneButton />
         </div>
       </div>
       <div className="relative hidden md:block w-full h-full">

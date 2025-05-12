@@ -14,8 +14,8 @@ interface ServiceCardProps {
 
 const ServiceCard: FC<ServiceCardProps> = ({ title, description, imageUrl, imageAlt, link }) => {
   return (
-    <div className="flex flex-col lg:flex-row gap-6 bg-slate-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-      <div className="w-full lg:w-2/5 relative h-56 sm:h-64 md:h-72 lg:h-auto">
+    <div className="flex flex-col gap-4 bg-slate-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-[360px] sm:h-[500px]">
+      <div className="relative h-64 sm:h-80 md:h-96">
         <Image 
           src={imageUrl} 
           alt={imageAlt} 
@@ -25,14 +25,14 @@ const ServiceCard: FC<ServiceCardProps> = ({ title, description, imageUrl, image
           priority
         />
       </div>
-      <div className="w-full lg:w-3/5 p-4 sm:p-6 flex flex-col justify-center">
+      <div className="p-4 sm:p-6 flex flex-col justify-between h-full">
         <h3 className="text-xl sm:text-2xl font-semibold text-navy-700 mb-2 sm:mb-3">{title}</h3>
-        <p className="text-sm sm:text-base text-gray-600 mb-4">
+        <p className="text-sm sm:text-base text-gray-600 flex-1 mb-4 overflow-hidden">
           {description}
         </p>
-        <Button asChild variant="default" className="self-start mt-auto">
+        <Button asChild variant="default" className="self-start mt-auto bg-primary/60 hover:bg-primary/70">
           <Link href={link} className="flex items-center gap-2 text-sm sm:text-base">
-            ESTIMATE HERE
+            Learn More
             <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
           </Link>
         </Button>
@@ -89,13 +89,15 @@ export default function OurServices() {
   return (
     <section className="py-8 md:py-16 px-4 max-w-7xl mx-auto" id="services">
       <div className="text-center mb-8 md:mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">Our services</h2>
-        <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
-          With over 10 years of experience, Kathy Clean provides top-rated residential and commercial cleaning across Denver and surrounding areas, including Parker, Lone Tree, Highlands Ranch, Centennial, Central Park, Hilltop, Washington Park, Cherry Creek, University Park, Highland, and Castle Rock. We also specialize in window cleaning, pressure washing, and gutter cleaning, all backed by our 48-hour satisfaction guarantee. Our expert team follows strict cleaning standards and offers eco-friendly options to give your home or business a spotless, healthy shine—every time.
-        </p>
-      </div>
+  <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4">
+    Our Residential and Commercial Services from Denver to Castle Rock
+  </h2>
+  <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
+    With over 10 years of experience, Kathy Clean provides top-rated residential and commercial cleaning across Denver and surrounding areas, including Parker, Lone Tree, Highlands Ranch, Centennial, Central Park, Hilltop, Washington Park, Cherry Creek, University Park, Highland, and Castle Rock. We also specialize in window cleaning, pressure washing, and gutter cleaning, all backed by our 48-hour satisfaction guarantee. Our expert team follows strict cleaning standards and offers eco-friendly options to give your home or business a spotless, healthy shine—every time.
+  </p>
+</div>
 
-      <div className="flex flex-col gap-6 md:gap-8 md:w-3/4 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8">
         {services.map((service) => (
           <div 
             key={service.title} 
@@ -110,6 +112,17 @@ export default function OurServices() {
             />
           </div>
         ))}
+      </div>
+      <div className="text-center">
+        <Button
+          variant="default"
+          className="font-medium"
+          asChild
+        >
+          <Link href="/request-quote">
+            REQUEST A QUOTE
+          </Link>
+        </Button>
       </div>
     </section>  );
 }
