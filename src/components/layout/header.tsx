@@ -8,7 +8,6 @@ import {
 	NavigationMenuLink,
 	NavigationMenuList,
 	NavigationMenuTrigger,
-	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import {
@@ -44,26 +43,26 @@ export function Header() {
 
 					{/* Hamburger Menu Icon for Mobile (far right) */}
 					<div className="flex-1 flex justify-end md:hidden">
-						<button
+						<Button
 							className="p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary"
 							aria-label="Open menu"
 							onClick={() => setMobileMenuOpen(true)}
 						>
 							<Menu size={28} className="text-white" />
-						</button>
+						</Button>
 					</div>
 
 					{/* Mobile Menu Drawer */}
 					{mobileMenuOpen && (
 						<div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex justify-end md:hidden">
 							<div className="bg-foreground w-4/5 max-w-xs h-full shadow-lg p-6 flex flex-col">
-								<button
+								<Button
 									className="self-end mb-6 p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary"
 									aria-label="Close menu"
 									onClick={() => setMobileMenuOpen(false)}
 								>
 									<span className="text-white text-2xl">×</span>
-								</button>
+								</Button>
 								<nav className="flex flex-col gap-4">
 									{/* Services Dropdown */}
 									<DropdownMenu>
