@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   title: "Residential & Commercial Cleaning in Denver | Kathy Clean",
   description: "Top-rated cleaning in Denver & nearby. Residential, commercial, windows, pressure & more. 48h guarantee. 10+ years of trusted service",
   icons: [{ rel: "icon", url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomaYo5lyrN0W8yorQH6lnDudV4OjgIFLEC2YpM" }],
+  keywords: "cleaning, Denver, residential, commercial, windows, pressure, 48h guarantee, 10+ years of trusted service",
+  alternates: {
+    canonical: "https://www.kathyclean.com/",
+    languages: {
+      "en-US": "https://www.kathyclean.com/"
+    }
+  }
 };
 
 export default function RootLayout({
@@ -21,9 +28,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="canonical" href="https://www.kathyclean.com/" />
-      </head>
       <GoogleTagManager gtmId="GTM-M3T7KSXH" />
       <body className="antialiased"> 
         <PostHogProvider>
