@@ -1,6 +1,9 @@
-import WindowsServiceComponent from "@/components/WindowsServiceComponent";
+import { redirect } from 'next/navigation';
 
 export default function CThruWindowCleaning() {
-  // Usa el mismo contenido que /window-cleaning-denver
-  return <WindowsServiceComponent location="Denver" />;
+  // Redirigir a la nueva ruta para Denver
+  redirect('/window-cleaning-denver');
+  
+  // Este return nunca se ejecutará debido a la redirección
+  return null;
 }

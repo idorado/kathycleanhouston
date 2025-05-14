@@ -71,24 +71,6 @@ export function Header() {
 											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-denver">Residential Cleaning</Link></DropdownMenuItem>
 										</DropdownMenuContent>
 									</DropdownMenu>
-									{/* Locations Dropdown */}
-									<DropdownMenu>
-										<DropdownMenuTrigger className="text-white text-lg text-left">Locations</DropdownMenuTrigger>
-										<DropdownMenuContent className="bg-foreground text-white">
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-denver">Denver</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-centennial">Centennial</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-castle-rock">Castle Rock</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-englewood">Englewood</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-highlands-ranch">Highlands Ranch</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-parker">Parker</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-lone-tree">Lone Tree</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-aurora">Aurora</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-lakewood">Lakewood</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-littleton">Littleton</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-sheridan">Sheridan</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-greenwood-village">Greenwood Village</Link></DropdownMenuItem>
-										</DropdownMenuContent>
-									</DropdownMenu>
 									<Link href="/about-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
 									<Link href="/request-quote" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Request a Quote</Link>
 									<div className="mt-2"><PhoneButton /></div>
@@ -194,7 +176,7 @@ export function Header() {
 											<li>
 												<NavigationMenuLink asChild>
 													<Link
-														href="/house-cleaning-denver"
+														href="/window-cleaning-denver"
 														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
 													>
 														Denver
@@ -204,47 +186,7 @@ export function Header() {
 											<li>
 												<NavigationMenuLink asChild>
 													<Link
-														href="/house-cleaning-centennial"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Centennial
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-castle-rock"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Castle Rock
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-englewood"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Englewood
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-highlands-ranch"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Highlands Ranch
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-parker"
+														href="/window-cleaning-parker"
 														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
 													>
 														Parker
@@ -254,7 +196,17 @@ export function Header() {
 											<li>
 												<NavigationMenuLink asChild>
 													<Link
-														href="/house-cleaning-lone-tree"
+														href="/window-cleaning-castle-rock"
+														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														Castle Rock
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/window-cleaning-lone-tree"
 														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
 													>
 														Lone Tree
@@ -264,50 +216,40 @@ export function Header() {
 											<li>
 												<NavigationMenuLink asChild>
 													<Link
-														href="/house-cleaning-aurora"
+														href="/window-cleaning-highlands-ranch"
+														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														Highlands Ranch
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/window-cleaning-centennial"
+														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														Centennial
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/window-cleaning-englewood"
+														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+													>
+														Englewood
+													</Link>
+												</NavigationMenuLink>
+											</li>
+											<li>
+												<NavigationMenuLink asChild>
+													<Link
+														href="/window-cleaning-aurora"
 														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
 													>
 														Aurora
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-lakewood"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Lakewood
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-littleton"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Littleton
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-sheridan"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Sheridan
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-greenwood-village"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Greenwood Village
 													</Link>
 												</NavigationMenuLink>
 											</li>

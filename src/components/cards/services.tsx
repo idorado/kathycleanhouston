@@ -15,7 +15,7 @@ type ServiceType = {
   image: string;
 };
 
-const services: ServiceType[] = [
+const cleaningServices: ServiceType[] = [
   {
     id: "recurring",
     name: "Recurring Cleaning",
@@ -92,10 +92,53 @@ const FeatureStar = () => (
   </div>
 );
 
-export function ServiceCards() {
+const windowServices: ServiceType[] = [
+  {
+    id: "residential-windows",
+    name: "Residential Windows",
+    description: "Professional window cleaning for homes of all sizes, ensuring streak-free, crystal-clear windows.",
+    features: [
+      "Interior and exterior window cleaning",
+      "Screen and track cleaning available",
+      "Eco-friendly cleaning solutions"
+    ],
+    image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomM7ix4wYzdDOT26oVhPrB8Uy5g9WlSQn1sNEG"
+  },
+  {
+    id: "commercial-windows",
+    name: "Commercial Windows",
+    description: "Professional window cleaning services for businesses, offices, and commercial properties.",
+    features: [
+      "Regular maintenance programs available",
+      "Minimal disruption to your business",
+      "Fully insured and licensed professionals"
+    ],
+    image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomM7ix4wYzdDOT26oVhPrB8Uy5g9WlSQn1sNEG"
+  },
+  {
+    id: "window-tracks-screens",
+    name: "Window Tracks & Screens",
+    description: "Deep cleaning of window tracks and screens to remove built-up dirt and grime.",
+    features: [
+      "Removal of dust and debris from tracks",
+      "Cleaning of window screens",
+      "Improves window functionality and appearance"
+    ],
+    image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomM7ix4wYzdDOT26oVhPrB8Uy5g9WlSQn1sNEG"
+  }
+];
+
+interface ServiceCardsProps {
+  serviceType?: string;
+}
+
+export function ServiceCards({ serviceType }: ServiceCardsProps) {
+  const services = serviceType === 'window-cleaning' ? windowServices : cleaningServices;
+  const defaultTab = serviceType === 'window-cleaning' ? 'residential-windows' : 'recurring';
+  
   return (
     <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center justify-center gap-8">
-      <Tabs defaultValue="recurring" className="w-full">
+      <Tabs defaultValue={defaultTab} className="w-full">
         {/* Custom TabsList for horizontal scrolling */}
         <div className="overflow-x-auto pb-4 mb-8 no-scrollbar w-full flex justify-center">
           <TabsList className="h-auto p-1 bg-transparent gap-2 mx-auto">

@@ -32,6 +32,8 @@ const MAP_IFRAME_URLS: Record<string, string> = {
   "Greenwood Village": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d102823.62253929685!2d-104.882065!3d39.617211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sGreenwood%20Village%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus",
 }
 
+import WhyCleanWindowsRegularly from "@/components/sections/why-clean-windows-regularly";
+
 export default function ServiceAreaHighlight({ location }: ServiceAreaHighlightProps) {
   const loc = location || "Denver";
   const mapUrl = MAP_IFRAME_URLS[loc] || MAP_IFRAME_URLS["Denver"];
@@ -55,14 +57,15 @@ export default function ServiceAreaHighlight({ location }: ServiceAreaHighlightP
           </div>
         </div>
         <div className="flex-1 min-w-[300px]">
-          <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-2">House Cleaning Services in {loc}</h3>
-          <p className="font-semibold text-navy-800 mb-2">Enjoy peace of mind, more time, and a spotless space.</p>
+          <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-2">Window Cleaning Services in {loc}</h3>
+          <p className="font-semibold text-navy-800 mb-2">Residential & Commercial Window Cleaning You can Rely On.</p>
           <p className="text-base md:text-lg text-[#454545] mb-6">
-            Kathy Clean proudly offers residential and commercial cleaning services across {loc}. From downtown apartments to homes in local neighborhoods, we’re your local cleaning team — reliable, professional, and always on time.
+            Kathy Clean provides professional window cleaning services in {loc} for both homes and businesses. Our trained technicians use high-quality equipment to deliver streak-free results — whether it's for storefronts, office buildings, or multi-story homes. Trusted by business owners, property managers and homeowners across {loc}.
           </p>
           <RequestQuoteButton />
         </div>
       </div>
+      <WhyCleanWindowsRegularly />
     </section>
   );
 }
