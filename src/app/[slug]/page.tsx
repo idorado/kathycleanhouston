@@ -25,6 +25,19 @@ const locations = [
   { id: 'cherry-creek', name: 'Cherry Creek', description: 'Expert cleaning services in Cherry Creek.' },
   { id: 'university-park', name: 'University Park', description: 'Reliable cleaning for University Park homes and businesses.' },
   { id: 'highland', name: 'Highland', description: 'Comprehensive cleaning solutions for Highland residents.' },
+  { id: 'englewood', name: 'Englewood', description: 'Expert cleaning services for homes and businesses in Englewood.' },
+  { id: 'aurora', name: 'Aurora', description: 'Professional cleaning for Aurora residents and businesses.' },
+  { id: 'lakewood', name: 'Lakewood', description: 'Reliable and thorough cleaning services in Lakewood.' },
+  { id: 'littleton', name: 'Littleton', description: 'Top-rated house cleaning in Littleton.' },
+  { id: 'sheridan', name: 'Sheridan', description: 'Affordable cleaning for Sheridan homes and offices.' },
+  { id: 'greenwood-village', name: 'Greenwood Village', description: 'Premium cleaning services for Greenwood Village.' },
+  { id: 'cherry-hills-village', name: 'Cherry Hills Village', description: 'Exceptional cleaning services for Cherry Hills Village.' },
+  { id: 'roxborough-park', name: 'Roxborough Park', description: 'Trusted cleaning for Roxborough Park homes.' },
+  { id: 'ken-caryl', name: 'Ken Caryl', description: 'Professional cleaning solutions in Ken Caryl.' },
+  { id: 'glendale', name: 'Glendale', description: 'Top-quality cleaning for Glendale residents.' },
+  { id: 'bow-mar', name: 'Bow Mar', description: 'Reliable and detailed cleaning in Bow Mar.' },
+  { id: 'the-pinery', name: 'The Pinery', description: 'Comprehensive cleaning services for The Pinery.' },
+  { id: 'watkins', name: 'Watkins', description: 'Affordable and expert cleaning in Watkins.' },
 ];
 
 function parseSlug(slug: string) {
