@@ -32,14 +32,10 @@ const ServiceCard: FC<ServiceCardProps> = ({ title, description, imageUrl, image
           <p className="text-sm sm:text-base text-gray-600 mb-4">
             {description}
           </p>
-          <span onClick={e => e.stopPropagation()}>
-            <Button asChild variant="default" className="self-start mt-auto bg-primary/60 hover:bg-primary/70" tabIndex={0}>
-              <Link href={link} className="flex items-center gap-2 text-sm sm:text-base" tabIndex={0}>
-                Learn More
-                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
-              </Link>
-            </Button>
-          </span>
+          <Button variant="default" className="self-start mt-auto">
+            Learn More
+            <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
+          </Button>
         </div>
       </div>
     </Link>
