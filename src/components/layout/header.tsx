@@ -24,6 +24,27 @@ import React, { useState } from "react";
 
 export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const services = [
+		{ href: '/house-cleaning-denver', title: 'Residential Cleaning', description: 'Professional home cleaning services' },
+		{ href: '/commercial-cleaning-denver', title: 'Commercial Cleaning', description: 'Office and business cleaning solutions' },
+		{ href: '/window-cleaning-denver', title: 'Window Cleaning', description: 'Crystal clear window cleaning' },
+		{ href: '/pressure-washing-denver', title: 'Pressure Washing', description: 'Professional pressure washing services' },
+		{ href: '/gutter-cleaning-denver', title: 'Gutter Cleaning', description: 'Cleaning and maintenance of gutters and downspouts' },
+	];
+	const locations = [
+		{ href: '/house-cleaning-denver', name: 'Denver' },
+		{ href: '/house-cleaning-centennial', name: 'Centennial' },
+		{ href: '/house-cleaning-castle-rock', name: 'Castle Rock' },
+		{ href: '/house-cleaning-englewood', name: 'Englewood' },
+		{ href: '/house-cleaning-highlands-ranch', name: 'Highlands Ranch' },
+		{ href: '/house-cleaning-parker', name: 'Parker' },
+		{ href: '/house-cleaning-lone-tree', name: 'Lone Tree' },
+		{ href: '/house-cleaning-aurora', name: 'Aurora' },
+		{ href: '/house-cleaning-lakewood', name: 'Lakewood' },
+		{ href: '/house-cleaning-littleton', name: 'Littleton' },
+		{ href: '/house-cleaning-sheridan', name: 'Sheridan' },
+		{ href: '/house-cleaning-greenwood-village', name: 'Greenwood Village' },
+	];
 	return (
 		<header className="sticky top-0 z-50 bg-foreground py-3">
 			<div className="container mx-auto px-4">
@@ -68,25 +89,22 @@ export function Header() {
 									<DropdownMenu>
 										<DropdownMenuTrigger className="text-white text-lg text-left">Services</DropdownMenuTrigger>
 										<DropdownMenuContent className="bg-foreground text-white">
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-denver">Residential Cleaning</Link></DropdownMenuItem>
+											{services.map(s => (
+												<DropdownMenuItem asChild key={s.href} onClick={() => setMobileMenuOpen(false)}>
+													<Link href={s.href}>{s.title}</Link>
+												</DropdownMenuItem>
+											))}
 										</DropdownMenuContent>
 									</DropdownMenu>
 									{/* Locations Dropdown */}
 									<DropdownMenu>
 										<DropdownMenuTrigger className="text-white text-lg text-left">Locations</DropdownMenuTrigger>
 										<DropdownMenuContent className="bg-foreground text-white">
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-denver">Denver</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-centennial">Centennial</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-castle-rock">Castle Rock</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-englewood">Englewood</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-highlands-ranch">Highlands Ranch</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-parker">Parker</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-lone-tree">Lone Tree</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-aurora">Aurora</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-lakewood">Lakewood</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-littleton">Littleton</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-sheridan">Sheridan</Link></DropdownMenuItem>
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}><Link href="/house-cleaning-greenwood-village">Greenwood Village</Link></DropdownMenuItem>
+											{locations.map(l => (
+												<DropdownMenuItem asChild key={l.href} onClick={() => setMobileMenuOpen(false)}>
+													<Link href={l.href}>{l.name}</Link>
+												</DropdownMenuItem>
+											))}
 										</DropdownMenuContent>
 									</DropdownMenu>
 									<Link href="/about-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
@@ -107,81 +125,16 @@ export function Header() {
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-denver"
-														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														<div className="text-sm font-medium leading-none">
-															Residential Cleaning
-														</div>
-														<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-															Professional home cleaning services
-														</p>
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/commercial-cleaning-denver"
-														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														<div className="text-sm font-medium leading-none">
-															Commercial Cleaning
-														</div>
-														<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-															Office and business cleaning solutions
-														</p>
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/window-cleaning-denver"
-														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														<div className="text-sm font-medium leading-none">
-															Window Cleaning
-														</div>
-														<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-															Crystal clear window cleaning
-														</p>
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/pressure-washing-denver"
-														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														<div className="text-sm font-medium leading-none">
-															Pressure Washing
-														</div>
-														<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-															Professional pressure washing services
-														</p>
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/gutter-cleaning-denver"
-														className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														<div className="text-sm font-medium leading-none">
-															Gutter Cleaning
-														</div>
-														<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-															Cleaning and maintenance of gutters and downspouts
-														</p>
-													</Link>
-												</NavigationMenuLink>
-											</li>
+											{services.map(s => (
+												<li key={s.href}>
+													<NavigationMenuLink asChild>
+														<Link href={s.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+															<div className="text-sm font-medium leading-none">{s.title}</div>
+															<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{s.description}</p>
+														</Link>
+													</NavigationMenuLink>
+												</li>
+											))}
 										</ul>
 									</NavigationMenuContent>
 								</NavigationMenuItem>
@@ -191,126 +144,15 @@ export function Header() {
 									</NavigationMenuTrigger>
 									<NavigationMenuContent>
 										<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-denver"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Denver
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-centennial"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Centennial
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-castle-rock"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Castle Rock
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-englewood"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Englewood
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-highlands-ranch"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Highlands Ranch
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-parker"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Parker
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-lone-tree"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Lone Tree
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-aurora"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Aurora
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-lakewood"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Lakewood
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-littleton"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Littleton
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-sheridan"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Sheridan
-													</Link>
-												</NavigationMenuLink>
-											</li>
-											<li>
-												<NavigationMenuLink asChild>
-													<Link
-														href="/house-cleaning-greenwood-village"
-														className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-													>
-														Greenwood Village
-													</Link>
-												</NavigationMenuLink>
-											</li>
+											{locations.map(l => (
+												<li key={l.href}>
+													<NavigationMenuLink asChild>
+														<Link href={l.href} className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+															{l.name}
+														</Link>
+													</NavigationMenuLink>
+												</li>
+											))}
 										</ul>
 									</NavigationMenuContent>
 								</NavigationMenuItem>
