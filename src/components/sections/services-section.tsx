@@ -1,5 +1,6 @@
 import { ServiceCard } from "@/components/cards/service-card"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { PriceCalculator } from "@/components/tools/price-calculator"
 import { FAQ } from "@/components/sections/faq"
@@ -175,7 +176,7 @@ export async  function ServicesSection() {
         <FAQ />
 
         <div className="text-center mt-12">
-          <Button size="lg">Request a Quote</Button>
+          <Button size="lg" asChild><Link href="/request-quote">Request a Quote</Link></Button>
           <Button variant="outline" size="lg" className="ml-4">
             Schedule a Consultation
           </Button>

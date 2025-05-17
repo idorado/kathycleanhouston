@@ -8,9 +8,10 @@ import { ServiceCards } from "@/components/cards/services";
 import WhyTrustUsSection from "@/components/sections/why-trust-us";
 import WhyBusinessesHomesChooseUs from "@/components/sections/why-businesses-homes-choose-us";
 import ReviewHighlight from "@/components/sections/review-highlight";
-import ReadyForCleaning from "@/components/sections/ready-for-cleaning";
+import ReadyForWindowCleaning from "@/components/sections/ready-for-window-cleaning";
 import ThreeStepProcess from "@/components/sections/three-step-process";
-import ServiceAreaHighlight from "@/components/sections/service-area-highlight";
+import ServiceAreaHighlightWindowCleaning from "@/components/sections/service-area-highlight-window-cleaning";
+import WindowCleaningBenefits from "@/components/sections/window-cleaning-benefits";
 
 interface WindowsServiceComponentProps {
   location: string;
@@ -32,7 +33,7 @@ const WindowsServiceComponent: React.FC<WindowsServiceComponentProps> = async ({
               asChild
             >
               <Link className="w-full" href="/request-quote">
-                REQUEST A SERVICE
+                REQUEST A QUOTE
               </Link>
             </Button>
             <div className="w-full sm:w-auto min-w-[180px] h-10">
@@ -56,8 +57,9 @@ const WindowsServiceComponent: React.FC<WindowsServiceComponentProps> = async ({
       <WhyBusinessesHomesChooseUs />
       <ReviewHighlight location={location} />
       <ThreeStepProcess />
-      <ReadyForCleaning location={location} serviceType="window cleaning" />
-      <ServiceAreaHighlight location={location} />
+      <ReadyForWindowCleaning location={location} />
+      <ServiceAreaHighlightWindowCleaning location={location} />
+      <WindowCleaningBenefits />
 
       {/* Our Window Cleaning Services */}
       <div

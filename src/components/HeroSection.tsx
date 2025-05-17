@@ -6,7 +6,7 @@ import Image from "next/image";
 
 interface HeroSectionProps {
   children?: React.ReactNode;
-  category?: string;
+  category?: string; // Opcional, no se mostrará si no se proporciona
   title?: string;
   description?: string;
   linkUrl?: string;
@@ -16,6 +16,7 @@ interface HeroSectionProps {
   imgWidth?: number;
   imgHeight?: number;
   imgPriority?: boolean;
+  phoneButton?: React.ReactNode;
 }
 
 const HeroSection: FC<HeroSectionProps> = ({
@@ -30,6 +31,7 @@ const HeroSection: FC<HeroSectionProps> = ({
   imgWidth = 400,
   imgHeight = 400,
   imgPriority = false,
+  phoneButton,
 }) => {
   return (
     <section className="relative bg-foreground overflow-hidden min-h-[340px] md:min-h-[420px]">
@@ -40,10 +42,13 @@ const HeroSection: FC<HeroSectionProps> = ({
           ) : (
             <>
               <div className="space-y-4 md:space-y-6 py-16 md:py-24 text-white text-center md:text-left">
-                {category && <Badge className="bg-primary">{category}</Badge>}
                 {title && <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">{title}</h1>}
                 {description && <p className="text-base sm:text-lg">{description}</p>}
-                {linkUrl && (
+                {phoneButton && (
+                  <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    {phoneButton}
+                  </div>
+                ) || linkUrl && (
                   <Button size="lg" className="w-full sm:w-auto">
                     <Link href={linkUrl} className="w-full">
                       {linkText}

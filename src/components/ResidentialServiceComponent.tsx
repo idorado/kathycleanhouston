@@ -7,9 +7,9 @@ import AdditionalServices from "@/components/AdditionalServices";
 import { ServiceCards } from "@/components/cards/services";
 import WhyTrustUsSection from "@/components/sections/why-trust-us";
 import ReviewHighlight from "@/components/sections/review-highlight";
-import ReadyForCleaning from "@/components/sections/ready-for-cleaning";
+import ReadyForHouseCleaning from "@/components/sections/ready-for-house-cleaning";
 import ThreeStepProcess from "@/components/sections/three-step-process";
-import ServiceAreaHighlight from "@/components/sections/service-area-highlight";
+import ServiceAreaHighlightHouseCleaning from "@/components/sections/service-area-highlight-house-cleaning";
 import WellnessBenefits from "@/components/sections/wellness-benefits";
 import { ResidentialPriceCalculator } from "@/components/tools/residential-price-calculator";
 
@@ -59,8 +59,8 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
       <WhyTrustUsSection location={location} />
       <ReviewHighlight location={location} />
       <ThreeStepProcess />
-      <ReadyForCleaning location={location} />
-      <ServiceAreaHighlight location={location} />
+      <ReadyForHouseCleaning location={location} />
+      <ServiceAreaHighlightHouseCleaning location={location} />
       <WellnessBenefits />
 
       {/* Our Residential Services */}

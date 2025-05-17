@@ -31,7 +31,7 @@ const HomeHero = () => {
       </div>
       <div className="relative hidden md:block w-full h-full">
         <Image
-          src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu"
+          src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomWu0pGghvM9rmixlERctSJWydYD1B0G2wqHse"
           alt="Professional cleaning service"
           width={400}
           height={400}
