@@ -96,17 +96,7 @@ export function Header() {
 											))}
 										</DropdownMenuContent>
 									</DropdownMenu>
-									{/* Locations Dropdown */}
-									<DropdownMenu>
-										<DropdownMenuTrigger className="text-white text-lg text-left">Locations</DropdownMenuTrigger>
-										<DropdownMenuContent className="bg-foreground text-white">
-											{locations.map(l => (
-												<DropdownMenuItem asChild key={l.href} onClick={() => setMobileMenuOpen(false)}>
-													<Link href={l.href}>{l.name}</Link>
-												</DropdownMenuItem>
-											))}
-										</DropdownMenuContent>
-									</DropdownMenu>
+									<Link href="/service-areas" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Locations</Link>
 									<Link href="/about-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
 									<Link href="/request-quote" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Request a Quote</Link>
 									<div className="mt-2"><PhoneButton /></div>
@@ -139,22 +129,11 @@ export function Header() {
 									</NavigationMenuContent>
 								</NavigationMenuItem>
 								<NavigationMenuItem>
-									<NavigationMenuTrigger className="bg-transparent text-white hover:bg-primary/10 hover:text-ring">
-										Locations
-									</NavigationMenuTrigger>
-									<NavigationMenuContent>
-										<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-											{locations.map(l => (
-												<li key={l.href}>
-													<NavigationMenuLink asChild>
-														<Link href={l.href} className="block select-none rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-															{l.name}
-														</Link>
-													</NavigationMenuLink>
-												</li>
-											))}
-										</ul>
-									</NavigationMenuContent>
+									<NavigationMenuLink asChild>
+										<Link href="/service-areas" className="bg-transparent text-white hover:bg-primary/10 hover:text-ring px-4 py-2 rounded transition-colors font-medium">
+											Locations
+										</Link>
+									</NavigationMenuLink>
 								</NavigationMenuItem>
 								<NavigationMenuItem>
 									<NavigationMenuLink asChild>
