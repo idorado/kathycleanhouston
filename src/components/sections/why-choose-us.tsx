@@ -1,4 +1,5 @@
-import type { FC } from 'react';
+"use server"
+import type { FC } from "react";
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -18,7 +19,7 @@ const FeatureCard: FC<FeatureCardProps> = ({ icon, title, description }) => {
   );
 };
 
-export default function WhyChooseUs() {
+export default async function WhyChooseUs() {
   const features = [
     {
       icon: <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomf784HIMOIyEW8fnCaPxAMTFk0iZhHrQ5NVgb" alt="Satisfaction Guaranteed"/>,

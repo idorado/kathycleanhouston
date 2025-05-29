@@ -1,5 +1,4 @@
-import React from "react";
-
+"use server"
 const companies = [
 	{
 		name: "Whole Foods",
@@ -44,7 +43,7 @@ const companies = [
 	},
 ];
 
-export default function CompaniesCountOnUs() {
+export default async function CompaniesCountOnUs() {
 	return (
 		<section className="py-12 bg-white" id="companies-count-on-us">
 			<div className="max-w-7xl mx-auto px-4">

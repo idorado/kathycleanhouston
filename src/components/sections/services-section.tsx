@@ -82,7 +82,7 @@ export const services = [
   }
 ] as const
 
-export async  function ServicesSection() {
+export async function ServicesSection() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">

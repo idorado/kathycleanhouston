@@ -1,7 +1,8 @@
+"use server"
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-export default function RequestQuoteButton() {
+export default async function RequestQuoteButton() {
   return (
     <Button
       variant="default"
