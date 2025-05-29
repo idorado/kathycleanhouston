@@ -39,7 +39,6 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { client } from "@/lib/client";
 
 type PriceTierRecurring = {
 	minSqFt: number;
@@ -325,10 +324,6 @@ export function ResidentialPriceCalculator() {
 	}, [calculateEstimate]);
 
 	const onSubmitCalculator = async (data: z.infer<typeof calculatorSchema>) => {
-		const response = await client.contact.calculator.$post({
-			...data,
-			totalPrice: basePrice + addonsPrice,
-		});
 		setOpen(false);
 	};
 	return (
