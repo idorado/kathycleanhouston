@@ -1,7 +1,4 @@
 "use client"
-
-import { useQuery } from '@tanstack/react-query'
-import { client } from "@/lib/client"
 import { Star } from 'lucide-react'
 import { Card, CardContent } from "@/components/ui/card"
 import AutoPlay from "embla-carousel-autoplay";
@@ -13,50 +10,66 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel"
+import Link from "next/link"
 
-const sampleTestimonials = [
+const testimonials = [
   {
-    id: "1",
-    quote: "Kathy Clean is great service at a fair price point. Communication is always timely and easy to make schedules around as needed. If something is ever missed there is always an option for a reclean to make it right which I have only had to ask for one time and it was partially my fault because I didn't realize leaving a door closed was code for skip this area. I highly recommend Kathy Clean!",
-    author: "Alysha Deaver",
-    rating: 5
+    id: "fe6c0a96-0add-4234-beca-42bbd7597fd8",
+    quote: "I have been with Kathy Clean for years and am totally happy.  They do a great job and I'm highly satisfied.  I would recommend their service!",
+    author: "nonya durham",
+    role: "Homeowner",
+    service: "Residential Cleaning",
+    created_at: "2025-03-10 16:35:24.187303+00",
+    updated_at: "2025-03-10 16:35:24.187303+00"
   },
   {
-    id: "2",
-    quote: "I was referred by a neighbor. Kathy Clean was very professional and it set an appt to start on a cleaning schedule w/in a few days. Person came yesterday and did an absolutely AMAZING job. You can tell she took great pride in what she does. Very professional. I was very impressed.",
+    id: "4ef1a912-a011-4cff-bb06-106ddecc7f29",
+    quote: "Service is outstanding, the help is professional, courteous and always on time for scheduled cleaning.  I would give Kathy Clean my highest recommendation, you'll be very pleased!",
+    author: "Steve Mahlstadt",
+    role: "",
+    service: "",
+    created_at: "2025-04-22 16:24:27+00",
+    updated_at: "2025-04-22 16:24:30+00"
+  },
+  {
+    id: "9fbe59dc-8a15-4b81-87ce-5089ca91c437",
+    quote: "I've been using Kathy Clean for years and can’t imagine using any other cleaning service. Everyone I've interacted with—whether it's the office staff or the cleaners—has been friendly, professional, and flexible. They always match you with the right person for your home cleaning needs, and they genuinely care about making sure you're happy with the service. I certainly am. They’re the best I've ever used, and my daughter has been using them for years as well.",
+    author: "Judy Hawkins",
+    role: "",
+    service: "",
+    created_at: "2025-03-10 16:35:24.187303+00",
+    updated_at: "2025-03-10 16:35:24.187303+00"
+  },
+  {
+    id: "752e2df4-8436-471c-a60b-6ab2dc94d686",
+    quote: "I was referred to Kathy Clean by a neighbor. They were very professional, and I was able to schedule an appointment to start a regular cleaning service within just a few days. The person who came yesterday did an absolutely AMAZING job. You could really tell she took great pride in her work. Very professional, and I was truly impressed.",
     author: "Donna Whalen",
-    rating: 5
+    role: "",
+    service: "",
+    created_at: "2025-03-10 16:35:24.187303+00",
+    updated_at: "2025-03-10 16:35:24.187303+00"
   },
   {
-    id: "3",
-    quote: "Kathy Clean did a 5 star job! The floors and bathroom were spotless, the kitchen squicky clean, and the house smelled amazing. She even went above and beyond and cleaned the baseboards",
-    author: "Jessica Dukart",
-    rating: 5
+    id: "51e43889-ccbc-4a21-a007-42495e2bbbab",
+    quote: "Alicia has always done a great job",
+    author: "Gordon Harvey",
+    role: "",
+    service: "",
+    created_at: "2025-03-10 16:35:24.187303+00",
+    updated_at: "2025-03-10 16:36:30+00"
+  },
+  {
+    id: "6cc7ae1b-3b56-41b8-bb15-680068f1350d",
+    quote: "Want the best cleaning service in town? Then you want to call Kathy Clean!! They will provide you with outstanding service, and they are very easy to work with.",
+    author: "Kerri Norris",
+    role: "",
+    service: "",
+    created_at: "2025-03-10 16:35:24.187303+00",
+    updated_at: "2025-03-10 16:35:24.187303+00"
   }
 ]
 
 export function Testimonial() {
-  const { data: testimonials, isPending } = useQuery({
-    queryKey: ["testimonials-recent"],
-    queryFn: async () => {
-      try {
-        const res = await client.testimonials.recent.$get();
-        return res.json()
-      } catch (error) {
-        console.error("Error fetching testimonials:", error);
-        return sampleTestimonials;
-      }
-    },
-    initialData: sampleTestimonials
-  })
-
-  if (isPending) {
-    return <div>Loading...</div>
-  }
-
-  if (!testimonials || testimonials.length === 0) {
-    return <div>No testimonials available</div>
-  }
 
   return (
     <div className="w-full py-12 flex flex-col items-center">
@@ -103,7 +116,7 @@ export function Testimonial() {
         className="mt-6 font-medium mx-auto"
         asChild
       >
-        <a href="/request-quote">REQUEST A QUOTE</a>
+        <Link href="/request-quote">REQUEST A QUOTE</Link>
       </Button>
     </div>
   )
