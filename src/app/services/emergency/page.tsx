@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import Image from "next/image"
 import { toast } from "sonner"
+import { CtaButton } from "@/components/ui/CtaButton"
 
 type EmergencyService = {
   id: string;
@@ -94,7 +95,7 @@ export default function EmergencyPage() {
             </div>
             <div>
               <Button size="lg" className="bg-blue-800 hover:bg-blue-900" asChild>
-                <a href="#request-quote">REQUEST A SERVICE</a>
+                <CtaButton href="/request-quote">REQUEST A SERVICE</CtaButton>
               </Button>
             </div>
           </div>

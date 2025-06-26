@@ -1,7 +1,7 @@
 "use server";
 import HeroSection from "@/components/HeroSection";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { CtaButton } from "@/components/ui/CtaButton";
 import PhoneButton from "@/components/PhoneButton";
 import AdditionalServices from "@/components/AdditionalServices";
 import { ServiceCards } from "@/components/cards/services";
@@ -32,9 +32,9 @@ const WindowsServiceComponent: React.FC<WindowsServiceComponentProps> = async ({
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-10 rounded-md px-6 has-[>svg]:px-4 w-full sm:w-auto min-w-[180px]"
               asChild
             >
-              <Link className="w-full" href="/request-quote">
+              <CtaButton href="/request-quote">
                 REQUEST A QUOTE
-              </Link>
+              </CtaButton>
             </Button>
             <div className="w-full sm:w-auto min-w-[180px] h-10">
               <PhoneButton />
