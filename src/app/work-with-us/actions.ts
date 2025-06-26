@@ -19,6 +19,8 @@ export type ApplicationData = {
   };
   schedule: string;
   backgroundCheck: "yes" | "no";
+  source?: string[];
+  notes?: string;
 };
 
 export async function addApplicationToNotion(data: ApplicationData) {
@@ -71,8 +73,20 @@ export async function addApplicationToNotion(data: ApplicationData) {
           checkbox: data.backgroundCheck === 'yes',
         },
         "Video": {
-          // The 'files' property is for uploads. We'll leave it empty for now.
           files: [],
+        },
+        // New fields from the updated schema
+        "Application Date": {
+          date: { start: new Date().toISOString() },
+        },
+        "Source/Channel": {
+          multi_select: data.source ? data.source.map(s => ({ name: s })) : [],
+        },
+        "Notes": {
+          rich_text: data.notes ? [{ text: { content: data.notes } }] : [],
+        },
+        "Interview Stages": {
+          multi_select: [], // This field is not in the form yet
         },
       },
     });

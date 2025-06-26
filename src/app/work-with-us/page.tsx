@@ -46,6 +46,14 @@ const translations = {
     uploading: 'Uploading...',
     uploadVideo: 'Upload Video',
     required: 'Required',
+    source: 'How did you hear about us?',
+    notes: 'Additional Notes (optional)',
+    sourceOptions: {
+      instagram: 'Instagram',
+      facebook: 'Facebook',
+      friend: 'A friend',
+      other: 'Other',
+    },
   },
   es: {
     title: 'Trabaja con Nosotros',
@@ -71,6 +79,14 @@ const translations = {
     uploading: 'Subiendo...',
     uploadVideo: 'Subir video',
     required: 'Requerido',
+    source: '¿Cómo te enteraste de nosotros?',
+    notes: 'Notas adicionales (opcional)',
+    sourceOptions: {
+      instagram: 'Instagram',
+      facebook: 'Facebook',
+      friend: 'Un amigo',
+      other: 'Otro',
+    },
   },
 };
 
@@ -98,6 +114,8 @@ export default function WorkWithUsPage() {
   schedule: z.string().min(1, { message: "Required" }),
   backgroundCheck: z.enum(["yes", "no"], { required_error: "Required" }),
   video: z.any().refine(file => file instanceof File, { message: "Required" }),
+  source: z.array(z.string()).optional(),
+  notes: z.string().optional(),
 });
 
 type WorkWithUsFormValues = z.infer<typeof WorkWithUsSchema>;
@@ -120,6 +138,8 @@ const form = useForm<WorkWithUsFormValues>({
     schedule: '',
     backgroundCheck: undefined,
     video: undefined,
+    source: [],
+    notes: '',
   },
 });
 
@@ -358,6 +378,84 @@ const onSubmit = async (data: WorkWithUsFormValues) => {
                       <FormLabel className="font-normal cursor-pointer">{t.no}</FormLabel>
                     </FormItem>
                   </RadioGroup>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div>
+            <FormLabel>{t.source}</FormLabel>
+            <div className="flex flex-wrap gap-4 mt-2">
+              <FormField
+                name="source"
+                control={form.control}
+                render={({ field }) => (
+                  <>
+                    <FormItem className="flex flex-row items-center space-x-2">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value?.includes('instagram')}
+                          onCheckedChange={(checked) => {
+                            return checked
+                              ? field.onChange([...(field.value || []), 'instagram'])
+                              : field.onChange(field.value?.filter((v) => v !== 'instagram'));
+                          }}
+                        />
+                      </FormControl>
+                      <FormLabel className="font-normal cursor-pointer">{t.sourceOptions.instagram}</FormLabel>
+                    </FormItem>
+                    <FormItem className="flex flex-row items-center space-x-2">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value?.includes('facebook')}
+                          onCheckedChange={(checked) => {
+                            return checked
+                              ? field.onChange([...(field.value || []), 'facebook'])
+                              : field.onChange(field.value?.filter((v) => v !== 'facebook'));
+                          }}
+                        />
+                      </FormControl>
+                      <FormLabel className="font-normal cursor-pointer">{t.sourceOptions.facebook}</FormLabel>
+                    </FormItem>
+                    <FormItem className="flex flex-row items-center space-x-2">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value?.includes('friend')}
+                          onCheckedChange={(checked) => {
+                            return checked
+                              ? field.onChange([...(field.value || []), 'friend'])
+                              : field.onChange(field.value?.filter((v) => v !== 'friend'));
+                          }}
+                        />
+                      </FormControl>
+                      <FormLabel className="font-normal cursor-pointer">{t.sourceOptions.friend}</FormLabel>
+                    </FormItem>
+                    <FormItem className="flex flex-row items-center space-x-2">
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value?.includes('other')}
+                          onCheckedChange={(checked) => {
+                            return checked
+                              ? field.onChange([...(field.value || []), 'other'])
+                              : field.onChange(field.value?.filter((v) => v !== 'other'));
+                          }}
+                        />
+                      </FormControl>
+                      <FormLabel className="font-normal cursor-pointer">{t.sourceOptions.other}</FormLabel>
+                    </FormItem>
+                  </>
+                )}
+              />
+            </div>
+          </div>
+          <FormField
+            name="notes"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{t.notes}</FormLabel>
+                <FormControl>
+                  <Textarea {...field} placeholder="..." />
                 </FormControl>
                 <FormMessage />
               </FormItem>
