@@ -9,7 +9,6 @@ const services = [
   { id: 'house-cleaning', name: 'House Cleaning', description: 'Professional residential cleaning services for your home.' },
   { id: 'commercial-cleaning', name: 'Commercial Cleaning', description: 'Comprehensive cleaning solutions for businesses and commercial spaces.' },
   { id: 'window-cleaning', name: 'Window Cleaning', description: 'Crystal clear windows inside and out for homes and businesses.' },
-  { id: 'pressure-washing', name: 'Pressure Washing', description: 'High-powered cleaning for exterior surfaces.' },
 ];
 
 const locations = [
@@ -123,23 +122,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
-  if (service?.id === 'pressure-washing') {
-    return {
-      title: `Pressure Washing ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
-      description: `Professional pressure washing services ${location ? ` in ${location.name}` : ''}. Get crystal clear windows with our expert team. Serving homes and businesses ${location? `in ${location?.name}` : ''} and surrounding areas.`,
-      alternates: {
-        canonical: `https://www.kathyclean.com/pressure-washing-${location?.id}`
-      },
-      openGraph: {
-        title: `Pressure Washing ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
-        description: `Professional pressure washing services ${location ? ` in ${location.name}` : ''}. Get crystal clear windows with our expert team.`,
-        url: `https://www.kathyclean.com/pressure-washing-${location?.id}`,
-        siteName: 'Kathy Clean',
-        locale: 'en_US',
-        type: 'website',
-      },
-    };
-  }
 
   return {
     title: '404 Not Found | Kathy Clean',
