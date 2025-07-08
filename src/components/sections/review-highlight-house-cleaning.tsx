@@ -17,31 +17,31 @@ export default function ReviewHighlightHouseCleaning({ location }: ReviewHighlig
             className="object-contain w-[420px] h-[290px] bg-white rounded-xl"
             priority
           />
-          <div className="bg-white rounded-lg shadow-md px-3 py-2 flex items-center gap-2 w-[210px] absolute right-5 bottom-5 z-20">
-            <span className="text-yellow-400 text-base">★★★★★</span>
-            <span className="font-semibold text-gray-900 text-sm">4.7/5</span>
-            <span className="text-gray-500 text-xs ml-2">Based on Verified Customer Reviews</span>
+          <div className="bg-white rounded-lg shadow-md p-3 flex flex-col items-center w-[220px] absolute right-5 bottom-5 z-20">
+            <span className="font-bold text-2xl text-gray-900">4.8/5</span>
+            <span className="text-yellow-400 text-lg mb-1">★★★★★</span>
+            <span className="text-gray-500 text-xs text-center">Based on Verified Customer Reviews</span>
           </div>
         </div>
       </div>
       <div className="flex flex-col gap-8 max-w-xl">
         <div className="bg-white rounded-lg shadow-none">
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex items-center gap-1 mb-2">
             <span className="text-yellow-400 text-lg">★★★★★</span>
           </div>
           <p className="text-gray-800 text-base mb-4">
-            Kyle is very professional and respectful of my residence. It is a pleasure to have his service. In fact, he has cleaned my window for several years. I am completely satisfied with his work and will continue to have him clean my windows.
+            The house smelled wonderfully clean and it was meticulously cleaned. I highly recommend Kathy Clean if you are looking for reliable service. The cleaner showed up when scheduled and did a great job! Thanks for making my long day at work end in such a positive way.
           </p>
-          <div className="font-semibold text-gray-900 leading-tight">Shelah</div>
+          <div className="font-semibold text-gray-900 leading-tight">Becky</div>
         </div>
         <div className="bg-white rounded-lg shadow-none">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-yellow-400 text-lg">★★★★★</span>
           </div>
           <p className="text-gray-800 text-base mb-4">
-            The team is so awesome our window are so clean and they are prompt with their service and always make sure we are looking good before they leave.
+            Kathy clean does a really nice job. It's a very reliable service. If you don't like something you tell them and they will correct it. They're really easy to work with. We really like the person who cleans for us and Beverly is delightful to work with!! My dad also uses the service and he really likes his person. I don't think you can go wrong with any of the people that work for them!
           </p>
-          <div className="font-semibold text-gray-900 leading-tight">Desiree McWilliams</div>
+          <div className="font-semibold text-gray-900 leading-tight">Kathy Welsh</div>
         </div>
       </div>
     </section>

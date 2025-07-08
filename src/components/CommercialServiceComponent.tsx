@@ -36,8 +36,8 @@ const CommercialServiceComponent = async ({ location }: CommercialServiceCompone
         <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">Commercial Cleaning{location ? ` in ${location}` : ''}</h1>
           <p className="text-base sm:text-lg">
-            Looking for reliable commercial cleaning in {location}?<br />
-            Kathy Clean provides professional cleaning services for offices, clinics, retail stores, and more throughout {location}. With over 10 years of experience and trusted by brands like IKEA, Starbucks, Whole Foods, and PetSmart, we deliver spotless results tailored to your business needs—backed by a 48-hour satisfaction guarantee.
+            Looking for reliable janitorial services in {location}?<br />
+            Kathy Clean provides professional cleaning services for offices, clinics, retail stores, and more throughout {location}. With over 10 years of experience and trusted by brands like IKEA, Starbucks, Whole Foods, and PetSmart, we deliver spotless results tailored to your business needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <CtaButton

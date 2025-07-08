@@ -90,14 +90,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (service?.id === 'commercial-cleaning') {
     return {
-      title: `Commercial Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
-      description: `Looking for commercial cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
+      title: `Commercial Cleaning Services in ${location?.name || 'Denver'} | Kathy Clean`,
+      description: `Professional commercial cleaning services${location ? ` in ${location.name}` : ''}. Trusted by businesses across the area.`,
       alternates: {
         canonical: `https://www.kathyclean.com/commercial-cleaning-${location?.id}`
       },
       openGraph: {
-        title: `Commercial Cleaning ${location ? ` in ${location.name}` : ''} | Kathy Clean`,
-        description: `Looking for commercial cleaning near you in ${location?.name}? Kathy Clean offers trusted and affordable services. Book a free quote today.`,
+        title: `Commercial Cleaning Services in ${location?.name || 'Denver'} | Kathy Clean`,
+        description: `Professional commercial cleaning services${location ? ` in ${location.name}` : ''}. Trusted by businesses across the area.`,
         url: `https://www.kathyclean.com/commercial-cleaning-${location?.id}`,
         siteName: 'Kathy Clean',
         locale: 'en_US',
@@ -109,13 +109,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (service?.id === 'window-cleaning') {
     return {
       title: `Window Cleaning ${location ? ` in ${location.name}` : ''} | Professional Window Cleaners`,
-      description: `Professional window cleaning services ${location ? ` in ${location.name}` : ''}. Get crystal clear windows with our expert team. Serving homes and businesses ${location? `in ${location?.name}` : ''} and surrounding areas.`,
+      description: `If you're looking for window cleaning companies in ${location?.name || 'Denver'}, CO, look no further than Kathy Clean Window Cleaning. Learn more about our services.`,
       alternates: {
         canonical: `https://www.kathyclean.com/window-cleaning-${location?.id}`
       },
       openGraph: {
-        title: `Window Cleaning in ${location?.name} | Kathy Clean`,
-        description: `Professional window cleaning services in ${location?.name}. Get crystal clear windows with our expert team.`,
+        title: `Window Cleaning in ${location?.name || 'Denver'} | Kathy Clean`,
+        description: `If you're looking for window cleaning companies in ${location?.name || 'Denver'}, CO, look no further than Kathy Clean Window Cleaning. Learn more about our services.`,
         url: `https://www.kathyclean.com/window-cleaning-${location?.id}`,
         siteName: 'Kathy Clean',
         locale: 'en_US',
