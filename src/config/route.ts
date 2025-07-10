@@ -11,7 +11,7 @@ export const locations = [
   'lone-tree',
   'englewood',
   'greewood-village',
-  'littleton'
+  'littleton',
   'highlands-ranch',
   'centennial',
   'central-park',
