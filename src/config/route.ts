@@ -9,6 +9,9 @@ export const locations = [
   'parker',
   'castle-rock',
   'lone-tree',
+  'englewood',
+  'greewood-village',
+  'littleton'
   'highlands-ranch',
   'centennial',
   'central-park',
