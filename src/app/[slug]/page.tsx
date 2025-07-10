@@ -16,7 +16,7 @@ const locations = [
   { id: 'parker', name: 'Parker', description: 'Quality cleaning services throughout Parker.' },
   { id: 'castle-rock', name: 'Castle Rock', description: 'Trusted cleaning professionals in Castle Rock.' },
   { id: 'lone-tree', name: 'Lone Tree', description: 'Dependable cleaning services for Lone Tree residents.' },
-  { id: 'englewood', name 'Englewood', description: 'Professional house cleaning and maid services in Englewood, CO. Enjoy a spotless home with our trusted cleaning services. Satisfaction guaranteed!'},
+  { id: 'englewood', name: 'Englewood', description: 'Professional house cleaning and maid services in Englewood, CO. Enjoy a spotless home with our trusted cleaning services. Satisfaction guaranteed!'},
   { id: 'highlands-ranch', name: 'Highlands Ranch', description: 'Comprehensive cleaning solutions in Highlands Ranch.' },
   { id: 'centennial', name: 'Centennial', description: 'Professional cleaning services for Centennial homes and businesses.' },
   { id: 'central-park', name: 'Central Park', description: 'Dedicated cleaning services for the Central Park neighborhood.' },
