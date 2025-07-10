@@ -38,11 +38,6 @@ const locationMapUrls: { [key: string]: string } = {
   'Highland': 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51392.6653018158!2d-105.0152517!3d39.758236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sHighland%2C%20Denver%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus'
 };
 
-// Función para obtener la URL del mapa según la ubicación
-const getMapUrl = (location: string | undefined): string => {
-  const loc = location || 'Denver';
-  return locationMapUrls[loc] || locationMapUrls['Denver'];
-};
 
 const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = async ({ location = 'Denver' }) => {
   // Format location for display - asegurando que siempre sea un string
