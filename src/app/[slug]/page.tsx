@@ -1,13 +1,16 @@
 import { notFound } from 'next/navigation';
-import CommercialServiceComponent from "@/components/CommercialServiceComponent";
-import WindowsServiceComponent from "@/components/WindowsServiceComponent";
-import ResidentialServiceComponent from "@/components/ResidentialServiceComponent";
 import type { Metadata } from "next";
+
+import ResidentialServiceComponent from "@/components/ResidentialServiceComponent";
+import CommercialServiceComponent from '@/components/CommercialServiceComponent';
+import WindowsServiceComponent from '@/components/WindowsServiceComponent';
 import { MoveInMoveOutServiceComponent } from '@/components/MoveInMoveOutServiceComponent';
 import PostConstructionServiceComponent from '@/components/PostConstructionServiceComponent';
+import CleaningServicesComponent from '@/components/CleaningServicesComponent';
 
 // Define services and locations
 const services = [
+  { id: 'cleaning-services', name: 'Cleaning Services', description: 'Professional cleaning services for your home or business.' },
   { id: 'house-cleaning', name: 'House Cleaning', description: 'Professional residential cleaning services for your home.' },
   { id: 'commercial-cleaning', name: 'Commercial Cleaning', description: 'Comprehensive cleaning solutions for businesses and commercial spaces.' },
   { id: 'window-cleaning', name: 'Window Cleaning', description: 'Crystal clear windows inside and out for homes and businesses.' },
@@ -113,6 +116,8 @@ export default async function ServiceLocationPage({ params }: { params: Promise<
   const { service, location } = getServiceAndLocation(slug);
 
   switch (service?.id) {
+    case 'cleaning-services':
+      return <CleaningServicesComponent location={location?.name || ''} />;
     case 'house-cleaning':
       return <ResidentialServiceComponent location={location?.name || ''} />;
     case 'commercial-cleaning':
