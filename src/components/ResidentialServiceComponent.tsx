@@ -11,8 +11,9 @@ import ReadyForHouseCleaning from "@/components/sections/ready-for-house-cleanin
 import ThreeStepProcess from "@/components/sections/three-step-process";
 import ServiceAreaHighlightHouseCleaning from "@/components/sections/service-area-highlight-house-cleaning";
 import WellnessBenefits from "@/components/sections/wellness-benefits";
-import { ResidentialPriceCalculator } from "@/components/tools/residential-price-calculator";
 import FeatureBar from "@/components/ui/FeatureBar";
+import {houseCleaning} from "@/config/json-ld";
+import JsonLd from "@/components/json-ld";
 
 // Accept location as prop
 interface ResidentialServiceComponentProps {
@@ -47,6 +48,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
   
   return (
     <main className="flex flex-col min-h-screen">
+      <JsonLd data={houseCleaning(location)} />
       <HeroSection>
         <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">

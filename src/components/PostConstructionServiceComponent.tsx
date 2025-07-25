@@ -7,6 +7,8 @@ import WhyTrustUsSection from "@/components/sections/why-trust-us";
 import ReviewHighlightHouseCleaning from "@/components/sections/review-highlight-house-cleaning";
 import ThreeStepProcess from "@/components/sections/three-step-process";
 import ReadyForHouseCleaning from "@/components/sections/ready-for-house-cleaning";
+import {postConstructionCleaning} from "@/config/json-ld"
+import JsonLd from "@/components/json-ld";
 
 interface PostConstructionServiceComponentProps {
   location?: string;
@@ -15,6 +17,7 @@ interface PostConstructionServiceComponentProps {
 export default async function PostConstructionServiceComponent({ location = 'Denver' }: PostConstructionServiceComponentProps) {
   return (
     <main className="flex flex-col min-h-screen">
+      <JsonLd data={postConstructionCleaning(location)} />
       <HeroSection>
         <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">

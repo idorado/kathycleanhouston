@@ -13,6 +13,8 @@ import ThreeStepProcess from "@/components/sections/three-step-process";
 import ServiceAreaHighlightWindowCleaning from "@/components/sections/service-area-highlight-window-cleaning";
 import WindowCleaningBenefits from "@/components/sections/window-cleaning-benefits";
 import FeatureBar from "@/components/ui/FeatureBar";
+import {windowCleaning} from "@/config/json-ld"
+import JsonLd from "@/components/json-ld";
 
 interface WindowsServiceComponentProps {
   location: string;
@@ -21,6 +23,7 @@ interface WindowsServiceComponentProps {
 const WindowsServiceComponent: React.FC<WindowsServiceComponentProps> = async ({ location }) => {
   return (
     <main className="flex flex-col min-h-screen">
+      <JsonLd data={windowCleaning(location)} />
       <HeroSection>
         <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">Window Cleaning in {location || 'Your Area'}</h1>

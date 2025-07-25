@@ -4,17 +4,15 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import CustomPhoneButton from "@/components/CustomPhoneButton";
 import { CtaButton } from "@/components/ui/CtaButton";
-
 import IndustriesSpecialized from "@/components/sections/industries-specialized";
 import WhyInvestInCommercialCleaningSection from "@/components/sections/why-invest-in-commercial-cleaning";
-
-
-
 import WhyTrustJanitorialSection from "@/components/sections/why-trust-janitorial";
 import ReadyForCleanerWorkspaceSection from "@/components/sections/ready-for-cleaner-workspace";
 import CustomerReviewsSection from "@/components/sections/customer-reviews";
 import FourStepSetupSection from "@/components/sections/four-step-setup";
 import ServiceAreaHighlightGeneric from "@/components/sections/service-area-highlight-generic";
+import JsonLd from "@/components/json-ld";
+import {commercialCleaning} from "@/config/json-ld"
 import FeatureBar from "@/components/ui/FeatureBar";
 
 interface CommercialServiceComponentProps {
@@ -24,6 +22,7 @@ interface CommercialServiceComponentProps {
 const CommercialServiceComponent = async ({ location }: CommercialServiceComponentProps) => {
   return (
     <main className="flex flex-col min-h-screen">
+      <JsonLd data={commercialCleaning(location)} />
       {/* Hero Section */}
       <HeroSection
         title={`Commercial Cleaning${location ? ` in ${location}` : ''}`}

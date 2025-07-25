@@ -4,13 +4,11 @@ import { CtaButton } from "@/components/ui/CtaButton";
 import PhoneButton from "@/components/PhoneButton";
 import FeatureBar from "@/components/ui/FeatureBar";
 import WhyTrustUsSection from "@/components/sections/why-trust-us";
-import ReviewHighlightHouseCleaning from "@/components/sections/review-highlight-house-cleaning";
-import ThreeStepProcess from "@/components/sections/three-step-process";
-import ReadyForHouseCleaning from "@/components/sections/ready-for-house-cleaning";
-import { ServiceCards } from "@/components/cards/services";
 import LifeInLocationSection from "@/components/sections/LifeInLocationSection";
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 import { lifeInLocationContent } from "@/components/sections/lifeInLocationContent";
+import { cleaningServices } from "@/config/json-ld";
+import JsonLd from "@/components/json-ld";
 
 interface CleaningServicesComponentProps {
   location?: string;
@@ -241,6 +239,7 @@ export default async function CleaningServicesComponent({
 
   return (
     <main className="flex flex-col min-h-screen">
+      <JsonLd data={cleaningServices(location)} />
       <HeroSection>
         <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">

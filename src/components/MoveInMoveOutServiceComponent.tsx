@@ -13,6 +13,8 @@ import ThreeStepProcess from "@/components/sections/three-step-process";
 import ReadyForHouseCleaning from "@/components/sections/ready-for-house-cleaning";
 import WhatToExpectMoveInOut from "@/components/sections/what-to-expect-move-in-out";
 import { MoveInOutCleaningFAQ } from "@/components/sections/faq/move-in-out-cleaning-faq";
+import {moveInOutCleaning} from "@/config/json-ld"
+import JsonLd from "@/components/json-ld";
 
 
 
@@ -23,6 +25,7 @@ interface MoveInMoveOutServiceComponentProps {
 export async function MoveInMoveOutServiceComponent({ location = 'Denver' }: MoveInMoveOutServiceComponentProps) {
   return (
     <main className="flex flex-col min-h-screen">
+      <JsonLd data={moveInOutCleaning(location)} />
       <HeroSection>
         <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
