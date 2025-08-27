@@ -14,8 +14,12 @@ const UTM_KEYS = [
   "msclkid",
 ] as const;
 
-const STORAGE_KEY = "kc_utm_first_touch";
-const COOKIE_NAME = "kc_utm_first_touch";
+// Store the LATEST (last-touch) UTMs
+const STORAGE_KEY = "kc_utm_latest";
+const COOKIE_NAME = "kc_utm_latest";
+// Legacy keys for backward compatibility (first-touch)
+const LEGACY_STORAGE_KEYS = ["kc_utm_first_touch"] as const;
+const LEGACY_COOKIE_NAMES = ["kc_utm_first_touch"] as const;
 const COOKIE_MAX_DAYS = 90;
 
 function setCookie(name: string, value: string, days: number) {
@@ -58,7 +62,7 @@ function parseSearchUtms(search: string | null) {
   }
 }
 
-function saveFirstTouch(utmObj: Record<string, string>) {
+function saveLatest(utmObj: Record<string, string>) {
   const value = JSON.stringify({ ...utmObj, ts: Date.now() });
   try {
     localStorage.setItem(STORAGE_KEY, value);
@@ -66,20 +70,27 @@ function saveFirstTouch(utmObj: Record<string, string>) {
   setCookie(COOKIE_NAME, value, COOKIE_MAX_DAYS);
 }
 
-function loadFirstTouch(): Record<string, any> | null {
+function loadLatest(): Record<string, any> | null {
+  // Prefer cookies over localStorage
   let val: string | null = null;
-  try {
-    val = localStorage.getItem(STORAGE_KEY);
-  } catch {}
+  try { val = getCookie(COOKIE_NAME) } catch {}
   if (!val) {
-    val = getCookie(COOKIE_NAME);
+    for (const legacy of LEGACY_COOKIE_NAMES) {
+      val = getCookie(legacy);
+      if (val) break;
+    }
+  }
+  if (!val) {
+    try { val = localStorage.getItem(STORAGE_KEY); } catch {}
+  }
+  if (!val) {
+    for (const legacy of LEGACY_STORAGE_KEYS) {
+      try { val = localStorage.getItem(legacy); } catch {}
+      if (val) break;
+    }
   }
   if (!val) return null;
-  try {
-    return JSON.parse(val);
-  } catch {
-    return null;
-  }
+  try { return JSON.parse(val); } catch { return null; }
 }
 
 function pushToDataLayer(resolved: Record<string, string> | null) {
@@ -105,45 +116,41 @@ export default function UtmPersistence() {
   const router = useRouter();
 
   useEffect(() => {
-    // 1) If we have stored first-touch UTMs, ensure they appear in the URL (without overwriting existing params)
-    let stored = loadFirstTouch();
-    if (stored) {
-      const params = new URLSearchParams(searchString);
-      let changed = false;
-      const storedObj = stored as Record<string, any>;
-      UTM_KEYS.forEach((k) => {
-        const hasInUrl = params.get(k);
-        const val = storedObj[k as string];
-        if (!hasInUrl && val) {
-          params.set(k, String(val));
-          changed = true;
-        }
-      });
-      if (changed) {
-        const qs = params.toString();
-        router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
-        return; // wait for next render with updated URL
-      }
-    }
-
-    // 2) Normal capture + persistence flow
+    // Parse UTMs present in the current URL
     const urlUtms = parseSearchUtms(searchString);
-    // Load again in case storage was empty previously
-    stored = stored || loadFirstTouch();
-    if (urlUtms && !stored) {
-      stored = { ...urlUtms };
-      saveFirstTouch(stored);
-    }
+
     if (urlUtms) {
+      // We HAVE URL UTMs: treat as latest-touch and update storage (cookie preferred)
+      saveLatest(urlUtms);
       try {
         sessionStorage.setItem(
           "kc_utm_last_click",
           JSON.stringify({ ...urlUtms, ts: Date.now() })
         );
       } catch {}
+      pushToDataLayer(urlUtms);
+      return;
     }
-    const resolved = urlUtms || stored || null;
-    pushToDataLayer(resolved);
+
+    // No URL UTMs: try to surface stored latest UTMs into the URL (no overwrite of existing params)
+    const stored = loadLatest();
+    if (stored) {
+      const params = new URLSearchParams(searchString);
+      let changed = false;
+      UTM_KEYS.forEach((k) => {
+        if (!params.get(k) && stored[k as string]) {
+          params.set(k, String(stored[k as string]));
+          changed = true;
+        }
+      });
+      if (changed) {
+        const qs = params.toString();
+        router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+        return; // allow next render to handle push with URL UTMs
+      }
+      // If nothing changed, still push what we have
+      pushToDataLayer(stored as Record<string, string>);
+    }
   }, [pathname, searchString]);
 
   return null;
