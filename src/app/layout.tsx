@@ -7,6 +7,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { PostHogProvider } from "@/components/providers"
+import UtmPersistence from "@/components/analytics/UtmPersistence"
 
 
 export const metadata: Metadata = {
@@ -58,6 +59,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </PostHogProvider>
+        <UtmPersistence />
         <Script id="tally-conversion-listener" strategy="afterInteractive">
   {`
     window.addEventListener("message", function(event) {
