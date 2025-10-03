@@ -39,6 +39,10 @@ const HomeHero = () => {
           alt="Professional cleaning service"
           width={400}
           height={400}
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          quality={75}
           className="relative w-full h-full object-cover rounded-lg "
         />
       </div>
