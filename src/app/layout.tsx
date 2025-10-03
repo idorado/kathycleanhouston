@@ -12,6 +12,7 @@ import UtmPersistence from "@/components/analytics/UtmPersistence"
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://kathyclean.com'),
   title: "Residential & Commercial Cleaning in Denver | Kathy Clean",
   description: "Top-rated cleaning in Denver & nearby. Residential, commercial, windows, pressure & more. 48h guarantee. 10+ years of trusted service",
   icons: [{ rel: "icon", url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomaYo5lyrN0W8yorQH6lnDudV4OjgIFLEC2YpM" }],
