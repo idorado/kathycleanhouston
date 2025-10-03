@@ -17,8 +17,7 @@ export const metadata: Metadata = {
   },
 };
 
-// Keep the 'use server' directive if needed by components
-"use server"
+// NOTE: Si algún día agregamos Server Actions a esta page, la directiva va dentro de la función acción, no a nivel de archivo.
 
 export default async function Home() {
   return (

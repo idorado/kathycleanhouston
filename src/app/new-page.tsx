@@ -1,4 +1,4 @@
-"use server"
+// NOTE: Si algún día agregamos Server Actions a esta page, la directiva va dentro de la función acción, no a nivel de archivo.
 import { Testimonial } from "@/components/cards/testimonial"
 import OurServices from "@/components/sections/our-services"
 import WhyChooseUs from "@/components/sections/why-choose-us"
