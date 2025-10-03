@@ -36,7 +36,6 @@ const ServiceCard: FC<ServiceCardProps> = ({
 						fill
 						sizes="370px"
 						className="object-cover w-full h-full"
-						priority
 					/>
 				</div>
 				<div className="p-4 sm:p-6 flex flex-col flex-1">

@@ -41,7 +41,7 @@ const HomeHero = () => {
           height={400}
           priority
           fetchPriority="high"
-          sizes="100vw"
+          sizes="(max-width: 768px) 0px, (max-width: 1280px) 50vw, 600px"
           quality={75}
           className="relative w-full h-full object-cover rounded-lg "
         />
