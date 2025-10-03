@@ -1,4 +1,5 @@
-"use server"
+import type { Metadata } from "next";
+
 import { Testimonial } from "@/components/cards/testimonial"
 import OurServices from "@/components/sections/our-services"
 import WhyChooseUs from "@/components/sections/why-choose-us"
@@ -9,6 +10,15 @@ import RequestQuoteButton from "@/components/sections/RequestQuoteButton"
 import FeatureBar from "@/components/ui/FeatureBar"
 import JsonLd from "@/components/json-ld";
 import { home } from "@/config/json-ld";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
+
+// Keep the 'use server' directive if needed by components
+"use server"
 
 export default async function Home() {
   return (
