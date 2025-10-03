@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { canonicalPath } from "@/lib/canonical";
 import { Button } from "@/components/ui/button";
 import PhoneButton from "@/components/PhoneButton";
 import { CtaButton } from '@/components/ui/CtaButton';
@@ -13,13 +14,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Other Cleaning Services in Denver | Kathy Clean',
     description: 'Gutter Cleaning, Pressure Washing, Solar Panel cleaning & Emergency Clean in Denver and nearby. Quality service with a 48h guarantee.',
-    url: 'https://www.kathyclean.com/other-services-denver',
+    url: canonicalPath('other-services-denver'),
     siteName: 'Kathy Clean',
     locale: 'en_US',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.kathyclean.com/other-services-denver',
+    canonical: canonicalPath('other-services-denver'),
   },
 };
 

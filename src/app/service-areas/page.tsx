@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
+import { canonicalPath } from "@/lib/canonical";
 import RequestQuoteButton from '@/components/sections/RequestQuoteButton';
 
 export const metadata: Metadata = {
   title: 'Kathy Clean | Cleaning Services in Denver & Surrounding Areas',
   description: 'Expert Cleaning Services in Denver, Castle Rock, Littleton, Centennial, Englewood, and more. Residential and Commercial Cleaning.',
   alternates: {
-    canonical: 'https://www.kathyclean.com/service-areas'
+    canonical: canonicalPath('service-areas')
   }
 };
 

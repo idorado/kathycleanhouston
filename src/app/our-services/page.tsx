@@ -1,4 +1,5 @@
 import OurServices from "@/components/sections/our-services"
+import { canonicalPath } from "@/lib/canonical";
 
 export default function ServicesPage() {
   return (
@@ -14,12 +15,12 @@ export const metadata = {
   openGraph: {
     title: 'Our Services | Residential & Commercial Cleaning in Denver',
     description: 'Explore our comprehensive range of residential and commercial cleaning services in Denver. Professional, reliable, and backed by our 48-hour satisfaction guarantee.',
-    url: 'https://www.kathyclean.com/our-services',
+    url: canonicalPath('our-services'),
     siteName: 'Kathy Clean',
     locale: 'en_US',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.kathyclean.com/our-services',
+    canonical: canonicalPath('our-services'),
   },
 };
