@@ -12,8 +12,39 @@ import UtmPersistence from "@/components/analytics/UtmPersistence"
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kathyclean.com'),
-  // NO poner alternates.canonical aquí
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://kathyclean.com"),
+  title: {
+    default: "Kathy Clean | House & Commercial Cleaning in Denver",
+    template: "%s | Kathy Clean",
+  },
+  description:
+    "Professional house & commercial cleaning across Denver Metro: recurring, deep cleans, move-in/out, windows & post-construction. Fast, friendly, insured.",
+  openGraph: {
+    type: "website",
+    url: "https://kathyclean.com",
+    siteName: "Kathy Clean",
+    title: "Kathy Clean | House & Commercial Cleaning in Denver",
+    description:
+      "Professional house & commercial cleaning across Denver Metro: recurring, deep cleans, move-in/out, windows & post-construction.",
+    images: [
+      {
+        url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu",
+        width: 1200,
+        height: 630,
+        alt: "Kathy Clean — Professional Cleaning Services",
+      },
+    ],
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kathy Clean | House & Commercial Cleaning in Denver",
+    description:
+      "Professional cleaning services in Denver & surrounding areas. Get a fast quote.",
+    images: [
+      "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu",
+    ],
+  },
 };
 
 const poppins = Poppins({
