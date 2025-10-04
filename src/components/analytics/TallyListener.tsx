@@ -26,8 +26,27 @@ export default function TallyListener() {
       }
     };
 
+    // Listener para postMessage desde iframe
     window.addEventListener('message', handler);
-    return () => window.removeEventListener('message', handler);
+
+    // Listener para el CustomEvent emitido por Tally en la página padre
+    const domListener = (event: Event) => {
+      const custom = event as CustomEvent<any>;
+      const detail = custom.detail || {};
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: 'quote_request_submitted',
+        formId: detail.formId,
+        formName: detail.formName,
+        source: 'tally',
+      });
+    };
+    document.addEventListener('tally:form-submitted', domListener as EventListener);
+
+    return () => {
+      window.removeEventListener('message', handler);
+      document.removeEventListener('tally:form-submitted', domListener as EventListener);
+    };
   }, []);
 
   return null;
