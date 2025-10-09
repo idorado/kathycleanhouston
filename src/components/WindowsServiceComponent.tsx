@@ -13,6 +13,7 @@ import ReadyForWindowCleaning from "@/components/sections/ready-for-window-clean
 import ThreeStepProcess from "@/components/sections/three-step-process";
 import ServiceAreaHighlightWindowCleaning from "@/components/sections/service-area-highlight-window-cleaning";
 import WindowCleaningBenefits from "@/components/sections/window-cleaning-benefits";
+import { WindowCleaningFAQ } from "@/components/sections/window-cleaning-faq";
 import FeatureBar from "@/components/ui/FeatureBar";
 import {windowCleaning} from "@/config/json-ld"
 import JsonLd from "@/components/json-ld";
@@ -63,28 +64,25 @@ const WindowsServiceComponent: React.FC<WindowsServiceComponentProps> = async ({
       </HeroSection>
 
       <WhyTrustWindowCleaning location={location} />
-      <WhyBusinessesHomesChooseUs />
       <ReviewHighlightWindowCleaning location={location} />
       <ThreeStepProcess />
       <ReadyForWindowCleaning location={location} />
       <ServiceAreaHighlightWindowCleaning location={location} />
       <WindowCleaningBenefits />
-
-      {/* Our Window Cleaning Services */}
-      <div
-        className="flex flex-col items-center justify-center gap-8 py-24 bg-gray-100"
-        id="window-cleaning"
-      >
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-primary-foreground">
-            Our Window Cleaning Services
-          </h3>
-          <p className="text-lg mb-4 md:mb-6 mx-auto max-w-3xl">
-            Crystal clear windows enhance your property's appearance and let in more natural light. We provide professional window cleaning services that leave your windows spotless and streak-free.
+      
+      {/* Window Cleaning Services Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">Our Window Cleaning Services</h2>
+          <p className="text-lg mb-8 mx-auto max-w-3xl">
+            Crystal clear windows enhance your property's appearance and let in more natural light. 
+            We provide professional window cleaning services that leave your windows spotless and streak-free.
           </p>
+          <ServiceCards serviceType="window-cleaning" />
         </div>
-        <ServiceCards serviceType="window-cleaning" />
-      </div>
+      </section>
+      
+      <WindowCleaningFAQ location={location} />
     </main>
   );
 };
