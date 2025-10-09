@@ -14,6 +14,7 @@ import ServiceAreaHighlightHouseCleaning from "@/components/sections/service-are
 import WellnessBenefits from "@/components/sections/wellness-benefits";
 import FeatureBar from "@/components/ui/FeatureBar";
 import {houseCleaning} from "@/config/json-ld";
+import { HouseCleaningFAQ } from "@/components/sections/house-cleaning-faq";
 import JsonLd from "@/components/json-ld";
 import { ensureHttps } from "@/lib/images";
 
@@ -113,7 +114,8 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
         <ServiceCards />
       </div>
 
-
+      {/* FAQ Section */}
+      <HouseCleaningFAQ location={location} />
 
     </main>
   );
