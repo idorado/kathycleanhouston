@@ -8,28 +8,67 @@ interface HouseCleaningFAQProps {
 
 const faqItems = [
   {
-    question: `How much does house cleaning cost in {Location}?`,
-    answer: `House cleaning prices in {Location} vary depending on your home's size and frequency. For example, a 2,000 sq ft home usually costs around $189 for monthly cleaning or $155 for weekly service. Request your custom quote today!`
+    question: 'What cleaning services do you offer in {Location}?',
+    answer: `Kathy Clean provides professional house cleaning, deep cleaning, move-in/move-out cleaning, post-construction cleaning, commercial cleaning, and window cleaning in {Location} and nearby areas. Whether you need a one-time cleaning or recurring service, we’ll make your space shine.`
   },
   {
-    question: 'Do you offer one-time and recurring cleaning?',
-    answer: `Yes! Choose from one-time, weekly, bi-weekly, or monthly cleanings. Most of our {Location} clients prefer bi-weekly. It keeps homes consistently clean and is more affordable long-term.`
+    question: 'How much does cleaning cost in {Location}?',
+    answer: `Pricing depends on your home’s size, condition, and cleaning type.
+For reference, a 2,000 sq ft home in {Location} typically costs around $189 for monthly cleaning or $155 for weekly service.
+Deep cleans and move-out services are priced individually based on scope.`
   },
   {
-    question: "What's the difference between a deep clean and a regular clean?",
-    answer: "A deep clean covers hard-to-reach areas like baseboards, vents, and behind furniture. It's ideal before starting a recurring plan, after long gaps, or before special occasions."
+    question: 'Do you offer both residential and commercial cleaning in {Location}?',
+    answer: `Yes. We clean houses, apartments, offices, clinics, gyms, salons, and retail spaces throughout {Location}. Each client gets a customized cleaning checklist and flexible scheduling.`
   },
   {
-    question: `Do you offer move-in and move-out cleanings in {Location}?`,
-    answer: `Yes. We handle move-in and move-out cleanings for tenants, landlords, and homeowners across {Location}. These include inside cabinets, drawers, and appliances—everything you need for a fresh start.`
+    question: 'Are you licensed, bonded, and insured in {Location}?',
+    answer: `Absolutely. Kathy Clean is fully licensed, bonded, and insured in the state of Colorado. We protect your home, our cleaners, and your business for complete peace of mind.`
   },
   {
-    question: 'Will I always get the same cleaner?',
-    answer: 'We aim to send the same cleaner for every visit. When substitutions are needed, we\'ll inform you and make sure your cleaning preferences are fully shared with the replacement.'
+    question: 'Do you bring cleaning supplies and equipment?',
+    answer: `Yes. Our cleaners come fully equipped with professional-grade supplies and tools. If you prefer eco-friendly products, just let us know—we offer green cleaning options safe for kids and pets.`
   },
   {
-    question: 'Do you offer eco-friendly cleaning?',
-    answer: 'Yes. If you prefer green cleaning products, just let us know—we have safe, non-toxic options for homes with kids and pets.'
+    question: 'Do you offer move-in or move-out cleanings in {Location}?',
+    answer: `Yes. We specialize in move-in/move-out cleanings for tenants, landlords, and homeowners across {Location}. The service includes inside appliances, drawers, cabinets, and baseboards to ensure every space is spotless.`
+  },
+  {
+    question: 'Do you clean after construction or remodeling projects in {Location}?',
+    answer: `Yes. Our post-construction cleaning removes dust, debris, and paint residue from renovations or new builds. We work with homeowners, contractors, and builders throughout {Location}.`
+  },
+  {
+    question: 'Do you clean windows in {Location}?',
+    answer: `Yes. We offer interior and exterior window cleaning for homes, offices, and buildings across {Location}. Add window cleaning to your house or commercial service for a complete shine.`
+  },
+  {
+    question: 'Are your cleaners background checked and trained?',
+    answer: `Yes. Every cleaner in {Location} passes a full background check and receives hands-on training. We only hire trustworthy professionals who meet our standards of quality and reliability.`
+  },
+  {
+    question: 'Can I schedule recurring cleaning in {Location}?',
+    answer: `Yes. Choose from weekly, bi-weekly, or monthly cleaning. Many clients in {Location} prefer bi-weekly—it’s the best balance between cost and consistency.`
+  },
+  {
+    question: 'Do you serve apartments and condos in {Location}?',
+    answer: `Yes. We clean condos, lofts, and apartments, including high-rise buildings in central {Location}. Most clients share access instructions (door codes, concierge, or key) for convenience.`
+  },
+  {
+    question: 'Do you offer discounts for recurring services?',
+    answer: `Yes. Clients with weekly or bi-weekly service receive discounted pricing and priority scheduling. Regular cleanings keep your space in great condition and lower long-term costs.`
+  },
+  {
+    question: 'What if I’m not satisfied with my cleaning?',
+    answer: `Your satisfaction is guaranteed. If something wasn’t cleaned properly, contact us within 48 hours and we’ll re-clean the area at no extra cost.`
+  },
+  {
+    question: 'What makes Kathy Clean different from other cleaning companies in {Location}?',
+    answer: `We combine local reliability, personalized service, and great communication. You’ll have a consistent cleaner, real-time text updates, and support from our Denver-based office team. That’s why hundreds of clients in {Location} trust Kathy Clean every month.`
+  },
+  {
+    question: 'How can I get a cleaning quote in {Location}?',
+    answer: `You can request a free quote at kathyclean.com or call (303) 681-2559.
+We’ll confirm your details and send a customized estimate—usually within minutes.`
   }
 ]
 
