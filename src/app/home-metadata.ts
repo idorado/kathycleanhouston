@@ -6,9 +6,9 @@ export const homePageMetadata: Metadata = {
   icons: [{ rel: "icon", url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomaYo5lyrN0W8yorQH6lnDudV4OjgIFLEC2YpM" }],
   keywords: "cleaning, Denver, residential, commercial, windows, pressure, 48h guarantee, 10+ years of trusted service",
   alternates: {
-    canonical: "https://www.kathyclean.com/",
+    canonical: "https://kathyclean.com/",
     languages: {
-      "en-US": "https://www.kathyclean.com/"
+      "en-US": "https://kathyclean.com/"
     }
   },
   other: {

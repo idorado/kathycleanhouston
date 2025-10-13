@@ -8,5 +8,7 @@ export function normalizePath(path: string): string {
 
 export function canonicalPath(...segments: Array<string | undefined>): string {
   const joined = segments.filter(Boolean).join("/");
-  return normalizePath(joined);
+  const normalized = normalizePath(joined);
+  if (normalized === "/") return normalized;
+  return normalized.endsWith("/") ? normalized : `${normalized}/`;
 }

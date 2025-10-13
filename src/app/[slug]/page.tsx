@@ -98,10 +98,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     ? `Reliable house cleaning in ${locationName}: recurring, deep, and move-out services. Trusted team, spotless results. Schedule your free estimate today!`
     : `Professional ${service.name.toLowerCase()} services in ${locationName}, CO. ${service.description}`;
     
-  const baseCanonical = isHouseCleaning
+  const canonical = isHouseCleaning
     ? canonicalPath(`house-cleaning-${locationId}`)
     : canonicalPath(`${service.id}${location ? `-${location.id}` : 'denver'}`);
-  const canonical = isHouseCleaning ? `${baseCanonical}/` : baseCanonical;
 
 
     // Add location-specific overrides
