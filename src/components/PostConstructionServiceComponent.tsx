@@ -11,6 +11,7 @@ import ReadyForHouseCleaning from "@/components/sections/ready-for-house-cleanin
 import {postConstructionCleaning} from "@/config/json-ld"
 import JsonLd from "@/components/json-ld";
 import { ensureHttps } from "@/lib/images";
+import FeatureBar from "@/components/ui/FeatureBar";
 
 interface PostConstructionServiceComponentProps {
   location?: string;
@@ -42,11 +43,12 @@ export default async function PostConstructionServiceComponent({ location = 'Den
               <PhoneButton />
             </div>
           </div>
+          <FeatureBar />
         </div>
         <div className="relative hidden md:flex w-full justify-center items-center">
-          <div className="relative w-[480px] h-[480px]">
+          <div className="relative w-[480px] h-[440px]">
             <Image
-              src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomlkWQowW1K9N4DUxFng7weyZbAGHESLJh3Ifa")}
+              src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomlHpefl1K9N4DUxFng7weyZbAGHESLJh3Ifa2")}
               alt="Post-construction cleaning service"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
