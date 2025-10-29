@@ -1,14 +1,6 @@
 'use client';
 import { useEffect } from 'react';
 
-declare global {
-  interface Window {
-    dataLayer: any[];
-    gtag?: (...args: any[]) => void;
-    __tallyDebug?: boolean;
-  }
-}
-
 const TALLY_ORIGIN_RE = /^https:\/\/([a-z0-9-]+\.)?tally\.so$/i;
 
 function safeParse<T = any>(v: any): T | null {
@@ -32,8 +24,8 @@ function pushDataLayer(payload: {
   submissionId?: string | null;
   source: 'tally_iframe' | 'tally_dom';
 }) {
-  if (!Array.isArray(window.dataLayer)) window.dataLayer = [];
-  window.dataLayer.push({
+  if (!Array.isArray((window as any).dataLayer)) (window as any).dataLayer = [];
+  (window as any).dataLayer.push({
     event: 'tally_form_submitted',
     formId: payload.formId ?? undefined,
     formName: payload.formName ?? undefined,
@@ -65,16 +57,16 @@ export default function TallyListener() {
 
       pushDataLayer({ formId, formName, submissionId, source: 'tally_iframe' });
 
-      if (typeof window.gtag === 'function') {
+      if (typeof (window as any).gtag === 'function') {
         try {
           // Optional GA4 (generate_lead)
-          window.gtag('event', 'generate_lead', {
+          if ((window as any).__tallyDebug) (window as any).gtag('event', 'generate_lead', {
             method: 'tally_iframe',
             form_id: formId ?? undefined,
             form_name: formName ?? undefined,
           });
           // Optional Google Ads conversion (direct)
-          window.gtag('event', 'conversion', {
+          if ((window as any).__tallyDebug) (window as any).gtag('event', 'conversion', {
             send_to: 'AW-17062489970/XHAECLjasMkaEPLeg8g_',
           });
         } catch { /* no-op */ }
@@ -98,14 +90,14 @@ export default function TallyListener() {
 
       pushDataLayer({ formId, formName, submissionId, source: 'tally_dom' });
 
-      if (typeof window.gtag === 'function') {
+      if (typeof (window as any).gtag === 'function') {
         try {
-          window.gtag('event', 'generate_lead', {
+          (window as any).gtag('event', 'generate_lead', {
             method: 'tally_dom',
             form_id: formId ?? undefined,
             form_name: formName ?? undefined,
           });
-          window.gtag('event', 'conversion', {
+          if ((window as any).__tallyDebug) (window as any).gtag('event', 'conversion', {
             send_to: 'AW-17062489970/XHAECLjasMkaEPLeg8g_',
           });
         } catch { /* no-op */ }
