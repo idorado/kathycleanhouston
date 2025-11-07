@@ -19,16 +19,17 @@ import { LocationCard } from "@/components/sections/our-locations";
 import { canonicalPath } from "@/lib/canonical";
 
 export const metadata = {
-  title: "Comprehensive House Cleaning Service in Arapahoe County, CO",
+  title: "Reliable House Cleaning Service in Centennial, CO",
   description:
-    "Kathy Clean Service offers a comprehensive house cleaning service in Arapahoe County, CO. Detailed, and eco-friendly home cleaning solutions. Call now!",
+    "Kathy Clean provides a reliable house cleaning service in Centennial, CO. Trusted, detailed, and eco-conscious cleaning for spotless homes. Call now!",
   keywords: [
-    "House Cleaning Arapahoe County CO",
-    "Comprehensive House Cleaning",
-    "Kathy Clean Service",
+    "House Cleaning Centennial CO",
+    "Reliable House Cleaning",
+    "Kathy Clean",
   ],
   alternates: {
-    canonical: "https://kathyclean.com/service-areas/arapahoe-county-co",
+    canonical:
+      "https://kathyclean.com/service-areas/arapahoe-county-co/centennial",
   },
 };
 
@@ -46,24 +47,23 @@ export default async function Home() {
             <div className="space-y-2 text-white text-center p-4 md:text-left">
               <h1 className="text-4xl md:text-5xl font-bold leading-tight">
                 <span className="text-primary">
-                  Comprehensive House Cleaning Service
+                  Reliable House Cleaning Service
                 </span>
                 <br />
-                <span className="text-background">in Arapahoe County, CO</span>
+                <span className="text-background">in Centennial, CO</span>
               </h1>
               <p className="text-lg">
                 <a
                   href="https://kathyclean.com/"
                   className="underline text-secondary"
                 >
-                  Kathy Clean Service
+                  Kathy Clean
                 </a>{" "}
-                provides a comprehensive house cleaning service in Arapahoe
-                County, CO. From detailed deep cleans to routine maintenance,
-                our trusted professionals deliver spotless results that make
-                every room shine. Whether you’re preparing for guests or
-                maintaining a healthy home, our team ensures your space stays
-                fresh, organized, and inviting.
+                provides a reliable house cleaning service in Centennial, CO.
+                Our dedicated cleaners focus on consistent quality, spotless
+                results, and eco-friendly methods that refresh every corner of
+                your home. Whether for weekly upkeep or a full deep clean, we
+                ensure every surface shines with care and precision.
               </p>
               <div className="pt-4 flex flex-col md:flex-row gap-4">
                 <Button variant="default" className="font-medium" asChild>
@@ -73,8 +73,8 @@ export default async function Home() {
                 <a
                   href="sms:3036812559"
                   className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-10 rounded-md px-6 w-full sm:w-auto min-w-[180px]
-                      border border-input bg-background text-foreground
-                      [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0"
+                border border-input bg-background text-foreground
+                [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0"
                 >
                   <span className="text-black hover:text-cyan-500">
                     TEXT US
@@ -86,94 +86,15 @@ export default async function Home() {
             <div className="relative hidden md:block w-full h-full">
               <Image
                 src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu"
-                alt="Professional cleaning service"
+                alt="Professional house cleaning service in Centennial, CO"
                 width={400}
                 height={400}
                 priority
                 fetchPriority="high"
                 sizes="(max-width: 768px) 0px, (max-width: 1280px) 50vw, 600px"
                 quality={75}
-                className="relative w-full h-full object-cover rounded-lg "
+                className="relative w-full h-full object-cover rounded-lg"
               />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Access by Location */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">
-              Cities We Serve in Arapahoe County
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Aurora, CO",
-                  imageUrl: "/images/locations/Arapahoe County, CO/aurora.jpeg",
-                  imageAlt: "House Cleaning Service in Aurora, CO",
-                  //link: "/service-areas/arapahoe-county-co/aurora",
-                },
-                {
-                  title: "Centennial, CO",
-                  imageUrl:
-                    "/images/locations/Arapahoe County, CO/centennial.jpeg",
-                  imageAlt: "House Cleaning Service in Centennial, CO",
-                  link: "/service-areas/arapahoe-county-co/centennial",
-                },
-                {
-                  title: "Englewood, CO",
-                  imageUrl:
-                    "/images/locations/Arapahoe County, CO/englewood.jpeg",
-                  imageAlt: "House Cleaning Service in Englewood, CO",
-                  link: "/service-areas/arapahoe-county-co/englewood",
-                },
-                {
-                  title: "Greenwood Village, CO",
-                  imageUrl:
-                    "/images/locations/Arapahoe County, CO/greenwood-village.jpeg",
-                  imageAlt: "House Cleaning Service in Greenwood Village, CO",
-                  link: "/service-areas/arapahoe-county-co/greenwood-village",
-                },
-                {
-                  title: "Glendale, CO",
-                  imageUrl:
-                    "/images/locations/Arapahoe County, CO/glendale.jpeg",
-                  imageAlt: "House Cleaning Service in Glendale, CO",
-                  //link: "/service-areas/arapahoe-county-co/glendale",
-                },
-                {
-                  title: "Littleton, CO",
-                  imageUrl:
-                    "/images/locations/Arapahoe County, CO/littleton.jpeg",
-                  imageAlt: "House Cleaning Service in Littleton, CO",
-                  //link: "/service-areas/arapahoe-county-co/littleton",
-                },
-                {
-                  title: "Columbine, CO",
-                  imageUrl:
-                    "/images/locations/Arapahoe County, CO/columbine.jpg",
-                  imageAlt: "House Cleaning Service in Columbine, CO",
-                  link: "/service-areas/arapahoe-county-co/columbine",
-                },
-                {
-                  title: "Sheridan, CO",
-                  imageUrl:
-                    "/images/locations/Arapahoe County, CO/sheridan.jpeg",
-                  imageAlt: "House Cleaning Service in Sheridan, CO",
-                  link: "/service-areas/arapahoe-county-co/sheridan",
-                },
-              ].map((location, index) => (
-                <LocationCard
-                  key={index}
-                  title={location.title}
-                  imageUrl={location.imageUrl}
-                  imageAlt={location.imageAlt}
-                  link={location.link}
-                />
-              ))}
             </div>
           </div>
         </div>
@@ -187,7 +108,7 @@ export default async function Home() {
               <div className="overflow-hidden rounded-lg shadow-lg">
                 <img
                   src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomlkWQowW1K9N4DUxFng7weyZbAGHESLJh3Ifa"
-                  alt="House Cleaning Service in Arapahoe County CO"
+                  alt="Reliable House Cleaning Service in Centennial CO"
                   className="w-full h-auto"
                   loading="lazy"
                 />
@@ -195,12 +116,12 @@ export default async function Home() {
             </div>
             <div className="w-full md:w-1/2">
               <h2 className="text-3xl font-bold mb-6">
-                Why Choose Kathy Clean Service for House Cleaning in Arapahoe
-                County, CO?
+                Why Choose Kathy Clean for a Reliable House Cleaning Service in
+                Centennial, CO?
               </h2>
               <p className="text-gray-600 mb-6">
-                Dedicated professionals ensuring spotless, healthy homes across
-                Arapahoe County.
+                Trusted professionals delivering spotless, healthy, and
+                organized homes throughout Centennial.
               </p>
               <dl className="max-w-xl mt-6 space-y-3 text-base leading-7 text-gray-600 lg:max-w-none">
                 <div className="relative pl-9">
@@ -210,21 +131,21 @@ export default async function Home() {
                       className="absolute w-5 left-1 top-1"
                       alt="Check Icon."
                     />
-                    Complete Home Cleaning Solutions:{" "}
+                    Detailed Room-by-Room Cleaning:{" "}
                   </dt>
                   <dd className="inline">
-                    Our comprehensive house cleaning service in{" "}
+                    Our reliable house cleaning service in{" "}
                     <a
-                      href="https://en.wikipedia.org/wiki/Arapahoe_County,_Colorado"
+                      href="https://en.wikipedia.org/wiki/Centennial,_Colorado"
                       target="_blank"
                       className="underline text-cyan-500"
                     >
-                      Arapahoe County, CO
+                      Centennial, CO
                     </a>{" "}
-                    covers every detail—from dusting high surfaces to sanitizing
-                    kitchens and bathrooms. We bring care and consistency to
-                    every visit, ensuring your home always looks and feels
-                    refreshed.
+                    includes meticulous cleaning for kitchens, bathrooms, living
+                    spaces, and bedrooms. From baseboards to ceiling fans, every
+                    corner is cleaned with precision to ensure lasting freshness
+                    and hygiene.
                   </dd>
                 </div>
                 <div className="relative pl-9">
@@ -234,13 +155,14 @@ export default async function Home() {
                       className="absolute w-5 left-1 top-1"
                       alt="Check Icon."
                     />
-                    Eco-Friendly and Safe Products:{" "}
+                    Safe and Eco-Friendly Cleaning Products:{" "}
                   </dt>
                   <dd className="inline">
-                    Kathy Clean Service uses only non-toxic, biodegradable
-                    cleaning supplies that are safe for children, pets, and the
-                    environment. Our approach combines sustainability with
-                    effective cleaning power for peace of mind.
+                    Kathy Clean uses biodegradable, non-toxic cleaning solutions
+                    safe for your family, pets, and the environment. Our
+                    products eliminate dirt and allergens effectively while
+                    maintaining indoor air quality and promoting a healthier
+                    home.
                   </dd>
                 </div>
                 <div className="relative pl-9">
@@ -250,14 +172,14 @@ export default async function Home() {
                       className="absolute w-5 left-1 top-1"
                       alt="Check Icon."
                     />
-                    Consistent Quality with Flexible Scheduling:{" "}
+                    Flexible Scheduling and Consistent Results:{" "}
                   </dt>
                   <dd className="inline">
-                    Whether you need a weekly clean or a one-time deep service,
-                    our flexible scheduling ensures your home stays spotless
-                    without interrupting your lifestyle. Arapahoe County
-                    homeowners rely on our trusted cleaning experts for
-                    reliable, on-time results.
+                    Whether you prefer weekly, bi-weekly, or one-time cleaning,
+                    our team adapts to your schedule for maximum convenience.
+                    Homeowners in Centennial trust our reliable house cleaning
+                    service for dependable timing and consistent results that
+                    exceed expectations.
                   </dd>
                 </div>
               </dl>
@@ -273,11 +195,11 @@ export default async function Home() {
           <div className="flex flex-col md:flex-row items-start gap-8 max-w-6xl mx-auto">
             <div className="w-full md:w-1/2">
               <h2 className="text-3xl font-bold mb-6">
-                Why House Cleaning Matters in Arapahoe County, CO
+                Why House Cleaning Matters in Centennial, CO
               </h2>
               <p className="text-gray-600 mb-6">
-                A cleaner home supports comfort, health, and long-term property
-                value.
+                Clean homes support health, comfort, and lasting property value
+                in every Centennial neighborhood.
               </p>
               <dl className="max-w-xl mt-6 space-y-3 text-base leading-7 text-gray-600 lg:max-w-none">
                 <div className="relative pl-9">
@@ -287,13 +209,14 @@ export default async function Home() {
                       className="absolute w-5 left-1 top-1"
                       alt="Check Icon."
                     />
-                    Promotes a Healthier Living Environment:{" "}
+                    Improves Indoor Air and Family Health:{" "}
                   </dt>
                   <dd className="inline">
-                    Regular professional cleaning reduces allergens, dust, and
-                    bacteria that accumulate in carpets, furniture, and air
-                    vents. A well-maintained home means cleaner air and fewer
-                    health risks for your family.
+                    Regular cleaning reduces allergens, dust mites, and pet
+                    dander that accumulate in fabrics, carpets, and vents. A
+                    reliable house cleaning service in Centennial, CO helps
+                    ensure fresher air, healthier breathing, and a more hygienic
+                    home for you and your loved ones.
                   </dd>
                 </div>
                 <div className="relative pl-9">
@@ -303,13 +226,14 @@ export default async function Home() {
                       className="absolute w-5 left-1 top-1"
                       alt="Check Icon."
                     />
-                    Supports Community Standards and Appeal:{" "}
+                    Protects Home Surfaces and Long-Term Value:{" "}
                   </dt>
                   <dd className="inline">
-                    Homeowners in Arapahoe County, CO take pride in maintaining
-                    clean, welcoming homes that enhance neighborhood appeal. A
-                    well-cared-for home contributes to local value and community
-                    reputation.
+                    Consistent upkeep prevents buildup of grime, mold, and
+                    bacteria that can damage finishes and fixtures. By
+                    scheduling a reliable house cleaning service in Centennial,
+                    CO, homeowners maintain both cleanliness and the long-term
+                    integrity of their property’s interior spaces.
                   </dd>
                 </div>
                 <div className="relative pl-9">
@@ -319,13 +243,20 @@ export default async function Home() {
                       className="absolute w-5 left-1 top-1"
                       alt="Check Icon."
                     />
-                    Prevents Long-Term Damage and Decline:{" "}
+                    Boosts Comfort, Confidence, and Community Pride:{" "}
                   </dt>
                   <dd className="inline">
-                    Routine cleaning prevents grime buildup and surface wear,
-                    protecting flooring, walls, and fixtures. With Kathy Clean
-                    Service, your home remains beautiful, comfortable, and
-                    structurally sound year-round.
+                    A clean, organized home enhances mood and productivity while
+                    fostering a sense of pride in one’s surroundings. Residents
+                    of Centennial trust{" "}
+                    <a
+                      href="https://kathyclean.com/"
+                      className="underline text-cyan-500"
+                    >
+                      Kathy Clean
+                    </a>{" "}
+                    to maintain pristine living environments that reflect care,
+                    comfort, and community standards.
                   </dd>
                 </div>
               </dl>
@@ -335,7 +266,7 @@ export default async function Home() {
               <div className="overflow-hidden rounded-lg shadow-lg">
                 <img
                   src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomLtolu5Ux3aBby7k62UgoriN9lVewuj0m4TMh"
-                  alt="Arapahoe County House Cleaning Service"
+                  alt="Reliable House Cleaning in Centennial CO"
                   className="w-full h-auto"
                   loading="lazy"
                 />
@@ -357,46 +288,47 @@ export default async function Home() {
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-0">
                     <AccordionTrigger className="text-left">
-                      What does a house cleaning service in Arapahoe County, CO
-                      include?
+                      What does a reliable house cleaning service in Centennial,
+                      CO include?
                     </AccordionTrigger>
                     <AccordionContent>
-                      A house cleaning service in Arapahoe County, CO typically
-                      includes complete dusting, floor mopping, vacuuming, and
-                      disinfecting of all living areas, kitchens, and bathrooms.{" "}
-                      <b>Kathy Clean Service</b> ensures every surface is
-                      spotless using eco-friendly products and attention to
-                      detail that leaves homes refreshed and inviting.
+                      A reliable house cleaning service in Centennial, CO
+                      typically covers dusting, mopping, vacuuming, and
+                      sanitizing all major areas of your home including
+                      bathrooms, kitchens, and bedrooms. <b>Kathy Clean</b>{" "}
+                      delivers thorough cleaning using eco-friendly solutions,
+                      leaving every room spotless, fresh, and comfortable for
+                      your family.
                     </AccordionContent>
                   </AccordionItem>
 
                   <AccordionItem value="item-1">
                     <AccordionTrigger className="text-left">
                       How often should I schedule a house cleaning service in
-                      Arapahoe County, CO?
+                      Centennial, CO?
                     </AccordionTrigger>
                     <AccordionContent>
-                      The frequency of a house cleaning service in Arapahoe
-                      County, CO depends on your household size and activity
-                      level. Most residents choose weekly or biweekly cleanings,
-                      while <b>Kathy Clean Service</b> also offers flexible
-                      monthly and deep-cleaning options to maintain your home’s
-                      long-term cleanliness.
+                      The ideal frequency for a house cleaning service in
+                      Centennial, CO depends on lifestyle and household size.
+                      Many residents prefer weekly or biweekly cleanings, while{" "}
+                      <b>Kathy Clean</b> also provides monthly deep cleans and
+                      custom maintenance plans to ensure your home always stays
+                      spotless and welcoming.
                     </AccordionContent>
                   </AccordionItem>
 
                   <AccordionItem value="item-2">
                     <AccordionTrigger className="text-left">
-                      Do I need to provide supplies for a house cleaning service
-                      in Arapahoe County, CO?
+                      Do I need to supply cleaning materials for a house
+                      cleaning service in Centennial, CO?
                     </AccordionTrigger>
                     <AccordionContent>
-                      No, professional cleaners bring all necessary tools and
-                      products for a house cleaning service in Arapahoe County,
-                      CO. <b>Kathy Clean Service</b> arrives fully equipped with
-                      safe, biodegradable cleaning agents and professional-grade
-                      equipment to guarantee exceptional results without any
-                      effort from homeowners.
+                      No, you don’t need to provide any products or tools for a
+                      house cleaning service in Centennial, CO.{" "}
+                      <b>Kathy Clean</b> arrives with professional-grade,
+                      non-toxic supplies and advanced equipment to ensure
+                      consistent, high-quality results while protecting your
+                      family and home environment.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -412,22 +344,23 @@ export default async function Home() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">Find Us</h2>
             <p className="text-gray-600 mb-6 text-center">
-              Our comprehensive house cleaning service in Arapahoe County, CO
-              covers homes of every size across Aurora, Centennial, and
-              Greenwood Village. <b>Kathy Clean Service</b> provides detailed,
-              dependable cleaning that ensures every home remains spotless,
-              fresh, and welcoming for residents throughout the county.
+              Our reliable house cleaning service in Centennial, CO extends to
+              homes across neighborhoods like Willow Creek, Foxridge, and Piney
+              Creek. <b>Kathy Clean</b> delivers consistent, eco-friendly
+              cleaning that keeps every home spotless and inviting. We proudly
+              serve Centennial residents with dependable quality, attention to
+              detail, and customer-focused care.
             </p>
             <div className="flex justify-center py-12">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d196600.46009261836!2d-104.54516163227055!3d39.65236584848614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c5e49bd3b8a0d%3A0x9a761e37e4be787e!2sArapahoe%20County%2C%20CO%2C%20USA!5e0!3m2!1sen!2sin!4v1761820973580!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30670.930710086667!2d-104.8869616!3d39.5945516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c8586c6b0a8cb%3A0xe8c5b8b84cc7eb7b!2sCentennial%2C%20CO%2C%20USA!5e0!3m2!1sen!2sus!4v1761825439021!5m2!1sen!2sus"
                 width="100%"
                 height="450"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               >
-                House cleaning service in Arapahoe County, CO, Cleaning company
-                near me, house cleaning service near me
+                Reliable house cleaning service in Centennial, CO, Cleaning
+                company near me, house cleaning Centennial CO
               </iframe>
             </div>
           </div>

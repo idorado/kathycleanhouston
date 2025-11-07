@@ -16,18 +16,18 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://kathyclean.com"
   ),
   title: {
-    default: "Top Rated Cleaning Company in Centennial, CO | Kathy Clean",
+    default: "Top Rated Cleaning Company in Denver, CO | Kathy Clean",
     template: "%s | Kathy Clean",
   },
   description:
-    "Professional Cleaning Company in Centennial, CO: recurring, deep cleans, move-in/out, windows & post-construction. Fast, friendly, insured.",
+    "Professional Cleaning Company in Denver, CO: recurring, deep cleans, move-in/out, windows & post-construction. Fast, friendly, insured.",
   openGraph: {
     type: "website",
     url: "https://kathyclean.com",
     siteName: "Kathy Clean",
-    title: "Top Rated Cleaning Company in Centennial, CO | Kathy Clean",
+    title: "Top Rated Cleaning Company in Denver, CO | Kathy Clean",
     description:
-      "Professional Cleaning Company in Centennial, CO: recurring, deep cleans, move-in/out, windows & post-construction. Fast, friendly, insured.",
+      "Professional Cleaning Company in Denver, CO: recurring, deep cleans, move-in/out, windows & post-construction. Fast, friendly, insured.",
     images: [
       {
         url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Top Rated Cleaning Company in Centennial, CO | Kathy Clean",
+    title: "Top Rated Cleaning Company in Denver, CO | Kathy Clean",
     description:
       "Professional cleaning services in Denver & surrounding areas. Get a fast quote.",
     images: [

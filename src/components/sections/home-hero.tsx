@@ -14,7 +14,7 @@ const HomeHero = () => {
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
           <span className="text-primary">Top Rated Cleaning Company</span>
           <br />
-          <span className="text-background">in Centennial, CO</span>
+          <span className="text-background">in Denver, CO</span>
         </h1>
         <p className="text-lg">
           We deliver spotless, healthy, and welcoming environments—perfect for

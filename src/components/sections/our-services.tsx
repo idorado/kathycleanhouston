@@ -104,15 +104,15 @@ export default async function OurServices() {
         <h2 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-center">
           Our House and Commercial Cleaning
           <br />
-          Services in Centennial, CO
+          Services in Denver, CO
         </h2>
         <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
           With over <strong>10 years of experience</strong>, Kathy Clean
           delivers top-rated house cleaning and commercial cleaning services
-          across the Centennial, CO and Denver area. We proudly serve
-          neighborhoods and cities including Denver, Parker, Lone Tree,
-          Highlands Ranch, Centennial, Central Park, Hilltop, Washington Park,
-          Cherry Creek, University Park, Highland, and Castle Rock.
+          across the Denver area. We proudly serve neighborhoods and cities
+          including Denver, Parker, Lone Tree, Highlands Ranch, Centennial,
+          Central Park, Hilltop, Washington Park, Cherry Creek, University Park,
+          Highland, and Castle Rock.
         </p>
 
         <div className="mt-6 space-y-3 text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
