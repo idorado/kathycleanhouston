@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     template: "%s | Luchos Cleaning",
   },
   description:
-    "Professional Cleaning Company in Houston, TX: recurring, deep cleans, move-in/out & post-construction. Fast, friendly, insured.",
+    "Professional Cleaning Company in Houston, TX, serving Harris County, TX: recurring, deep cleans, move-in/out & post-construction. Fast, friendly, insured.",
   openGraph: {
     type: "website",
     url: "https://luchoscleaning.com",
     siteName: "Luchos Cleaning",
     title: "Top Rated Cleaning Company in Houston, TX | Luchos Cleaning",
     description:
-      "Professional Cleaning Company in Houston, TX: recurring, deep cleans, move-in/out, windows & post-construction. Fast, friendly, insured.",
+      "Professional Cleaning Company in Houston, TX, serving Harris County, TX: recurring, deep cleans, move-in/out & post-construction. Fast, friendly, insured.",
     images: [
       {
         url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Top Rated Cleaning Company in Houston, TX | Luchos Cleaning",
     description:
-      "Professional cleaning services in Houston & surrounding areas. Get a fast quote.",
+      "Professional cleaning services in Houston & surrounding areas, serving Harris County, TX. Get a fast quote.",
     images: [
       "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu",
     ],

@@ -28,15 +28,9 @@ export function Header() {
 	const services = [
 		{ href: '/house-cleaning-denver', title: 'House Cleaning', description: 'Professional home cleaning services' },
 		{ href: '/commercial-cleaning-denver', title: 'Commercial Cleaning', description: 'Office and business cleaning solutions' },
-		{ href: '/window-cleaning-denver', title: 'Window Cleaning', description: 'Crystal clear window cleaning' },
-		{ href: '/other-services-denver', title: 'Other Services', description: 'Pressure Washing, Post Construction Cleaning, Emergency Cleaning and more' },
 	];
 	const locations = [
-		{ href: '/service-areas/arapahoe-county-co', name: 'Arapahoe County' },
-		{ href: '/service-areas/denver-county-co', name: 'Denver County' },
-		{ href: '/service-areas/douglas-county-co', name: 'Douglas County' },
-		{ href: '/service-areas/jefferson-county-co', name: 'Jefferson County' },
-		{ href: '/service-areas', name: 'View All Locations' },
+		{ href: '/service-areas/harris-county-tx', name: 'Harris County, TX' },
 	];
 	return (
 		<header className="sticky top-0 z-50 bg-foreground py-3">

@@ -59,7 +59,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
           </h1>
           <p className="text-base sm:text-lg mb-6">
             Looking for trusted house cleaning services in {displayLocation}?<br />
-            Lucho's Cleaning delivers affordable, top-rated cleanings backed by 10+ years of experience and satisfied customers in {displayLocation} {isDenverArea ? 'and throughout the Houston metro area' : 'and surrounding areas'}.
+            Lucho's Cleaning delivers affordable, top-rated cleanings backed by a team with 10+ years of experience and satisfied customers in {displayLocation} {isDenverArea ? 'and throughout the Houston metro area' : 'and surrounding areas'}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <Button
@@ -116,6 +116,13 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
 
       {/* FAQ Section */}
       <HouseCleaningFAQ location={location} />
+
+      <div className="mt-12 px-4 md:px-0 max-w-4xl mx-auto text-gray-700">
+        <h3 className="text-xl font-semibold mb-2">Service Areas</h3>
+        <p>
+          We proudly serve all of Harris County, including Houston, Spring Branch, Houston Heights, Upper Kirby, Memorial, Uptown, Bellaire, and the Medical Center Area.
+        </p>
+      </div>
 
     </main>
   );

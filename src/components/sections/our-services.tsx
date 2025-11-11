@@ -76,26 +76,6 @@ export default async function OurServices() {
       imageAlt: "Professional cleaners working in an office space",
       link: "/commercial-cleaning-denver",
     },
-    {
-      title: "Window Cleaning",
-      description:
-        "Get crystal-clear windows that brighten your space. We offer streak-free window cleaning for homes, offices, storefronts, and more. We use professional tools and eco-friendly products for a flawless finish every time. Proudly serving Denver, Parker, Castle Rock, Lone Tree, and surrounding areas.",
-      imageUrl:
-        "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom0KAm82nznWpD8lt52ycuGbAavdFLke9Ugf7J",
-      imageAlt: "Professional window cleaner washing windows",
-      link: "/window-cleaning-denver",
-    },
-
-    {
-      title: "Other Cleaning Services",
-      description:
-        "From emergency cleaning and move-in/move-out services to post-construction cleaning, and pressure washing, we serve Denver and surrounding areas with precision. Our team follows detailed checklists to ensure no spot is missed—every job, every time.",
-      imageUrl:
-        "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomxFeTU8PQRcBU1VN4YrWbTIXj8k39sPLKdZiv",
-      imageAlt:
-        "Professional cleaner in protective gear providing sanitization services",
-      link: "/other-services-denver",
-    },
   ];
 
   return (
@@ -127,7 +107,7 @@ export default async function OurServices() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 max-w-5xl mx-auto">
-        {services.slice(0, 4).map((service) => (
+        {services.map((service) => (
           <div
             key={service.title}
             className="transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"

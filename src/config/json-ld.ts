@@ -39,15 +39,15 @@ export const home = () => ({
   ],
   "priceRange": "$$",
   "areaServed": [
-    { "@type": "Place", "name": "Castle Rock" },
-    { "@type": "Place", "name": "Centennial" },
+    { "@type": "Place", "name": "Harris County" },
     { "@type": "Place", "name": "Houston" },
-    { "@type": "Place", "name": "Englewood" },
-    { "@type": "Place", "name": "Greenwood Village" },
-    { "@type": "Place", "name": "Highlands Ranch" },
-    { "@type": "Place", "name": "Littleton" },
-    { "@type": "Place", "name": "Lone Tree" },
-    { "@type": "Place", "name": "Parker" }
+    { "@type": "Place", "name": "Spring Branch" },
+    { "@type": "Place", "name": "Houston Heights" },
+    { "@type": "Place", "name": "Upper Kirby" },
+    { "@type": "Place", "name": "Memorial" },
+    { "@type": "Place", "name": "Uptown" },
+    { "@type": "Place", "name": "Bellaire" },
+    { "@type": "Place", "name": "Medical Center Area" }
   ],
   "sameAs": [
     "https://www.facebook.com/kathyclean",
