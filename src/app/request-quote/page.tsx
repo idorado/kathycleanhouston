@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function RequestQuote() {
   const [iframeSrc, setIframeSrc] = useState(
-    "https://tally.so/embed/nGyB9p?transparentBackground=1"
+    "https://tally.so/embed/wMkPWA?transparentBackground=1"
   );
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function RequestQuote() {
       const params = window.location.search;
       if (params) {
         setIframeSrc(
-          `https://tally.so/embed/nGyB9p?transparentBackground=1&${params.substring(
+          `https://tally.so/embed/wMkPWA?transparentBackground=1&${params.substring(
             1
           )}`
         );
