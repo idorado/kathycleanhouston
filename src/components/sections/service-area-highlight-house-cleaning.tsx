@@ -3,6 +3,10 @@ interface ServiceAreaHighlightHouseCleaningProps {
 }
 
 const MAP_IFRAME_URLS: Record<string, string> = {
+  Houston:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d443006.8294086512!2d-95.79082969612489!3d29.835685754864407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20Texas%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1763153833260!5m2!1ses-419!2sar",
+  "Houston, TX":
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d443006.8294086512!2d-95.79082969612489!3d29.835685754864407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20Texas%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1763153833260!5m2!1ses-419!2sar",
   Denver: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d204983.3710354381!2d-105.10992795!3d39.76433895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c78d2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sDenver%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2sus",
   Parker: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30652.60938438324!2d-104.7809982!3d39.5186001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c8b2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sParker%2C%20CO!5e0!3m2!1sen!2sus!4v1710516801!5m2!1sen!2us",
   "Castle Rock": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30652.60938438324!2d-104.8669!3d39.3722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b1b2e8e5a7f5%3A0x4a6b0b2e8e5a7f5!2sCastle%20Rock%2C%20CO!5e0!3m2!1sen!2us!4v1710516801!5m2!1sen!2us",

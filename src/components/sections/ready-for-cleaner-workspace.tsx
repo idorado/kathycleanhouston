@@ -10,7 +10,7 @@ export default function ReadyForCleanerWorkspaceSection() {
           Ready For a Cleaner, Safer Workspace?
         </h2>
         <p className="text-white text-base md:text-lg mb-8">
-          Our Denver-based team provides reliable, high-quality commercial cleaning services tailored to your business needs. We keep your space clean, safe, and presentable, so you can focus on running your business.
+          Our Houston-based team provides reliable, high-quality commercial cleaning services tailored to your business needs. We keep your space clean, safe, and presentable, so you can focus on running your business.
         </p>
         <Button size="lg" className="font-bold mt-2" asChild>
           <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>

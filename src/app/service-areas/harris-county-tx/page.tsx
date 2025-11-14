@@ -110,53 +110,57 @@ export default async function Home() {
               {[
                 {
                   title: "Houston, TX",
-                  imageUrl: "/images/locations/Harris County, TX/houston.jpeg",
+                  imageUrl:
+                    "https://tv7odam5so.ufs.sh/f/mVZIBtP0JDKerPRAhrgFAwqQ4Bx97YSaJmXiMCRycHO6sIlv",
                   imageAlt: "Cleaning Service in Houston, TX",
                   link: "/service-areas/harris-county-tx/houston",
                 },
                 {
                   title: "Spring Branch, TX",
                   imageUrl:
-                    "/images/locations/Harris County, TX/spring-branch.jpeg",
+                    "https://tv7odam5so.ufs.sh/f/mVZIBtP0JDKeCJVSdDTbvrsSFZYTU9dOXWt4AK3hpN8y1cQ7",
                   imageAlt: "Cleaning Service in Spring Branch, TX",
                   link: "/service-areas/harris-county-tx/spring-branch",
                 },
                 {
                   title: "Houston Heights, TX",
                   imageUrl:
-                    "/images/locations/Harris County, TX/houston-heights.jpeg",
+                    "https://tv7odam5so.ufs.sh/f/mVZIBtP0JDKeHsVvhc03fjtVXkYx94QSdW0bKvNOe6Ms1uUR",
                   imageAlt: "Cleaning Service in Houston Heights, TX",
                   link: "/service-areas/harris-county-tx/houston-heights",
                 },
                 {
                   title: "Upper Kirby, TX",
                   imageUrl:
-                    "/images/locations/Harris County, TX/upper-kirby.jpeg",
+                    "https://tv7odam5so.ufs.sh/f/mVZIBtP0JDKeqfPmAjrplLSJ5y74UtdbjwOHGFRf2Y86QX0m",
                   imageAlt: "Cleaning Service in Upper Kirby, TX",
                   link: "/service-areas/harris-county-tx/upper-kirby",
                 },
                 {
                   title: "Memorial, TX",
-                  imageUrl: "/images/locations/Harris County, TX/memorial.jpeg",
+                  imageUrl:
+                    "https://tv7odam5so.ufs.sh/f/mVZIBtP0JDKeVwKVGcXSiG9Z87dAevx4W3BMCKN5nR0IhOq1",
                   imageAlt: "Cleaning Service in Memorial, TX",
                   link: "/service-areas/harris-county-tx/memorial",
                 },
                 {
                   title: "Uptown, TX",
-                  imageUrl: "/images/locations/Harris County, TX/uptown.jpeg",
+                  imageUrl:
+                    "https://tv7odam5so.ufs.sh/f/mVZIBtP0JDKe8EYzrkxtkZSlms1oIuXejnzJNr9D84OidBGh",
                   imageAlt: "Cleaning Service in Uptown, TX",
                   link: "/service-areas/harris-county-tx/uptown",
                 },
                 {
                   title: "Bellaire, TX",
-                  imageUrl: "/images/locations/Harris County, TX/bellaire.jpeg",
+                  imageUrl:
+                    "https://tv7odam5so.ufs.sh/f/mVZIBtP0JDKeh4p3y3J6MaugieZ84fAlqrsUB1phdGnY7jSW",
                   imageAlt: "Cleaning Service in Bellaire, TX",
                   link: "/service-areas/harris-county-tx/bellaire",
                 },
                 {
                   title: "Medical Center Area, TX",
                   imageUrl:
-                    "/images/locations/Harris County, TX/medical-center-area.jpeg",
+                    "https://tv7odam5so.ufs.sh/f/mVZIBtP0JDKeid10QrZ8JaU1WVTRvhHDklsYA5QFM2r8nOqS",
                   imageAlt: "Cleaning Service in Medical Center Area, TX",
                   link: "/service-areas/harris-county-tx/medical-center-area",
                 },

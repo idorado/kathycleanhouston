@@ -55,7 +55,7 @@ export default function RequestQuote() {
                 </svg>
               </div>
               <span className="font-medium text-gray-900">
-                500+ Happy Customers
+                Happy Customers
               </span>
             </div>
 
@@ -72,7 +72,7 @@ export default function RequestQuote() {
                 </svg>
               </div>
               <span className="font-medium text-gray-900">
-                4.9/5 Star Rating
+                5 Star Rating
               </span>
             </div>
 
@@ -356,7 +356,7 @@ export default function RequestQuote() {
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <span className="text-gray-700">info@kathyclean.com</span>
+                  <span className="text-gray-700">contact@luchoscleaning.com</span>
                 </div>
 
                 <div className="flex items-start">
@@ -471,7 +471,7 @@ export default function RequestQuote() {
                   How do I confirm my cleaning once I receive the quote?
                 </h3>
                 <p>
-                  You can simply let us know by text, calling or just appoving
+                  You can simply let us know by text, calling or just approving
                   the quote online in one click. We’ll reserve your preferred
                   date and assign a cleaner right away.
                 </p>

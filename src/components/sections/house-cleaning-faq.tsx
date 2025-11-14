@@ -62,10 +62,6 @@ Deep cleans and move-out services are priced individually based on scope.`
     answer: `Your satisfaction is guaranteed. If something wasn’t cleaned properly, contact us within 48 hours and we’ll re-clean the area at no extra cost.`
   },
   {
-    question: 'What makes Kathy Clean different from other cleaning companies in {Location}?',
-    answer: `We combine local reliability, personalized service, and great communication. You’ll have a consistent cleaner, real-time text updates, and support from our Denver-based office team. That’s why hundreds of clients in {Location} trust Kathy Clean every month.`
-  },
-  {
     question: 'How can I get a cleaning quote in {Location}?',
     answer: `You can request a free quote at kathyclean.com or call (346) 488-6044.
 We’ll confirm your details and send a customized estimate—usually within minutes.`

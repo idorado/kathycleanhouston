@@ -14,9 +14,10 @@ export default function WhyTrustJanitorialSection({ location }: WhyTrustJanitori
         </h2>
         <p className="text-base md:text-lg text-[#454545] max-w-4xl text-left mb-10">
           For over a decade, Kathy Clean has delivered high-quality commercial cleaning across Colorado, from offices and retail stores to restaurants and medical facilities. Our professional team is known for consistency, reliability, and attention to detail, helping businesses maintain clean, safe, and welcoming environments.
+          We are now transfering this knowledge to Houston, to provide our top rated cleaning services through Lucho's Cleaning
         </p>
         <div className="w-full flex flex-col items-center justify-center py-8">
-          <h3 className="text-2xl md:text-3xl font-bold text-navy-800 mb-8 text-center">We've earned the trust of {location}'s top businesses through consistent quality, reliability, and attention to detail.</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-navy-800 mb-8 text-center">We've earned the trust of top businesses through consistent quality, reliability, and attention to detail.</h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-10 items-center justify-center mb-8">
             <div className="flex flex-col items-center">
               <div className="h-20 w-20 mb-2 rounded-full overflow-hidden bg-white flex items-center justify-center p-2">

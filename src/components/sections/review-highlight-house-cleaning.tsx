@@ -18,7 +18,7 @@ export default function ReviewHighlightHouseCleaning({ location }: ReviewHighlig
             priority
           />
           <div className="bg-white rounded-lg shadow-md p-3 flex flex-col items-center w-[220px] absolute right-5 bottom-5 z-20">
-            <span className="font-bold text-2xl text-gray-900">4.9/5</span>
+            <span className="font-bold text-2xl text-gray-900">5/5</span>
             <span className="text-yellow-400 text-lg mb-1">★★★★★</span>
             <span className="text-gray-500 text-xs text-center">Based on Verified Customer Reviews</span>
           </div>
@@ -30,7 +30,7 @@ export default function ReviewHighlightHouseCleaning({ location }: ReviewHighlig
             <span className="text-yellow-400 text-lg">★★★★★</span>
           </div>
           <p className="text-gray-800 text-base mb-4">
-            The house smelled wonderfully clean and it was meticulously cleaned. I highly recommend Kathy Clean if you are looking for reliable service. The cleaner showed up when scheduled and did a great job! Thanks for making my long day at work end in such a positive way.
+            The house smelled wonderfully clean and it was meticulously cleaned. I highly recommend Lucho's Cleaning if you are looking for reliable service. The cleaner showed up when scheduled and did a great job! Thanks for making my long day at work end in such a positive way.
           </p>
           <div className="font-semibold text-gray-900 leading-tight">Becky</div>
         </div>
@@ -39,9 +39,9 @@ export default function ReviewHighlightHouseCleaning({ location }: ReviewHighlig
             <span className="text-yellow-400 text-lg">★★★★★</span>
           </div>
           <p className="text-gray-800 text-base mb-4">
-            Kathy clean does a really nice job. It's a very reliable service. If you don't like something you tell them and they will correct it. They're really easy to work with. We really like the person who cleans for us and Beverly is delightful to work with!! My dad also uses the service and he really likes his person. I don't think you can go wrong with any of the people that work for them!
+            Lucho's Cleaning does a really nice job. It's a very reliable service. If you don't like something you tell them and they will correct it. They're really easy to work with. We really like the person who cleans for us and Beverly is delightful to work with!! My dad also uses the service and he really likes his person. I don't think you can go wrong with any of the people that work for them!
           </p>
-          <div className="font-semibold text-gray-900 leading-tight">Kathy Welsh</div>
+          <div className="font-semibold text-gray-900 leading-tight">Kathy</div>
         </div>
       </div>
     </section>

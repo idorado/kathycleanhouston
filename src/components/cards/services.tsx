@@ -48,28 +48,6 @@ const cleaningServices: ServiceType[] = [
       "We coordinate with contractors to ensure timely cleaning after project completion."
     ],
     image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlombX3i6ckGctfxEFSjXR7am2eDqMn9h1wrd0OP"
-  },
-  {
-    id: "pressure-washing",
-    name: "Pressure Washing",
-    description: "Restore the exterior surfaces of your property with our professional pressure washing services.",
-    features: [
-      "Effectively removes dirt, grime, mold, and mildew from driveways, decks, and siding.",
-      "Our equipment is calibrated to clean thoroughly without damaging delicate surfaces.",
-      "Dramatically improves curb appeal and extends the life of your exterior surfaces."
-    ],
-    image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomNysLnp8Qqho34HzWAgdjRlcDPJntsL1f2TIb"
-  },
-  {
-    id: "window-cleaning",
-    name: "Window Cleaning",
-    description: "Crystal clear windows that let natural light shine through and improve your view.",
-    features: [
-      "Professional-grade tools and solutions for streak-free, spotless windows.",
-      "We clean both interior and exterior windows, including screens and tracks.",
-      "Trained technicians can safely reach windows on upper floors."
-    ],
-    image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomuTf8JIORAPXijlg8vVLbWSoDk4xMqEyCKh2B"
   }
 ];
 

@@ -95,7 +95,7 @@ export default async function OurServices() {
 
         <div className="mt-6 space-y-3 text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
           We specialize in House cleaning (regular, deep, move-in/move-out),
-          Commercial and office cleaning, Window cleaning.
+          Commercial and office cleaning.
           <p className="mt-4">
             All services are backed by our{" "}
             <strong>48-hour satisfaction guarantee</strong> — your peace of mind

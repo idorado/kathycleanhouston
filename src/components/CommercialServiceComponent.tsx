@@ -115,13 +115,6 @@ const CommercialServiceComponent = async ({
       />
       <WhyInvestInCommercialCleaningSection />
       <CommercialCleaningFAQ location={location} />
-
-      <div className="mt-12 px-4 md:px-0 max-w-4xl mx-auto text-gray-700">
-        <h3 className="text-xl font-semibold mb-2">Service Areas</h3>
-        <p>
-          We proudly serve all of Harris County, including Houston, Spring Branch, Houston Heights, Upper Kirby, Memorial, Uptown, Bellaire, and the Medical Center Area.
-        </p>
-      </div>
     </main>
   );
 };

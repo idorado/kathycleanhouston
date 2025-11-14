@@ -62,10 +62,10 @@ export default function ServiceAreas() {
                 </p>
                 <p>
                   We specialize in house cleaning, move-in/move-out cleaning,
-                  post-construction cleanup, window cleaning, and janitorial
-                  services. Whether you need recurring service or a one-time
-                  deep clean, our fully trained, insured, and background-checked
-                  cleaners deliver consistent, high-quality results.
+                  post-construction cleanup, and janitorial services. Whether
+                  you need recurring service or a one-time deep clean, our
+                  fully trained, insured, and background-checked cleaners
+                  deliver consistent, high-quality results.
                 </p>
               </div>
 
@@ -108,7 +108,7 @@ export default function ServiceAreas() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-6">
-              Our Cleaning Services in Houston, TX
+              Our Cleaning Services in Harris County, TX
             </h2>
             <div className="bg-white p-8 rounded-lg">
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
@@ -126,10 +126,10 @@ export default function ServiceAreas() {
                 </p>
                 <p>
                   We specialize in house cleaning, move-in/move-out cleaning,
-                  post-construction cleanup, window cleaning, and janitorial
-                  services. Whether you need recurring service or a one-time
-                  deep clean, our fully trained, insured, and background-checked
-                  cleaners deliver consistent, high-quality results.
+                  post-construction cleanup, and janitorial services. Whether
+                  you need recurring service or a one-time deep clean, our
+                  fully trained, insured, and background-checked cleaners
+                  deliver consistent, high-quality results.
                 </p>
                 <p>
                   Looking for cleaning services near you? Contact us today to
@@ -155,28 +155,11 @@ export default function ServiceAreas() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  title: "Arapahoe County, CO",
-                  imageUrl: "/images/locations/arapahoe-county.jpg",
-                  imageAlt: "House Cleaning Service in Arapahoe County, CO",
-                  link: "/service-areas/arapahoe-county-co",
-                },
-                {
-                  title: "Denver County, CO",
-                  imageUrl: "/images/locations/denver-county.jpeg",
-                  imageAlt: "House Cleaning Service in Denver County, CO",
-                  link: "/service-areas/denver-county-co",
-                },
-                {
-                  title: "Douglas County, CO",
-                  imageUrl: "/images/locations/douglas-county.jpeg",
-                  imageAlt: "House Cleaning Service in Douglas County, CO",
-                  link: "/service-areas/douglas-county-co",
-                },
-                {
-                  title: "Jefferson County, CO",
-                  imageUrl: "/images/locations/jefferson-county.jpeg",
-                  imageAlt: "House Cleaning Service in Jefferson County, CO",
-                  link: "/service-areas/jefferson-county-co",
+                  title: "Harris County, TX",
+                  imageUrl:
+                    "https://tv7odam5so.ufs.sh/f/mVZIBtP0JDKeAO6EjqYlkE2QmblsJDhG6viRqZSt3UT5oMOC",
+                  imageAlt: "House Cleaning Service in Harris County, TX",
+                  link: "/service-areas/harris-county-tx",
                 },
               ].map((location, index) => (
                 <LocationCard

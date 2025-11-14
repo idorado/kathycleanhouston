@@ -34,7 +34,7 @@ export default function FeatureBar() {
       <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
         <FeatureItem 
           icon={<StarIcon />} 
-          text="4.9/5 Rating" 
+          text="5/5 Rating" 
         />
         <FeatureItem 
           icon={<ShieldIcon />} 

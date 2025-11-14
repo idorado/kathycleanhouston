@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -127,36 +126,6 @@ export function Footer() {
                   >
                     contact@luchoscleaning.com
                   </a>
-                </div>
-
-                <div className="flex space-x-3 pt-2">
-                  <Link
-                    href="https://www.facebook.com/KathyCleanProfessionalCleaningServices/"
-                    aria-label="Facebook"
-                    className="text-white hover:text-cyan-500"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Facebook size={20} />
-                  </Link>
-                  <Link
-                    href="https://www.linkedin.com/company/kathyclean"
-                    aria-label="LinkedIn"
-                    className="text-white hover:text-cyan-500"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Linkedin size={20} />
-                  </Link>
-                  <Link
-                    href="https://www.instagram.com/kathycleandenver/"
-                    aria-label="Instagram"
-                    className="text-white hover:text-cyan-500"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Instagram size={20} />
-                  </Link>
                 </div>
               </div>
             </div>

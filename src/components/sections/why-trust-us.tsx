@@ -23,6 +23,11 @@ export default function WhyTrustUsSection({ location, serviceType, locationConte
       .replace('{location}', location || 'Denver')
       .replace('{serviceType}', serviceType || 'Cleaning')
     : `Why ${location || 'Denver'} Trusts Our ${serviceType || 'Cleaning'} Services`;
+
+  const description =
+    (location === "Houston" || location === "Houston, TX")
+      ? "Houston families and homeowners choose us because we treat every space like our own. Our cleaners are professional, careful, and committed to delivering spotless results you can feel the moment you walk in."
+      : (content.description || defaultContent.description);
   return (
     <section className="bg-[#F4F4F4] border-t border-b border-border py-12 md:py-16">
       <div className="max-w-5xl mx-auto px-4 text-center">
@@ -30,7 +35,7 @@ export default function WhyTrustUsSection({ location, serviceType, locationConte
           {title}
         </h2>
         <p className="text-base md:text-lg text-[#454545] max-w-4xl text-left mb-10 whitespace-pre-line">
-          {content.description || defaultContent.description}
+          {description}
         </p>
 <WhyTrustBenefits />
         

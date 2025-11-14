@@ -26,10 +26,6 @@ const faqItems = [
   {
     question: 'Do you offer recurring janitorial services?',
     answer: 'Yes. You can choose daily, weekly, or bi-weekly cleaning plans depending on your facility\'s traffic and needs.'
-  },
-  {
-    question: `Why businesses in {Location} choose Kathy Clean`,
-    answer: 'We\'re a local Colorado company, known for reliable service, flexible scheduling, and transparent pricing. Dozens of businesses in {Location} already trust Kathy Clean for spotless results.'
   }
 ]
 
