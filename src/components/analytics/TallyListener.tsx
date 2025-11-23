@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import posthog from 'posthog-js'
 
 const TALLY_ORIGIN_RE = /^https:\/\/([a-z0-9-]+\.)?tally\.so$/i;
 
@@ -34,6 +35,34 @@ function pushDataLayer(payload: {
   });
 }
 
+function trackPosthogLead({
+  formId,
+  formName,
+  submissionId,
+  source,
+}: {
+  formId?: string
+  formName?: string
+  submissionId?: string
+  source: 'tally_iframe' | 'tally_dom'
+}) {
+  try {
+    if (!posthog) return
+
+    posthog.capture('lead_submit', {
+      formId,
+      formName,
+      submissionId,
+      source,
+      path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+      url: typeof window !== 'undefined' ? window.location.href : undefined,
+    })
+  } catch (e) {
+    // fail silently – tracking should never break the app
+    console.error('PostHog lead_submit failed', e)
+  }
+}
+
 export default function TallyListener() {
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
@@ -56,6 +85,13 @@ export default function TallyListener() {
       }
 
       pushDataLayer({ formId, formName, submissionId, source: 'tally_iframe' });
+
+      trackPosthogLead({
+        formId: formId ?? undefined,
+        formName: formName ?? undefined,
+        submissionId: submissionId ?? undefined,
+        source: 'tally_iframe',
+      })
 
       if (typeof (window as any).gtag === 'function') {
         try {
@@ -89,6 +125,13 @@ export default function TallyListener() {
       }
 
       pushDataLayer({ formId, formName, submissionId, source: 'tally_dom' });
+
+      trackPosthogLead({
+        formId: formId ?? undefined,
+        formName: formName ?? undefined,
+        submissionId: submissionId ?? undefined,
+        source: 'tally_dom',
+      })
 
       if (typeof (window as any).gtag === 'function') {
         try {
