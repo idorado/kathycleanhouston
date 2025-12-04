@@ -1,38 +1,51 @@
-"use client"
+"use client";
+
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { CtaButton } from "@/components/ui/CtaButton";
-import posthog from "posthog-js";
+import { usePostHog } from "posthog-js/react";
+import { cn } from "@/lib/utils";
 
 type RequestQuoteButtonProps = {
   location?: string;
   className?: string;
-  onClick?: () => void;
 };
 
-export default function RequestQuoteButton({ location, className, onClick }: RequestQuoteButtonProps) {
-  const handleClick = () => {
-    console.log("Request Quote Button Clicked");
-    posthog?.capture("cta_request_quote_click", {
-      location: location || "unknown",
-    });
+export default function RequestQuoteButton({
+  location,
+  className,
+}: RequestQuoteButtonProps) {
+  const posthog = usePostHog();
 
-    if (onClick) {
-      try {
-        onClick();
-      } catch (error) {
-        console.error(error);
-      }
+  const handleClick = () => {
+    console.log("DEBUG CTA – clicked (RequestQuoteButton, Luchos)");
+
+    try {
+      posthog?.capture("cta_request_quote_click", {
+        brand: "Luchos",
+        location: location ?? "unknown",
+        path:
+          typeof window !== "undefined"
+            ? window.location.pathname
+            : undefined,
+        url:
+          typeof window !== "undefined"
+            ? window.location.href
+            : undefined,
+      });
+    } catch (e) {
+      console.error("PostHog CTA click failed (luchos)", e);
     }
   };
 
   return (
-    <Button
-      variant="default"
-      className={`mt-8 font-medium mx-auto px-8 py-3 text-lg shadow-lg hover:scale-105 transition-all${className ? ` ${className}` : ""}`}
-      asChild
+    <Link
+      href="/request-quote"
+      onClick={handleClick}
+      className={cn(
+        "py-2 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-10 rounded-md px-6 w-full sm:w-auto min-w-[180px] bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
+        className
+      )}
     >
-      <CtaButton href="/request-quote" onClick={handleClick}>REQUEST A QUOTE</CtaButton>
-    </Button>
+      REQUEST A QUOTE
+    </Link>
   );
 }

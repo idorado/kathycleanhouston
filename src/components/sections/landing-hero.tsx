@@ -1,9 +1,8 @@
 import HeroSection from "@/components/HeroSection";
-import { Button } from "@/components/ui/button";
-import { CtaButton } from "@/components/ui/CtaButton";
 import PhoneButton from "@/components/PhoneButton";
 import FeatureBar from "@/components/ui/FeatureBar";
 import Image from "next/image";
+import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 
 interface LandingHeroProps {
   location: string;
@@ -24,15 +23,7 @@ const LandingHero = ({ location, imageUrl, headline, description }: LandingHeroP
         )}
         <p className="text-lg mb-2">{description}</p>
         <div className="pt-4 flex flex-col md:flex-row gap-4">
-          <Button
-            variant="default"
-            className="font-medium"
-            asChild
-          >
-            <CtaButton href="/request-quote">
-              REQUEST A QUOTE
-            </CtaButton>
-          </Button>
+          <RequestQuoteButton className="font-medium" />
           <PhoneButton />
         </div>
         <FeatureBar />

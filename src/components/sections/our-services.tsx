@@ -3,8 +3,8 @@ import type { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { CtaButton } from "@/components/ui/CtaButton";
 import { ArrowRight } from "lucide-react";
+import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 
 interface ServiceCardProps {
   title: string;
@@ -121,9 +121,7 @@ export default async function OurServices() {
         ))}
       </div>
       <div className="text-center">
-        <Button variant="default" className="font-medium" asChild>
-          <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>
-        </Button>
+        <RequestQuoteButton className="font-medium" />
       </div>
     </section>
   );

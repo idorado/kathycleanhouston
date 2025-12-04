@@ -1,11 +1,11 @@
+# *
 User-agent: *
 Allow: /
-
-# Bloquear URLs con parámetros UTM para que no se indexen
-Disallow: /*?utm_*
-# Mantener fuera del rastreo las rutas internas de la app
 Disallow: /api/
 Disallow: /admin/
 
-# Declarar el nuevo sitemap
-Sitemap: https://kathyclean.com/sitemap.xml
+# Host
+Host: https://luchoscleaning.com
+
+# Sitemaps
+Sitemap: https://luchoscleaning.com/sitemap.xml

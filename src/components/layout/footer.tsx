@@ -151,7 +151,7 @@ export function Footer() {
               </a>
               <div className="mt-2 w-full h-48 rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56140.24123621904!2d-95.54139096191744!3d29.78370877266356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c5ff44dce045%3A0x3df9c8e8305733d4!2sLuchos%20Cleaning!5e0!3m2!1sen!2sar!4v1762890192457!5m2!1sen!2sar"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.8061070088734!2d-95.52112162366939!3d29.783247575056137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c531cf72f29d%3A0x2c640da6601bcaa5!2sLuchos%20Cleaning!5e0!3m2!1ses-419!2sar!4v1764879629621!5m2!1ses-419!2sar"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}

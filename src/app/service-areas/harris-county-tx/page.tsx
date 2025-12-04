@@ -51,7 +51,7 @@ export default async function Home() {
               </h1>
               <p className="text-lg">
                 <a
-                  href="https://kathyclean.com/"
+                  href="https://luchoscleaning.com/"
                   className="underline text-secondary"
                 >
                   Luchos Cleaning

@@ -96,15 +96,20 @@ export function Header() {
 									</DropdownMenu>
 									<Link href="/about-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
 									<Link href="/work-with-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Work With Us</Link>
-									<RequestQuoteButton location="location_components_layout_header" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)} />
 									<div className="mt-2"><PhoneButton /></div>
+									<div className="mt-4 lg:hidden">
+										<RequestQuoteButton
+											location="location_mobile_menu"
+											className="w-full"
+										/>
+									</div>
 								</nav>
 							</div>
 						</div>
 					)}
 
 					{/* Center: Navigation */}
-					<div className="hidden md:flex absolute left-1/2 -translate-x-1/2">
+					<div className="hidden md:flex absolute left-1/2 -translate-x-1/2 min-w-0 flex-shrink">
 						<NavigationMenu>
 							<NavigationMenuList className="gap-1">
 								<NavigationMenuItem>
@@ -165,7 +170,12 @@ export function Header() {
 					{/* Right: Buttons */}
 					<div className="hidden md:block">
 						<div className="flex flex-row gap-3 items-center">
-							<RequestQuoteButton location="location_components_layout_header" className="font-medium" />
+							<div className="hidden lg:block shrink-0">
+								<RequestQuoteButton
+									location="location_components_layout_header"
+									className="shrink-0"
+								/>
+							</div>
 							<PhoneButton />
 						</div>
 					</div>
