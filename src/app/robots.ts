@@ -7,12 +7,14 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
         disallow: [
-          "/*?utm_*",
           "/api/",
           "/admin/",
+          "/*?utm_*",
+          "/*?fbclid=*",
+          "/*?gclid=*",
         ],
       },
     ],
-    sitemap: "https://kathyclean.com/sitemap.xml",
+    sitemap: "https://luchoscleaning.com/sitemap.xml",
   };
 }
