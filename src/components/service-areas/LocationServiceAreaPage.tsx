@@ -103,6 +103,24 @@ export default function LocationServiceAreaPage({
             ) : null}
             <span dangerouslySetInnerHTML={{ __html: afterAnchorHtml }} />
           </p>
+          <p className="text-lg">
+            <span className="text-white/90">Explore:</span>{" "}
+            <Link href="/house-cleaning-houston" className="underline">
+              House Cleaning
+            </Link>{" "}
+            •{" "}
+            <Link href="/commercial-cleaning-houston" className="underline">
+              Commercial Cleaning
+            </Link>{" "}
+            •{" "}
+            <Link href="/request-quote" className="underline">
+              Request a Quote
+            </Link>{" "}
+            •{" "}
+            <Link href="/service-areas" className="underline">
+              Service Areas
+            </Link>
+          </p>
           <div className="pt-4 flex flex-col md:flex-row gap-4">
             <RequestQuoteButton
               location="location_components_service_areas_location_service_area_page"

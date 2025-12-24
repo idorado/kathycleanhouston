@@ -11,7 +11,7 @@ const canonical = "https://kathycleanhouston.com/service-areas/river-oaks";
 const area = getHoustonServiceArea("river-oaks");
 
 export const metadata = {
-  title,
+  title: `House Cleaning in ${locationName}, Houston | Kathy Clean Houston`,
   description,
   alternates: {
     canonical,

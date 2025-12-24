@@ -11,7 +11,7 @@ const canonical = "https://kathycleanhouston.com/service-areas/the-memorial-vill
 const area = getHoustonServiceArea("the-memorial-villages");
 
 export const metadata = {
-  title,
+  title: `House Cleaning in ${locationName}, Houston | Kathy Clean Houston`,
   description,
   alternates: {
     canonical,

@@ -11,7 +11,7 @@ const canonical = "https://kathycleanhouston.com/service-areas/greenway-upper-ki
 const area = getHoustonServiceArea("greenway-upper-kirby-area");
 
 export const metadata = {
-  title,
+  title: `House Cleaning in ${locationName}, Houston | Kathy Clean Houston`,
   description,
   alternates: {
     canonical,

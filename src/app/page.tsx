@@ -11,6 +11,7 @@ import { FAQ } from "@/components/sections/faq"
 import FeatureBar from "@/components/ui/FeatureBar"
 import JsonLd from "@/components/json-ld";
 import { home } from "@/config/json-ld";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   alternates: {
@@ -53,6 +54,38 @@ export default async function Home() {
               <p className="text-gray-600 mb-6">We provide top-quality cleaning services across the Houston area. From downtown Houston to the surrounding neighborhoods of Harris County, our professional team is committed to delivering spotless results for both homes and businesses.</p>
               <div className="text-gray-600 mb-8">
                 <p>We proudly serve: Houston, Spring Branch, Houston Heights, Upper Kirby, Memorial, Uptown, Bellaire, and the Medical Center Area.</p>
+                <div className="mt-4">
+                  <p className="font-medium">Top Areas We Serve:</p>
+                  <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2">
+                    <Link href="/service-areas/houston" className="underline">
+                      House Cleaning in Houston
+                    </Link>
+                    <Link href="/service-areas/spring-branch" className="underline">
+                      House Cleaning in Spring Branch
+                    </Link>
+                    <Link href="/service-areas/greater-heights" className="underline">
+                      House Cleaning in Greater Heights
+                    </Link>
+                    <Link href="/service-areas/greenway-upper-kirby-area" className="underline">
+                      House Cleaning in Greenway / Upper Kirby Area
+                    </Link>
+                    <Link href="/service-areas/memorial" className="underline">
+                      House Cleaning in Memorial
+                    </Link>
+                    <Link href="/service-areas/river-oaks" className="underline">
+                      House Cleaning in River Oaks
+                    </Link>
+                    <Link href="/service-areas/bellaire" className="underline">
+                      House Cleaning in Bellaire
+                    </Link>
+                    <Link href="/service-areas/medical-center-area" className="underline">
+                      House Cleaning in Medical Center Area
+                    </Link>
+                    <Link href="/service-areas" className="underline">
+                      View all service areas
+                    </Link>
+                  </div>
+                </div>
               </div>
               <RequestQuoteButton />
             </div>

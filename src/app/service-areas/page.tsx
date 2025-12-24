@@ -5,8 +5,7 @@ import { LocationCard } from "@/components/sections/our-locations";
 import { houstonServiceAreas } from "@/lib/service-areas/houstonLocations";
 
 export const metadata: Metadata = {
-  title:
-    "Service Areas for House Cleaning Service in Texas - Kathy Clean Houston",
+  title: "House & Commercial Cleaning Service Areas in Houston | Kathy Clean Houston",
   description:
     "Service Areas for Expert House Cleaning Service in Houston and Harris County by Kathy Clean Houston. Residential and Commercial Cleaning. Call Now!",
   alternates: {
