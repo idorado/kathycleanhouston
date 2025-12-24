@@ -5,11 +5,11 @@ import { LocationCard } from "@/components/sections/our-locations";
 import { houstonServiceAreas } from "@/lib/service-areas/houstonLocations";
 
 export const metadata: Metadata = {
-  title: "House & Commercial Cleaning Service Areas in Houston | Kathy Clean Houston",
+  title: "House & Commercial Cleaning Service Areas in Houston",
   description:
-    "Service Areas for Expert House Cleaning Service in Houston and Harris County by Kathy Clean Houston. Residential and Commercial Cleaning. Call Now!",
+    "Browse Kathy Clean Houston service areas across Houston and nearby neighborhoods. Find your area and request a fast quote for house or commercial cleaning.",
   alternates: {
-    canonical: canonicalPath("service-areas"),
+    canonical: "/service-areas",
   },
 };
 

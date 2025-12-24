@@ -103,24 +103,6 @@ export default function LocationServiceAreaPage({
             ) : null}
             <span dangerouslySetInnerHTML={{ __html: afterAnchorHtml }} />
           </p>
-          <p className="text-lg">
-            <span className="text-white/90">Explore:</span>{" "}
-            <Link href="/house-cleaning-houston" className="underline">
-              House Cleaning
-            </Link>{" "}
-            •{" "}
-            <Link href="/commercial-cleaning-houston" className="underline">
-              Commercial Cleaning
-            </Link>{" "}
-            •{" "}
-            <Link href="/request-quote" className="underline">
-              Request a Quote
-            </Link>{" "}
-            •{" "}
-            <Link href="/service-areas" className="underline">
-              Service Areas
-            </Link>
-          </p>
           <div className="pt-4 flex flex-col md:flex-row gap-4">
             <RequestQuoteButton
               location="location_components_service_areas_location_service_area_page"
@@ -138,7 +120,7 @@ export default function LocationServiceAreaPage({
           </div>
           <FeatureBar />
         </div>
-        <div className="relative hidden md:flex w-full items-end justify-center">
+        <div className="relative hidden md:block w-full h-full">
           <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
             <div className="absolute left-[-10%] top-1/3 w-[360px] h-[360px] bg-[#00F5D4]/25 rounded-[40%] blur-2xl" />
             <div className="absolute right-8 top-6 w-3 h-3 bg-[#00F5D4] rounded-full" />
@@ -146,19 +128,17 @@ export default function LocationServiceAreaPage({
             <div className="absolute left-10 bottom-10 w-2.5 h-2.5 bg-[#00F5D4] rounded-full" />
             <div className="absolute right-12 top-1/3 w-5 h-5 bg-[#00F5D4] rotate-45 rounded-[4px]" />
           </div>
-          <div className="relative h-[540px] md:h-[560px] overflow-hidden flex items-start bg-transparent">
-            <Image
-              src={finalHeroImage.url}
-              alt={normalizeBrandText(finalHeroImage.alt)}
-              width={480}
-              height={480}
-              priority
-              fetchPriority="high"
-              sizes="(max-width: 768px) 0px, (max-width: 1280px) 50vw, 600px"
-              quality={85}
-              className="relative h-auto w-auto max-h-[700px] object-contain"
-            />
-          </div>
+          <Image
+            src={finalHeroImage.url}
+            alt={normalizeBrandText(finalHeroImage.alt)}
+            width={400}
+            height={400}
+            priority
+            fetchPriority="high"
+            sizes="(max-width: 768px) 0px, (max-width: 1280px) 50vw, 600px"
+            quality={75}
+            className="relative w-full h-full object-cover rounded-lg"
+          />
         </div>
       </HeroSection>
 

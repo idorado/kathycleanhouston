@@ -6,13 +6,14 @@ import { getHoustonServiceArea } from "@/lib/service-areas/houstonLocations";
 const locationName = "Bellaire";
 const title = `Reliable House Cleaning Service in ${locationName}`;
 const description =
-  `Kathy Clean Houston provides trusted recurring, deep, and move-out cleaning services in ${locationName} and the greater Houston area.`;
-const canonical = "https://kathycleanhouston.com/service-areas/bellaire";
+  `Looking for reliable house cleaning in ${locationName}, Houston? Kathy Clean Houston offers recurring, deep, and move-out cleaning with insured professionals and a 48-hour satisfaction guarantee. Get a fast quote.`;
+const canonical = "/service-areas/bellaire";
 const area = getHoustonServiceArea("bellaire");
 
 export const metadata = {
-  title: `House Cleaning in ${locationName}, Houston | Kathy Clean Houston`,
-  description,
+  title: `House Cleaning in ${locationName}, Houston`,
+  description:
+    `Reliable house cleaning in ${locationName}. Kathy Clean Houston offers recurring, deep & move-out cleaning with insured pros. Get a fast quote.`,
   alternates: {
     canonical,
   },

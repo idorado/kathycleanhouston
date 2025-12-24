@@ -5,11 +5,11 @@ import { redirect } from "next/navigation";
 
 const title = "Reliable House Cleaning Service in Houston";
 const description =
-  "Kathy Clean Houston provides trusted recurring, deep, and move-out cleaning services in Houston and Harris County.";
-const canonical = "https://kathycleanhouston.com/service-areas/houston";
+  "Looking for reliable house cleaning in Houston, TX? Kathy Clean Houston offers recurring, deep, and move-out cleaning with insured professionals and a 48-hour satisfaction guarantee. Get a fast quote.";
+const canonical = "/service-areas/houston";
 
 export const metadata = {
-  title: "House Cleaning in Houston, TX | Kathy Clean Houston",
+  title: "House Cleaning in Houston, TX",
   description,
   alternates: {
     canonical,

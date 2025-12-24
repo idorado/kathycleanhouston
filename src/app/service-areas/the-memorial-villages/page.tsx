@@ -6,13 +6,14 @@ import { getHoustonServiceArea } from "@/lib/service-areas/houstonLocations";
 const locationName = "The Memorial Villages";
 const title = `Reliable House Cleaning Service in ${locationName}`;
 const description =
-  `Kathy Clean Houston provides trusted recurring, deep, and move-out cleaning services in ${locationName} and the greater Houston area.`;
-const canonical = "https://kathycleanhouston.com/service-areas/the-memorial-villages";
+  `Looking for reliable house cleaning in ${locationName}, Houston? Kathy Clean Houston offers recurring, deep, and move-out cleaning with insured professionals and a 48-hour satisfaction guarantee. Get a fast quote.`;
+const canonical = "/service-areas/the-memorial-villages";
 const area = getHoustonServiceArea("the-memorial-villages");
 
 export const metadata = {
-  title: `House Cleaning in ${locationName}, Houston | Kathy Clean Houston`,
-  description,
+  title: `House Cleaning in ${locationName}`,
+  description:
+    `Reliable house cleaning in ${locationName}. Kathy Clean Houston offers recurring, deep & move-out cleaning with insured pros. Get a fast quote.`,
   alternates: {
     canonical,
   },
