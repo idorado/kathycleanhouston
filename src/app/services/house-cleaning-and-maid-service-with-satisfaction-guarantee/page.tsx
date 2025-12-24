@@ -8,13 +8,13 @@ export default function HouseCleaningService() {
 }
 
 export const metadata = {
-  title: "House Cleaning & Maid Service with Satisfaction Guarantee | Lucho's Cleaning",
+  title: "House Cleaning & Maid Service with Satisfaction Guarantee | Kathy Clean Houston",
   description: 'Professional house cleaning and maid services with a satisfaction guarantee. Serving Houston and surrounding areas with top-quality residential cleaning.',
   openGraph: {
-    title: "House Cleaning & Maid Service with Satisfaction Guarantee | Lucho's Cleaning",
+    title: "House Cleaning & Maid Service with Satisfaction Guarantee | Kathy Clean Houston",
     description: 'Professional house cleaning and maid services with a satisfaction guarantee. Serving Houston and surrounding areas with top-quality residential cleaning.',
     url: canonicalPath('our-services', 'house-cleaning-and-maid-service-with-satisfaction-guarantee'),
-    siteName: "Lucho's Cleaning",
+    siteName: "Kathy Clean Houston",
     locale: 'en_US',
     type: 'website',
   },

@@ -29,19 +29,19 @@ export default function ContactPage() {
               <div className="w-full md:w-1/2">
                 <Image 
                   src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom8WFaPuKhMCiFKE7nTrZgcpJWtXBskwHlzmqf" 
-                  alt="Luchos Cleaning office" 
+                  alt="Kathy Clean Houston office" 
                   width={500} 
                   height={400}
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
                 />
               </div>
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold">Luchos Cleaning</h2>
+                <h2 className="text-2xl font-bold">Kathy Clean Houston</h2>
                 <address className="not-italic text-gray-600 space-y-2">
                   <p>Houston, TX</p>
                 </address>
                 <div className="space-y-2">
-                  <p className="font-medium">Email: <a href="mailto:contact@luchoscleaning.com" className="text-blue-600 hover:underline">contact@luchoscleaning.com</a></p>
+                  <p className="font-medium">Email: <a href="mailto:info@kathyclean.com" className="text-blue-600 hover:underline">info@kathyclean.com</a></p>
                   <p className="font-medium">Phone: <a href="tel:+13464886044" className="text-blue-600 hover:underline">(346) 488-6044</a></p>
                 </div>
               </div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
               <div className="mt-6 w-full rounded-lg overflow-hidden shadow-md">
                 <Image 
                   src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomai17bhrN0W8yorQH6lnDudV4OjgIFLEC2YpM"
-                  alt="Luchos Cleaning Service Areas"
+                  alt="Kathy Clean Houston Service Areas"
                   width={1200}
                   height={800}
                   className="w-full h-auto object-cover"

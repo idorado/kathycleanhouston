@@ -1,10 +1,36 @@
+const SITE_URL = "https://kathycleanhouston.com";
+const LOGO_URL = `${SITE_URL}/images/logo-nav.webp`;
+const CONTACT_EMAIL = "info@kathyclean.com";
+const AREA_SERVED = [
+  { "@type": "Place", "name": "Houston, TX" },
+  { "@type": "Place", "name": "Houston" },
+  { "@type": "Place", "name": "Spring Branch" },
+  { "@type": "Place", "name": "Spring Branch Central" },
+  { "@type": "Place", "name": "Spring Branch East" },
+  { "@type": "Place", "name": "Greater Heights" },
+  { "@type": "Place", "name": "Greenway / Upper Kirby Area" },
+  { "@type": "Place", "name": "Memorial" },
+  { "@type": "Place", "name": "Greater Uptown" },
+  { "@type": "Place", "name": "Bellaire" },
+  { "@type": "Place", "name": "Medical Center Area" },
+  { "@type": "Place", "name": "The Memorial Villages" },
+  { "@type": "Place", "name": "River Oaks" },
+  { "@type": "Place", "name": "Mid West" },
+  { "@type": "Place", "name": "Briar Forest" },
+  { "@type": "Place", "name": "West University Place" },
+  { "@type": "Place", "name": "Washington Ave. / Memorial Park" },
+];
+
 export const home = () => ({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Luchos Cleaning",
+  "name": "Kathy Clean Houston",
   "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
-  "@id": "https://luchoscleaning.com",
-  "url": "https://luchoscleaning.com",
+  "logo": LOGO_URL,
+  "email": CONTACT_EMAIL,
+  "serviceType": "Residential Cleaning Services",
+  "@id": SITE_URL,
+  "url": SITE_URL,
   "telephone": "+1 346-488-6044",
   "address": {
     "@type": "PostalAddress",
@@ -36,17 +62,7 @@ export const home = () => ({
     }
   ],
   "priceRange": "$$",
-  "areaServed": [
-    { "@type": "Place", "name": "Harris County" },
-    { "@type": "Place", "name": "Houston" },
-    { "@type": "Place", "name": "Spring Branch" },
-    { "@type": "Place", "name": "Houston Heights" },
-    { "@type": "Place", "name": "Upper Kirby" },
-    { "@type": "Place", "name": "Memorial" },
-    { "@type": "Place", "name": "Uptown" },
-    { "@type": "Place", "name": "Bellaire" },
-    { "@type": "Place", "name": "Medical Center Area" }
-  ],
+  "areaServed": AREA_SERVED,
   "sameAs": []
 });
 
@@ -57,8 +73,11 @@ export const houseCleaning = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Luchos Cleaning",
+    "name": "Kathy Clean Houston",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
+    "logo": LOGO_URL,
+    "email": CONTACT_EMAIL,
+    "serviceType": "Residential Cleaning Services",
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
@@ -96,12 +115,9 @@ export const houseCleaning = (location: string) => {
     ],
     "priceRange": "$$",
     "sameAs": [],
-    "@id": `https://luchoscleaning.com/${slug}`,
-    "url": `https://luchoscleaning.com/${slug}`,
-    "areaServed": {
-      "@type": "Place",
-      "name": locationTitleCase
-    },
+    "@id": `${SITE_URL}/${slug}`,
+    "url": `${SITE_URL}/${slug}`,
+    "areaServed": AREA_SERVED,
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `House Cleaning in ${locationTitleCase}`,
@@ -129,8 +145,11 @@ export const commercialCleaning = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Luchos Cleaning",
+    "name": "Kathy Clean Houston",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
+    "logo": LOGO_URL,
+    "email": CONTACT_EMAIL,
+    "serviceType": "Residential Cleaning Services",
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
@@ -168,12 +187,9 @@ export const commercialCleaning = (location: string) => {
     ],
     "priceRange": "$$",
     "sameAs": [],
-    "@id": `https://luchoscleaning.com/${slug}`,
-    "url": `https://luchoscleaning.com/${slug}`,
-    "areaServed": {
-      "@type": "Place",
-      "name": locationTitleCase
-    },
+    "@id": `${SITE_URL}/${slug}`,
+    "url": `${SITE_URL}/${slug}`,
+    "areaServed": AREA_SERVED,
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Commercial Cleaning in ${locationTitleCase}`,
@@ -201,8 +217,11 @@ export const windowCleaning = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Luchos Cleaning",
+    "name": "Kathy Clean Houston",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
+    "logo": LOGO_URL,
+    "email": CONTACT_EMAIL,
+    "serviceType": "Residential Cleaning Services",
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
@@ -240,12 +259,9 @@ export const windowCleaning = (location: string) => {
     ],
     "priceRange": "$$",
     "sameAs": [],
-    "@id": `https://luchoscleaning.com/${slug}`,
-    "url": `https://luchoscleaning.com/${slug}`,
-    "areaServed": {
-      "@type": "Place",
-      "name": locationTitleCase
-    },
+    "@id": `${SITE_URL}/${slug}`,
+    "url": `${SITE_URL}/${slug}`,
+    "areaServed": AREA_SERVED,
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Window Cleaning in ${locationTitleCase}`,
@@ -273,8 +289,11 @@ export const cleaningServices = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Luchos Cleaning",
+    "name": "Kathy Clean Houston",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
+    "logo": LOGO_URL,
+    "email": CONTACT_EMAIL,
+    "serviceType": "Residential Cleaning Services",
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
@@ -312,12 +331,9 @@ export const cleaningServices = (location: string) => {
     ],
     "priceRange": "$$",
     "sameAs": [],
-    "@id": `https://luchoscleaning.com/${slug}`,
-    "url": `https://luchoscleaning.com/${slug}`,
-    "areaServed": {
-      "@type": "Place",
-      "name": locationTitleCase
-    },
+    "@id": `${SITE_URL}/${slug}`,
+    "url": `${SITE_URL}/${slug}`,
+    "areaServed": AREA_SERVED,
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Cleaning Services in ${locationTitleCase}`,
@@ -367,8 +383,11 @@ export const moveInOutCleaning = (location: string) => {
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Luchos Cleaning",
+    "name": "Kathy Clean Houston",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
+    "logo": LOGO_URL,
+    "email": CONTACT_EMAIL,
+    "serviceType": "Residential Cleaning Services",
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
@@ -406,12 +425,9 @@ export const moveInOutCleaning = (location: string) => {
     ],
     "priceRange": "$$",
     "sameAs": [],
-    "@id": `https://luchoscleaning.com/${slug}`,
-    "url": `https://luchoscleaning.com/${slug}`,
-    "areaServed": {
-      "@type": "Place",
-      "name": locationTitleCase
-    },
+    "@id": `${SITE_URL}/${slug}`,
+    "url": `${SITE_URL}/${slug}`,
+    "areaServed": AREA_SERVED,
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Move-In & Move-Out Cleaning in ${locationTitleCase}`,
@@ -433,14 +449,19 @@ export const moveInOutCleaning = (location: string) => {
 };
 
 export const postConstructionCleaning = (location: string) => {
-  const slug = `post-construction-cleaning-${location.toLowerCase().replace(/ /g, '-')}`;
+  const slug = `post-construction-cleaning-${location
+    .toLowerCase()
+    .replace(/ /g, '-')}`;
   const locationTitleCase = location.replace(/\b\w/g, l => l.toUpperCase());
 
   return {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Luchos Cleaning",
+    "name": "Kathy Clean Houston",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
+    "logo": LOGO_URL,
+    "email": CONTACT_EMAIL,
+    "serviceType": "Residential Cleaning Services",
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
@@ -478,12 +499,9 @@ export const postConstructionCleaning = (location: string) => {
     ],
     "priceRange": "$$",
     "sameAs": [],
-    "@id": `https://luchoscleaning.com/${slug}`,
-    "url": `https://luchoscleaning.com/${slug}`,
-    "areaServed": {
-      "@type": "Place",
-      "name": locationTitleCase
-    },
+    "@id": `${SITE_URL}/${slug}`,
+    "url": `${SITE_URL}/${slug}`,
+    "areaServed": AREA_SERVED,
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Post-Construction Cleaning in ${locationTitleCase}`,

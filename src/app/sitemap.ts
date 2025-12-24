@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { houstonServiceAreas } from "@/lib/service-areas/houstonLocations";
 
-const baseUrl = "https://luchoscleaning.com";
+const baseUrl = "https://kathycleanhouston.com";
 
 const staticRoutes: string[] = [
   "/",

@@ -5,8 +5,8 @@ import { redirect } from "next/navigation";
 
 const title = "Reliable House Cleaning Service in Houston";
 const description =
-  "Lucho’s Cleaning provides trusted recurring, deep, and move-out cleaning services in Houston and Harris County.";
-const canonical = "https://luchoscleaning.com/service-areas/houston";
+  "Kathy Clean Houston provides trusted recurring, deep, and move-out cleaning services in Houston and Harris County.";
+const canonical = "https://kathycleanhouston.com/service-areas/houston";
 
 export const metadata = {
   title: "Reliable House Cleaning Service in Houston",
@@ -31,11 +31,11 @@ export default async function HoustonServiceAreaPage() {
       heroTitle="Reliable House Cleaning Service"
       heroSubtitle="in Houston"
       heroParagraphs={[
-        `<a href="https://luchoscleaning.com/" class="underline text-secondary">Lucho’s Cleaning</a> offers professional home cleaning services in Houston. From recurring maintenance cleanings to deep cleans and move-out cleanings, our team delivers consistent quality so your home feels fresh, comfortable, and guest-ready week after week.`,
+        `<a href="https://kathycleanhouston.com/" class="underline text-secondary">Kathy Clean Houston</a> offers professional home cleaning services in Houston. From recurring maintenance cleanings to deep cleans and move-out cleanings, our team delivers consistent quality so your home feels fresh, comfortable, and guest-ready week after week.`,
       ]}
       ctaPhone="(346) 488-6044"
       ctaSmsNumber="(346) 488-6044"
-      benefitsTitle="Why Choose Lucho’s Cleaning in Houston?"
+      benefitsTitle="Why Choose Kathy Clean Houston in Houston?"
       benefitsParagraph="We bring reliability, eco-friendly products, and consistent quality for busy Houston households."
       benefitsItems={[
         {

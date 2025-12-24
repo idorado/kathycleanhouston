@@ -28,7 +28,7 @@ const faqs = [
   {
     question: "Are your cleaners legal to work in the United States?",
     answer:
-      "Yes. Luchos Cleaning only hires 100% legal workers. We also conduct full background checks on every potential new hire prior to extending a job offer.",
+      "Yes. Kathy Clean Houston only hires 100% legal workers. We also conduct full background checks on every potential new hire prior to extending a job offer.",
   },
   {
     question: "Do your cleaners speak English?",

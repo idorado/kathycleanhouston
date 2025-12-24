@@ -30,7 +30,7 @@ export default function ReviewHighlightHouseCleaning({ location }: ReviewHighlig
             <span className="text-yellow-400 text-lg">★★★★★</span>
           </div>
           <p className="text-gray-800 text-base mb-4">
-            The house smelled wonderfully clean and it was meticulously cleaned. I highly recommend Lucho's Cleaning if you are looking for reliable service. The cleaner showed up when scheduled and did a great job! Thanks for making my long day at work end in such a positive way.
+            The house smelled wonderfully clean and it was meticulously cleaned. I highly recommend Kathy Clean Houston if you are looking for reliable service. The cleaner showed up when scheduled and did a great job! Thanks for making my long day at work end in such a positive way.
           </p>
           <div className="font-semibold text-gray-900 leading-tight">Becky</div>
         </div>
@@ -39,7 +39,7 @@ export default function ReviewHighlightHouseCleaning({ location }: ReviewHighlig
             <span className="text-yellow-400 text-lg">★★★★★</span>
           </div>
           <p className="text-gray-800 text-base mb-4">
-            Lucho's Cleaning does a really nice job. It's a very reliable service. If you don't like something you tell them and they will correct it. They're really easy to work with. We really like the person who cleans for us and Beverly is delightful to work with!! My dad also uses the service and he really likes his person. I don't think you can go wrong with any of the people that work for them!
+            Kathy Clean Houston does a really nice job. It's a very reliable service. If you don't like something you tell them and they will correct it. They're really easy to work with. We really like the person who cleans for us and Beverly is delightful to work with!! My dad also uses the service and he really likes his person. I don't think you can go wrong with any of the people that work for them!
           </p>
           <div className="font-semibold text-gray-900 leading-tight">Kathy</div>
         </div>

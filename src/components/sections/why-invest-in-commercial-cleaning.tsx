@@ -33,7 +33,7 @@ export default function WhyInvestInCommercialCleaningSection() {
           <div className="flex-1">
             <h3 className="text-xl font-bold text-gray-800 mb-2">A spotless space says everything about your business</h3>
             <p className="text-base text-gray-700 mb-4">
-              A clean workplace sends a message to your clients, your team, and your partners. It shows you care, it boosts productivity, and it protects your assets. At Lucho's Cleaning, we help businesses across Harris County, TX operate in healthier, more organized, and more professional environments. Here’s why consistent commercial cleaning matters:
+              A clean workplace sends a message to your clients, your team, and your partners. It shows you care, it boosts productivity, and it protects your assets. At Kathy Clean Houston, we help businesses across Harris County, TX operate in healthier, more organized, and more professional environments. Here’s why consistent commercial cleaning matters:
             </p>
           </div>
           <div className="flex-1 flex justify-center">

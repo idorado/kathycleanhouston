@@ -144,7 +144,7 @@ export default function EmergencyPage() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">Request a Quote</h2>
             <p className="text-gray-600 mb-8">
-              For more than a decade, we've been delivering spotless, streak-free results to homes and businesses. Today, we operate as Luchos Cleaning, continuing our commitment to excellence with the same trusted quality and expertise across Houston and Harris County.
+              For more than a decade, we've been delivering spotless, streak-free results to homes and businesses. Today, we operate as Kathy Clean Houston, continuing our commitment to excellence with the same trusted quality and expertise across Houston and Harris County.
             </p>
             
             <Form {...form}>

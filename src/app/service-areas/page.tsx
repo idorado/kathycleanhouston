@@ -6,9 +6,9 @@ import { houstonServiceAreas } from "@/lib/service-areas/houstonLocations";
 
 export const metadata: Metadata = {
   title:
-    "Service Areas for House Cleaning Service in Texas - Luchos Cleaning",
+    "Service Areas for House Cleaning Service in Texas - Kathy Clean Houston",
   description:
-    "Service Areas for Expert House Cleaning Service in Houston and Harris County by Luchos Cleaning. Residential and Commercial Cleaning. Call Now!",
+    "Service Areas for Expert House Cleaning Service in Houston and Harris County by Kathy Clean Houston. Residential and Commercial Cleaning. Call Now!",
   alternates: {
     canonical: canonicalPath("service-areas"),
   },
@@ -23,23 +23,14 @@ export default function ServiceAreas() {
           <div className="flex flex-col lg:flex-row items-center">
             <div className="lg:w-full lg:pr-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center lg:text-left">
-                Service Areas for House Cleaning Service in Texas - Luchos
-                Cleaning
+                Service Areas for House Cleaning Service in Texas - Kathy Clean Houston
               </h1>
               <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
                 <p>
-                  Luchos Cleaning proudly provides reliable house and commercial
-                  cleaning services across the Houston area. We serve Harris County,
-                  including Houston, Spring Branch, Houston Heights, Upper Kirby,
-                  Memorial, Uptown, Bellaire, and the Medical Center Area. Our trusted
-                  team is ready to keep your home or business spotless.
+                  Kathy Clean Houston proudly provides reliable house and commercial cleaning services across the Houston area. We serve Harris County, including Houston, Spring Branch, Houston Heights, Upper Kirby, Memorial, Uptown, Bellaire, and the Medical Center Area. Our trusted team is ready to keep your home or business spotless.
                 </p>
                 <p>
-                  We specialize in house cleaning, move-in/move-out cleaning,
-                  post-construction cleanup, and janitorial services. Whether
-                  you need recurring service or a one-time deep clean, our
-                  fully trained, insured, and background-checked cleaners
-                  deliver consistent, high-quality results.
+                  We specialize in house cleaning, move-in/move-out cleaning, post-construction cleanup, and janitorial services. Whether you need recurring service or a one-time deep clean, our fully trained, insured, and background-checked cleaners deliver consistent, high-quality results.
                 </p>
               </div>
 
@@ -87,16 +78,10 @@ export default function ServiceAreas() {
             <div className="bg-white p-8 rounded-lg">
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Luchos Cleaning proudly serves the entire Houston metropolitan area
-                  and surrounding communities. Our strategically located service
-                  areas ensure we can provide prompt, reliable cleaning services
-                  to homes and businesses throughout the region.
+                  Kathy Clean Houston proudly serves the entire Houston metropolitan area and surrounding communities. Our strategically located service areas ensure we can provide prompt, reliable cleaning services to homes and businesses throughout the region.
                 </p>
                 <p>
-                  Each pin on the map represents one of our service locations
-                  where our professional cleaning teams are ready to deliver
-                  exceptional results. We understand the unique needs of each
-                  community and tailor our services accordingly.
+                  Each pin on the map represents one of our service locations where our professional cleaning teams are ready to deliver exceptional results. We understand the unique needs of each community and tailor our services accordingly.
                 </p>
                 <p>
                   We specialize in house cleaning, move-in/move-out cleaning,

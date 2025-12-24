@@ -6,8 +6,8 @@ import { getHoustonServiceArea } from "@/lib/service-areas/houstonLocations";
 const locationName = "Bellaire";
 const title = `Reliable House Cleaning Service in ${locationName}`;
 const description =
-  `Lucho’s Cleaning provides trusted recurring, deep, and move-out cleaning services in ${locationName} and the greater Houston area.`;
-const canonical = "https://luchoscleaning.com/service-areas/bellaire";
+  `Kathy Clean Houston provides trusted recurring, deep, and move-out cleaning services in ${locationName} and the greater Houston area.`;
+const canonical = "https://kathycleanhouston.com/service-areas/bellaire";
 const area = getHoustonServiceArea("bellaire");
 
 export const metadata = {
@@ -28,11 +28,11 @@ export default async function BellaireServiceAreaPage() {
       heroTitle="Reliable House Cleaning Service"
       heroSubtitle={`in ${locationName}`}
       heroParagraphs={[
-        `<a href="https://luchoscleaning.com/" class="underline text-secondary">Lucho’s Cleaning</a> offers professional home cleaning services in ${locationName}. From recurring maintenance cleanings to deep cleans and move-out cleanings, our team delivers consistent quality so your home feels fresh, comfortable, and guest-ready week after week.`,
+        `<a href="https://kathycleanhouston.com/" class="underline text-secondary">Kathy Clean Houston</a> offers professional home cleaning services in ${locationName}. From recurring maintenance cleanings to deep cleans and move-out cleanings, our team delivers consistent quality so your home feels fresh, comfortable, and guest-ready week after week.`,
       ]}
       ctaPhone="(346) 488-6044"
       ctaSmsNumber="(346) 488-6044"
-      benefitsTitle={`Why Choose Lucho’s Cleaning in ${locationName}?`}
+      benefitsTitle={`Why Choose Kathy Clean Houston in ${locationName}?`}
       benefitsParagraph={`We bring reliability, eco-friendly products, and consistent quality for ${locationName} households.`}
       benefitsItems={[
         {

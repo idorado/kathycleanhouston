@@ -87,7 +87,7 @@ export default async function OurServices() {
           Services in Houston, TX
         </h2>
         <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
-          Luchos Cleaning delivers top-rated house cleaning and commercial cleaning services
+          Kathy Clean Houston delivers top-rated house cleaning and commercial cleaning services
           across the Houston area. We proudly serve Harris County, including
           Houston, Spring Branch, Houston Heights, Upper Kirby, Memorial,
           Uptown, Bellaire, and the Medical Center Area.

@@ -44,7 +44,7 @@ const CommercialServiceComponent = async ({
           </h1>
           <p className="text-base sm:text-lg">
             Looking for reliable janitorial services in {location}?<br />
-            Lucho's Cleaning provides professional cleaning services for offices,
+            Kathy Clean Houston provides professional cleaning services for offices,
             clinics, retail stores, and more throughout {location}. With over 10
             years of experience and trusted by brands like IKEA, Starbucks,
             Whole Foods, and PetSmart, we deliver spotless results tailored to
@@ -111,7 +111,7 @@ const CommercialServiceComponent = async ({
         location={location}
         serviceTitle="Commercial Cleaning Services in"
         subtitle="Office, Retail & Janitorial Cleaning You Can Count On"
-        description={`Lucho's Cleaning delivers reliable commercial cleaning services in ${location} tailored for offices, retail spaces, and other business environments. Our trained professionals use high-quality products and proven systems to ensure your space is spotless, safe, and welcoming. Whether it's a small office, a large facility, or a multi-location business. Trusted by business owners and property managers across ${location}.`}
+        description={`Kathy Clean Houston delivers reliable commercial cleaning services in ${location} tailored for offices, retail spaces, and other business environments. Our trained professionals use high-quality products and proven systems to ensure your space is spotless, safe, and welcoming. Whether it's a small office, a large facility, or a multi-location business. Trusted by business owners and property managers across ${location}.`}
       />
       <WhyInvestInCommercialCleaningSection />
       <CommercialCleaningFAQ location={location} />

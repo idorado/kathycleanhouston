@@ -10,7 +10,7 @@ export default function WhyCleanWindowsRegularly() {
         <div className="flex-1">
           <h3 className="text-lg md:text-xl font-bold text-gray-800 mb-4">The benefits go beyond just appearance</h3>
           <p className="text-base md:text-lg text-gray-700 mb-2">
-            Lucho's Cleaning provides reliable residential and commercial window cleaning services in Houston and surrounding areas. Here’s why regular cleanings matter:
+            Kathy Clean Houston provides reliable residential and commercial window cleaning services in Houston and surrounding areas. Here’s why regular cleanings matter:
           </p>
         </div>
         <div className="flex-1 flex justify-center">

@@ -9,7 +9,7 @@ interface HouseCleaningFAQProps {
 const faqItems = [
   {
     question: 'What cleaning services do you offer in {Location}?',
-    answer: `Lucho's Cleaning provides professional house cleaning, deep cleaning, move-in/move-out cleaning, post-construction cleaning, commercial cleaning, and window cleaning in {Location} and nearby areas. Whether you need a one-time cleaning or recurring service, we’ll make your space shine.`
+    answer: `Kathy Clean Houston provides professional house cleaning, deep cleaning, move-in/move-out cleaning, post-construction cleaning, commercial cleaning, and window cleaning in {Location} and nearby areas. Whether you need a one-time cleaning or recurring service, we’ll make your space shine.`
   },
   {
     question: 'How much does cleaning cost in {Location}?',
@@ -23,7 +23,7 @@ Deep cleans and move-out services are priced individually based on scope.`
   },
   {
     question: 'Are you licensed, bonded, and insured in {Location}?',
-    answer: `Absolutely. Lucho's Cleaning is fully licensed, bonded, and insured. We protect your home, our cleaners, and your business for complete peace of mind.`
+    answer: `Absolutely. Kathy Clean Houston is fully licensed, bonded, and insured. We protect your home, our cleaners, and your business for complete peace of mind.`
   },
   {
     question: 'Do you bring cleaning supplies and equipment?',

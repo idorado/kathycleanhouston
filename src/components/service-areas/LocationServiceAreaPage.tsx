@@ -11,6 +11,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import PhoneButton from "@/components/PhoneButton";
+import Link from "next/link";
 
 export interface LocationServiceAreaPageProps {
   title: string;
@@ -63,11 +64,24 @@ export default function LocationServiceAreaPage({
   mapEmbedUrl,
   children,
 }: LocationServiceAreaPageProps & { children?: React.ReactNode }) {
+  const normalizeBrandText = (value: string) =>
+    value
+      .replaceAll("Lucho’s Cleaning", "Kathy Clean Houston")
+      .replaceAll("Lucho's Cleaning", "Kathy Clean Houston")
+      .replaceAll("Luchos Cleaning", "Kathy Clean Houston");
+
   const finalHeroImage =
     heroImage ?? {
-      url: "https://tv7odam5so.ufs.sh/f/mVZIBtP0JDKedyyLi2MpvGO2NaeJolDh9SPIMcn7wWiQB3qg",
-      alt: "Professional house cleaning service by Lucho’s Cleaning",
+      url: "/images/hero-image.webp",
+      alt: "Professional cleaner from Kathy Clean Houston holding cleaning supplies",
     };
+
+  const rawHeroParagraph = normalizeBrandText(heroParagraphs[0] || "");
+  const anchorStart = rawHeroParagraph.indexOf("<a ");
+  const anchorEnd = anchorStart >= 0 ? rawHeroParagraph.indexOf("</a>", anchorStart) : -1;
+  const hasAnchor = anchorStart >= 0 && anchorEnd >= 0;
+  const beforeAnchorHtml = hasAnchor ? rawHeroParagraph.slice(0, anchorStart) : rawHeroParagraph;
+  const afterAnchorHtml = hasAnchor ? rawHeroParagraph.slice(anchorEnd + "</a>".length) : "";
 
   return (
     <main className="flex flex-col min-h-screen">
@@ -76,14 +90,19 @@ export default function LocationServiceAreaPage({
       <HeroSection>
         <div className="space-y-2 text-white text-center p-4 md:text-left">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-            <span className="text-primary">{heroTitle}</span>
+            <span className="text-primary">{normalizeBrandText(heroTitle)}</span>
             <br />
-            <span className="text-background">{heroSubtitle}</span>
+            <span className="text-background">{normalizeBrandText(heroSubtitle)}</span>
           </h1>
-          <p
-            className="text-lg"
-            dangerouslySetInnerHTML={{ __html: heroParagraphs[0] || "" }}
-          />
+          <p className="text-lg">
+            <span dangerouslySetInnerHTML={{ __html: beforeAnchorHtml }} />
+            {hasAnchor ? (
+              <Link href="/" className="underline text-secondary">
+                Kathy Clean Houston
+              </Link>
+            ) : null}
+            <span dangerouslySetInnerHTML={{ __html: afterAnchorHtml }} />
+          </p>
           <div className="pt-4 flex flex-col md:flex-row gap-4">
             <RequestQuoteButton
               location="location_components_service_areas_location_service_area_page"
@@ -112,7 +131,7 @@ export default function LocationServiceAreaPage({
           <div className="relative h-[540px] md:h-[560px] overflow-hidden flex items-start bg-transparent">
             <Image
               src={finalHeroImage.url}
-              alt={finalHeroImage.alt}
+              alt={normalizeBrandText(finalHeroImage.alt)}
               width={480}
               height={480}
               priority
@@ -140,8 +159,8 @@ export default function LocationServiceAreaPage({
               </div>
             </div>
             <div className="w-full md:w-1/2">
-              <h2 className="text-3xl font-bold mb-6">{benefitsTitle}</h2>
-              <p className="text-gray-600 mb-6">{benefitsParagraph}</p>
+              <h2 className="text-3xl font-bold mb-6">{normalizeBrandText(benefitsTitle)}</h2>
+              <p className="text-gray-600 mb-6">{normalizeBrandText(benefitsParagraph)}</p>
               <dl className="max-w-xl mt-6 space-y-3 text-base leading-7 text-gray-600 lg:max-w-none">
                 {benefitsItems.map((item, idx) => (
                   <div key={idx} className="relative pl-9">
@@ -151,11 +170,11 @@ export default function LocationServiceAreaPage({
                         className="absolute w-5 left-1 top-1"
                         alt="Check Icon."
                       />
-                      {item.title}{" "}
+                      {normalizeBrandText(item.title)}{" "}
                     </dt>
                     <dd
                       className="inline"
-                      dangerouslySetInnerHTML={{ __html: item.body }}
+                      dangerouslySetInnerHTML={{ __html: normalizeBrandText(item.body) }}
                     />
                   </div>
                 ))}
@@ -171,8 +190,8 @@ export default function LocationServiceAreaPage({
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row items-start gap-8 max-w-6xl mx-auto">
             <div className="w-full md:w-1/2">
-              <h2 className="text-3xl font-bold mb-6">{whyTitle}</h2>
-              <p className="text-gray-600 mb-6">{whyParagraph}</p>
+              <h2 className="text-3xl font-bold mb-6">{normalizeBrandText(whyTitle)}</h2>
+              <p className="text-gray-600 mb-6">{normalizeBrandText(whyParagraph)}</p>
               <dl className="max-w-xl mt-6 space-y-3 text-base leading-7 text-gray-600 lg:max-w-none">
                 {whyItems.map((item, idx) => (
                   <div key={idx} className="relative pl-9">
@@ -182,11 +201,11 @@ export default function LocationServiceAreaPage({
                         className="absolute w-5 left-1 top-1"
                         alt="Check Icon."
                       />
-                      {item.title}{" "}
+                      {normalizeBrandText(item.title)}{" "}
                     </dt>
                     <dd
                       className="inline"
-                      dangerouslySetInnerHTML={{ __html: item.body }}
+                      dangerouslySetInnerHTML={{ __html: normalizeBrandText(item.body) }}
                     />
                   </div>
                 ))}
@@ -197,7 +216,7 @@ export default function LocationServiceAreaPage({
               <div className="overflow-hidden rounded-lg shadow-lg">
                 <img
                   src={whyImage.url}
-                  alt={whyImage.alt}
+                  alt={normalizeBrandText(whyImage.alt)}
                   className="w-full h-auto"
                   loading="lazy"
                 />

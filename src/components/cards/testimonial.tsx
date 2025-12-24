@@ -16,7 +16,7 @@ import Link from "next/link"
 const testimonials = [
   {
     id: "4ef1a912-a011-4cff-bb06-106ddecc7f29",
-    quote: "Service is outstanding, the help is professional, courteous and always on time for scheduled cleaning.  I would give Lucho's Cleaning my highest recommendation, you'll be very pleased!",
+    quote: "Service is outstanding, the help is professional, courteous and always on time for scheduled cleaning.  I would give Kathy Clean Houston my highest recommendation, you'll be very pleased!",
     author: "Steve M.",
     role: "",
     service: "",
@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     id: "9fbe59dc-8a15-4b81-87ce-5089ca91c437",
-    quote: "Nubia does an amazing job. She is meticulous and always willing to do anything we ask. We enjoy her great work as well as efficiency. We highly recommend Luchos Cleaning!",
+    quote: "Nubia does an amazing job. She is meticulous and always willing to do anything we ask. We enjoy her great work as well as efficiency. We highly recommend Kathy Clean Houston!",
     author: "Ximena V.",
     role: "",
     service: "",
@@ -34,7 +34,7 @@ const testimonials = [
   },
   {
     id: "752e2df4-8436-471c-a60b-6ab2dc94d686",
-    quote: "I was referred to Lucho's Cleaning by a neighbor. They were very professional, and I was able to schedule an appointment to start a regular cleaning service within just a few days. The person who came yesterday did an absolutely AMAZING job. You could really tell she took great pride in her work. Very professional, and I was truly impressed.",
+    quote: "I was referred to Kathy Clean Houston by a neighbor. They were very professional, and I was able to schedule an appointment to start a regular cleaning service within just a few days. The person who came yesterday did an absolutely AMAZING job. You could really tell she took great pride in her work. Very professional, and I was truly impressed.",
     author: "Donna W.",
     role: "",
     service: "",
@@ -43,7 +43,7 @@ const testimonials = [
   },
   {
     id: "51e43889-ccbc-4a21-a007-42495e2bbbab",
-    quote: "I've used Lucho's Cleaning and am impressed with how their cleaners are personable and have a high attention to detail. The front scheduling staff are great, and work hard to accommodate special requests. Highly recommend Lucho's Cleaning.",
+    quote: "I've used Kathy Clean Houston and am impressed with how their cleaners are personable and have a high attention to detail. The front scheduling staff are great, and work hard to accommodate special requests. Highly recommend Kathy Clean Houston.",
     author: "Rik W.",
     role: "",
     service: "",
@@ -52,7 +52,7 @@ const testimonials = [
   },
   {
     id: "6cc7ae1b-3b56-41b8-bb15-680068f1350d",
-    quote: "Want the best cleaning service in town? Then you want to call Lucho's Cleaning!! They will provide you with outstanding service, and they are very easy to work with.",
+    quote: "Want the best cleaning service in town? Then you want to call Kathy Clean Houston!! They will provide you with outstanding service, and they are very easy to work with.",
     author: "Kerri N.",
     role: "",
     service: "",

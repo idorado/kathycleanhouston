@@ -114,7 +114,7 @@ export default function RequestQuote() {
                 frameBorder="0"
                 marginHeight={0}
                 marginWidth={0}
-                title="Get your free cleaning quote | Luchos Cleaning"
+                title="Get your free cleaning quote | Kathy Clean Houston"
                 className="absolute top-0 left-0 w-full h-full"
               ></iframe>
             </div>
@@ -122,10 +122,10 @@ export default function RequestQuote() {
 
           {/* Left Column - Cards */}
           <div className="w-full lg:w-1/2 space-y-6">
-            {/* Why Choose Luchos Cleaning Card */}
+            {/* Why Choose Kathy Clean Houston Card */}
             <div className="bg-white/50 p-6 rounded-lg shadow-md border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Why Choose Luchos Cleaning?
+                Why Choose Kathy Clean Houston?
               </h3>
 
               {/* Item 1 */}
@@ -260,7 +260,7 @@ export default function RequestQuote() {
                     ))}
                   </div>
                   <p className="text-gray-600 text-sm italic">
-                    "Luchos Cleaning transformed my home! Their attention to detail
+                    "Kathy Clean Houston transformed my home! Their attention to detail
                     is incredible and the team is so professional."
                   </p>
                 </div>
@@ -310,7 +310,7 @@ export default function RequestQuote() {
                     ))}
                   </div>
                   <p className="text-gray-600 text-sm italic">
-                    "I've tried many cleaning services, but Luchos Cleaning is by
+                    "I've tried many cleaning services, but Kathy Clean Houston is by
                     far the best. They're reliable and do amazing work."
                   </p>
                 </div>
@@ -356,7 +356,7 @@ export default function RequestQuote() {
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <span className="text-gray-700">contact@luchoscleaning.com</span>
+                  <span className="text-gray-700">info@kathyclean.com</span>
                 </div>
 
                 <div className="flex items-start">
@@ -393,7 +393,7 @@ export default function RequestQuote() {
                 frameBorder="0"
                 marginHeight={0}
                 marginWidth={0}
-                title="Get your free cleaning quote | Lucho's Cleaning"
+                title="Get your free cleaning quote | Kathy Clean Houston"
                 className="absolute top-0 left-0 w-full h-full"
               ></iframe>
             </div>
@@ -568,7 +568,7 @@ export default function RequestQuote() {
 
               <div>
                 <h3 className="text-xl font-semibold mb-2">
-                  Why should I choose Luchos Cleaning?
+                  Why should I choose Kathy Clean Houston?
                 </h3>
                 <p>
                   Because we make cleaning simple, reliable, and stress-free.

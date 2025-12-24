@@ -47,7 +47,7 @@ export default async function WhyChooseUs() {
     <section className="p-16 bg-slate-50" id="why-choose-us">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-navy-800 mb-4">Why Trust Lucho's Cleaning For Your Cleaning Needs?</h2>
+          <h2 className="text-4xl font-bold text-navy-800 mb-4">Why Trust Kathy Clean Houston For Your Cleaning Needs?</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Great things start with a clean space. We don't just clean, we care. Every detail matters, every job is done with pride and a smile. If it's not perfect, we make it right. Clean. Professional. Happy. That's who we are.
           </p>

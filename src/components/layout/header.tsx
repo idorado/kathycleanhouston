@@ -42,12 +42,12 @@ export function Header() {
 						<div className="flex items-center gap-8">
 							<Link href="/" className="flex items-center">
 								<Image
-									src="/images/luchos-cleaning-logo.png"
-									alt="Luchos Cleaning logo"
-									width={260}
-									height={80}
+									src="/images/logo-nav.webp"
+									alt="Kathy Clean Houston logo"
+									width={150}
+									height={40}
 									priority
-									className="h-20 w-auto"
+									className="h-10 w-auto"
 								/>
 							</Link>
 						</div>
@@ -117,12 +117,12 @@ export function Header() {
 						<div className="flex items-center gap-8">
 							<Link href="/" className="flex items-center">
 								<Image
-									src="/images/luchos-cleaning-logo.png"
-									alt="Luchos Cleaning logo"
-									width={260}
-									height={80}
+									src="/images/logo-nav.webp"
+									alt="Kathy Clean Houston logo"
+									width={150}
+									height={40}
 									priority
-									className="h-20 w-auto"
+									className="h-10 w-auto"
 								/>
 							</Link>
 						</div>

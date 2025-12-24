@@ -12,19 +12,19 @@ import TallyListener from "@/components/analytics/TallyListener";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://luchoscleaning.com"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://kathycleanhouston.com"
   ),
   title: {
-    default: "Top Rated Cleaning Company in Houston, TX | Luchos Cleaning",
-    template: "%s | Luchos Cleaning",
+    default: "Top Rated Cleaning Company in Houston, TX | Kathy Clean Houston",
+    template: "%s | Kathy Clean Houston",
   },
   description:
     "Professional Cleaning Company in Houston, TX, serving Harris County, TX: recurring, deep cleans, move-in/out & post-construction. Fast, friendly, insured.",
   openGraph: {
     type: "website",
-    url: "https://luchoscleaning.com",
-    siteName: "Luchos Cleaning",
-    title: "Top Rated Cleaning Company in Houston, TX | Luchos Cleaning",
+    url: "https://kathycleanhouston.com",
+    siteName: "Kathy Clean Houston",
+    title: "Top Rated Cleaning Company in Houston, TX | Kathy Clean Houston",
     description:
       "Professional Cleaning Company in Houston, TX, serving Harris County, TX: recurring, deep cleans, move-in/out & post-construction. Fast, friendly, insured.",
     images: [
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
         url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu",
         width: 1200,
         height: 630,
-        alt: "Luchos Cleaning — Professional Cleaning Services",
+        alt: "Kathy Clean Houston — Professional Cleaning Services",
       },
     ],
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Top Rated Cleaning Company in Houston, TX | Luchos Cleaning",
+    title: "Top Rated Cleaning Company in Houston, TX | Kathy Clean Houston",
     description:
       "Professional cleaning services in Houston & surrounding areas, serving Harris County, TX. Get a fast quote.",
     images: [

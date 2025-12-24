@@ -121,10 +121,10 @@ export function Footer() {
                     </svg>
                   </div>
                   <a
-                    href="mailto:contact@luchoscleaning.com"
+                    href="mailto:info@kathyclean.com"
                     className="text-white hover:text-cyan-500"
                   >
-                    contact@luchoscleaning.com
+                    info@kathyclean.com
                   </a>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-primary pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-primary">
-          <p>© 2025 Luchos Cleaning. All rights reserved.</p>
+          <p>&copy; 2025 Kathy Clean Houston. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-primary">
               Privacy Policy

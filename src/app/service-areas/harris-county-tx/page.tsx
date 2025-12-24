@@ -19,17 +19,17 @@ import { LocationCard } from "@/components/sections/our-locations";
 import { canonicalPath } from "@/lib/canonical";
 import { redirect } from "next/navigation";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Comprehensive House and Commercial Cleaning Service in Harris County, TX",
   description:
-    "Luchos Cleaning offers a comprehensive house and commercial cleaning service in Harris County, TX. Detailed, and eco-friendly cleaning solutions. Call now!",
+    "Kathy Clean Houston offers a comprehensive house and commercial cleaning service in Harris County, TX. Detailed, and eco-friendly cleaning solutions. Call now!",
   keywords: [
     "Cleaning Harris County TX",
     "Comprehensive Cleaning",
-    "Luchos Cleaning",
+    "Kathy Clean Houston",
   ],
   alternates: {
-    canonical: "https://luchoscleaning.com/service-areas",
+    canonical: "https://kathycleanhouston.com/service-areas",
   },
   robots: {
     index: false,
@@ -57,10 +57,10 @@ export default async function Home() {
               </h1>
               <p className="text-lg">
                 <a
-                  href="https://luchoscleaning.com/"
+                  href="https://kathycleanhouston.com/"
                   className="underline text-secondary"
                 >
-                  Luchos Cleaning
+                  Kathy Clean Houston
                 </a>{" "}
                 provides a comprehensive cleaning service in Harris County, TX.
                 From detailed deep cleans to routine maintenance, our trusted
@@ -89,7 +89,7 @@ export default async function Home() {
             </div>
             <div className="relative hidden md:block w-full h-full">
               <Image
-                src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu"
+                src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiG9Z87dAevx4W3BMCKN5nR0IhOq1"
                 alt="Professional cleaning service"
                 width={400}
                 height={400}
@@ -200,7 +200,7 @@ export default async function Home() {
             </div>
             <div className="w-full md:w-1/2">
               <h2 className="text-3xl font-bold mb-6">
-                Why Choose Luchos Cleaning for Cleaning in Harris County, TX?
+                Why Choose Kathy Clean Houston for Cleaning in Harris County, TX?
               </h2>
               <p className="text-gray-600 mb-6">
                 Dedicated professionals ensuring spotless, healthy homes and
@@ -234,7 +234,7 @@ export default async function Home() {
                     Eco-Friendly and Safe Products:{" "}
                   </dt>
                   <dd className="inline">
-                    Luchos Cleaning uses only non-toxic, biodegradable
+                    Kathy Clean Houston uses only non-toxic, biodegradable
                     cleaning supplies that are safe for children, pets, and the
                     environment. Our approach combines sustainability with
                     effective cleaning power for peace of mind.
@@ -282,7 +282,7 @@ export default async function Home() {
                       A comprehensive cleaning service in Harris County, TX
                       typically includes complete dusting, floor mopping,
                       vacuuming, and disinfecting of all living areas, kitchens,
-                      and bathrooms. <b>Luchos Cleaning</b> ensures every
+                      and bathrooms. <b>Kathy Clean Houston</b> ensures every
                       surface is spotless using eco-friendly products and
                       attention to detail that leaves spaces refreshed and
                       inviting.
@@ -297,7 +297,7 @@ export default async function Home() {
                     <AccordionContent>
                       The frequency depends on your household or business needs.
                       Most clients choose weekly or biweekly cleanings, while{" "}
-                      <b>Luchos Cleaning</b> also offers flexible monthly
+                      <b>Kathy Clean Houston</b> also offers flexible monthly
                       and deep-cleaning options to maintain long-term
                       cleanliness.
                     </AccordionContent>
@@ -311,7 +311,7 @@ export default async function Home() {
                     <AccordionContent>
                       No, professional cleaners bring all necessary tools and
                       products for a cleaning service in Harris County, TX.{" "}
-                      <b>Luchos Cleaning</b> arrives fully equipped with
+                      <b>Kathy Clean Houston</b> arrives fully equipped with
                       safe, biodegradable cleaning agents and professional-grade
                       equipment to guarantee exceptional results.
                     </AccordionContent>
@@ -331,7 +331,7 @@ export default async function Home() {
             <p className="text-gray-600 mb-6 text-center">
               Our comprehensive cleaning service in Harris County, TX covers
               homes and businesses across Houston, Spring Branch, and surrounding
-              areas. <b>Luchos Cleaning</b> provides detailed, dependable
+              areas. <b>Kathy Clean Houston</b> provides detailed, dependable
               cleaning that ensures every space remains spotless, fresh, and
               welcoming for residents and business owners.
             </p>

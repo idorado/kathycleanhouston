@@ -182,7 +182,7 @@ export function PriceCalculator() {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Lucho's Cleaning Cost Estimator</CardTitle>
+        <CardTitle>Kathy Clean Houston Cost Estimator</CardTitle>
         <CardDescription>Get an instant price estimate for our professional cleaning services</CardDescription>
       </CardHeader>
       <CardContent>

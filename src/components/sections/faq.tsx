@@ -4,12 +4,12 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 const faqItems = [
   {
-    question: "What cleaning services does Lucho's Cleaning offer in the Houston area?",
+    question: "What cleaning services does Kathy Clean Houston offer in the Houston area?",
     answer: "We provide house cleaning, deep cleaning, move in & move out cleaning, post-construction cleaning, and commercial cleaning across Houston, Spring Branch, The Heights, Upper Kirby, and nearby areas."
   },
   {
-    question: "Is Luchos Cleaning licensed, bonded, and insured in Texas?",
-    answer: "Yes! Lucho's Cleaning is fully licensed, bonded, and insured for residential and commercial cleaning throughout Texas. We'll gladly provide a Certificate of Insurance upon request."
+    question: "Is Kathy Clean Houston licensed, bonded, and insured in Texas?",
+    answer: "Yes! Kathy Clean Houston is fully licensed, bonded, and insured for residential and commercial cleaning throughout Texas. We'll gladly provide a Certificate of Insurance upon request."
   },
   {
     question: "How do I get a quote for cleaning services near Houston?",
@@ -32,7 +32,7 @@ const faqItems = [
     answer: "Your satisfaction is guaranteed. If something wasn't cleaned to your expectations, let us know within 48 hours and we'll re-clean the area at no extra cost."
   },
   {
-    question: "What makes Lucho's Cleaning different?",
+    question: "What makes Kathy Clean Houston different?",
     answer: "We focus on reliability, consistency, and communication. You'll get the same trusted cleaner whenever possible, a dedicated support team for scheduling, and quality guaranteed after every visit."
   }
 ]

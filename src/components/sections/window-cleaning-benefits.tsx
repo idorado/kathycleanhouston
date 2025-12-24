@@ -9,7 +9,7 @@ export default function WindowCleaningBenefits() {
             <h2 className="text-4xl md:text-5xl font-bold text-navy-800 text-center md:text-left mb-4">Why Clean Your Windows Regularly?</h2>
             <h3 className="text-xl font-semibold text-navy-800 mb-2">The benefits go beyond just appearance</h3>
             <p className="text-lg text-navy-700 mb-4">
-              Professional window cleaning does more than improve how your property looks, it also enhances comfort, health, and productivity. Lucho's Cleaning provides reliable residential and commercial window cleaning services in Houston and surrounding areas. Here’s why regular cleanings matter:
+              Professional window cleaning does more than improve how your property looks, it also enhances comfort, health, and productivity. Kathy Clean Houston provides reliable residential and commercial window cleaning services in Houston and surrounding areas. Here’s why regular cleanings matter:
             </p>
           </div>
           <div className="md:w-1/2 flex justify-center">
