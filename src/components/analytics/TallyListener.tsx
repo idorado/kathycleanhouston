@@ -1,6 +1,7 @@
 'use client';
 import { useEffect } from 'react';
 import posthog from 'posthog-js'
+import { ANALYTICS_BRAND, ANALYTICS_LOCATION } from "@/lib/analytics";
 
 const TALLY_ORIGIN_RE = /^https:\/\/([a-z0-9-]+\.)?tally\.so$/i;
 
@@ -50,6 +51,8 @@ function trackPosthogLead({
     if (!posthog) return
 
     posthog.capture('lead_submit', {
+      brand: ANALYTICS_BRAND,
+      location: ANALYTICS_LOCATION,
       formId,
       formName,
       submissionId,

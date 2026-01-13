@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePostHog } from "posthog-js/react";
 import { cn } from "@/lib/utils";
+import { ANALYTICS_BRAND, ANALYTICS_LOCATION } from "@/lib/analytics";
 
 type RequestQuoteButtonProps = {
   location?: string;
@@ -16,12 +17,10 @@ export default function RequestQuoteButton({
   const posthog = usePostHog();
 
   const handleClick = () => {
-    console.log("DEBUG CTA – clicked (RequestQuoteButton, Luchos)");
-
     try {
       posthog?.capture("cta_request_quote_click", {
-        brand: "Luchos",
-        location: location ?? "unknown",
+        brand: ANALYTICS_BRAND,
+        location: ANALYTICS_LOCATION,
         path:
           typeof window !== "undefined"
             ? window.location.pathname
@@ -32,7 +31,7 @@ export default function RequestQuoteButton({
             : undefined,
       });
     } catch (e) {
-      console.error("PostHog CTA click failed (luchos)", e);
+      console.error("PostHog CTA click failed", e);
     }
   };
 
