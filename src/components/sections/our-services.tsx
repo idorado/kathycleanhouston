@@ -87,10 +87,7 @@ export default async function OurServices() {
           Services in Houston, TX
         </h2>
         <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
-          Kathy Clean Houston delivers top-rated house cleaning and commercial cleaning services
-          across the Houston area. We proudly serve Harris County, including
-          Houston, Spring Branch, Houston Heights, Upper Kirby, Memorial,
-          Uptown, Bellaire, and the Medical Center Area.
+          Kathy Clean delivers top-rated house cleaning and commercial cleaning services across the Houston area. We proudly serve Memorial, West University Place, Bellaire, River Oaks, and the Memorial Villages
         </p>
 
         <div className="mt-6 space-y-3 text-base md:text-lg text-gray-600 max-w-4xl mx-auto">

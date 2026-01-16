@@ -30,9 +30,24 @@ export function Header() {
 		{ href: '/house-cleaning-houston', title: 'House Cleaning', description: 'Professional home cleaning services' },
 		{ href: '/commercial-cleaning-houston', title: 'Commercial Cleaning', description: 'Office and business cleaning solutions' },
 	];
+	const allowedLocationSlugs = new Set([
+		"bellaire",
+		"river-oaks",
+		"the-memorial-villages",
+		"washington-ave-memorial-park",
+		"west-university-place",
+	]);
+
 	const locations = [...houstonServiceAreas]
-		.sort((a, b) => a.name.localeCompare(b.name))
-		.map((area) => ({ href: `/service-areas/${area.slug}`, name: area.name }));
+		.filter((area) => allowedLocationSlugs.has(area.slug))
+		.map((area) => ({
+			href: `/service-areas/${area.slug}`,
+			name:
+				area.slug === "washington-ave-memorial-park"
+					? "Washington Ave. / Memorial Park"
+					: area.name,
+		}))
+		.sort((a, b) => a.name.localeCompare(b.name));
 	return (
 		<header className="sticky top-0 z-50 bg-foreground py-3">
 			<div className="container mx-auto px-4">
@@ -86,15 +101,15 @@ export function Header() {
 									<DropdownMenu>
 										<DropdownMenuTrigger className="text-white text-lg text-left">Locations</DropdownMenuTrigger>
 										<DropdownMenuContent className="bg-foreground text-white">
-											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}>
-												<Link href="/service-areas">View All Locations</Link>
-											</DropdownMenuItem>
-											<DropdownMenuSeparator />
 											{locations.map(l => (
 												<DropdownMenuItem asChild key={l.href} onClick={() => setMobileMenuOpen(false)}>
 													<Link href={l.href}>{l.name}</Link>
 												</DropdownMenuItem>
 											))}
+											<DropdownMenuSeparator />
+											<DropdownMenuItem asChild onClick={() => setMobileMenuOpen(false)}>
+												<Link href="/service-areas">View all locations</Link>
+											</DropdownMenuItem>
 										</DropdownMenuContent>
 									</DropdownMenu>
 									<Link href="/about-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
@@ -157,16 +172,6 @@ export function Header() {
 											</NavigationMenuTrigger>
 											<NavigationMenuContent>
 												<ul className="grid w-[300px] gap-3 p-4">
-													<li>
-														<NavigationMenuLink asChild>
-															<Link href="/service-areas" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-																<div className="text-sm font-medium leading-none">View All Locations</div>
-															</Link>
-														</NavigationMenuLink>
-													</li>
-													<li aria-hidden>
-														<div className="h-px w-full bg-border" />
-													</li>
 													{locations.map(l => (
 														<li key={l.href}>
 															<NavigationMenuLink asChild>
@@ -176,6 +181,16 @@ export function Header() {
 															</NavigationMenuLink>
 														</li>
 													))}
+													<li aria-hidden>
+														<div className="h-px w-full bg-border" />
+													</li>
+													<li>
+														<NavigationMenuLink asChild>
+															<Link href="/service-areas" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+																<div className="text-sm font-medium leading-none">View all locations</div>
+															</Link>
+														</NavigationMenuLink>
+													</li>
 												</ul>
 											</NavigationMenuContent>
 										</NavigationMenuItem>

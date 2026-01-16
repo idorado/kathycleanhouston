@@ -22,14 +22,17 @@ export default function ServiceAreas() {
           <div className="flex flex-col lg:flex-row items-center">
             <div className="lg:w-full lg:pr-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center lg:text-left">
-                Service Areas for House Cleaning Service in Texas - Kathy Clean Houston
+                House Cleaning Services in Memorial, West University Place & Nearby Houston Neighborhoods
               </h1>
               <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
                 <p>
-                  Kathy Clean Houston proudly provides reliable house and commercial cleaning services across the Houston area. We serve Harris County, including Houston, Spring Branch, Houston Heights, Upper Kirby, Memorial, Uptown, Bellaire, and the Medical Center Area. Our trusted team is ready to keep your home or business spotless.
+                  Kathy Clean Houston specializes in professional house cleaning services for homes located in Memorial, West University Place, The Memorial Villages, Bellaire, and River Oaks. Our residential cleaning teams focus on neighborhoods where homeowners expect consistent quality, trusted professionals, and dependable service.
                 </p>
                 <p>
-                  We specialize in house cleaning, move-in/move-out cleaning, post-construction cleanup, and janitorial services. Whether you need recurring service or a one-time deep clean, our fully trained, insured, and background-checked cleaners deliver consistent, high-quality results.
+                  We provide recurring house cleaning, deep cleaning, move-in/move-out cleaning, and post-renovation cleanups for select residential communities across West Houston.
+                </p>
+                <p>
+                  All services are delivered by fully insured, background-checked cleaners and backed by our 48-hour satisfaction guarantee.
                 </p>
               </div>
 
@@ -72,26 +75,21 @@ export default function ServiceAreas() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-6">
-              Our Cleaning Services in Harris County, TX
+              Our Cleaning Services in Houston, TX
             </h2>
             <div className="bg-white p-8 rounded-lg">
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Kathy Clean Houston proudly serves the entire Houston metropolitan area and surrounding communities. Our strategically located service areas ensure we can provide prompt, reliable cleaning services to homes and businesses throughout the region.
+                  Kathy Clean Houston provides top-rated residential cleaning services for homeowners and families in Memorial, West University Place, and nearby high-end neighborhoods. Our strategically located teams allow us to deliver reliable, detail-focused cleaning with fast response times and consistent results.
                 </p>
                 <p>
-                  Each pin on the map represents one of our service locations where our professional cleaning teams are ready to deliver exceptional results. We understand the unique needs of each community and tailor our services accordingly.
+                  Our professional cleaning teams regularly serve homes that value trust, quality, and long-term reliability. We understand the unique needs of each neighborhood and tailor our services accordingly.
                 </p>
                 <p>
-                  We specialize in house cleaning, move-in/move-out cleaning,
-                  post-construction cleanup, and janitorial services. Whether
-                  you need recurring service or a one-time deep clean, our
-                  fully trained, insured, and background-checked cleaners
-                  deliver consistent, high-quality results.
+                  We specialize in recurring house cleaning, deep cleaning, and move-in/move-out services, delivered by fully trained, insured, and background-checked professionals.
                 </p>
                 <p>
-                  Looking for cleaning services near you? Contact us today to
-                  request your free quote.
+                  Looking for trusted house cleaning in your neighborhood? Request your free quote today.
                 </p>
               </div>
             </div>
@@ -104,14 +102,22 @@ export default function ServiceAreas() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">
-              Cities We Serve
+              Locations We Serve
             </h2>
             <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
               Select your city below for location-specific information
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {houstonServiceAreas.map((location, index) => (
+              {[...houstonServiceAreas]
+                .filter(
+                  (location) =>
+                    location.slug !== "houston" &&
+                    location.slug !== "spring-branch" &&
+                    location.slug !== "medical-center-area",
+                )
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map((location, index) => (
                 <LocationCard
                   key={index}
                   title={location.name}

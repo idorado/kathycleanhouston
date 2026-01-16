@@ -13,11 +13,10 @@ const HomeHero = () => {
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
           <span className="text-primary">Top Rated Cleaning Company</span>
           <br />
-          <span className="text-background">in Houston, TX</span>
+          <span className="text-background">in Memorial &amp; West University Place</span>
         </h1>
         <p className="text-lg">
-          We deliver spotless, healthy, and welcoming environments—perfect for
-          busy homes, productive offices, and everything in between.
+          We deliver spotless, healthy, and welcoming environments—perfect for busy families in Memorial, West U & nearby neighborhoods.
         </p>
         <div className="pt-4 flex flex-col md:flex-row gap-4">
           <RequestQuoteButton location="location_components_sections_home_hero" className="font-medium" />
