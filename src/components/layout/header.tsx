@@ -19,7 +19,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
 import PhoneButton from "@/components/PhoneButton";
-import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 import { houstonServiceAreas } from "@/lib/service-areas/houstonLocations";
 
 import React, { useState } from "react";
@@ -116,10 +115,18 @@ export function Header() {
 									<Link href="/work-with-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Work With Us</Link>
 									<div className="mt-2"><PhoneButton /></div>
 									<div className="mt-4 lg:hidden">
-										<RequestQuoteButton
-											location="location_mobile_menu"
-											className="w-full"
-										/>
+										<button
+											type="button"
+											className="py-2 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-10 rounded-md px-6 w-full sm:w-auto min-w-[180px] bg-primary text-primary-foreground shadow-xs hover:bg-primary/90"
+											data-tally-open="wMkPWA"
+											data-tally-layout="modal"
+											data-tally-width="600"
+											data-tally-hide-title="1"
+											data-tally-form-events-forwarding="1"
+											onClick={() => setTimeout(() => setMobileMenuOpen(false), 0)}
+										>
+											REQUEST A QUOTE
+										</button>
 									</div>
 								</nav>
 							</div>
@@ -216,10 +223,17 @@ export function Header() {
 						{/* Right: Desktop actions */}
 						<div className="flex items-center gap-3">
 							<div className="hidden xl:block">
-								<RequestQuoteButton
-									location="location_components_layout_header"
-									className="shrink-0"
-								/>
+								<button
+									type="button"
+									className="py-2 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-10 rounded-md px-6 w-full sm:w-auto min-w-[180px] bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 shrink-0"
+									data-tally-open="wMkPWA"
+									data-tally-layout="modal"
+									data-tally-width="600"
+									data-tally-hide-title="1"
+									data-tally-form-events-forwarding="1"
+								>
+									REQUEST A QUOTE
+								</button>
 							</div>
 							<PhoneButton />
 						</div>

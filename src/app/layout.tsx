@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 import { Header } from "@/components/layout/header";
@@ -94,6 +95,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* End Google Tag Manager (noscript) */}
+        <Script src="https://tally.so/widgets/embed.js" strategy="afterInteractive" />
         <PostHogProvider>
           <div className="min-h-screen flex flex-col">
             <Header />
