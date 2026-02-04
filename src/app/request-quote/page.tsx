@@ -1,24 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { getAttribution, toQueryParams } from "@/lib/attribution";
 
 export default function RequestQuote() {
-  const [iframeSrc, setIframeSrc] = useState(
-    "https://tally.so/embed/wMkPWA?transparentBackground=1"
-  );
+  const [iframeSrc] = useState(() => {
+    const base = "https://tally.so/embed/wMkPWA?transparentBackground=1";
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const params = window.location.search;
-      if (params) {
-        setIframeSrc(
-          `https://tally.so/embed/wMkPWA?transparentBackground=1&${params.substring(
-            1
-          )}`
-        );
-      }
+    if (typeof window === "undefined") return base;
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const hasUrlUtms =
+      urlParams.has("utm_source") ||
+      urlParams.has("utm_medium") ||
+      urlParams.has("utm_campaign") ||
+      urlParams.has("utm_term") ||
+      urlParams.has("utm_content");
+
+    if (hasUrlUtms) {
+      const qs = urlParams.toString();
+      return qs ? `${base}&${qs}` : base;
     }
-  }, []);
+
+    const attr = getAttribution();
+    const qsWithMaybeQuestion = toQueryParams(attr);
+    const qs = qsWithMaybeQuestion.startsWith("?")
+      ? qsWithMaybeQuestion.slice(1)
+      : qsWithMaybeQuestion;
+
+    return qs ? `${base}&${qs}` : base;
+  });
 
   return (
     <div className="min-h-screen bg-blue-50">

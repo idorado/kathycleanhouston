@@ -20,11 +20,29 @@ import {
 import { Menu } from "lucide-react";
 import PhoneButton from "@/components/PhoneButton";
 import { houstonServiceAreas } from "@/lib/service-areas/houstonLocations";
+import { getAttribution, toQueryParams } from "@/lib/attribution";
 
 import React, { useState } from "react";
 
 export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const injectAttributionIntoUrlTemporarily = () => {
+		try {
+			const attr = getAttribution();
+			if (!attr) return;
+
+			const original = window.location.pathname + window.location.search;
+			const qsWithMaybeQuestion = toQueryParams(attr);
+			const qs = qsWithMaybeQuestion.startsWith("?")
+				? qsWithMaybeQuestion.slice(1)
+				: qsWithMaybeQuestion;
+
+			if (!qs) return;
+
+			history.replaceState(null, "", window.location.pathname + "?" + qs);
+			setTimeout(() => history.replaceState(null, "", original), 500);
+		} catch {}
+	};
 	const services = [
 		{ href: '/house-cleaning-houston', title: 'House Cleaning', description: 'Professional home cleaning services' },
 		{ href: '/commercial-cleaning-houston', title: 'Commercial Cleaning', description: 'Office and business cleaning solutions' },
@@ -123,7 +141,10 @@ export function Header() {
 											data-tally-width="600"
 											data-tally-hide-title="1"
 											data-tally-form-events-forwarding="1"
-											onClick={() => setTimeout(() => setMobileMenuOpen(false), 0)}
+											onClick={() => {
+												injectAttributionIntoUrlTemporarily();
+												setTimeout(() => setMobileMenuOpen(false), 0);
+											}}
 										>
 											REQUEST A QUOTE
 										</button>
@@ -231,6 +252,7 @@ export function Header() {
 									data-tally-width="600"
 									data-tally-hide-title="1"
 									data-tally-form-events-forwarding="1"
+									onClick={injectAttributionIntoUrlTemporarily}
 								>
 									REQUEST A QUOTE
 								</button>
