@@ -1,36 +1,38 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getAttribution, toQueryParams } from "@/lib/attribution";
 
 export default function RequestQuote() {
-  const [iframeSrc] = useState(() => {
-    const base = "https://tally.so/embed/wMkPWA?transparentBackground=1";
+  const base = "https://tally.so/embed/wMkPWA?transparentBackground=1";
+  const [iframeSrc, setIframeSrc] = useState<string | null>(null);
 
-    if (typeof window === "undefined") return base;
-
+  useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-
-    const hasUrlUtms =
+    const hasCampaignParams =
       urlParams.has("utm_source") ||
       urlParams.has("utm_medium") ||
       urlParams.has("utm_campaign") ||
       urlParams.has("utm_term") ||
-      urlParams.has("utm_content");
+      urlParams.has("utm_content") ||
+      urlParams.has("gclid") ||
+      urlParams.has("gbraid") ||
+      urlParams.has("wbraid") ||
+      urlParams.has("gad_campaignid") ||
+      urlParams.has("gad_source");
 
-    if (hasUrlUtms) {
-      const qs = urlParams.toString();
-      return qs ? `${base}&${qs}` : base;
+    let qs = "";
+    if (hasCampaignParams) {
+      qs = urlParams.toString();
+    } else {
+      const attr = getAttribution();
+      const qsMaybe = toQueryParams(attr);
+      qs = qsMaybe.startsWith("?") ? qsMaybe.slice(1) : qsMaybe;
     }
 
-    const attr = getAttribution();
-    const qsWithMaybeQuestion = toQueryParams(attr);
-    const qs = qsWithMaybeQuestion.startsWith("?")
-      ? qsWithMaybeQuestion.slice(1)
-      : qsWithMaybeQuestion;
-
-    return qs ? `${base}&${qs}` : base;
-  });
+    const finalSrc = qs ? `${base}&${qs}` : base;
+    setIframeSrc(finalSrc);
+  }, []);
 
   return (
     <div className="min-h-screen bg-blue-50">
@@ -118,17 +120,21 @@ export default function RequestQuote() {
           {/* Right Column - Form - Moved to top on mobile */}
           <div className="w-full lg:hidden mb-8 bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="relative pb-[160%] h-0 overflow-hidden">
-              <iframe
-                src={iframeSrc}
-                loading="lazy"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                marginHeight={0}
-                marginWidth={0}
-                title="Get your free cleaning quote | Kathy Clean Houston"
-                className="absolute top-0 left-0 w-full h-full"
-              ></iframe>
+              {iframeSrc ? (
+                <iframe
+                  src={iframeSrc}
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  marginHeight={0}
+                  marginWidth={0}
+                  title="Get your free cleaning quote | Kathy Clean Houston"
+                  className="absolute top-0 left-0 w-full h-full"
+                ></iframe>
+              ) : (
+                <div className="absolute top-0 left-0 w-full h-full bg-white" />
+              )}
             </div>
           </div>
 
@@ -397,17 +403,21 @@ export default function RequestQuote() {
           {/* Right Column - Form - Hidden on mobile, shown on lg screens */}
           <div className="hidden lg:block w-full lg:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="relative pb-[160%] h-0 overflow-hidden">
-              <iframe
-                src={iframeSrc}
-                loading="lazy"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                marginHeight={0}
-                marginWidth={0}
-                title="Get your free cleaning quote | Kathy Clean Houston"
-                className="absolute top-0 left-0 w-full h-full"
-              ></iframe>
+              {iframeSrc ? (
+                <iframe
+                  src={iframeSrc}
+                  loading="lazy"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  marginHeight={0}
+                  marginWidth={0}
+                  title="Get your free cleaning quote | Kathy Clean Houston"
+                  className="absolute top-0 left-0 w-full h-full"
+                ></iframe>
+              ) : (
+                <div className="absolute top-0 left-0 w-full h-full bg-white" />
+              )}
             </div>
           </div>
         </div>
