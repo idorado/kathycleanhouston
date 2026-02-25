@@ -23,7 +23,7 @@ import { Label } from "@/components/ui/label";
 
 const translations = {
   en: {
-    title: 'Work with Us',
+    title: 'Partner With Kathy Clean',
     fullName: 'Full Name',
     phone: 'Cellphone (WhatsApp)',
     email: 'Email',
@@ -31,16 +31,16 @@ const translations = {
     ownCar: 'Do you have your own car?',
     yes: 'Yes',
     no: 'No',
-    legalWork: 'Do you have legal permission to work in the US?',
-    daysAvailable: 'What days/times can you work? (Check all that apply)',
+    legalWork: 'Are you currently located in the US?',
+    daysAvailable: 'What days/times are you generally available? (Check all that apply)',
     weekdays: 'Monday to Friday',
     weekends: 'Weekends',
     mornings: 'Mornings',
     afternoons: 'Afternoons',
-    schedule: 'What is your schedule availability?',
-    scheduleExample: 'E.g.: Monday to Friday 8am - 5pm, weekends, only nights, etc.',
-    backgroundCheck: 'Are you willing to undergo a background check?',
-    video: "Record a video about your experience and why you want to work at Kathy Clean Houston",
+    availabilityNotes: 'Availability details (optional)',
+    availabilityNotesExample: 'E.g.: weekdays 8am–5pm, weekends, evenings only, etc.',
+    screeningConsent: 'Are you willing to complete a basic identity & safety verification?',
+    video: "Record a video about your experience and why you want to partner with Kathy Clean Houston",
     submit: 'Submit',
     language: 'Language',
     uploading: 'Uploading...',
@@ -56,7 +56,7 @@ const translations = {
     },
   },
   es: {
-    title: 'Trabaja con Nosotros',
+    title: 'Asóciate con Kathy Clean',
     fullName: 'Nombre completo',
     phone: 'Celular (WhatsApp)',
     email: 'Correo electrónico',
@@ -64,16 +64,16 @@ const translations = {
     ownCar: '¿Tienes auto propio?',
     yes: 'Sí',
     no: 'No',
-    legalWork: '¿Tienes permiso para trabajar legalmente en EE. UU.?',
-    daysAvailable: '¿Qué días y horarios puedes trabajar? (Marca todos los que puedas)',
+    legalWork: '¿Actualmente estás ubicado(a) en EE. UU.?',
+    daysAvailable: '¿Qué días y horarios tienes disponibilidad general? (Marca todos los que puedas)',
     weekdays: 'Lunes a Viernes',
     weekends: 'Fines de semana',
     mornings: 'Mañanas',
     afternoons: 'Tardes',
-    schedule: '¿Cuál es tu disponibilidad de horario?',
-    scheduleExample: 'Ej: Lunes a Viernes 8am - 5pm, fines de semana, solo noches, etc.',
-    backgroundCheck: '¿Estás dispuesto(a) a que te hagamos un background check?',
-    video: "Graba un video contándonos sobre tus últimas experiencias y por qué te interesa trabajar en Kathy Clean Houston",
+    availabilityNotes: 'Detalles de disponibilidad (opcional)',
+    availabilityNotesExample: 'Ej: Lunes a Viernes 8am - 5pm, fines de semana, solo noches, etc.',
+    screeningConsent: '¿Estás dispuesto(a) a completar una verificación básica de identidad y seguridad?',
+    video: "Graba un video contándonos sobre tu experiencia y por qué te interesa asociarte con Kathy Clean Houston",
     submit: 'Enviar',
     language: 'Idioma',
     uploading: 'Subiendo...',
@@ -111,8 +111,8 @@ export default function WorkWithUsPage() {
     d => d.weekdays || d.weekends || d.mornings || d.afternoons,
     { message: "Select at least one option" }
   ),
-  schedule: z.string().min(1, { message: "Required" }),
-  backgroundCheck: z.enum(["yes", "no"], { required_error: "Required" }),
+  availabilityNotes: z.string().optional(),
+  screeningConsent: z.enum(["yes", "no"], { required_error: "Required" }),
   video: z.any().refine(file => file instanceof File, { message: "Required" }),
   source: z.array(z.string()).optional(),
   notes: z.string().optional(),
@@ -135,8 +135,8 @@ const form = useForm<WorkWithUsFormValues>({
       mornings: false,
       afternoons: false,
     },
-    schedule: '',
-    backgroundCheck: undefined,
+    availabilityNotes: '',
+    screeningConsent: undefined,
     video: undefined,
     source: [],
     notes: '',
@@ -341,24 +341,25 @@ const onSubmit = async (data: WorkWithUsFormValues) => {
             </div>
           </div>
           <FormField
-            name="schedule"
+            name="availabilityNotes"
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t.schedule} <span className="text-red-500">*</span></FormLabel>
+                <FormLabel>{t.availabilityNotes}</FormLabel>
                 <FormControl>
-                  <Textarea {...field} placeholder={t.scheduleExample} />
+                  <Textarea {...field} placeholder={t.availabilityNotesExample} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
+
           <FormField
-            name="backgroundCheck"
+            name="screeningConsent"
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t.backgroundCheck} <span className="text-red-500">*</span></FormLabel>
+                <FormLabel>{t.screeningConsent} <span className="text-red-500">*</span></FormLabel>
                 <FormControl>
                   <RadioGroup
                     onValueChange={field.onChange}

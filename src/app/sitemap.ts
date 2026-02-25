@@ -8,7 +8,6 @@ const staticRoutes: string[] = [
   "/about-us",
   "/request-quote",
   "/faq",
-  "/work-with-us",
   "/service-areas",
   ...houstonServiceAreas.map((area) => `/service-areas/${area.slug}`),
   "/house-cleaning-houston",

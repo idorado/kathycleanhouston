@@ -43,7 +43,7 @@ const testimonials = [
   },
   {
     id: "51e43889-ccbc-4a21-a007-42495e2bbbab",
-    quote: "I've used Kathy Clean Houston and am impressed with how their cleaners are personable and have a high attention to detail. The front scheduling staff are great, and work hard to accommodate special requests. Highly recommend Kathy Clean Houston.",
+    quote: "I've used Kathy Clean Houston and am impressed with how the service professionals are personable and have a high attention to detail. The scheduling support is great and works hard to accommodate special requests. Highly recommend Kathy Clean Houston.",
     author: "Rik W.",
     role: "",
     service: "",

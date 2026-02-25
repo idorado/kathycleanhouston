@@ -37,7 +37,7 @@ export default function ServiceAreaHighlight({ location }: ServiceAreaHighlightP
           <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-2">Window Cleaning Services in {loc}</h3>
           <p className="font-semibold text-navy-800 mb-2">Residential & Commercial Window Cleaning You can Rely On.</p>
           <p className="text-base md:text-lg text-[#454545] mb-6">
-            Kathy Clean Houston provides professional window cleaning services in {loc} for both homes and businesses. Our trained technicians use high-quality equipment to deliver streak-free results — whether it's for storefronts, office buildings, or multi-story homes. Trusted by business owners, property managers and homeowners across {loc}.
+            Kathy Clean Houston provides professional window cleaning services in {loc} for both homes and businesses. Our experienced professionals use high-quality equipment to deliver streak-free results — whether it's for storefronts, office buildings, or multi-story homes. Trusted by business owners, property managers and homeowners across {loc}.
           </p>
           <RequestQuoteButton />
         </div>

@@ -165,10 +165,10 @@ export default function RequestQuote() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">
-                    Professional & Trained Staff
+                    Professional Service
                   </h4>
                   <p className="text-gray-600 text-sm">
-                    Background-checked team with years of experience.
+                    Background-checked cleaning professionals with years of experience.
                   </p>
                 </div>
               </div>
@@ -279,11 +279,12 @@ export default function RequestQuote() {
                   </div>
                   <p className="text-gray-600 text-sm italic">
                     "Kathy Clean Houston transformed my home! Their attention to detail
-                    is incredible and the team is so professional."
+                    is incredible and they are so professional."
                   </p>
                 </div>
                 <p className="text-sm font-medium text-gray-900 ml-8">
-                  Sarah Johnson - Weekly Cleaning
+                  — Sarah M.
+Johnson - Weekly Cleaning
                 </p>
               </div>
 
@@ -344,8 +345,7 @@ export default function RequestQuote() {
                 Get In Touch
               </h3>
               <p className="text-gray-600 mb-4">
-                Our friendly team is here to answer your questions and help you
-                book your cleaning service.
+                We’re here to answer your questions and help you book your cleaning service.
               </p>
               <div className="space-y-3 mt-4">
                 <div className="flex items-start">
@@ -438,9 +438,9 @@ export default function RequestQuote() {
                   hours.
                 </p>
                 <p>
-                  Once we receive your request, our team reviews your home’s
-                  details (size, rooms, service type) and sends a customized
-                  estimate straight to your inbox or phone.
+                  Once we receive your request, we review your home’s details
+                  (size, rooms, service type) and send a customized estimate
+                  straight to your inbox or phone.
                 </p>
               </div>
 
@@ -579,12 +579,12 @@ export default function RequestQuote() {
 
               <div>
                 <h3 className="text-xl font-semibold mb-2">
-                  Who are your cleaners? Are they background checked?
+                  Who provides the service? Are they background checked?
                 </h3>
                 <p>
-                  All our cleaners are fully trained, background checked, and
-                  insured. We only hire experienced professionals who meet our
-                  standards for reliability, honesty, and attention to detail.
+                  Cleaning professionals are background checked and insured. We
+                  work with experienced professionals who meet our standards for
+                  reliability, honesty, and attention to detail.
                 </p>
               </div>
 
@@ -595,7 +595,7 @@ export default function RequestQuote() {
                 <p>
                   Because we make cleaning simple, reliable, and stress-free.
                   From your first quote to your regular cleanings, we handle
-                  everything with transparency, real-time updates, and a 48-hour
+                  everything with transparency, timely updates, and a 48-hour
                   satisfaction guarantee.
                 </p>
               </div>

@@ -6,7 +6,7 @@ export default function IndustriesSpecialized({ location = "Houston" }: Industri
     {
       title: "Preschools & Daycares",
       description:
-        "Specialized cleaning for safe, healthy environments for children and staff.",
+        "Specialized cleaning for safe, healthy environments for children and educators.",
       icon: (
         <img
           src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOa14iZLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu"

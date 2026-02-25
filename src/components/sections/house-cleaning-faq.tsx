@@ -19,7 +19,7 @@ Deep cleans and move-out services are priced individually based on scope.`
   },
   {
     question: 'Do you offer both residential and commercial cleaning in {Location}?',
-    answer: `Yes. We clean houses, apartments, offices, clinics, gyms, salons, and retail spaces throughout {Location}. Each client gets a customized cleaning checklist and flexible scheduling.`
+    answer: `Yes. We clean houses, apartments, offices, clinics, gyms, salons, and retail spaces throughout {Location}. Each client receives a tailored scope of service and flexible scheduling.`
   },
   {
     question: 'Are you licensed, bonded, and insured in {Location}?',
@@ -27,7 +27,7 @@ Deep cleans and move-out services are priced individually based on scope.`
   },
   {
     question: 'Do you bring cleaning supplies and equipment?',
-    answer: `Yes. Our cleaners come fully equipped with professional-grade supplies and tools. If you prefer eco-friendly products, just let us know—we offer green cleaning options safe for kids and pets.`
+    answer: `Cleaning professionals arrive prepared for the service. If you prefer eco-friendly products, just let us know—we offer green cleaning options safe for kids and pets.`
   },
   {
     question: 'Do you offer move-in or move-out cleanings in {Location}?',
@@ -42,8 +42,8 @@ Deep cleans and move-out services are priced individually based on scope.`
     answer: `Yes. We offer interior and exterior window cleaning for homes, offices, and buildings across {Location}. Add window cleaning to your house or commercial service for a complete shine.`
   },
   {
-    question: 'Are your cleaners background checked and trained?',
-    answer: `Yes. Every cleaner in {Location} passes a full background check and receives hands-on training. We only hire trustworthy professionals who meet our standards of quality and reliability.`
+    question: 'Are service professionals background checked?',
+    answer: `Yes. Every cleaning professional in {Location} passes a full background check. We prioritize consistent service quality and dependable results.`
   },
   {
     question: 'Can I schedule recurring cleaning in {Location}?',

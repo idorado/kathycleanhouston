@@ -15,7 +15,7 @@ export default function WhyBusinessesHomesChooseUs({ location = 'Houston' }: Why
           <div className="bg-[#F4F7FE] rounded-lg shadow-sm p-6 flex flex-col items-start">
             <UserPlus size={36} className="text-navy-800 mb-4" />
             <h3 className="font-bold text-lg mb-1 text-navy-800">We don’t send just anyone</h3>
-            <p className="text-gray-700">Our team is trained to spot buildup others miss.</p>
+            <p className="text-gray-700">We focus on thorough, detail-oriented results.</p>
           </div>
           {/* Card 2 */}
           <div className="bg-[#F4F7FE] rounded-lg shadow-sm p-6 flex flex-col items-start">
@@ -27,13 +27,13 @@ export default function WhyBusinessesHomesChooseUs({ location = 'Houston' }: Why
           <div className="bg-[#F4F7FE] rounded-lg shadow-sm p-6 flex flex-col items-start">
             <PartyPopper size={36} className="text-navy-800 mb-4" />
             <h3 className="font-bold text-lg mb-1 text-navy-800">15+ Years of Experience</h3>
-            <p className="text-gray-700">Trusted across {loc} for years. Our experienced team delivers consistent results with care and professionalism.</p>
+            <p className="text-gray-700">Trusted across {loc} for years. Experienced service professionals deliver consistent results with care and professionalism.</p>
           </div>
           {/* Card 4 */}
           <div className="bg-[#F4F7FE] rounded-lg shadow-sm p-6 flex flex-col items-start">
             <Sparkles size={36} className="text-navy-800 mb-4" />
             <h3 className="font-bold text-lg mb-1 text-navy-800">No Disruption, No Mess</h3>
-            <p className="text-gray-700">Our team works fast, clean, and without getting in the way of your customers or staff.</p>
+            <p className="text-gray-700">Service is delivered efficiently and with minimal disruption to your customers or people.</p>
           </div>
           {/* Card 5 */}
           <div className="bg-[#F4F7FE] rounded-lg shadow-sm p-6 flex flex-col items-start">

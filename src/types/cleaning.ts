@@ -4,7 +4,7 @@ export interface CleaningTask {
   notes: string;
 }
 
-export interface CleaningChecklistData {
+export interface ServiceScopeData {
   // Room types
   bathrooms?: CleaningTask[];
   bedrooms?: CleaningTask[];
@@ -19,6 +19,6 @@ export interface CleaningChecklistData {
   [key: string]: CleaningTask[] | string | undefined;
 }
 
-export interface CleaningChecklist {
-  cleaning_checklist: CleaningChecklistData;
+export interface ServiceScope {
+  service_scope: ServiceScopeData;
 }

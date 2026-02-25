@@ -13,7 +13,7 @@ export default function ThreeStepProcess() {
         <div className="bg-[#F5F7FB] rounded-lg p-8 w-full md:w-1/3 flex flex-col items-center shadow-sm">
           <span className="text-6xl font-bold text-navy-800 mb-2 drop-shadow-sm" style={{ WebkitTextStroke: '2px #17224D', color: 'white' }}>2</span>
           <h3 className="text-lg font-bold text-navy-800 mb-2">Get Matched</h3>
-          <p className="text-base text-navy-800 text-center">We'll assign the right team for your needs</p>
+          <p className="text-base text-navy-800 text-center">We’ll coordinate service details based on your needs</p>
         </div>
         {/* Step 3 */}
         <div className="bg-[#F5F7FB] rounded-lg p-8 w-full md:w-1/3 flex flex-col items-center shadow-sm">

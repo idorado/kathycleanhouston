@@ -15,7 +15,7 @@ const MAP_IFRAME_URLS: Record<string, string> = {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d443006.8294086512!2d-95.79082969612489!3d29.835685754864407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20Texas%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1763153833260!5m2!1ses-419!2sar",
 };
 
-export default function ServiceAreaHighlightGeneric({ location = "Houston", serviceTitle = "Cleaning Services in", description = "We provide professional cleaning services in your area for homes and businesses. Our trained technicians deliver reliable results for all types of properties.", subtitle = "Residential & Commercial Cleaning You can Rely On." }: ServiceAreaHighlightGenericProps) {
+export default function ServiceAreaHighlightGeneric({ location = "Houston", serviceTitle = "Cleaning Services in", description = "We provide professional cleaning services in your area for homes and businesses. Our experienced professionals deliver reliable results for all types of properties.", subtitle = "Residential & Commercial Cleaning You can Rely On." }: ServiceAreaHighlightGenericProps) {
   const mapUrl = MAP_IFRAME_URLS[location] || MAP_IFRAME_URLS["Houston"];
 
   return (

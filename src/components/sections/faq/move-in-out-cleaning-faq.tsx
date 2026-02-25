@@ -19,7 +19,7 @@ import {
                 <AccordionItem value="item-2">
                     <AccordionTrigger>Do I need to be present for the cleaning?</AccordionTrigger>
                     <AccordionContent>
-                        No, you do not need to be present. As long as we have access to the property, our team can complete the cleaning. We will coordinate with you to arrange for key pickup and drop-off if necessary.
+                        No, you do not need to be present. As long as we have access to the property, service can be completed. We will coordinate with you to arrange for key pickup and drop-off if necessary.
                     </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-3">
@@ -31,7 +31,7 @@ import {
                 <AccordionItem value="item-4">
                     <AccordionTrigger>Do you provide the cleaning supplies and equipment?</AccordionTrigger>
                     <AccordionContent>
-                        Yes, our professional cleaning team comes fully equipped with all the necessary supplies and equipment to perform a thorough cleaning. We use high-quality, eco-friendly products to ensure the best results.
+                        Cleaning professionals arrive prepared for the service. We use high-quality, eco-friendly products to support great results.
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

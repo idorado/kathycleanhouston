@@ -86,9 +86,9 @@ const WindowPriceCalculator = () => {
       addons += windowCount * 2 // $2 per screen
     }
     
-    // Add track cleaning
+    // Add rail cleaning
     if (tracks) {
-      addons += windowCount * 1.5 // $1.50 per track
+      addons += windowCount * 1.5 // $1.50 per window rail
     }
     
     setBasePrice(base)
@@ -241,7 +241,7 @@ const WindowPriceCalculator = () => {
                         />
                       </FormControl>
                       <FormLabel className="text-sm font-normal">
-                        Track Cleaning ($1.50 per window)
+                        Rail Cleaning ($1.50 per window)
                       </FormLabel>
                     </FormItem>
                   )}

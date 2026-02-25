@@ -184,9 +184,10 @@ function DropdownMenuShortcut({
     <span
       data-slot="dropdown-menu-shortcut"
       className={cn(
-        "text-muted-foreground ml-auto text-xs tracking-widest",
+        "text-muted-foreground ml-auto text-xs",
         className
       )}
+      style={{ letterSpacing: "0.25em" }}
       {...props}
     />
   )

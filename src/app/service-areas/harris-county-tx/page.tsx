@@ -66,7 +66,7 @@ export default async function Home() {
                 From detailed deep cleans to routine maintenance, our trusted
                 professionals deliver spotless results that make every room
                 shine. Whether you’re preparing for guests or maintaining a
-                healthy space, our team ensures your home or business stays
+                healthy space, we help ensure your home or business stays
                 fresh, organized, and inviting.
               </p>
               <div className="pt-4 flex flex-col md:flex-row gap-4">

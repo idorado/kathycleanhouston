@@ -31,7 +31,7 @@ const CommercialServiceComponent = async ({
       {/* Hero Section */}
       <HeroSection
         title={`Commercial Cleaning${location ? ` in ${location}` : ""}`}
-        description="We offer thorough window cleaning services that enhance the appearance of your business or home. From standard interior/exterior cleaning to hard water stain removal, our team ensures a spotless view every time."
+        description="We offer thorough window cleaning services that enhance the appearance of your business or home. From standard interior/exterior cleaning to hard water stain removal, we prioritize a spotless view every time."
         imgUrl="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomNqiHdB8Qqho34HzWAgdjRlcDPJntsL1f2TIb"
         imgAlt="Professional commercial cleaning service"
         imgWidth={400}
@@ -111,7 +111,7 @@ const CommercialServiceComponent = async ({
         location={location}
         serviceTitle="Commercial Cleaning Services in"
         subtitle="Office, Retail & Janitorial Cleaning You Can Count On"
-        description={`Kathy Clean Houston delivers reliable commercial cleaning services in ${location} tailored for offices, retail spaces, and other business environments. Our trained professionals use high-quality products and proven systems to ensure your space is spotless, safe, and welcoming. Whether it's a small office, a large facility, or a multi-location business. Trusted by business owners and property managers across ${location}.`}
+        description={`Kathy Clean Houston delivers reliable commercial cleaning services in ${location} tailored for offices, retail spaces, and other business environments. We use high-quality products and proven systems to help keep your space spotless, safe, and welcoming. Whether it's a small office, a large facility, or a multi-location business. Trusted by business owners and property managers across ${location}.`}
       />
       <WhyInvestInCommercialCleaningSection />
       <CommercialCleaningFAQ location={location} />

@@ -38,7 +38,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
           </h1>
           <p className="text-base sm:text-lg mb-6">
             Looking for trusted house cleaning services in {displayLocation}?<br />
-            Kathy Clean Houston delivers affordable, top-rated cleanings backed by a team with years of experience and satisfied customers in {displayLocation} and surrounding areas.
+            Kathy Clean Houston delivers affordable, top-rated cleanings backed by years of experience and satisfied customers in {displayLocation} and surrounding areas.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <Button

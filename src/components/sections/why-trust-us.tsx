@@ -13,7 +13,7 @@ interface WhyTrustUsProps {
 
 const defaultContent = {
   title: "Why {location} Trusts Our {serviceType} Services",
-  description: `For years, we've been providing top-quality cleaning services to homes and businesses throughout Houston and the surrounding communities.\n\nOur team of experienced professionals is committed to delivering exceptional results with attention to detail and a personal touch that large cleaning chains simply can't match.`
+  description: `For years, we've been providing top-quality cleaning services to homes and businesses throughout Houston and the surrounding communities.\n\nExperienced service professionals are committed to delivering exceptional results with attention to detail and a personal touch that large cleaning chains simply can't match.`
 };
 
 export default function WhyTrustUsSection({ location, serviceType, locationContent }: WhyTrustUsProps) {
@@ -26,7 +26,7 @@ export default function WhyTrustUsSection({ location, serviceType, locationConte
 
   const description =
     (location === "Houston" || location === "Houston, TX")
-      ? "Houston families and homeowners choose us because we treat every space like our own. Our cleaners are professional, careful, and committed to delivering spotless results you can feel the moment you walk in."
+      ? "Houston families and homeowners choose us because we treat every space like our own. Service is delivered with care and a commitment to spotless results you can feel the moment you walk in."
       : (content.description || defaultContent.description);
   return (
     <section className="bg-[#F4F4F4] border-t border-b border-border py-12 md:py-16">

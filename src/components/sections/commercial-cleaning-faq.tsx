@@ -9,7 +9,7 @@ interface CommercialCleaningFAQProps {
 const faqItems = [
   {
     question: `What types of commercial spaces do you clean in {Location}?`,
-    answer: `We clean offices, clinics, gyms, retail stores, schools, and other commercial buildings throughout {Location}. Each facility gets a tailored cleaning checklist.`
+    answer: `We clean offices, clinics, gyms, retail stores, schools, and other commercial buildings throughout {Location}. Each facility receives a tailored scope of service.`
   },
   {
     question: 'Do you provide cleaning after business hours?',
@@ -17,11 +17,11 @@ const faqItems = [
   },
   {
     question: 'Are you insured for commercial clients?',
-    answer: 'Absolutely. We carry full liability and workers\' compensation insurance. Many of our clients request Certificates of Insurance (COIs)—we\'ll gladly provide one.'
+    answer: 'Absolutely. We carry General Liability insurance. Many of our clients request Certificates of Insurance (COIs)—we\'ll gladly provide one.'
   },
   {
     question: 'Can I have the same crew every time?',
-    answer: 'Yes, we assign a consistent, trusted cleaning team to your business for familiarity and security.'
+    answer: 'Whenever possible, we coordinate for a consistent service experience for familiarity and security.'
   },
   {
     question: 'Do you offer recurring janitorial services?',

@@ -61,7 +61,7 @@ function trackPosthogLead({
       url: typeof window !== 'undefined' ? window.location.href : undefined,
     })
   } catch (e) {
-    // fail silently – tracking should never break the app
+    // fail silently – analytics should never break the app
     console.error('PostHog lead_submit failed', e)
   }
 }

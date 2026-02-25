@@ -22,8 +22,8 @@ const cleaningServices: ServiceType[] = [
     description: "Our most popular option, trusted by homeowners who value consistency and convenience.",
     features: [
       "Customers love our flexibility, allowing them to schedule cleanings that fit their lifestyle.",
-      "They also appreciate our trained and dedicated cleaners, who provide reliable, high-quality service every time.",
-      "Many of our clients build strong relationships with their preferred cleaners, enjoying the comfort of seeing familiar faces who understand their home and preferences."
+      "They also appreciate cleaning professionals who provide reliable, high-quality service every time.",
+      "Many of our clients enjoy the comfort of a familiar service experience and consistent attention to their preferences."
     ],
     image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOlEz0gLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu"
   },
@@ -33,7 +33,7 @@ const cleaningServices: ServiceType[] = [
     description: "Comprehensive cleaning services for those transitioning to a new home or apartment.",
     features: [
       "We ensure every corner of your new or previous home is spotless and ready for the next chapter.",
-      "Our detailed cleaning checklist covers areas that are often overlooked during regular cleanings.",
+      "We focus on thorough, consistent results across the areas that are often overlooked during regular cleanings.",
       "Property managers and landlords trust us to prepare their properties for new tenants."
     ],
     image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomndt4D5wNq3haW9IjyTl7dbP5tZX4mrvg1GQH"
@@ -44,7 +44,7 @@ const cleaningServices: ServiceType[] = [
     description: "Specialized cleaning after renovation or construction projects to remove dust and debris.",
     features: [
       "We remove construction dust, debris, and residues from all surfaces and hard-to-reach areas.",
-      "Our team is equipped with professional tools to handle post-construction challenges.",
+      "Cleaning professionals arrive prepared to handle post-construction cleaning needs.",
       "We coordinate with contractors to ensure timely cleaning after project completion."
     ],
     image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlombX3i6ckGctfxEFSjXR7am2eDqMn9h1wrd0OP"
@@ -77,7 +77,7 @@ const windowServices: ServiceType[] = [
     description: "Professional window cleaning for homes of all sizes, ensuring streak-free, crystal-clear windows.",
     features: [
       "Interior and exterior window cleaning",
-      "Screen and track cleaning available",
+      "Screen and rail cleaning available",
       "Eco-friendly cleaning solutions"
     ],
     image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomM7ix4wYzdDOT26oVhPrB8Uy5g9WlSQn1sNEG"

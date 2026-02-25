@@ -48,12 +48,12 @@ export default function About() {
 
         <h3 className="text-xl font-semibold text-accent">Local focus, professional standards</h3>
         <p>
-          Our Houston team is managed locally. That means better communication, faster response times, and real accountability.
+          Services are coordinated locally. That means better communication, faster response times, and clear accountability.
         </p>
 
-        <h3 className="text-xl font-semibold text-accent">Trained, vetted cleaning professionals</h3>
+        <h3 className="text-xl font-semibold text-accent">Vetted cleaning professionals</h3>
         <p>
-          Every cleaner we work with is carefully vetted and trained to follow detailed cleaning checklists and consistent quality standards.
+          Every cleaning professional we work with is carefully vetted and selected for consistent, detail-focused results.
         </p>
 
         <h3 className="text-xl font-semibold text-accent">Fully insured and reliable service</h3>
@@ -71,24 +71,22 @@ export default function About() {
       </div>
 
       <div className="space-y-6 mb-8">
-        <h2 className="text-2xl font-bold text-accent">Our Cleaning Services in Houston</h2>
-        <p>Kathy Clean Houston offers a full range of residential cleaning services, including:</p>
+        <h2 className="text-2xl font-bold text-accent">Home Cleaning That Fits Your Life</h2>
         <ul className="list-disc pl-6 space-y-1">
-          <li>Recurring house cleaning (weekly, bi-weekly, monthly)</li>
-          <li>Deep cleaning services</li>
-          <li>Move-in and move-out cleaning</li>
-          <li>One-time cleanings</li>
+          <li>Reliable weekly, bi-weekly, or monthly cleanings</li>
+          <li>Deep cleaning and move-in/move-out options</li>
+          <li>Fully insured and background-checked professionals</li>
           <li>Customized cleaning plans tailored to your home</li>
         </ul>
         <p>
-          Whether you live in a house, apartment, or townhome, our team adapts the service to your space — not the other way around.
+          Whether you live in a house, apartment, or townhome, we adapt the service to your space — not the other way around.
         </p>
       </div>
 
       <div className="space-y-6 mb-8">
         <h2 className="text-2xl font-bold text-accent">A Brand Built to Grow — Without Losing the Local Touch</h2>
         <p>
-          Kathy Clean is expanding to multiple cities, but every location operates with a strong local presence. When you book Kathy Clean Houston, you’re not calling a national call center — you’re working with a Houston-based team that understands the area and takes pride in serving it.
+          Kathy Clean is expanding to multiple cities, but every location operates with a strong local presence. When you book Kathy Clean Houston, you’re not calling a national call center — you’re working with a Houston-based service that understands the area and takes pride in serving it.
         </p>
         <p>As we grow, our commitment remains the same:</p>
         <ul className="list-disc pl-6 space-y-1">

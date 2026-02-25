@@ -18,7 +18,7 @@ export default function ServiceAreaHighlightHouseCleaning({ location }: ServiceA
       <div className="max-w-4xl mx-auto rounded-3xl bg-white px-6 py-10 flex flex-col items-center text-center shadow-lg">
         <h2 className="text-3xl md:text-4xl font-bold text-navy-800 mb-4">Servicing {loc}</h2>
         <p className="text-lg text-navy-700 mb-8">
-          Our house cleaning team proudly serves {loc} and its surrounding areas, ensuring a spotless home for all our clients.
+          House cleaning service is available throughout {loc} and surrounding areas, helping keep homes spotless across the community.
         </p>
         <div className="w-full h-96 rounded-xl overflow-hidden">
           <iframe

@@ -27,19 +27,19 @@ export default async function WhyChooseUs() {
       description: "Our service is so good, we guarantee it. If you are not 100% satisfied with your cleaning, contact us within 48 hours, and we will gladly re-clean any area you're dissatisfied with, at no extra cost."
     },
     {
-      icon: <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom5Qw8arRQnkuiVT9l8U1p3SweHAjbqyscPMXW" alt="Checklists"/>,
-      title: "Checklists",
-      description: "Excellence is in the details. We approach every job with the same rigor as pilots and surgeons, through checklists. Our process ensures nothing is missed, every time."
+      icon: <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom5Qw8arRQnkuiVT9l8U1p3SweHAjbqyscPMXW" alt="Attention to detail"/>,
+      title: "Attention to Detail",
+      description: "Excellence is in the details. We focus on thorough, consistent results and attention to detail every visit."
     },
     {
       icon: <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomxlikN0PQRcBU1VN4YrWbTIXj8k39sPLKdZiv" alt="Fully Insured & Bonded"/>,
       title: "Fully Insured & Bonded",
-      description: "For your peace of mind, we are bonded for $1M and covered with up to $5M in General Liability insurance. Our team is made up of 100% legal workers and has one of the lowest turnover rates in the industry."
+      description: "For your peace of mind, we are bonded and covered with General Liability insurance."
     },
     {
-      icon: <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom4AHAO15dAlomP7EFuMse5X0rqt64ZLkg13W9" alt="Happy Employees = Better Service"/>,
-      title: "Happy Employees = Better Service",
-      description: "Low turnover means our employees are treated well, which translates to better customer service and a more dedicated team."
+      icon: <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom4AHAO15dAlomP7EFuMse5X0rqt64ZLkg13W9" alt="Consistent service"/>,
+      title: "Consistency = Better Service",
+      description: "A consistent service experience supports better communication and reliable results."
     }
   ];
 

@@ -33,7 +33,7 @@ export default function Page() {
         <li>Detect, prevent, and address fraud, abuse, or safety issues.</li>
       </ul>
 
-      <h2>3. Cookies & Tracking</h2>
+      <h2>3. Cookies & Analytics</h2>
       <p>
         We use cookies and similar technologies for essential functions, performance, and analytics (e.g., PostHog).
         You can adjust cookie settings in your browser. Some features may not function properly without certain cookies.
@@ -48,10 +48,10 @@ export default function Page() {
         <li><strong>Business transfers</strong> (e.g., merger, acquisition) where your data may be part of the transferred assets.</li>
       </ul>
 
-      <h2>5. Data Retention</h2>
+      <h2>5. Data Storage Period</h2>
       <p>
-        We retain personal information for as long as necessary to provide services and fulfill the purposes described
-        in this Policy, unless a longer retention period is required or permitted by law.
+        We keep personal information for as long as necessary to provide services and fulfill the purposes described
+        in this Policy, unless a longer storage period is required or permitted by law.
       </p>
 
       <h2>6. Security</h2>
@@ -64,7 +64,7 @@ export default function Page() {
       <ul>
         <li><strong>Access/Correction/Deletion:</strong> You may request access to, correction, or deletion of your personal information, subject to legal limitations.</li>
         <li><strong>Marketing opt-out:</strong> You can opt out of marketing emails/SMS by using provided links or contacting us.</li>
-        <li><strong>Do Not Track:</strong> Our site does not currently respond to DNT signals.</li>
+        <li><strong>Browser privacy signals:</strong> Our site does not currently respond to DNT signals.</li>
       </ul>
 
       <h2>8. Children's Privacy</h2>

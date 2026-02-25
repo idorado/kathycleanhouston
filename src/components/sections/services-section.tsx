@@ -29,7 +29,7 @@ export const services = [
       "All standard cleaning tasks",
       "Inside cabinet cleaning",
       "Baseboards and crown molding",
-      "Window sill and track cleaning"
+      "Window sill and rail cleaning"
     ]
   },
   {
@@ -76,7 +76,7 @@ export const services = [
     features: [
       "Hospital-grade disinfection",
       "Compliance with health codes",
-      "Specialized staff training",
+      "Specialized protocols",
       "Proper medical waste handling"
     ]
   }

@@ -17,8 +17,8 @@ export type ApplicationData = {
     mornings: boolean;
     afternoons: boolean;
   };
-  schedule: string;
-  backgroundCheck: "yes" | "no";
+  availabilityNotes?: string;
+  screeningConsent: "yes" | "no";
   source?: string[];
   notes?: string;
 };
@@ -66,11 +66,13 @@ export async function addApplicationToNotion(data: ApplicationData) {
         "DaysAvailable": {
           rich_text: [{ text: { content: availabilityDaysString } }],
         },
-        "Schedule": {
-          rich_text: [{ text: { content: data.schedule } }],
+        "Availability Notes": {
+          rich_text: data.availabilityNotes
+            ? [{ text: { content: data.availabilityNotes } }]
+            : [],
         },
-        "agreeBackgroundCheck": {
-          checkbox: data.backgroundCheck === 'yes',
+        "Screening Consent": {
+          checkbox: data.screeningConsent === 'yes',
         },
         "Video": {
           files: [],

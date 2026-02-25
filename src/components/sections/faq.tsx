@@ -17,7 +17,7 @@ const faqItems = [
   },
   {
     question: "Do you bring your own supplies and equipment?",
-    answer: "Yes. All cleaners come fully equipped with professional-grade products, vacuums, and tools. If you prefer eco-friendly cleaning or have your own products, we're happy to use them."
+    answer: "Cleaning professionals arrive prepared for the service. If you prefer eco-friendly products or have your own products, we're happy to use them."
   },
   {
     question: "Do you offer discounts for recurring cleaning?",
@@ -33,7 +33,7 @@ const faqItems = [
   },
   {
     question: "What makes Kathy Clean Houston different?",
-    answer: "We focus on reliability, consistency, and communication. You'll get the same trusted cleaner whenever possible, a dedicated support team for scheduling, and quality guaranteed after every visit."
+    answer: "We focus on reliability, consistency, and communication. Whenever possible, we aim for a familiar service experience, responsive scheduling support, and quality guaranteed after every visit."
   }
 ]
 

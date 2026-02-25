@@ -9,17 +9,17 @@ const steps = [
   {
     number: 2,
     title: "Custom Proposal and Pricing",
-    description: "Based on your needs, we provide a tailored proposal with a clear checklist and service details.",
+    description: "Based on your needs, we provide a tailored proposal with a clear scope of service and service details.",
   },
   {
     number: 3,
     title: "Onboarding and Service Launch",
-    description: "Once approved, we set up your account, align with your team, and begin service with trained staff and a dedicated account manager.",
+    description: "Once approved, we set up your account, align on service expectations, and begin service with a dedicated point of contact.",
   },
   {
     number: 4,
     title: "Quality Control and Ongoing Support",
-    description: "We monitor service quality regularly and stay in touch to ensure your standards are consistently met.",
+    description: "We focus on maintaining consistent results and stay in touch to ensure your standards are consistently met.",
   },
 ];
 

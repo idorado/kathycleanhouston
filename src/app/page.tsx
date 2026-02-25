@@ -88,12 +88,12 @@ export default async function Home() {
               <h2 className="text-3xl font-bold mb-6">Quality Cleaning Services Across Houston, TX</h2>
               <div className="text-gray-600 mb-8">
                 <p className="mb-6">We provide top-rated residential cleaning services for busy families and homeowners in Memorial, West University Place, and nearby high-end neighborhoods in Houston.</p>
-                <p>Our professional, fully insured team delivers consistent, detail-focused cleaning designed for homes that value trust, reliability, and peace of mind.</p>
+                <p>Our professional, fully insured service delivers consistent, detail-focused cleaning designed for homes that value trust, reliability, and peace of mind.</p>
                 <p className="mt-4">
                   <span className="font-medium">Primary Service Areas:</span> Memorial · West University Place · The Memorial Villages · Bellaire · River Oaks
                 </p>
-                <p className="mt-4">We also serve select nearby neighborhoods in Houston.</p>
               </div>
+              <p className="mt-4">We also serve select nearby neighborhoods in Houston.</p>
               <RequestQuoteButton />
             </div>
           </div>

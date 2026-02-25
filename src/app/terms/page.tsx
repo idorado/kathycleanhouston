@@ -33,7 +33,7 @@ export default function Page() {
       <h2>3. Scheduling, Rescheduling & Cancellations</h2>
       <ul>
         <li><strong>Notice:</strong> Please provide at least 24–48 hours' notice to reschedule or cancel (the exact window is shown on your quote or confirmation).</li>
-        <li><strong>Late cancellation / lockout:</strong> If we arrive and cannot access the property, or you cancel within the notice window, a fee may apply to cover the reserved slot and staff time.</li>
+        <li><strong>Late cancellation / lockout:</strong> If we arrive and cannot access the property, or you cancel within the notice window, a fee may apply to cover the reserved slot and service time.</li>
         <li><strong>Delays:</strong> We aim to arrive within the scheduled window; traffic, weather, and prior jobs can affect timing. We'll communicate promptly about material delays.</li>
       </ul>
 
@@ -72,13 +72,13 @@ export default function Page() {
       <h2>9. Photos & Testimonials</h2>
       <p>
         With your permission, we may take before/after photos of work areas to document results, quality,
-        and training. We do not photograph personal identifying items. Testimonials or images are only used
+        and service details. We do not photograph personal identifying items. Testimonials or images are only used
         for marketing with your consent.
       </p>
 
       <h2>10. Health, Safety & Pets</h2>
       <p>
-        For everyone's safety, our team will not handle hazardous materials or aggressive animals. Please
+        For everyone's safety, we will not handle hazardous materials or aggressive animals. Please
         secure pets during service. We may pause or decline tasks that pose safety risks.
       </p>
 

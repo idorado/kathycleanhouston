@@ -10,10 +10,10 @@ const cards = [
   },
   {
     icon: (
-      <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom0XTbJtnznWpD8lt52ycuGbAavdFLke9Ugf7J" alt="Boost team focus icon" className="w-16 h-16 object-contain mx-auto" />
+      <img src="https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlom0XTbJtnznWpD8lt52ycuGbAavdFLke9Ugf7J" alt="Boost focus icon" className="w-16 h-16 object-contain mx-auto" />
     ),
-    title: "Boost Team Focus",
-    description: "A clean space helps your team stay focused, reduces sick days, and creates a more enjoyable work environment.",
+    title: "Boost Focus",
+    description: "A clean space helps people stay focused, reduces sick days, and creates a more enjoyable work environment.",
   },
   {
     icon: (
@@ -33,7 +33,7 @@ export default function WhyInvestInCommercialCleaningSection() {
           <div className="flex-1">
             <h3 className="text-xl font-bold text-gray-800 mb-2">A spotless space says everything about your business</h3>
             <p className="text-base text-gray-700 mb-4">
-              A clean workplace sends a message to your clients, your team, and your partners. It shows you care, it boosts productivity, and it protects your assets. At Kathy Clean Houston, we help businesses across Harris County, TX operate in healthier, more organized, and more professional environments. Here’s why consistent commercial cleaning matters:
+              A clean workplace sends a message to your clients, your people, and your partners. It shows you care, it boosts productivity, and it protects your assets. At Kathy Clean Houston, we help businesses across Harris County, TX operate in healthier, more organized, and more professional environments. Here’s why consistent commercial cleaning matters:
             </p>
           </div>
           <div className="flex-1 flex justify-center">

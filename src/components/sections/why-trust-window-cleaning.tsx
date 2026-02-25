@@ -14,7 +14,7 @@ export default function WhyTrustWindowCleaning({ location }: WhyTrustWindowClean
           Why {location || 'Houston'} Trusts Our Window Cleaning Services
         </h2>
         <p className="text-base md:text-lg text-[#454545] max-w-4xl mx-auto text-left mb-10">
-          We provide professional window cleaning for homes and businesses with careful attention to detail. Our experienced team delivers spotless results with care, professionalism, and consistent quality.
+          We provide professional window cleaning for homes and businesses with careful attention to detail. Experienced service professionals deliver spotless results with care, professionalism, and consistent quality.
         </p>
         <WhyTrustBenefits />
         

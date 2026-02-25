@@ -31,7 +31,7 @@ const WindowsServiceComponent: React.FC<WindowsServiceComponentProps> = async ({
         <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">Window Cleaning in {location || 'Your Area'}</h1>
           <p className="text-base sm:text-lg">
-            We offer thorough window cleaning services that enhance the appearance of your business or home. From standard interior/exterior cleaning to hard water stain removal, our team ensures a spotless view every time.
+            We offer thorough window cleaning services that enhance the appearance of your business or home. From standard interior/exterior cleaning to hard water stain removal, we prioritize a spotless view every time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <Button

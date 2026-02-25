@@ -29,7 +29,7 @@ export default async function WestUniversityPlaceServiceAreaPage() {
       heroTitle="Reliable House Cleaning Service"
       heroSubtitle={`in ${locationName}`}
       heroParagraphs={[
-        `<a href="https://kathycleanhouston.com/" class="underline text-secondary">Kathy Clean Houston</a> offers professional home cleaning services in ${locationName}. From recurring maintenance cleanings to deep cleans and move-out cleanings, our team delivers consistent quality so your home feels fresh, comfortable, and guest-ready week after week.`,
+        `<a href="https://kathycleanhouston.com/" class="underline text-secondary">Kathy Clean Houston</a> offers professional home cleaning services in ${locationName}. From recurring maintenance cleanings to deep cleans and move-out cleanings, we focus on consistent quality so your home feels fresh, comfortable, and guest-ready week after week.`,
       ]}
       ctaPhone="(346) 488-6044"
       ctaSmsNumber="(346) 488-6044"
@@ -45,8 +45,8 @@ export default async function WestUniversityPlaceServiceAreaPage() {
           body: "We use non-toxic solutions designed to be safe for families and pets while still delivering a detailed clean.",
         },
         {
-          title: "Detail-focused pros who respect your home:",
-          body: "Our team follows proven checklists, communicates clearly, and cleans with care so you can trust the result every time.",
+          title: "Detail-focused service:",
+          body: "Service is delivered with clear communication, attention to detail, and consistent results so you can trust the outcome every time.",
         },
       ]}
       benefitsImage={{
@@ -87,7 +87,7 @@ export default async function WestUniversityPlaceServiceAreaPage() {
         {
           question: "Do I need to provide supplies or equipment?",
           answer:
-            "No. Our team arrives with professional supplies and tools. If you have specific product preferences, we can accommodate them when possible.",
+            "No. Cleaning professionals arrive prepared for the service. If you have specific product preferences, we can accommodate them when possible.",
         },
       ]}
       mapTitle={`Find Us in ${locationName}`}

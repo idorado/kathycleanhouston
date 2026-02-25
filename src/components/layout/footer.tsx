@@ -59,14 +59,6 @@ export function Footer() {
                   Get a Quote
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/work-with-us"
-                  className="text-white hover:text-cyan-500"
-                >
-                  Work with us
-                </Link>
-              </li>
             </ul>
           </div>
 

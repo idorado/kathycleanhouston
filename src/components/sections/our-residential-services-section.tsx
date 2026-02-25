@@ -9,8 +9,8 @@ const services = [
     description: "Our most popular option, trusted by homeowners who value consistency and convenience.",
     bullets: [
       "Customers love our flexibility, allowing them to schedule cleanings that fit their lifestyle.",
-      "They also appreciate our trained and dedicated cleaners, who provide reliable, high-quality service every time.",
-      "Many of our clients build strong relationships with their preferred cleaners, enjoying the comfort of seeing familiar faces who understand their home and preferences."
+      "They also appreciate cleaning professionals who provide reliable, high-quality service every time.",
+      "Many of our clients enjoy the comfort of a familiar service experience and consistent attention to their preferences."
     ],
     image: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomAcyI8dPo3cFv8PBRDrpoYXiQwjhVE4KNzqTy"
   },

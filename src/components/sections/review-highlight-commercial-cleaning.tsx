@@ -39,7 +39,7 @@ export default function ReviewHighlightCommercialCleaning({ location }: ReviewHi
             <span className="text-yellow-400 text-lg">★★★★★</span>
           </div>
           <p className="text-gray-800 text-base mb-4">
-            The team is so awesome our window are so clean and they are prompt with their service and always make sure we are looking good before they leave.
+            The service is awesome — our windows are so clean, they are prompt, and they always make sure we are looking good before they leave.
           </p>
           <div className="font-semibold text-gray-900 leading-tight">Desiree McWilliams</div>
         </div>

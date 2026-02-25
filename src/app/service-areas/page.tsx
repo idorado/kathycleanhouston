@@ -26,13 +26,13 @@ export default function ServiceAreas() {
               </h1>
               <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
                 <p>
-                  Kathy Clean Houston specializes in professional house cleaning services for homes located in Memorial, West University Place, The Memorial Villages, Bellaire, and River Oaks. Our residential cleaning teams focus on neighborhoods where homeowners expect consistent quality, trusted professionals, and dependable service.
+                  Kathy Clean Houston specializes in professional house cleaning services for homes located in Memorial, West University Place, The Memorial Villages, Bellaire, and River Oaks. Our residential services focus on neighborhoods where homeowners expect consistent quality, trusted professionals, and dependable service.
                 </p>
                 <p>
                   We provide recurring house cleaning, deep cleaning, move-in/move-out cleaning, and post-renovation cleanups for select residential communities across West Houston.
                 </p>
                 <p>
-                  All services are delivered by fully insured, background-checked cleaners and backed by our 48-hour satisfaction guarantee.
+                  All services are delivered by fully insured, background-checked cleaning professionals and backed by our 48-hour satisfaction guarantee.
                 </p>
               </div>
 
@@ -80,13 +80,13 @@ export default function ServiceAreas() {
             <div className="bg-white p-8 rounded-lg">
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Kathy Clean Houston provides top-rated residential cleaning services for homeowners and families in Memorial, West University Place, and nearby high-end neighborhoods. Our strategically located teams allow us to deliver reliable, detail-focused cleaning with fast response times and consistent results.
+                  Kathy Clean Houston provides top-rated residential cleaning services for homeowners and families in Memorial, West University Place, and nearby high-end neighborhoods. Our services are coordinated to deliver reliable, detail-focused cleaning with fast response times and consistent results.
                 </p>
                 <p>
-                  Our professional cleaning teams regularly serve homes that value trust, quality, and long-term reliability. We understand the unique needs of each neighborhood and tailor our services accordingly.
+                  Our service professionals regularly support homes that value trust, quality, and long-term reliability. We understand the unique needs of each neighborhood and tailor service options accordingly.
                 </p>
                 <p>
-                  We specialize in recurring house cleaning, deep cleaning, and move-in/move-out services, delivered by fully trained, insured, and background-checked professionals.
+                  We specialize in recurring house cleaning, deep cleaning, and move-in/move-out services, delivered by fully insured and background-checked service professionals.
                 </p>
                 <p>
                   Looking for trusted house cleaning in your neighborhood? Request your free quote today.

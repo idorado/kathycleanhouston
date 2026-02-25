@@ -4,7 +4,7 @@ const faqs = [
   {
     question: "Are you licensed, bonded and insured?",
     answer:
-      "Yes! We’re fully covered to protect you, our cleaners, and our company. Need proof? Just ask, and we’ll provide a certificate.",
+      "Yes! We’re fully covered to protect you and our company. Need proof? Just ask, and we’ll provide a certificate.",
   },
   {
     question: "How many people will clean my home?",
@@ -13,37 +13,37 @@ const faqs = [
   {
     question: "Will I always have the same cleaner(s)?",
     answer:
-      "We know how important it is to have a familiar face cleaning your home. That’s why we have a low turnover and strive to send the same cleaner(s) every time. While occasional changes happen due to vacations or schedule adjustments, most of our customers see the same trusted team visit after visit. No matter who comes, rest assured they’re trained to our high standards, ensuring top-notch service every time.",
+      "We know how important it is to have a familiar face providing service in your home. While occasional changes can happen due to schedule adjustments, we aim for a consistent experience visit after visit. No matter who arrives, we prioritize thorough, consistent results every time.",
   },
   {
-    question: "Are your cleaners trained?",
+    question: "How do you ensure consistent service quality?",
     answer:
-      "Absolutely! Every team member gets hands-on training and ongoing supervision. If someone doesn’t meet our standards, they don’t stay with us.",
+      "We prioritize consistent service quality. If something doesn’t meet expectations, we address it promptly.",
   },
   {
     question: "Can you clean high-up areas and behind furniture?",
     answer:
-      "Yes, but with limits. Our cleaners use long dusters for high spots. We’ll clean behind furniture if it’s easy to move, but we don’t lift anything over 35 lbs for safety reasons. If you’d like us to clean under heavy items, please move them before we arrive.",
+      "Yes, but with limits. For safety reasons, we don’t lift anything over 35 lbs. If you’d like under heavy items cleaned, please move them before we arrive.",
   },
   {
-    question: "Are your cleaners legal to work in the United States?",
+    question: "Are service professionals background checked?",
     answer:
-      "Yes. Kathy Clean Houston only hires 100% legal workers. We also conduct full background checks on every potential new hire prior to extending a job offer.",
+      "Yes. Service professionals are background checked for your peace of mind.",
   },
   {
-    question: "Do your cleaners speak English?",
+    question: "Do service professionals speak English?",
     answer:
-      "Not all of our cleaners speak English, but we’ve got you covered! Our team is equipped with the right tools and support from our office to ensure smooth communication. If you ever have a specific request or concern, just let us know—we’ll make sure everything is clear and taken care of.",
+      "Not all service professionals speak English, but we’ve got you covered. If you ever have a specific request or concern, just let us know—we’ll make sure everything is clear and taken care of.",
   },
   {
-    question: "How do the cleaners get into my home? Do I have to be home?",
+    question: "How does service access work? Do I have to be home?",
     answer:
       "Your call! You can be there, leave a key with us (we store it securely), provide a garage code, or arrange another method. If you have an alarm system, you can give us instructions—or simply turn it off for the day.",
   },
   {
     question: "Arrival Notice & Access to Your Home",
     answer:
-      "We’ll send you an email reminder one week before your cleaning with an estimated arrival time. While we do our best to stick to it, last-minute schedule changes, traffic, or weather may cause slight delays—but don’t worry, we keep you updated!\n\nOur system allows us to track our cleaners in real time, so we know when they check in, check out, and if they’re on their way to your home. If you ever need an update, just reach out!",
+      "We’ll send you an email reminder one week before your cleaning with an estimated arrival time. While we do our best to stick to it, schedule changes, traffic, or weather may cause slight delays—but don’t worry, we keep you updated!\n\nOur scheduling system keeps appointments organized and transparent. If you ever need an update, just reach out!",
   },
   {
     question: "How do I pay for your services?",
@@ -61,7 +61,7 @@ const faqs = [
       "Pricing is based on your home and needs. We provide free estimates—by phone, email, or in-person. First-time or deep cleanings may cost more.",
   },
   {
-    question: "Should I tip the cleaners?",
+    question: "Is tipping expected?",
     answer:
       "Tips aren’t required, but always appreciated! If you love the service, a small tip is a great way to say thanks.",
   },
@@ -86,9 +86,9 @@ const faqs = [
       "We love hearing from you! Call, email, or use the feedback form on our website. Your input helps us improve.",
   },
   {
-    question: "Can I hire your cleaner directly?",
+    question: "How should I schedule appointments?",
     answer:
-      "Nope! When you sign up with us, you agree not to hire our cleaners directly. We work hard to find and train great staff—please respect that.",
+      "For service coordination purposes, appointments should be scheduled through Kathy Clean.",
   },
   {
     question: "What if something gets damaged?",

@@ -130,7 +130,6 @@ export function Header() {
 										</DropdownMenuContent>
 									</DropdownMenu>
 									<Link href="/about-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-									<Link href="/work-with-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>Work With Us</Link>
 									<div className="mt-2"><PhoneButton /></div>
 									<div className="mt-4 lg:hidden">
 										<button
@@ -226,13 +225,6 @@ export function Header() {
 											<NavigationMenuLink asChild>
 												<Link href="/about-us" className="bg-transparent text-white hover:bg-primary/10 hover:text-ring px-4 py-2 rounded transition-colors font-medium">
 													About Us
-												</Link>
-											</NavigationMenuLink>
-										</NavigationMenuItem>
-										<NavigationMenuItem>
-											<NavigationMenuLink asChild>
-												<Link href="/work-with-us" className="bg-transparent text-white hover:bg-primary/10 hover:text-ring px-4 py-2 rounded transition-colors font-medium">
-													Work With Us
 												</Link>
 											</NavigationMenuLink>
 										</NavigationMenuItem>

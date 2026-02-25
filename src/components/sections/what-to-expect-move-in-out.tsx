@@ -8,7 +8,7 @@ const WhatToExpectMoveInOut = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-gray-50 p-6 rounded-lg">
             <h3 className="text-xl font-semibold mb-4 text-secondary-foreground">For Move-In Cleaning</h3>
-            <p className="text-gray-600">We prepare your new home for your arrival. Our team ensures every corner is sanitized and sparkling clean, so you can settle in with peace of mind. We focus on deep cleaning kitchens, bathrooms, floors, and windows, creating a fresh and welcoming environment for you and your family.</p>
+            <p className="text-gray-600">We prepare your new home for your arrival. Service is delivered with a focus on thorough results, so you can settle in with peace of mind. We focus on deep cleaning kitchens, bathrooms, floors, and windows, creating a fresh and welcoming environment for you and your family.</p>
           </div>
           <div className="bg-gray-50 p-6 rounded-lg">
             <h3 className="text-xl font-semibold mb-4 text-secondary-foreground">For Move-Out Cleaning</h3>
