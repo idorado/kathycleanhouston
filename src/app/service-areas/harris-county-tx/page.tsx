@@ -74,16 +74,6 @@ export default async function Home() {
                   <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>
                 </Button>
                 <PhoneButton />
-                <a
-                  href="sms:+13464886044"
-                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-10 rounded-md px-6 w-full sm:w-auto min-w-[180px]
-                      border border-input bg-background text-foreground
-                      [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0"
-                >
-                  <span className="text-black hover:text-cyan-500">
-                    TEXT US
-                  </span>
-                </a>
               </div>
               <FeatureBar />
             </div>

@@ -32,17 +32,17 @@ export default function FeatureBar() {
   return (
     <div className="w-full mt-3">
       <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
-        <FeatureItem 
-          icon={<StarIcon />} 
-          text="5/5 Rating" 
+        <FeatureItem
+          icon={<StarIcon />}
+          text="4.8/5 Rating"
         />
-        <FeatureItem 
-          icon={<ShieldIcon />} 
-          text="Fully Insured & Bonded" 
+        <FeatureItem
+          icon={<ShieldIcon />}
+          text="Fully Insured & Bonded"
         />
-        <FeatureItem 
-          icon={<ClockIcon />} 
-          text="48 hr Guarantee" 
+        <FeatureItem
+          icon={<ClockIcon />}
+          text="48 hr Guarantee"
         />
       </div>
     </div>

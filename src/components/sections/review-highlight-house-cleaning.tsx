@@ -18,7 +18,7 @@ export default function ReviewHighlightHouseCleaning({ location }: ReviewHighlig
             priority
           />
           <div className="bg-white rounded-lg shadow-md p-3 flex flex-col items-center w-[220px] absolute right-5 bottom-5 z-20">
-            <span className="font-bold text-2xl text-gray-900">5/5</span>
+            <span className="font-bold text-2xl text-gray-900">4.8/5</span>
             <span className="text-yellow-400 text-lg mb-1">★★★★★</span>
             <span className="text-gray-500 text-xs text-center">Based on Verified Customer Reviews</span>
           </div>
