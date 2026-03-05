@@ -4,19 +4,92 @@ import posthog from 'posthog-js'
 import { ANALYTICS_BRAND, ANALYTICS_LOCATION } from "@/lib/analytics";
 
 const TALLY_ORIGIN_RE = /^https:\/\/([a-z0-9-]+\.)?tally\.so$/i;
+// Google Ads conversion tracking
+// Account/Tag: AW-17742166397
+// Conversion name: Enviar formulario de clientes potenciales
+// Trigger: Tally lead form submission
+const GOOGLE_ADS_LEAD_SEND_TO = 'AW-17742166397/RTkrCP3v8cMbEP3yj4xC';
 
 function safeParse<T = any>(v: any): T | null {
   if (typeof v !== 'string') return (v ?? null) as T | null;
   try { return JSON.parse(v) as T; } catch { return null; }
 }
 
-function isDuplicate(submissionId?: string | null): boolean {
-  if (!submissionId) return false;
+function isDuplicate(params: {
+  submissionId?: string | null;
+  formId?: string | null;
+  source: 'tally_iframe' | 'tally_dom';
+}): boolean {
+  const { submissionId, formId, source } = params;
   try {
-    const key = `tally_submit_${submissionId}`;
-    if (sessionStorage.getItem(key)) return true;
-    sessionStorage.setItem(key, '1');
+    if (submissionId) {
+      const key = `tally_submit_${submissionId}`;
+      if (sessionStorage.getItem(key)) return true;
+      sessionStorage.setItem(key, '1');
+      return false;
+    }
+
+    const fallbackKey = `tally_submit_fallback_${source}_${formId ?? 'unknown'}`;
+    const now = Date.now();
+    const last = Number(sessionStorage.getItem(fallbackKey) ?? '0');
+    if (Number.isFinite(last) && now - last < 10_000) return true;
+    sessionStorage.setItem(fallbackKey, String(now));
   } catch { /* ignore */ }
+  return false;
+}
+
+function isAdsDebugEnabled(): boolean {
+  try {
+    if (typeof window === 'undefined') return false;
+    if ((window as any).__kcDebugAds === true) return true;
+    return localStorage.getItem('kcDebugAds') === '1';
+  } catch {
+    return false;
+  }
+}
+
+function logAdsDebug(payload: any) {
+  if (!isAdsDebugEnabled()) return;
+  try {
+    console.info(payload.message, payload.data);
+  } catch { /* no-op */ }
+}
+
+function logTallySubmit(params: {
+  source: 'tally_iframe' | 'tally_dom';
+  formId?: string | null;
+  submissionId?: string | null;
+  deduped: boolean;
+  conversionFired: boolean;
+}) {
+  if (!isAdsDebugEnabled()) return;
+  try {
+    console.info('kc tally submit', {
+      formId: params.formId ?? undefined,
+      submissionId: params.submissionId ?? undefined,
+      deduped: params.deduped,
+      conversionFired: params.conversionFired,
+      source: params.source,
+    });
+  } catch { /* no-op */ }
+}
+
+function fireGoogleAdsLeadConversion(): boolean {
+  if (typeof (window as any).gtag !== 'function') return false;
+  try {
+    if (!(window as any).__kcAdsConfigured) {
+      // When GTM loads the Google tag, gtag is available. We only add the new Ads config ID here.
+      (window as any).gtag('config', 'AW-17742166397');
+      (window as any).__kcAdsConfigured = true;
+    }
+    (window as any).gtag('event', 'conversion', {
+      send_to: GOOGLE_ADS_LEAD_SEND_TO,
+      value: 1.0,
+      currency: 'USD',
+    });
+    return true;
+  } catch { /* no-op */ }
+
   return false;
 }
 
@@ -68,6 +141,14 @@ function trackPosthogLead({
 
 export default function TallyListener() {
   useEffect(() => {
+    logAdsDebug({
+      message: 'kc ads debug',
+      data: {
+        gtag: typeof (window as any).gtag,
+        dataLayer: Array.isArray((window as any).dataLayer) ? 'array' : typeof (window as any).dataLayer,
+      },
+    });
+
     const onMessage = (e: MessageEvent) => {
       if (!e.origin || !TALLY_ORIGIN_RE.test(e.origin)) return;
 
@@ -82,8 +163,15 @@ export default function TallyListener() {
       const formName = p?.formName ?? null;
       const submissionId = p?.submissionId ?? p?.id ?? null;
 
-      if (isDuplicate(submissionId)) {
-        try { console.log('[Tally] duplicate (iframe) ignored', submissionId); } catch {}
+      const deduped = isDuplicate({ submissionId, formId, source: 'tally_iframe' });
+      if (deduped) {
+        logTallySubmit({
+          source: 'tally_iframe',
+          formId,
+          submissionId,
+          deduped: true,
+          conversionFired: false,
+        });
         return;
       }
 
@@ -104,16 +192,18 @@ export default function TallyListener() {
             form_id: formId ?? undefined,
             form_name: formName ?? undefined,
           });
-          // Optional Google Ads conversion (direct)
-          if ((window as any).__tallyDebug) (window as any).gtag('event', 'conversion', {
-            send_to: 'AW-17062489970/XHAECLjasMkaEPLeg8g_',
-          });
         } catch { /* no-op */ }
       }
 
-      try {
-        console.log('[Tally] pushed tally_form_submitted (iframe)', { formId, formName, submissionId });
-      } catch {}
+      const conversionFired = fireGoogleAdsLeadConversion();
+
+      logTallySubmit({
+        source: 'tally_iframe',
+        formId,
+        submissionId,
+        deduped: false,
+        conversionFired,
+      });
     };
 
     const onCustomEvent = (ev: Event) => {
@@ -122,8 +212,15 @@ export default function TallyListener() {
       const formName = detail?.formName ?? null;
       const submissionId = detail?.submissionId ?? null;
 
-      if (isDuplicate(submissionId)) {
-        try { console.log('[Tally] duplicate (dom) ignored', submissionId); } catch {}
+      const deduped = isDuplicate({ submissionId, formId, source: 'tally_dom' });
+      if (deduped) {
+        logTallySubmit({
+          source: 'tally_dom',
+          formId,
+          submissionId,
+          deduped: true,
+          conversionFired: false,
+        });
         return;
       }
 
@@ -143,15 +240,18 @@ export default function TallyListener() {
             form_id: formId ?? undefined,
             form_name: formName ?? undefined,
           });
-          if ((window as any).__tallyDebug) (window as any).gtag('event', 'conversion', {
-            send_to: 'AW-17062489970/XHAECLjasMkaEPLeg8g_',
-          });
         } catch { /* no-op */ }
       }
 
-      try {
-        console.log('[Tally] pushed tally_form_submitted (dom)', { formId, formName, submissionId });
-      } catch {}
+      const conversionFired = fireGoogleAdsLeadConversion();
+
+      logTallySubmit({
+        source: 'tally_dom',
+        formId,
+        submissionId,
+        deduped: false,
+        conversionFired,
+      });
     };
 
     window.addEventListener('message', onMessage);
