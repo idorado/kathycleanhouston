@@ -36,6 +36,16 @@ export interface LocationServiceAreaPageProps {
   whyItems: { title: string; body: string; href?: string }[];
   whyImage: { url: string; alt: string };
 
+  locationSpecificContent?: {
+    title: string;
+    content: string;
+  };
+
+  recurringCleaningContent?: {
+    title: string;
+    content: string;
+  };
+
   faqItems: { question: string; answer: string }[];
 
   mapTitle: string;
@@ -58,6 +68,8 @@ export default function LocationServiceAreaPage({
   whyParagraph,
   whyItems,
   whyImage,
+  locationSpecificContent,
+  recurringCleaningContent,
   faqItems,
   mapTitle,
   mapParagraph,
@@ -215,6 +227,34 @@ export default function LocationServiceAreaPage({
           </div>
         </div>
       </section>
+
+      {/* Location-Specific Content Section */}
+      {locationSpecificContent && (
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-12">{normalizeBrandText(locationSpecificContent.title)}</h2>
+              <div className="prose prose-lg max-w-none">
+                <div dangerouslySetInnerHTML={{ __html: normalizeBrandText(locationSpecificContent.content) }} />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Recurring Cleaning Section */}
+      {recurringCleaningContent && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-12">{normalizeBrandText(recurringCleaningContent.title)}</h2>
+              <div className="prose prose-lg max-w-none">
+                <div dangerouslySetInnerHTML={{ __html: normalizeBrandText(recurringCleaningContent.content) }} />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ Section */}
       <section className="py-16 bg-white">

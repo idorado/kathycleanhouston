@@ -73,6 +73,14 @@ export default async function GreaterHeightsServiceAreaPage() {
         url: area.imageUrl,
         alt: area.imageAlt,
       }}
+      locationSpecificContent={{
+        title: "House Cleaning Services in Greater Heights for Busy Homes",
+        content: `<p>Greater Heights attracts creative professionals, young families, and entrepreneurs who thrive in this vibrant Inner Loop neighborhood. Our <a href="/house-cleaning-houston">house cleaning in Houston</a> services are perfect for the active lifestyles of Heights residents who balance work in downtown Houston with enjoying the area's renowned restaurants, parks, and cultural venues. The cleaning professionals we work with understand the diverse housing styles in Greater Heights, from historic bungalows to modern townhomes, delivering thorough cleaning that adapts to your schedule. Whether you're commuting to the Medical Center or managing family activities along 19th Street, our weekly and biweekly cleaning options keep your home ready for spontaneous gatherings. We serve homes across Greater Heights and nearby Houston neighborhoods including <a href="/service-areas/washington-ave-memorial-park">Washington Ave/Memorial Park</a>, providing consistent service that matches the energetic pace of Heights living.</p><p>For Greater Heights families with active lifestyles, we focus on creating clean, healthy environments using eco-friendly products that stand up to the daily demands of urban living. Our <a href="/recurring-house-cleaning-services">recurring house cleaning services</a> help maintain the character and charm of Heights homes while supporting your busy schedule. Ready to <a href="/request-quote">request a quote</a> for reliable cleaning that fits your Greater Heights lifestyle?</p>`,
+      }}
+      recurringCleaningContent={{
+        title: "Recurring Cleaning That Fits Your Schedule",
+        content: `<p>Recurring cleaning is the ideal solution for Greater Heights homeowners who want to maintain their homes while enjoying the neighborhood's active social scene. Weekly service keeps your home ready for impromptu gatherings and maintains the polished look expected in this trendy area. Biweekly cleaning provides the perfect balance for busy professionals who value their free time exploring the Heights' attractions. Monthly maintenance helps preserve your home's condition between more frequent cleanings. The cleaning professionals we work with understand the unique needs of historic and modern homes in Greater Heights, ensuring consistent quality that respects your property's character. Our recurring service includes detailed cleaning of all living spaces, with flexible scheduling that accommodates your dynamic Heights lifestyle.</p>`,
+      }}
       faqItems={[
         {
           question: `What is included in a house cleaning in ${locationName}?`,

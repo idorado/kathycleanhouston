@@ -73,6 +73,14 @@ export default async function TheMemorialVillagesServiceAreaPage() {
         url: area.imageUrl,
         alt: area.imageAlt,
       }}
+      locationSpecificContent={{
+        title: "House Cleaning Services in The Memorial Villages for Busy Homes",
+        content: `<p>The Memorial Villages communities feature some of Houston's most prestigious homes, where busy professionals and established families require exceptional cleaning service. Our <a href="/house-cleaning-houston">house cleaning in Houston</a> services are tailored for the distinctive homes in Bunker Hill, Hedwig, Hilshire, Piney Point, and Spring Valley. The cleaning professionals we work with understand the high standards expected in these luxury neighborhoods, delivering meticulous cleaning that respects your privacy and property. Whether you're managing a career in the Energy Corridor or coordinating family activities across the greater Houston area, our weekly and biweekly cleaning options maintain your home's impeccable condition. We serve homes across The Memorial Villages and nearby Houston neighborhoods including <a href="/service-areas/memorial">Memorial</a> and <a href="/service-areas/spring-branch">Spring Branch</a>, providing consistent service that matches the refined lifestyle of these exclusive communities.</p><p>For families in The Memorial Villages, we prioritize thorough cleaning using premium products that protect your fine finishes and furnishings. Our <a href="/recurring-house-cleaning-services">recurring house cleaning services</a> help maintain the pristine condition expected in these luxury homes, from regular maintenance to preparation for entertaining guests. Ready to <a href="/request-quote">request a quote</a> for cleaning service that meets the exacting standards of The Memorial Villages?</p>`,
+      }}
+      recurringCleaningContent={{
+        title: "Recurring Cleaning That Fits Your Schedule",
+        content: `<p>Recurring cleaning is the preferred choice for The Memorial Villages homeowners who demand consistently exceptional results. Weekly service ensures your luxury home maintains perfect condition for any occasion, while biweekly cleaning provides the ideal balance of thorough cleaning and convenience. Monthly maintenance visits help preserve your home's pristine appearance between more frequent cleanings. The cleaning professionals we work with understand the unique requirements of luxury homes, from fine surfaces to specialty materials, ensuring every cleaning meets the high standards of The Memorial Villages communities. Our recurring service includes detailed attention to all living spaces, with flexible scheduling that accommodates your busy professional life and social commitments.</p>`,
+      }}
       faqItems={[
         {
           question: `What is included in a house cleaning in ${locationName}?`,

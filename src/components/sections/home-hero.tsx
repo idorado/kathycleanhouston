@@ -9,14 +9,14 @@ import FeatureBar from "@/components/ui/FeatureBar";
 const HomeHero = () => {
   return (
     <HeroSection>
-      <div className="space-y-2 text-white text-center p-4 md:text-left">
+      <div className="space-y-4 text-white text-center p-4 md:text-left">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-          <span className="text-primary">Top Rated Cleaning Company</span>
+          <span className="text-primary">Recurring House Cleaning Services</span>
           <br />
-          <span className="text-background">in Memorial &amp; West University Place</span>
+          <span className="text-background">in Houston</span>
         </h1>
         <p className="text-lg">
-          We deliver spotless, healthy, and welcoming environments—perfect for busy families in Memorial, West U & nearby neighborhoods.
+          Weekly and biweekly cleaning with reliable, flat-rate pricing for Houston homes in Memorial, West University Place, and nearby neighborhoods.
         </p>
         <div className="pt-4 flex flex-col md:flex-row gap-4">
           <RequestQuoteButton location="location_components_sections_home_hero" className="font-medium" />
@@ -24,7 +24,7 @@ const HomeHero = () => {
         </div>
         <FeatureBar />
       </div>
-      <div className="relative hidden md:block w-full h-full">
+      <div className="relative hidden md:flex w-full justify-center items-center">
         <Image
           src="/images/hero-image.webp"
           alt="Professional cleaner from Kathy Clean Houston holding cleaning supplies"
@@ -34,7 +34,7 @@ const HomeHero = () => {
           fetchPriority="high"
           sizes="(max-width: 768px) 0px, (max-width: 1280px) 50vw, 600px"
           quality={75}
-          className="relative w-full h-full object-cover rounded-lg "
+          className="object-cover rounded-lg"
         />
       </div>
     </HeroSection>

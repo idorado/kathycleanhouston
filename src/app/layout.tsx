@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://kathycleanhouston.com"
   ),
   title: {
-    default: "Top Rated Cleaning Company in Houston, TX | Kathy Clean Houston",
+    default: "House Cleaning in Houston | Recurring, Deep & Move-Out | Kathy Clean",
     template: "%s | Kathy Clean Houston",
   },
   description:

@@ -73,6 +73,14 @@ export default async function WashingtonAveMemorialParkServiceAreaPage() {
         url: area.imageUrl,
         alt: area.imageAlt,
       }}
+      locationSpecificContent={{
+        title: "House Cleaning Services in Washington Ave/Memorial Park for Busy Homes",
+        content: `<p>Washington Ave and Memorial Park area residents enjoy one of Houston's most dynamic neighborhoods, combining urban energy with easy access to outdoor recreation. Our <a href="/house-cleaning-houston">house cleaning in Houston</a> services are perfect for active professionals and fitness enthusiasts who balance work in downtown Houston with regular visits to Memorial Park. The cleaning professionals we work with understand the modern apartments and townhomes in this area, delivering thorough cleaning that accommodates your active lifestyle. Whether you're heading to Memorial Park for your morning run or enjoying the vibrant Washington Ave nightlife, our weekly and biweekly cleaning options ensure your home stays pristine without disrupting your busy schedule. We serve homes across Washington Ave/Memorial Park and nearby Houston neighborhoods including <a href="/service-areas/greater-heights">Greater Heights</a>, providing consistent service that supports your active urban lifestyle.</p><p>For Washington Ave/Memorial Park residents who value fitness and outdoor activities, we focus on creating clean, healthy environments using eco-friendly products that complement your active lifestyle. Our <a href="/recurring-house-cleaning-services">recurring house cleaning services</a> help maintain your home's condition while giving you more time for Memorial Park workouts and neighborhood activities. Ready to <a href="/request-quote">request a quote</a> for reliable cleaning that fits your Washington Ave/Memorial Park lifestyle?</p>`,
+      }}
+      recurringCleaningContent={{
+        title: "Recurring Cleaning That Fits Your Schedule",
+        content: `<p>Recurring cleaning is the ideal solution for Washington Ave/Memorial Park homeowners who want to maintain their homes while enjoying Houston's most active neighborhood. Weekly service keeps your home perfectly maintained for your active lifestyle and social gatherings. Biweekly cleaning provides the perfect balance for busy professionals who split time between work, Memorial Park activities, and exploring the area's restaurants and entertainment. Monthly maintenance helps preserve your home's condition between more frequent cleanings. The cleaning professionals we work with understand the needs of urban homes, ensuring consistent quality that accommodates your dynamic schedule. Our recurring service includes detailed cleaning of all living spaces, with flexible timing that works around your Memorial Park routine.</p>`,
+      }}
       faqItems={[
         {
           question: `What is included in a house cleaning in ${locationName}?`,

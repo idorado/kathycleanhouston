@@ -73,6 +73,14 @@ export default async function MemorialServiceAreaPage() {
         url: area.imageUrl,
         alt: area.imageAlt,
       }}
+      locationSpecificContent={{
+        title: "House Cleaning Services in Memorial for Busy Homes",
+        content: `<p>Memorial homeowners juggle demanding careers, family commitments, and active social schedules. Our <a href="/house-cleaning-houston">house cleaning in Houston</a> services are designed for busy professionals who value their time. The cleaning professionals we work with understand the unique needs of Memorial's larger homes and townhomes, delivering thorough cleaning that accommodates your hectic lifestyle. Whether you're commuting downtown or managing family activities, our weekly and biweekly cleaning options ensure your home stays pristine without disrupting your schedule. We serve homes across Memorial and nearby Houston neighborhoods including <a href="/service-areas/the-memorial-villages">The Memorial Villages</a> and <a href="/service-areas/spring-branch">Spring Branch</a>, providing consistent service that adapts to your family's needs.</p><p>For Memorial families with children, we focus on creating healthy, clean environments using eco-friendly products that are safe for kids and pets. Our <a href="/recurring-house-cleaning-services">recurring house cleaning services</a> help maintain the high standards expected in Memorial homes, from regular maintenance to deep cleaning preparation for entertaining. Ready to <a href="/request-quote">request a quote</a> for reliable cleaning that fits your Memorial lifestyle?</p>`,
+      }}
+      recurringCleaningContent={{
+        title: "Recurring Cleaning That Fits Your Schedule",
+        content: `<p>Recurring cleaning is the most popular choice among Memorial homeowners who want consistent results without the hassle of scheduling each visit. Choose weekly service for constantly pristine homes, biweekly cleaning for the perfect balance of cleanliness and convenience, or monthly maintenance to keep your home in top condition. The cleaning professionals we work with provide reliable scheduling and consistent quality, ensuring your Memorial home maintains its polished appearance week after week. Our recurring service includes detailed cleaning of all living areas, kitchens, and bathrooms, with attention to the specific needs of your home. Flexible scheduling makes it easy to maintain your clean home while managing your busy Memorial lifestyle.</p>`,
+      }}
       faqItems={[
         {
           question: `What is included in a house cleaning in ${locationName}?`,

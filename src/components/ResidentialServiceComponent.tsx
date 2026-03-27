@@ -93,6 +93,50 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
         <ServiceCards />
       </div>
 
+      {/* Houston Resources Section */}
+      <div className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+              House Cleaning Guides for Houston Homes
+            </h3>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Houston homeowners use these guides to understand pricing and determine the right cleaning frequency. Recurring cleaning is the most common option, helping you choose the perfect plan for your home.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h4 className="text-lg font-semibold mb-3 text-gray-900">
+                <a 
+                  href="/resources/house-cleaning-cost-houston" 
+                  className="text-primary hover:text-primary/80 no-underline"
+                >
+                  How Much Does House Cleaning Cost in Houston?
+                </a>
+              </h4>
+              <p className="text-gray-600">
+                Learn about pricing factors, what affects house cleaning costs, and how flat-rate pricing works for Houston homes.
+              </p>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
+              <h4 className="text-lg font-semibold mb-3 text-gray-900">
+                <a 
+                  href="/resources/how-often-house-cleaning-houston" 
+                  className="text-primary hover:text-primary/80 no-underline"
+                >
+                  How Often Should You Schedule House Cleaning in Houston?
+                </a>
+              </h4>
+              <p className="text-gray-600">
+                Discover weekly, biweekly, and recurring cleaning schedules to find the perfect frequency for your Houston home.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* FAQ Section */}
       <HouseCleaningFAQ location={location} />
 

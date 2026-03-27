@@ -60,7 +60,7 @@ export default async function OurServices() {
     {
       title: "House Cleaning",
       description:
-        "Enjoy a spotless home with our trusted house cleaning services in Houston and throughout Harris County. We clean kitchens, bathrooms, bedrooms, and more using eco-friendly products and meticulous care. Ideal for recurring or one-time cleanings.",
+        "Enjoy a spotless home with our trusted house cleaning services in Houston and throughout Harris County. We clean kitchens, bathrooms, bedrooms, and more using eco-friendly products and meticulous care. Perfect for recurring weekly/biweekly cleaning or one-time deep cleans.",
       imageUrl:
         "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomAcT0ESUo3cFv8PBRDrpoYXiQwjhVE4KNzqTy",
       imageAlt:
