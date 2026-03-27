@@ -9,6 +9,9 @@ const staticRoutes: string[] = [
   "/request-quote",
   "/faq",
   "/service-areas",
+  "/resources",
+  "/resources/house-cleaning-cost-houston",
+  "/resources/how-often-house-cleaning-houston",
   ...houstonServiceAreas.map((area) => `/service-areas/${area.slug}`),
   "/house-cleaning-houston",
   "/commercial-cleaning-houston",
@@ -30,6 +33,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       route === "/request-quote"
     ) {
       priority = 0.9;
+    } else if (
+      route === "/resources" ||
+      route === "/resources/house-cleaning-cost-houston" ||
+      route === "/resources/how-often-house-cleaning-houston"
+    ) {
+      priority = 0.8;
     } else if (route.startsWith("/service-areas/")) {
       priority = 0.8;
     }

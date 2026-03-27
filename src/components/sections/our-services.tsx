@@ -87,7 +87,7 @@ export default async function OurServices() {
           Services in Houston, TX
         </h2>
         <p className="text-base md:text-lg text-gray-600 max-w-4xl mx-auto">
-          Kathy Clean delivers top-rated house cleaning and commercial cleaning services across the Houston area. We proudly serve Memorial, West University Place, Bellaire, River Oaks, and the Memorial Villages
+          Kathy Clean delivers top-rated <a href="/house-cleaning-houston" className="text-primary hover:text-primary/80 underline">house cleaning</a> and commercial cleaning services across the Houston area. We proudly serve Memorial, West University Place, Bellaire, River Oaks, and the Memorial Villages
         </p>
 
         <div className="mt-6 space-y-3 text-base md:text-lg text-gray-600 max-w-4xl mx-auto">

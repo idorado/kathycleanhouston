@@ -48,11 +48,13 @@ export function Header() {
 		{ href: '/commercial-cleaning-houston', title: 'Commercial Cleaning', description: 'Office and business cleaning solutions' },
 	];
 	const allowedLocationSlugs = new Set([
-		"bellaire",
-		"river-oaks",
+		"memorial",
 		"the-memorial-villages",
+		"greater-heights",
+		"spring-branch",
 		"washington-ave-memorial-park",
 		"west-university-place",
+		"bellaire",
 	]);
 
 	const locations = [...houstonServiceAreas]

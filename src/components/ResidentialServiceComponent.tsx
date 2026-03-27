@@ -34,12 +34,19 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
       <HeroSection>
         <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
-            House Cleaning in {displayLocation}
+            {displayLocation === 'Houston' ? 'Recurring House Cleaning Services in Houston' : `House Cleaning in ${displayLocation}`}
           </h1>
           <p className="text-base sm:text-lg mb-6">
-            Looking for trusted house cleaning services in {displayLocation}?<br />
-            Kathy Clean Houston delivers affordable, top-rated cleanings backed by years of experience and satisfied customers in {displayLocation} and surrounding areas.
+            {displayLocation === 'Houston' 
+              ? <span>Weekly and biweekly house cleaning with reliable, flat-rate pricing. Serving <a href="/service-areas/memorial" className="text-primary hover:text-primary/80 underline">Memorial</a>, <a href="/service-areas/greater-heights" className="text-primary hover:text-primary/80 underline">Heights</a>, <a href="/service-areas/spring-branch" className="text-primary hover:text-primary/80 underline">Spring Branch</a>, and West Houston neighborhoods with consistent, trusted service.</span>
+              : `Looking for trusted house cleaning services in ${displayLocation}?<br />Kathy Clean Houston delivers affordable, top-rated cleanings backed by years of experience and satisfied customers in ${displayLocation} and surrounding areas.`
+            }
           </p>
+          {displayLocation === 'Houston' && (
+            <p className="text-base text-gray-200 mb-6">
+              Most of our Houston customers choose recurring cleaning to keep their homes consistently clean while saving time and cost.
+            </p>
+          )}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <Button
               variant="default"
@@ -71,6 +78,57 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
       </HeroSection>
 
       <WhyTrustUsSection location={location} />
+
+      {displayLocation === 'Houston' && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4 text-gray-900">
+                Why Recurring Cleaning Works Best for Houston Homes
+              </h2>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Consistent Results</h3>
+                    <p className="text-gray-600">Regular cleanings maintain your home's condition week after week, preventing buildup and keeping everything consistently fresh.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Lower Long-Term Cost</h3>
+                    <p className="text-gray-600">Recurring service costs less per visit than one-time cleanings, with discounted pricing for regular customers.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">No Deep Buildup</h3>
+                    <p className="text-gray-600">Frequent cleanings prevent dirt and grime from accumulating, eliminating the need for intensive deep cleaning sessions.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Predictable Schedule</h3>
+                    <p className="text-gray-600">Set weekly or biweekly appointments give you peace of mind and a clean home without having to think about it.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       <ReviewHighlightHouseCleaning location={location} />
       <ThreeStepProcess />
       <ReadyForHouseCleaning location={location} />
@@ -101,7 +159,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
               House Cleaning Guides for Houston Homes
             </h3>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Houston homeowners use these guides to understand pricing and determine the right cleaning frequency. Recurring cleaning is the most common option, helping you choose the perfect plan for your home.
+              Most homeowners in Houston start by understanding pricing and how often to schedule cleaning before booking. These guides help you make informed decisions about your cleaning service.
             </p>
           </div>
           
