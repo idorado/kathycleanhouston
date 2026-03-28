@@ -67,6 +67,21 @@ export default async function Home() {
 
       <WhyChooseUs />
 
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">See Why Customers Like Kathy Clean</h2>
+          <div 
+            className="trustindex-widget"
+            dangerouslySetInnerHTML={{
+              __html: `
+                <div class="trustindex-widget" data-locale="en-US" data-template-id="0bb607a64c82262e8c861b2a2d6"></div>
+                <script defer async src="https://cdn.trustindex.io/loader.js?0bb607a64c82262e8c861b2a2d6"></script>
+              `
+            }}
+          />
+        </div>
+      </section>
+
       {/* Areas We Serve Section */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6">
@@ -214,13 +229,6 @@ export default async function Home() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold text-center mb-12">Reviews From Wonderful Customers</h2>
-          <Testimonial />
         </div>
       </section>
 

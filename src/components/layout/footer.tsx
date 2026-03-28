@@ -157,7 +157,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-primary pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-primary">
-          <p>&copy; 2025 Kathy Clean Houston. All rights reserved.</p>
+          <p>&copy; 2026 Kathy Clean Houston. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-primary">
               Privacy Policy

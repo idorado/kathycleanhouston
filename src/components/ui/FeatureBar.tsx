@@ -31,7 +31,7 @@ const FeatureItem = ({ icon, text }: { icon: React.ReactNode; text: string }) =>
 export default function FeatureBar() {
   return (
     <div className="w-full mt-3">
-      <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
+      <div className="flex flex-wrap justify-start gap-2 sm:gap-3 md:gap-4">
         <FeatureItem
           icon={<StarIcon />}
           text="4.8/5 Rating"

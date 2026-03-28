@@ -129,6 +129,25 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
         </section>
       )}
 
+      {displayLocation === 'Houston' && (
+        <section className="py-16 bg-white">
+          <div className="max-w-5xl mx-auto px-4 text-center">
+            <h2 className="text-4xl font-bold text-navy-800 mb-8">
+              See Why Customers Like Kathy Clean
+            </h2>
+            <div 
+              className="trustindex-widget"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  <div class="trustindex-widget" data-locale="en-US" data-template-id="0bb607a64c82262e8c861b2a2d6"></div>
+                  <script defer async src="https://cdn.trustindex.io/loader.js?0bb607a64c82262e8c861b2a2d6"></script>
+                `
+              }}
+            />
+          </div>
+        </section>
+      )}
+
       <ReviewHighlightHouseCleaning location={location} />
       <ThreeStepProcess />
       <ReadyForHouseCleaning location={location} />
