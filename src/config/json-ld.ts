@@ -92,8 +92,10 @@ export const houseCleaning = (location: string) => {
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "9219 Katy Fwy #136",
       "addressLocality": "Houston",
       "addressRegion": "TX",
+      "postalCode": "77024",
       "addressCountry": "US"
     },
     "geo": {
@@ -165,8 +167,10 @@ export const commercialCleaning = (location: string) => {
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "9219 Katy Fwy #136",
       "addressLocality": "Houston",
       "addressRegion": "TX",
+      "postalCode": "77024",
       "addressCountry": "US"
     },
     "geo": {
@@ -238,8 +242,10 @@ export const windowCleaning = (location: string) => {
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "9219 Katy Fwy #136",
       "addressLocality": "Houston",
       "addressRegion": "TX",
+      "postalCode": "77024",
       "addressCountry": "US"
     },
     "geo": {
@@ -311,8 +317,10 @@ export const cleaningServices = (location: string) => {
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "9219 Katy Fwy #136",
       "addressLocality": "Houston",
       "addressRegion": "TX",
+      "postalCode": "77024",
       "addressCountry": "US"
     },
     "geo": {
@@ -406,8 +414,10 @@ export const moveInOutCleaning = (location: string) => {
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "9219 Katy Fwy #136",
       "addressLocality": "Houston",
       "addressRegion": "TX",
+      "postalCode": "77024",
       "addressCountry": "US"
     },
     "geo": {
@@ -481,8 +491,10 @@ export const postConstructionCleaning = (location: string) => {
     "telephone": "+1 346-488-6044",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "9219 Katy Fwy #136",
       "addressLocality": "Houston",
       "addressRegion": "TX",
+      "postalCode": "77024",
       "addressCountry": "US"
     },
     "geo": {
