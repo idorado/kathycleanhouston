@@ -21,6 +21,14 @@ const AREA_SERVED = [
   { "@type": "Place", "name": "Washington Ave. / Memorial Park" },
 ];
 
+const AGGREGATE_RATING = {
+  "@type": "AggregateRating",
+  "ratingValue": "5",
+  "reviewCount": "12",
+  "bestRating": "5",
+  "worstRating": "1"
+};
+
 export const home = () => ({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -34,8 +42,10 @@ export const home = () => ({
   "telephone": "+1 346-488-6044",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "9219 Katy Fwy #136",
     "addressLocality": "Houston",
     "addressRegion": "TX",
+    "postalCode": "77024",
     "addressCountry": "US"
   },
   "geo": {
@@ -63,7 +73,8 @@ export const home = () => ({
   ],
   "priceRange": "$$",
   "areaServed": AREA_SERVED,
-  "sameAs": []
+  "sameAs": [],
+  "aggregateRating": AGGREGATE_RATING
 });
 
 export const houseCleaning = (location: string) => {
@@ -134,7 +145,8 @@ export const houseCleaning = (location: string) => {
           }
         }
       ]
-    }
+    },
+    "aggregateRating": AGGREGATE_RATING
   }
 };
 
@@ -206,7 +218,8 @@ export const commercialCleaning = (location: string) => {
           }
         }
       ]
-    }
+    },
+    "aggregateRating": AGGREGATE_RATING
   }
 };
 
@@ -278,7 +291,8 @@ export const windowCleaning = (location: string) => {
           }
         }
       ]
-    }
+    },
+    "aggregateRating": AGGREGATE_RATING
   }
 };
 
@@ -372,7 +386,8 @@ export const cleaningServices = (location: string) => {
           }
         }
       ]
-    }
+    },
+    "aggregateRating": AGGREGATE_RATING
   }
 };
 
@@ -444,7 +459,8 @@ export const moveInOutCleaning = (location: string) => {
           }
         }
       ]
-    }
+    },
+    "aggregateRating": AGGREGATE_RATING
   }
 };
 
@@ -518,7 +534,7 @@ export const postConstructionCleaning = (location: string) => {
           }
         }
       ]
-    }
+    },
+    "aggregateRating": AGGREGATE_RATING
   }
 };
-

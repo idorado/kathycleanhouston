@@ -128,14 +128,6 @@ export default function ServiceAreas() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...houstonServiceAreas]
-                .filter(
-                  (location) =>
-                    location.slug !== "houston" &&
-                    location.slug !== "spring-branch" &&
-                    location.slug !== "medical-center-area" &&
-                    location.slug !== "mid-west" &&
-                    location.slug !== "briar-forest",
-                )
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .map((location, index) => (
                 <LocationCard

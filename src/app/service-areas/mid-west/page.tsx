@@ -1,5 +1,5 @@
 import JsonLd from "@/components/json-ld";
-import { home } from "@/config/json-ld";
+import { houseCleaning } from "@/config/json-ld";
 import LocationServiceAreaPage from "@/components/service-areas/LocationServiceAreaPage";
 import { getHoustonServiceArea } from "@/lib/service-areas/houstonLocations";
 
@@ -94,7 +94,7 @@ export default async function MidWestServiceAreaPage() {
       mapParagraph={`Serving homes across the ${locationName} Houston area.`}
       mapEmbedUrl={area.mapEmbedUrl}
     >
-      <JsonLd data={home()} />
+      <JsonLd data={houseCleaning(locationName)} />
     </LocationServiceAreaPage>
   );
 }
