@@ -9,17 +9,18 @@ import { useEffect } from 'react'
 export function PostHogProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     const apiKey = process.env.NEXT_PUBLIC_POSTHOG_KEY
-    const apiHost = process.env.NEXT_PUBLIC_POSTHOG_HOST
 
     // If no credentials, do nothing
-    if (!apiKey || !apiHost) {
+    if (!apiKey) {
       return
     }
 
     // Always initialize PostHog when we have apiKey and host
     posthog.init(apiKey, {
-      api_host: apiHost,
+      api_host: '/ingest',
+      ui_host: 'https://us.posthog.com',
       capture_pageview: false,
+      capture_pageleave: true,
     })
 
     // In non-production environments, initialize but opt-out of sending data
