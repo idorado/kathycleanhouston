@@ -5,6 +5,9 @@ import HeroSection from "@/components/HeroSection";
 import Image from "next/image";
 import PhoneButton from "@/components/PhoneButton";
 import Link from "next/link";
+import JsonLd from "@/components/json-ld";
+
+const SITE_URL = "https://kathycleanhouston.com";
 
 export interface LocationServiceAreaPageProps {
   title: string;
@@ -47,6 +50,7 @@ export interface LocationServiceAreaPageProps {
 }
 
 export default function LocationServiceAreaPage({
+  canonical,
   heroTitle,
   heroSubtitle,
   heroParagraphs,
@@ -87,9 +91,43 @@ export default function LocationServiceAreaPage({
   const hasAnchor = anchorStart >= 0 && anchorEnd >= 0;
   const beforeAnchorHtml = hasAnchor ? rawHeroParagraph.slice(0, anchorStart) : rawHeroParagraph;
   const afterAnchorHtml = hasAnchor ? rawHeroParagraph.slice(anchorEnd + "</a>".length) : "";
+  const canonicalPath = canonical.endsWith("/") && canonical !== "/"
+    ? canonical.slice(0, -1)
+    : canonical;
+  const locationName = canonicalPath
+    .replace("/service-areas/", "")
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": SITE_URL
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Service Areas",
+        "item": `${SITE_URL}/service-areas`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": `House Cleaning in ${locationName}`,
+        "item": `${SITE_URL}${canonicalPath}`
+      }
+    ]
+  };
 
   return (
     <main className="flex flex-col min-h-screen">
+      <JsonLd data={breadcrumbSchema} />
       {children}
 
       <HeroSection>

@@ -1,21 +1,32 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { canonicalPath } from "@/lib/canonical";
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 import ResourceArticleTemplate from "@/components/resources/ResourceArticleTemplate";
 
+const articlePath = canonicalPath("resources/house-cleaning-cost-houston");
+const articleTitle = "How Much Does House Cleaning Cost in Houston?";
+const articleDescription =
+  "Learn how house cleaning pricing works in Houston. Understand what affects cost including home size, bathrooms, condition, and frequency of recurring cleaning.";
+
 export const metadata: Metadata = {
   title: "How Much Does House Cleaning Cost in Houston? Flat-Rate Pricing Guide",
-  description:
-    "Learn how house cleaning pricing works in Houston. Understand what affects cost including home size, bathrooms, condition, and frequency of recurring cleaning.",
+  description: articleDescription,
   alternates: {
-    canonical: canonicalPath("resources/house-cleaning-cost-houston"),
+    canonical: articlePath,
   },
 };
 
 export default function HouseCleaningCostHoustonArticle() {
   return (
-    <ResourceArticleTemplate>
+    <ResourceArticleTemplate
+      schema={{
+        headline: articleTitle,
+        description: articleDescription,
+        path: articlePath,
+        datePublished: "2026-04-23",
+        dateModified: "2026-04-23",
+      }}
+    >
       <h1>How Much Does House Cleaning Cost in Houston?</h1>
       
       <p>

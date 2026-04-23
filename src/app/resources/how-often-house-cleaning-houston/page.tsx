@@ -1,21 +1,32 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { canonicalPath } from "@/lib/canonical";
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 import ResourceArticleTemplate from "@/components/resources/ResourceArticleTemplate";
 
+const articlePath = canonicalPath("resources/how-often-house-cleaning-houston");
+const articleTitle = "How Often Should You Schedule House Cleaning in Houston?";
+const articleDescription =
+  "Find out how often you should clean your home in Houston. Learn the best schedule for recurring cleaning based on home size, lifestyle, and family needs.";
+
 export const metadata: Metadata = {
   title: "How Often Should You Schedule House Cleaning in Houston?",
-  description:
-    "Find out how often you should clean your home in Houston. Learn the best schedule for recurring cleaning based on home size, lifestyle, and family needs.",
+  description: articleDescription,
   alternates: {
-    canonical: canonicalPath("resources/how-often-house-cleaning-houston"),
+    canonical: articlePath,
   },
 };
 
 export default function HowOftenHouseCleaningHoustonArticle() {
   return (
-    <ResourceArticleTemplate>
+    <ResourceArticleTemplate
+      schema={{
+        headline: articleTitle,
+        description: articleDescription,
+        path: articlePath,
+        datePublished: "2026-04-23",
+        dateModified: "2026-04-23",
+      }}
+    >
       <h1>How Often Should You Schedule House Cleaning in Houston?</h1>
       
       <p>

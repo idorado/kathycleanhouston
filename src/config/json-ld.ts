@@ -1,15 +1,14 @@
 const SITE_URL = "https://kathycleanhouston.com";
 const LOGO_URL = `${SITE_URL}/images/logo-nav.webp`;
 const CONTACT_EMAIL = "info@kathyclean.com";
+const GBP_URL = process.env.NEXT_PUBLIC_GBP_URL;
 
-// Add your verified directory profile URLs here to enable AI entity graph linking.
-// These propagate to every schema block on the site.
 const SAME_AS_URLS: string[] = [
-  // "https://www.google.com/maps/place/Kathy+Clean+Houston/...",  // Google Business Profile URL
-  // "https://www.yelp.com/biz/kathy-clean-houston",
-  // "https://www.facebook.com/kathycleanhouston",
-  // "https://www.instagram.com/kathycleanhouston",
-];
+  GBP_URL,
+  "https://www.yelp.com/biz/kathy-clean-houston",
+  "https://www.facebook.com/kathycleanhouston",
+  "https://www.instagram.com/kathycleanhouston",
+].filter((url): url is string => Boolean(url));
 
 const AREA_SERVED = [
   { "@type": "Place", "name": "Houston, TX" },
