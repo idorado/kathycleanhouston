@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://luchoscleaning.com',
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://kathycleanhouston.com',
   generateRobotsTxt: true,
 
   // No listar en el sitemap rutas que no queremos posicionar
@@ -17,6 +17,14 @@ module.exports = {
   robotsTxtOptions: {
     policies: [
       { userAgent: '*', allow: '/', disallow: ['/api/', '/admin/'] },
+      { userAgent: 'GPTBot', allow: '/' },
+      { userAgent: 'OAI-SearchBot', allow: '/' },
+      { userAgent: 'ChatGPT-User', allow: '/' },
+      { userAgent: 'ClaudeBot', allow: '/' },
+      { userAgent: 'PerplexityBot', allow: '/' },
+      { userAgent: 'Google-Extended', allow: '/' },
+      { userAgent: 'Amazonbot', allow: '/' },
+      { userAgent: 'Applebot-Extended', allow: '/' },
     ],
   },
 

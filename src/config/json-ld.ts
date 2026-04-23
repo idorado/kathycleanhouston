@@ -1,6 +1,16 @@
 const SITE_URL = "https://kathycleanhouston.com";
 const LOGO_URL = `${SITE_URL}/images/logo-nav.webp`;
 const CONTACT_EMAIL = "info@kathyclean.com";
+
+// Add your verified directory profile URLs here to enable AI entity graph linking.
+// These propagate to every schema block on the site.
+const SAME_AS_URLS: string[] = [
+  // "https://www.google.com/maps/place/Kathy+Clean+Houston/...",  // Google Business Profile URL
+  // "https://www.yelp.com/biz/kathy-clean-houston",
+  // "https://www.facebook.com/kathycleanhouston",
+  // "https://www.instagram.com/kathycleanhouston",
+];
+
 const AREA_SERVED = [
   { "@type": "Place", "name": "Houston, TX" },
   { "@type": "Place", "name": "Houston" },
@@ -23,114 +33,85 @@ const AREA_SERVED = [
 
 const AGGREGATE_RATING = {
   "@type": "AggregateRating",
-  "ratingValue": "5",
-  "reviewCount": "12",
+  "ratingValue": "4.8",
+  "reviewCount": "14",
   "bestRating": "5",
   "worstRating": "1"
 };
 
+const GEO_COORDINATES = {
+  "@type": "GeoCoordinates",
+  "latitude": 29.7832,
+  "longitude": -95.5211
+};
+
+const OPENING_HOURS = [
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "07:00",
+    "closes": "20:00"
+  },
+  {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Saturday", "Sunday"],
+    "opens": "09:00",
+    "closes": "20:00"
+  }
+];
+
+const ADDRESS = {
+  "@type": "PostalAddress",
+  "streetAddress": "9219 Katy Fwy #136",
+  "addressLocality": "Houston",
+  "addressRegion": "TX",
+  "postalCode": "77024",
+  "addressCountry": "US"
+};
+
 export const home = () => ({
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["LocalBusiness", "CleaningService"],
+  "@id": `${SITE_URL}/#business`,
   "name": "Kathy Clean Houston",
+  "description": "Professional house cleaning in Houston, TX. Recurring, deep clean, move-in/out, and post-construction cleaning by insured, background-checked professionals. 48-hour satisfaction guarantee.",
   "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
   "logo": LOGO_URL,
   "email": CONTACT_EMAIL,
   "serviceType": "Residential Cleaning Services",
-  "@id": SITE_URL,
   "url": SITE_URL,
   "telephone": "+1 346-488-6044",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "9219 Katy Fwy #136",
-    "addressLocality": "Houston",
-    "addressRegion": "TX",
-    "postalCode": "77024",
-    "addressCountry": "US"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 29.7604,
-    "longitude": -95.3698
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
-      ],
-      "opens": "07:00",
-      "closes": "20:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Saturday", "Sunday"
-      ],
-      "opens": "09:00",
-      "closes": "20:00"
-    }
-  ],
+  "address": ADDRESS,
+  "geo": GEO_COORDINATES,
+  "openingHoursSpecification": OPENING_HOURS,
   "priceRange": "$$",
   "areaServed": AREA_SERVED,
-  "sameAs": [],
+  "sameAs": SAME_AS_URLS,
   "aggregateRating": AGGREGATE_RATING
 });
 
 export const houseCleaning = (location: string) => {
-  const slug = `house-cleaning-${location.toLowerCase().replace(/ /g, '-')}`;
+  const pageSlug = `service-areas/${location.toLowerCase().replace(/ /g, '-')}`;
   const locationTitleCase = location.replace(/\b\w/g, l => l.toUpperCase());
 
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Kathy Clean Houston",
+    "@type": ["LocalBusiness", "CleaningService"],
+    "@id": `${SITE_URL}/${pageSlug}#service`,
+    "name": `Kathy Clean Houston — House Cleaning in ${locationTitleCase}`,
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "logo": LOGO_URL,
     "email": CONTACT_EMAIL,
     "serviceType": "Residential Cleaning Services",
     "telephone": "+1 346-488-6044",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "9219 Katy Fwy #136",
-      "addressLocality": "Houston",
-      "addressRegion": "TX",
-      "postalCode": "77024",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 29.7604,
-      "longitude": -95.3698
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "07:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "20:00"
-      }
-    ],
+    "address": ADDRESS,
+    "geo": GEO_COORDINATES,
+    "openingHoursSpecification": OPENING_HOURS,
     "priceRange": "$$",
-    "sameAs": [],
-    "@id": `${SITE_URL}/${slug}`,
-    "url": `${SITE_URL}/${slug}`,
-    "areaServed": AREA_SERVED,
+    "sameAs": SAME_AS_URLS,
+    "url": `${SITE_URL}/${pageSlug}`,
+    "parentOrganization": { "@id": `${SITE_URL}/#business` },
+    "areaServed": { "@type": "Place", "name": locationTitleCase },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `House Cleaning in ${locationTitleCase}`,
@@ -140,10 +121,7 @@ export const houseCleaning = (location: string) => {
           "itemOffered": {
             "@type": "Service",
             "name": "House Cleaning",
-            "areaServed": {
-              "@type": "Place",
-              "name": locationTitleCase
-            }
+            "areaServed": { "@type": "Place", "name": locationTitleCase }
           }
         }
       ]
@@ -158,54 +136,22 @@ export const commercialCleaning = (location: string) => {
 
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["LocalBusiness", "CleaningService"],
+    "@id": `${SITE_URL}/${slug}#service`,
     "name": "Kathy Clean Houston",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "logo": LOGO_URL,
     "email": CONTACT_EMAIL,
-    "serviceType": "Residential Cleaning Services",
+    "serviceType": "Commercial Cleaning Services",
     "telephone": "+1 346-488-6044",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "9219 Katy Fwy #136",
-      "addressLocality": "Houston",
-      "addressRegion": "TX",
-      "postalCode": "77024",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 29.7604,
-      "longitude": -95.3698
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "07:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "20:00"
-      }
-    ],
+    "address": ADDRESS,
+    "geo": GEO_COORDINATES,
+    "openingHoursSpecification": OPENING_HOURS,
     "priceRange": "$$",
-    "sameAs": [],
-    "@id": `${SITE_URL}/${slug}`,
+    "sameAs": SAME_AS_URLS,
     "url": `${SITE_URL}/${slug}`,
-    "areaServed": AREA_SERVED,
+    "parentOrganization": { "@id": `${SITE_URL}/#business` },
+    "areaServed": { "@type": "Place", "name": locationTitleCase },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Commercial Cleaning in ${locationTitleCase}`,
@@ -215,10 +161,7 @@ export const commercialCleaning = (location: string) => {
           "itemOffered": {
             "@type": "Service",
             "name": "Commercial Cleaning",
-            "areaServed": {
-              "@type": "Place",
-              "name": locationTitleCase
-            }
+            "areaServed": { "@type": "Place", "name": locationTitleCase }
           }
         }
       ]
@@ -233,54 +176,22 @@ export const windowCleaning = (location: string) => {
 
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["LocalBusiness", "CleaningService"],
+    "@id": `${SITE_URL}/${slug}#service`,
     "name": "Kathy Clean Houston",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "logo": LOGO_URL,
     "email": CONTACT_EMAIL,
-    "serviceType": "Residential Cleaning Services",
+    "serviceType": "Window Cleaning Services",
     "telephone": "+1 346-488-6044",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "9219 Katy Fwy #136",
-      "addressLocality": "Houston",
-      "addressRegion": "TX",
-      "postalCode": "77024",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 29.7604,
-      "longitude": -95.3698
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "07:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "20:00"
-      }
-    ],
+    "address": ADDRESS,
+    "geo": GEO_COORDINATES,
+    "openingHoursSpecification": OPENING_HOURS,
     "priceRange": "$$",
-    "sameAs": [],
-    "@id": `${SITE_URL}/${slug}`,
+    "sameAs": SAME_AS_URLS,
     "url": `${SITE_URL}/${slug}`,
-    "areaServed": AREA_SERVED,
+    "parentOrganization": { "@id": `${SITE_URL}/#business` },
+    "areaServed": { "@type": "Place", "name": locationTitleCase },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Window Cleaning in ${locationTitleCase}`,
@@ -290,10 +201,7 @@ export const windowCleaning = (location: string) => {
           "itemOffered": {
             "@type": "Service",
             "name": "Window Cleaning",
-            "areaServed": {
-              "@type": "Place",
-              "name": locationTitleCase
-            }
+            "areaServed": { "@type": "Place", "name": locationTitleCase }
           }
         }
       ]
@@ -308,54 +216,22 @@ export const cleaningServices = (location: string) => {
 
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["LocalBusiness", "CleaningService"],
+    "@id": `${SITE_URL}/${slug}#service`,
     "name": "Kathy Clean Houston",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "logo": LOGO_URL,
     "email": CONTACT_EMAIL,
     "serviceType": "Residential Cleaning Services",
     "telephone": "+1 346-488-6044",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "9219 Katy Fwy #136",
-      "addressLocality": "Houston",
-      "addressRegion": "TX",
-      "postalCode": "77024",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 29.7604,
-      "longitude": -95.3698
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "07:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "20:00"
-      }
-    ],
+    "address": ADDRESS,
+    "geo": GEO_COORDINATES,
+    "openingHoursSpecification": OPENING_HOURS,
     "priceRange": "$$",
-    "sameAs": [],
-    "@id": `${SITE_URL}/${slug}`,
+    "sameAs": SAME_AS_URLS,
     "url": `${SITE_URL}/${slug}`,
-    "areaServed": AREA_SERVED,
+    "parentOrganization": { "@id": `${SITE_URL}/#business` },
+    "areaServed": { "@type": "Place", "name": locationTitleCase },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Cleaning Services in ${locationTitleCase}`,
@@ -365,10 +241,7 @@ export const cleaningServices = (location: string) => {
           "itemOffered": {
             "@type": "Service",
             "name": "House Cleaning",
-            "areaServed": {
-              "@type": "Place",
-              "name": locationTitleCase
-            }
+            "areaServed": { "@type": "Place", "name": locationTitleCase }
           }
         },
         {
@@ -376,10 +249,7 @@ export const cleaningServices = (location: string) => {
           "itemOffered": {
             "@type": "Service",
             "name": "Commercial Cleaning",
-            "areaServed": {
-              "@type": "Place",
-              "name": locationTitleCase
-            }
+            "areaServed": { "@type": "Place", "name": locationTitleCase }
           }
         },
         {
@@ -387,10 +257,7 @@ export const cleaningServices = (location: string) => {
           "itemOffered": {
             "@type": "Service",
             "name": "Window Cleaning",
-            "areaServed": {
-              "@type": "Place",
-              "name": locationTitleCase
-            }
+            "areaServed": { "@type": "Place", "name": locationTitleCase }
           }
         }
       ]
@@ -405,54 +272,22 @@ export const moveInOutCleaning = (location: string) => {
 
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["LocalBusiness", "CleaningService"],
+    "@id": `${SITE_URL}/${slug}#service`,
     "name": "Kathy Clean Houston",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "logo": LOGO_URL,
     "email": CONTACT_EMAIL,
-    "serviceType": "Residential Cleaning Services",
+    "serviceType": "Move-In & Move-Out Cleaning Services",
     "telephone": "+1 346-488-6044",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "9219 Katy Fwy #136",
-      "addressLocality": "Houston",
-      "addressRegion": "TX",
-      "postalCode": "77024",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 29.7604,
-      "longitude": -95.3698
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "07:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "20:00"
-      }
-    ],
+    "address": ADDRESS,
+    "geo": GEO_COORDINATES,
+    "openingHoursSpecification": OPENING_HOURS,
     "priceRange": "$$",
-    "sameAs": [],
-    "@id": `${SITE_URL}/${slug}`,
+    "sameAs": SAME_AS_URLS,
     "url": `${SITE_URL}/${slug}`,
-    "areaServed": AREA_SERVED,
+    "parentOrganization": { "@id": `${SITE_URL}/#business` },
+    "areaServed": { "@type": "Place", "name": locationTitleCase },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Move-In & Move-Out Cleaning in ${locationTitleCase}`,
@@ -462,10 +297,7 @@ export const moveInOutCleaning = (location: string) => {
           "itemOffered": {
             "@type": "Service",
             "name": "Move-In & Move-Out Cleaning",
-            "areaServed": {
-              "@type": "Place",
-              "name": locationTitleCase
-            }
+            "areaServed": { "@type": "Place", "name": locationTitleCase }
           }
         }
       ]
@@ -475,61 +307,27 @@ export const moveInOutCleaning = (location: string) => {
 };
 
 export const postConstructionCleaning = (location: string) => {
-  const slug = `post-construction-cleaning-${location
-    .toLowerCase()
-    .replace(/ /g, '-')}`;
+  const slug = `post-construction-cleaning-${location.toLowerCase().replace(/ /g, '-')}`;
   const locationTitleCase = location.replace(/\b\w/g, l => l.toUpperCase());
 
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["LocalBusiness", "CleaningService"],
+    "@id": `${SITE_URL}/${slug}#service`,
     "name": "Kathy Clean Houston",
     "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
     "logo": LOGO_URL,
     "email": CONTACT_EMAIL,
-    "serviceType": "Residential Cleaning Services",
+    "serviceType": "Post-Construction Cleaning Services",
     "telephone": "+1 346-488-6044",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "9219 Katy Fwy #136",
-      "addressLocality": "Houston",
-      "addressRegion": "TX",
-      "postalCode": "77024",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 29.7604,
-      "longitude": -95.3698
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "07:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "20:00"
-      }
-    ],
+    "address": ADDRESS,
+    "geo": GEO_COORDINATES,
+    "openingHoursSpecification": OPENING_HOURS,
     "priceRange": "$$",
-    "sameAs": [],
-    "@id": `${SITE_URL}/${slug}`,
+    "sameAs": SAME_AS_URLS,
     "url": `${SITE_URL}/${slug}`,
-    "areaServed": AREA_SERVED,
+    "parentOrganization": { "@id": `${SITE_URL}/#business` },
+    "areaServed": { "@type": "Place", "name": locationTitleCase },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": `Post-Construction Cleaning in ${locationTitleCase}`,
@@ -539,10 +337,7 @@ export const postConstructionCleaning = (location: string) => {
           "itemOffered": {
             "@type": "Service",
             "name": "Post-Construction Cleaning",
-            "areaServed": {
-              "@type": "Place",
-              "name": locationTitleCase
-            }
+            "areaServed": { "@type": "Place", "name": locationTitleCase }
           }
         }
       ]

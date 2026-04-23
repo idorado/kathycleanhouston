@@ -130,7 +130,7 @@ export function Footer() {
             </h3>
             <div className="space-y-4">
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Luchos+Cleaning+Houston+TX"
+                href="https://www.google.com/maps/search/?api=1&query=9219+Katy+Fwy+%23136+Houston+TX+77024"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-cyan-500 block"
@@ -143,13 +143,14 @@ export function Footer() {
               </a>
               <div className="mt-2 w-full h-48 rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.8061070088734!2d-95.52112162366939!3d29.783247575056137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c531cf72f29d%3A0x2c640da6601bcaa5!2sLuchos%20Cleaning!5e0!3m2!1ses-419!2sar!4v1764879629621!5m2!1ses-419!2sar"
+                  src="https://maps.google.com/maps?q=9219+Katy+Fwy+%23136,+Houston,+TX+77024&z=15&output=embed"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
+                  title="Kathy Clean Houston location — 9219 Katy Fwy #136, Houston TX 77024"
                 ></iframe>
               </div>
             </div>

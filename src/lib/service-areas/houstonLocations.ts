@@ -12,7 +12,12 @@ export type HoustonServiceAreaSlug =
   | "mid-west"
   | "briar-forest"
   | "west-university-place"
-  | "washington-ave-memorial-park";
+  | "washington-ave-memorial-park"
+  | "energy-corridor"
+  | "katy"
+  | "sugar-land"
+  | "the-woodlands"
+  | "westchase";
 
 export type HoustonServiceArea = {
   name: string;
@@ -149,6 +154,51 @@ export const houstonServiceAreas: HoustonServiceArea[] = [
       "House cleaning services in Washington Ave Memorial Park, Houston",
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d74869.25624181979!2d-95.50892076884148!3d29.782201084014865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c74b7418d3c7%3A0xd51cb2b8600d8d8e!2sWashington%20Ave.%2F%20Memorial%20Park%2C%20Houston%2C%20Texas%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1764348693926!5m2!1ses-419!2sar",
+  },
+  {
+    name: "Energy Corridor",
+    slug: "energy-corridor",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/1/19/BPAmericasHQ.JPG",
+    imageAlt: "BP Americas headquarters in Energy Corridor, Houston TX — professional house cleaning services",
+    mapEmbedUrl:
+      "https://maps.google.com/maps?q=Energy+Corridor,+Houston,+TX+77079&z=13&output=embed",
+  },
+  {
+    name: "Katy",
+    slug: "katy",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Katysign.JPG",
+    imageAlt: "City of Katy Texas welcome sign — professional house cleaning services",
+    mapEmbedUrl:
+      "https://maps.google.com/maps?q=Katy,+TX+77494&z=12&output=embed",
+  },
+  {
+    name: "Sugar Land",
+    slug: "sugar-land",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/4/49/Sugarland_Town_Square.jpg",
+    imageAlt: "Sugar Land Town Square in First Colony, Sugar Land TX — professional house cleaning services",
+    mapEmbedUrl:
+      "https://maps.google.com/maps?q=Sugar+Land,+TX+77479&z=12&output=embed",
+  },
+  {
+    name: "The Woodlands",
+    slug: "the-woodlands",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/2/2a/Woodlands_Waterway.jpg",
+    imageAlt: "The Woodlands Waterway in The Woodlands TX — professional house cleaning services",
+    mapEmbedUrl:
+      "https://maps.google.com/maps?q=The+Woodlands,+TX+77380&z=12&output=embed",
+  },
+  {
+    name: "Westchase",
+    slug: "westchase",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/0/0f/Westchase%2C_Houston%2C_TX%2C_USA_-_panoramio.jpg",
+    imageAlt: "Westchase district Houston TX urban landscape — professional house cleaning services",
+    mapEmbedUrl:
+      "https://maps.google.com/maps?q=Westchase,+Houston,+TX+77042&z=13&output=embed",
   },
 ];
 

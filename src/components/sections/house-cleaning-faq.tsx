@@ -63,8 +63,7 @@ Deep cleans and move-out services are priced individually based on scope.`
   },
   {
     question: 'How can I get a cleaning quote in {Location}?',
-    answer: `You can request a free quote at luchoscleaning.com or call (346) 488-6044.
-We’ll confirm your details and send a customized estimate—usually within minutes.`
+    answer: `You can request a free quote at kathycleanhouston.com/request-quote or call (346) 488-6044. We’ll confirm your details and send a customized estimate—usually within minutes.`
   }
 ]
 

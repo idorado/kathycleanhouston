@@ -2,13 +2,6 @@ import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 import FeatureBar from "@/components/ui/FeatureBar";
 import React from "react";
 import HeroSection from "@/components/HeroSection";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import PhoneButton from "@/components/PhoneButton";
 import Link from "next/link";
@@ -263,22 +256,19 @@ export default function LocationServiceAreaPage({
             <h2 className="text-3xl font-bold text-center mb-12">
               Frequently Asked Questions
             </h2>
-            <Card className="w-full">
-              <CardContent className="pt-6">
-                <Accordion type="single" collapsible className="w-full">
-                  {faqItems.map((item, idx) => (
-                    <AccordionItem key={idx} value={`item-${idx}`}>
-                      <AccordionTrigger className="text-left">
-                        {item.question}
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <div dangerouslySetInnerHTML={{ __html: item.answer }} />
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </CardContent>
-            </Card>
+            <div className="space-y-3">
+              {faqItems.map((item, idx) => (
+                <details key={idx} className="border rounded-lg bg-white shadow-sm group">
+                  <summary className="flex justify-between items-center p-4 font-semibold cursor-pointer text-base list-none [&::-webkit-details-marker]:hidden">
+                    {item.question}
+                    <span className="ml-4 text-primary shrink-0 transition-transform group-open:rotate-180" aria-hidden>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                    </span>
+                  </summary>
+                  <div className="px-4 pb-4 text-gray-700 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: item.answer }} />
+                </details>
+              ))}
+            </div>
           </div>
         </div>
       </section>

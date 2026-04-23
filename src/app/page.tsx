@@ -12,42 +12,6 @@ import JsonLd from "@/components/json-ld";
 import { home } from "@/config/json-ld";
 import Link from "next/link";
 
-const cleaningServiceSchema = {
-  "@context": "https://schema.org",
-  "@type": "CleaningService",
-  name: "Kathy Clean Houston",
-  url: "https://kathycleanhouston.com",
-  telephone: "+1-346-488-6044",
-  email: "info@kathyclean.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "9219 Katy Fwy #136",
-    addressLocality: "Houston",
-    addressRegion: "TX",
-    postalCode: "77024",
-    addressCountry: "US",
-  },
-  areaServed: [
-    { "@type": "Place", name: "Houston, TX" },
-    { "@type": "Place", name: "Spring Branch" },
-    { "@type": "Place", name: "Spring Branch Central" },
-    { "@type": "Place", name: "Spring Branch East" },
-    { "@type": "Place", name: "Greater Heights" },
-    { "@type": "Place", name: "Greenway / Upper Kirby Area" },
-    { "@type": "Place", name: "Memorial" },
-    { "@type": "Place", name: "Greater Uptown" },
-    { "@type": "Place", name: "Bellaire" },
-    { "@type": "Place", name: "Medical Center Area" },
-    { "@type": "Place", name: "The Memorial Villages" },
-    { "@type": "Place", name: "River Oaks" },
-    { "@type": "Place", name: "Mid West" },
-    { "@type": "Place", name: "Briar Forest" },
-    { "@type": "Place", name: "West University Place" },
-    { "@type": "Place", name: "Washington Ave. / Memorial Park" },
-  ],
-  sameAs: [],
-};
-
 export const metadata: Metadata = {
   alternates: {
     canonical: '/',
@@ -60,7 +24,6 @@ export default async function Home() {
   return (
         <main className="flex flex-col min-h-screen">
       <JsonLd data={home()} />
-      <JsonLd data={cleaningServiceSchema} />
       <HomeHero />
 
       <OurServices />

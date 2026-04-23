@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Frequently Asked Questions | Kathy Clean Houston",
   description: "Get answers to common questions about Kathy Clean Houston house cleaning services. Learn about our cleaning process, pricing, scheduling, and more.",
   alternates: {
-    canonical: "https://www.kathycleanhouston.com/faq",
+    canonical: "/faq",
   },
 };
 
