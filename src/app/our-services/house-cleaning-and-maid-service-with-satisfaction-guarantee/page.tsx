@@ -2,7 +2,12 @@ import ResidentialServiceComponent from "@/components/ResidentialServiceComponen
 import { canonicalPath } from "@/lib/canonical";
 
 export default function HouseCleaningService() {
-  return <ResidentialServiceComponent location="Houston" />;
+  return (
+    <ResidentialServiceComponent
+      location="Houston"
+      schemaCanonicalPath="/our-services/house-cleaning-and-maid-service-with-satisfaction-guarantee"
+    />
+  );
 }
 
 export const metadata = {

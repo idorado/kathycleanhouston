@@ -29,6 +29,10 @@ export default function ResourceArticleTemplate({ children, schema }: ResourceAr
         "url": url,
         "datePublished": schema.datePublished,
         "dateModified": schema.dateModified,
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", "h2", "p:first-of-type"]
+        },
         "author": {
           "@type": "Organization",
           "@id": `${SITE_URL}/#business`,

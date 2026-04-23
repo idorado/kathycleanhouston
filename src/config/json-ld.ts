@@ -129,8 +129,28 @@ export const home = () => ({
   "review": REVIEWS
 });
 
-export const houseCleaning = (location: string) => {
-  const pageSlug = `service-areas/${location.toLowerCase().replace(/ /g, '-')}`;
+export const website = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  "url": SITE_URL,
+  "name": "Kathy Clean Houston",
+  "publisher": { "@id": `${SITE_URL}/#business` },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${SITE_URL}/search?q={search_term_string}`,
+    "query-input": "required name=search_term_string"
+  }
+});
+
+export const houseCleaning = (location: string, canonicalPath?: string) => {
+  const generatedSlug = location
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  const pageSlug = canonicalPath
+    ? canonicalPath.replace(/^\/+|\/+$/g, "")
+    : `service-areas/${generatedSlug}`;
   const locationTitleCase = location.replace(/\b\w/g, l => l.toUpperCase());
 
   return {

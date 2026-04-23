@@ -22,5 +22,10 @@ export const metadata: Metadata = {
 export default function HouseCleaningHouston() {
   // Houston-specific residential/house cleaning page
   // Ensures headings and copy render for Houston via the component's `location` prop.
-  return <ResidentialServiceComponent location="Houston" />;
+  return (
+    <ResidentialServiceComponent
+      location="Houston"
+      schemaCanonicalPath="/house-cleaning-houston"
+    />
+  );
 }

@@ -8,7 +8,7 @@ import RequestQuoteButton from "@/components/sections/RequestQuoteButton"
 import { FAQ } from "@/components/sections/faq"
 import FeatureBar from "@/components/ui/FeatureBar"
 import JsonLd from "@/components/json-ld";
-import { home } from "@/config/json-ld";
+import { home, website } from "@/config/json-ld";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -23,6 +23,7 @@ export default async function Home() {
   return (
         <main className="flex flex-col min-h-screen">
       <JsonLd data={home()} />
+      <JsonLd data={website()} />
       <HomeHero />
 
       <OurServices />

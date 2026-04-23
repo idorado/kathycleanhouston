@@ -4,7 +4,12 @@ import { redirect } from "next/navigation";
 
 export default function HouseCleaningService() {
   redirect("/our-services/house-cleaning-and-maid-service-with-satisfaction-guarantee");
-  return <ResidentialServiceComponent location="Houston" />;
+  return (
+    <ResidentialServiceComponent
+      location="Houston"
+      schemaCanonicalPath="/services/house-cleaning-and-maid-service-with-satisfaction-guarantee"
+    />
+  );
 }
 
 export const metadata = {
