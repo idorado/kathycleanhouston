@@ -17,7 +17,8 @@ export type HoustonServiceAreaSlug =
   | "katy"
   | "sugar-land"
   | "the-woodlands"
-  | "westchase";
+  | "westchase"
+  | "rice-military";
 
 export type HoustonServiceArea = {
   name: string;
@@ -190,6 +191,15 @@ export const houstonServiceAreas: HoustonServiceArea[] = [
     imageAlt: "The Woodlands Waterway in The Woodlands TX — professional house cleaning services",
     mapEmbedUrl:
       "https://maps.google.com/maps?q=The+Woodlands,+TX+77380&z=12&output=embed",
+  },
+  {
+    name: "Rice Military",
+    slug: "rice-military",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/8/85/Beer_can_house.jpg",
+    imageAlt: "Beer Can House landmark in Rice Military Houston TX — professional house cleaning services",
+    mapEmbedUrl:
+      "https://maps.google.com/maps?q=Rice+Military,+Houston,+TX+77007&z=14&output=embed",
   },
   {
     name: "Westchase",

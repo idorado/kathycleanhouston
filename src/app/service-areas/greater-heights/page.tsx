@@ -4,102 +4,115 @@ import LocationServiceAreaPage from "@/components/service-areas/LocationServiceA
 import { getHoustonServiceArea } from "@/lib/service-areas/houstonLocations";
 
 const locationName = "Greater Heights";
-const title = `Reliable House Cleaning Service in ${locationName}`;
-const description =
-  `Looking for reliable house cleaning in ${locationName}, Houston? Kathy Clean Houston offers recurring, deep, and move-out cleaning with insured professionals and a 48-hour satisfaction guarantee. Get a fast quote.`;
-const canonical = "/service-areas/greater-heights";
 const area = getHoustonServiceArea("greater-heights");
 
 export const metadata = {
-  title: `House Cleaning in ${locationName}`,
+  title: "House Cleaning Services in Houston Heights TX | Kathy Clean",
   description:
-    `Reliable house cleaning in ${locationName}. Kathy Clean Houston offers recurring, deep & move-out cleaning with insured pros. Get a fast quote.`,
+    "Professional house cleaning in Houston Heights (77007, 77008, 77009). Kathy Clean Houston offers recurring, deep & move-out cleaning for Heights bungalows and townhomes. Fully insured. Get a fast quote.",
   alternates: {
-    canonical,
+    canonical: "/service-areas/greater-heights",
   },
 };
 
-export default async function GreaterHeightsServiceAreaPage() {
+export default function GreaterHeightsServiceAreaPage() {
   return (
     <LocationServiceAreaPage
-      title={title}
-      description={description}
-      canonical={canonical}
+      title="Reliable House Cleaning Service"
+      description={metadata.description}
+      canonical="/service-areas/greater-heights"
       robotsIndex={true}
       heroTitle="Reliable House Cleaning Service"
-      heroSubtitle={`in ${locationName}`}
+      heroSubtitle="in Houston Heights"
       heroParagraphs={[
-        `<a href="https://kathycleanhouston.com/" class="underline text-secondary">Kathy Clean Houston</a> offers professional home cleaning services in ${locationName}. From recurring maintenance cleanings to deep cleans and move-out cleanings, we focus on consistent quality so your home feels fresh, comfortable, and guest-ready week after week.`,
+        `<a href="https://kathycleanhouston.com/" class="underline text-secondary">Kathy Clean Houston</a> provides professional home cleaning throughout Greater Heights, Houston (zip codes 77007, 77008, and 77009). From weekly maintenance to deep cleans and move-out services, we serve the creative professionals, growing families, and dual-income households that make the Heights one of Houston's most vibrant inner-loop neighborhoods.`,
       ]}
       ctaPhone="(346) 488-6044"
       ctaSmsNumber="(346) 488-6044"
-      benefitsTitle={`Why Choose Kathy Clean Houston in ${locationName}?`}
-      benefitsParagraph={`We bring reliability, eco-friendly products, and consistent quality for ${locationName} households.`}
+      benefitsTitle="Why Heights Households Choose Kathy Clean"
+      benefitsParagraph="The Heights moves fast — our service keeps up with it. Reliable, consistent cleaning that fits around demanding work schedules and active home lives."
       benefitsItems={[
         {
-          title: "Reliable recurring cleaning:",
-          body: "Choose weekly, bi-weekly, or monthly service to keep your home consistently clean without the stress.",
+          title: "Flexible scheduling for busy Heights professionals:",
+          body: "Whether you commute to the Energy Corridor, downtown, or the Medical Center, we offer morning and midday slots that have your home clean before you're back. No need to be home.",
         },
         {
-          title: "Eco-friendly, family-safe products:",
-          body: "We use non-toxic solutions designed to be safe for families and pets while still delivering a detailed clean.",
+          title: "Experience with bungalows and multi-story townhomes:",
+          body: "The Heights housing stock is unique — from 1920s craftsman bungalows to modern 3-story townhomes. We adapt our approach to your home's layout, materials, and specific cleaning priorities.",
         },
         {
-          title: "Detail-focused pros who respect your home:",
-          body: "Service is delivered with clear communication, attention to detail, and consistent results so you can trust the outcome every time.",
+          title: "Eco-friendly products safe for kids and pets:",
+          body: "Non-toxic, biodegradable cleaners that protect your family — important for the Heights families who use White Oak Bayou trails and spend time in their outdoor spaces.",
         },
       ]}
       benefitsImage={{
-        url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomlkWQowW1K9N4DUxFng7weyZbAGHESLJh3Ifa",
-        alt: `Professional house cleaning service in ${locationName}`,
-      }}
-      whyTitle={`Why House Cleaning Matters in ${locationName}`}
-      whyParagraph={`Keeping your ${locationName} home clean improves comfort, supports indoor air quality, and saves time for what matters most.`}
-      whyItems={[
-        {
-          title: "Helps reduce dust and allergens:",
-          body: "Routine cleaning supports a healthier home by removing dust and buildup that can affect indoor air quality.",
-        },
-        {
-          title: "Protects surfaces and finishes:",
-          body: "Regular upkeep prevents grime buildup and helps extend the life of floors, counters, and fixtures.",
-        },
-        {
-          title: "Makes hosting and daily life easier:",
-          body: "A consistently clean home feels better day-to-day and makes it simple to welcome guests at any time.",
-        },
-      ]}
-      whyImage={{
         url: area.imageUrl,
         alt: area.imageAlt,
       }}
+      whyTitle="Why House Cleaning Matters in the Heights"
+      whyParagraph="The Heights' character — older homes, active families, and year-round Houston humidity — creates specific cleaning challenges that benefit from consistent professional attention."
+      whyItems={[
+        {
+          title: "Older homes accumulate dust differently:",
+          body: "The Heights' historic bungalows and craftsman homes have unique architectural details — crown molding, hardwood floors, original fixtures — that require more attentive dusting and cleaning than modern builds.",
+        },
+        {
+          title: "High humidity accelerates bathroom and kitchen buildup:",
+          body: "Houston's climate is hard on surfaces. Regular cleaning prevents mold, mildew, and grout discoloration in the bathrooms and kitchens of Heights homes, especially older builds with less ventilation.",
+        },
+        {
+          title: "Active families and pets need a clean home base:",
+          body: "Heights families spend their weekends on 19th Street, White Oak Bayou trails, and Donovan Park. That active outdoor life tracks in. Recurring cleaning keeps your home fresh without consuming your downtime.",
+        },
+      ]}
+      whyImage={{
+        url: "https://upload.wikimedia.org/wikipedia/commons/8/8a/HeightsTheater.JPG",
+        alt: "Heights Theater and central business district in Houston Heights TX",
+      }}
       locationSpecificContent={{
-        title: "House Cleaning Services in Greater Heights for Busy Homes",
-        content: `<p>Greater Heights attracts creative professionals, young families, and entrepreneurs who thrive in this vibrant Inner Loop neighborhood. Our <a href="/house-cleaning-houston">house cleaning in Houston</a> services are perfect for the active lifestyles of Heights residents who balance work in downtown Houston with enjoying the area's renowned restaurants, parks, and cultural venues. The cleaning professionals we work with understand the diverse housing styles in Greater Heights, from historic bungalows to modern townhomes, delivering thorough cleaning that adapts to your schedule. Whether you're commuting to the Medical Center or managing family activities along 19th Street, our weekly and biweekly cleaning options keep your home ready for spontaneous gatherings. We serve homes across Greater Heights and nearby Houston neighborhoods including <a href="/service-areas/washington-ave-memorial-park">Washington Ave/Memorial Park</a>, providing consistent service that matches the energetic pace of Heights living.</p><p>For Greater Heights families with active lifestyles, we focus on creating clean, healthy environments using eco-friendly products that stand up to the daily demands of urban living. Our <a href="/recurring-house-cleaning-services">recurring house cleaning services</a> help maintain the character and charm of Heights homes while supporting your busy schedule. Ready to <a href="/request-quote">request a quote</a> for reliable cleaning that fits your Greater Heights lifestyle?</p>`,
+        title: "House Cleaning in Greater Heights for Inner-Loop Houston Households",
+        content: `<p>Greater Heights — spanning zip codes <strong>77007</strong>, <strong>77008</strong>, and <strong>77009</strong> — is one of Houston's most sought-after inner-loop neighborhoods, known for its historic architecture, walkable streets, and thriving local business scene along 19th Street and Yale Street. Our <a href="/house-cleaning-houston">Houston house cleaning</a> service has become a go-to for Heights households who want reliable, professional cleaning without the hassle of coordinating with an individual cleaner. We serve neighborhoods throughout the Greater Heights area including Woodland Heights, Norhill, Sunset Heights, Shady Acres, and the Cottage Grove communities along Washington Avenue.</p>
+<p>Heights homes range from 1920s craftsman bungalows to new-construction 3-story townhomes — and we've cleaned them all. Historic homes need careful attention to hardwood floors, original woodwork, and older fixtures that don't respond well to harsh chemicals. Modern townhomes need systematic top-to-bottom cleaning that handles stairs, rooftop decks, and open-plan layouts efficiently. Our recurring service adapts to your home's specific needs and your household's schedule. We also serve adjacent neighborhoods including <a href="/service-areas/rice-military">Rice Military</a> and <a href="/service-areas/spring-branch">Spring Branch</a>.</p>
+<p>For Heights renters and homeowners in transition, our move-out cleaning service is thorough and landlord-ready — covering inside appliances, cabinet interiors, baseboards, and all areas required for a full deposit return. Move-in cleans make new Heights homes feel genuinely fresh before you unpack. If you're one of the many Heights residents who found us through a neighbor's recommendation or a quick search, <a href="/request-quote">request a free quote</a> — we respond same-day.</p>`,
       }}
       recurringCleaningContent={{
-        title: "Recurring Cleaning That Fits Your Schedule",
-        content: `<p>Recurring cleaning is the ideal solution for Greater Heights homeowners who want to maintain their homes while enjoying the neighborhood's active social scene. Weekly service keeps your home ready for impromptu gatherings and maintains the polished look expected in this trendy area. Biweekly cleaning provides the perfect balance for busy professionals who value their free time exploring the Heights' attractions. Monthly maintenance helps preserve your home's condition between more frequent cleanings. The cleaning professionals we work with understand the unique needs of historic and modern homes in Greater Heights, ensuring consistent quality that respects your property's character. Our recurring service includes detailed cleaning of all living spaces, with flexible scheduling that accommodates your dynamic Heights lifestyle.</p>`,
+        title: "Recurring Cleaning Built for the Heights Lifestyle",
+        content: `<p>Biweekly cleaning is by far the most popular choice among Heights clients — it keeps a home consistently clean and guest-ready without the frequency of weekly service. For households with children, dogs, or heavy kitchen use, weekly service keeps pace with the activity level that Heights family life demands. Monthly deep cleans work for smaller households or young professionals who travel frequently and maintain between visits. Every visit covers full kitchen and bathroom cleaning, vacuuming and mopping all floors, dusting all surfaces and fixtures, mirrors and glass, and attention to the high-touch areas that accumulate the most grime in a busy Heights home. For historic bungalows, we take extra care with hardwood floors (dry mop or appropriate cleaner only), vintage fixtures, and period woodwork. Flexible rescheduling is always available — the Heights lifestyle doesn't follow a fixed calendar, and neither do we.</p>`,
       }}
       faqItems={[
         {
-          question: `What is included in a house cleaning in ${locationName}?`,
+          question: "Do you serve the Heights zip codes 77007, 77008, and 77009?",
           answer:
-            "Most cleanings include dusting, vacuuming, mopping, kitchen and bathroom sanitizing, and tidying common areas. We can customize priorities based on your home and goals.",
+            "Yes. We clean homes throughout Greater Heights including Woodland Heights, Norhill, Sunset Heights, Shady Acres, and Cottage Grove. We serve all three Heights zip codes and adjacent areas like Rice Military and Spring Branch.",
         },
         {
-          question: "Do you offer recurring and one-time cleaning?",
+          question: "Do you have experience cleaning historic Heights bungalows?",
           answer:
-            "Yes. We offer recurring weekly/bi-weekly/monthly cleaning, as well as one-time deep cleaning and move-out cleaning depending on your needs.",
+            "Yes. We regularly clean 1920s-1940s craftsman and Victorian bungalows throughout the Heights. We use appropriate products for hardwood floors, original woodwork, and older fixtures — nothing abrasive that could damage period finishes.",
         },
         {
-          question: "Do I need to provide supplies or equipment?",
+          question: "Can you clean my Heights home while I'm at work?",
           answer:
-            "No. Cleaning professionals arrive prepared for the service. If you have specific product preferences, we can accommodate them when possible.",
+            "Absolutely. Most Heights clients provide a key code or lockbox access. We clean while you're away and lock up securely. You'll get a notification when the team finishes.",
+        },
+        {
+          question: "What is included in a Heights house cleaning?",
+          answer:
+            "Standard cleanings include kitchen and bathroom deep cleaning, vacuuming and mopping all floors, dusting all surfaces and fixtures, cleaning mirrors, wiping countertops and appliances, and attention to entry areas. For bungalows, we include careful hardwood floor treatment. For townhomes, we clean all floors including stairs.",
+        },
+        {
+          question: "How much does house cleaning cost in the Heights?",
+          answer:
+            "Most 2-bed/1-bath Heights bungalows run $140–$175 per biweekly visit. Larger 3-bed/2-bath homes and 3-story townhomes range $175–$230. Recurring clients save 15–20% vs. one-time rates. Request a free quote for your specific home.",
+        },
+        {
+          question: "Do you offer move-out cleaning for Heights rentals?",
+          answer:
+            "Yes. We specialize in move-out cleaning throughout the Heights — covering inside appliances, cabinet interiors, bathrooms, baseboards, and everything required for a full deposit return. We coordinate with landlords and property managers on request.",
         },
       ]}
-      mapTitle={`Find Us in ${locationName}`}
-      mapParagraph={`Serving ${locationName} and surrounding neighborhoods across the greater Houston area.`}
+      mapTitle="Serving Greater Heights and Inner-Loop Houston"
+      mapParagraph="Serving Greater Heights (77007, 77008, 77009), including Woodland Heights, Norhill, Sunset Heights, Shady Acres, and the Washington Avenue corridor."
       mapEmbedUrl={area.mapEmbedUrl}
     >
       <JsonLd data={houseCleaning(locationName)} />
