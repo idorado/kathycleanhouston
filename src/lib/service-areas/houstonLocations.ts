@@ -18,7 +18,8 @@ export type HoustonServiceAreaSlug =
   | "sugar-land"
   | "the-woodlands"
   | "westchase"
-  | "rice-military";
+  | "rice-military"
+  | "oak-forest";
 
 export type HoustonServiceArea = {
   name: string;
@@ -209,6 +210,15 @@ export const houstonServiceAreas: HoustonServiceArea[] = [
     imageAlt: "Westchase district Houston TX urban landscape — professional house cleaning services",
     mapEmbedUrl:
       "https://maps.google.com/maps?q=Westchase,+Houston,+TX+77042&z=13&output=embed",
+  },
+  {
+    name: "Oak Forest",
+    slug: "oak-forest",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/8/83/OakForestHoustonTX.JPG",
+    imageAlt: "Oak Forest neighborhood street in Houston TX — professional house cleaning services",
+    mapEmbedUrl:
+      "https://maps.google.com/maps?q=Oak+Forest,+Houston,+TX+77018&z=14&output=embed",
   },
 ];
 
