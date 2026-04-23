@@ -14,21 +14,60 @@ const SAME_AS_URLS: string[] = [
 const AREA_SERVED = [
   { "@type": "Place", "name": "Houston, TX" },
   { "@type": "Place", "name": "Houston" },
+  { "@type": "Place", "name": "Greater Heights" },
+  { "@type": "Place", "name": "Rice Military" },
   { "@type": "Place", "name": "Spring Branch" },
   { "@type": "Place", "name": "Spring Branch Central" },
   { "@type": "Place", "name": "Spring Branch East" },
-  { "@type": "Place", "name": "Greater Heights" },
-  { "@type": "Place", "name": "Greenway / Upper Kirby Area" },
+  { "@type": "Place", "name": "Energy Corridor" },
   { "@type": "Place", "name": "Memorial" },
-  { "@type": "Place", "name": "Greater Uptown" },
+  { "@type": "Place", "name": "Westchase" },
+  { "@type": "Place", "name": "Katy, TX" },
+  { "@type": "Place", "name": "Sugar Land, TX" },
+  { "@type": "Place", "name": "The Woodlands, TX" },
   { "@type": "Place", "name": "Bellaire" },
-  { "@type": "Place", "name": "Medical Center Area" },
+  { "@type": "Place", "name": "West University Place" },
   { "@type": "Place", "name": "The Memorial Villages" },
   { "@type": "Place", "name": "River Oaks" },
-  { "@type": "Place", "name": "Mid West" },
-  { "@type": "Place", "name": "Briar Forest" },
-  { "@type": "Place", "name": "West University Place" },
   { "@type": "Place", "name": "Washington Ave. / Memorial Park" },
+];
+
+const REVIEWS = [
+  {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "author": { "@type": "Person", "name": "Steve M." },
+    "datePublished": "2025-04-22",
+    "reviewBody": "Service is outstanding, the help is professional, courteous and always on time for scheduled cleaning. I would give Kathy Clean Houston my highest recommendation, you'll be very pleased!"
+  },
+  {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "author": { "@type": "Person", "name": "Ximena V." },
+    "datePublished": "2025-03-10",
+    "reviewBody": "Nubia does an amazing job. She is meticulous and always willing to do anything we ask. We enjoy her great work as well as efficiency. We highly recommend Kathy Clean Houston!"
+  },
+  {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "author": { "@type": "Person", "name": "Donna W." },
+    "datePublished": "2025-03-10",
+    "reviewBody": "I was referred to Kathy Clean Houston by a neighbor. They were very professional, and I was able to schedule an appointment within just a few days. The person who came did an absolutely AMAZING job. Very professional, and I was truly impressed."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "author": { "@type": "Person", "name": "Rik W." },
+    "datePublished": "2025-03-10",
+    "reviewBody": "I've used Kathy Clean Houston and am impressed with how the service professionals are personable and have a high attention to detail. The scheduling support is great and works hard to accommodate special requests. Highly recommend Kathy Clean Houston."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+    "author": { "@type": "Person", "name": "Kerri N." },
+    "datePublished": "2025-03-10",
+    "reviewBody": "Want the best cleaning service in town? Then you want to call Kathy Clean Houston!! They will provide you with outstanding service, and they are very easy to work with."
+  }
 ];
 
 const AGGREGATE_RATING = {
@@ -87,7 +126,8 @@ export const home = () => ({
   "priceRange": "$$",
   "areaServed": AREA_SERVED,
   "sameAs": SAME_AS_URLS,
-  "aggregateRating": AGGREGATE_RATING
+  "aggregateRating": AGGREGATE_RATING,
+  "review": REVIEWS
 });
 
 export const houseCleaning = (location: string) => {
