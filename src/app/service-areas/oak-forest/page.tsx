@@ -13,6 +13,11 @@ export const metadata = {
   alternates: {
     canonical: "/service-areas/oak-forest",
   },
+  openGraph: {
+    title: "House Cleaning Services in Oak Forest, Houston TX | Kathy Clean",
+    description: "Professional house cleaning in Oak Forest and Garden Oaks, Houston (77018, 77092). Recurring, deep & move-out cleaning for Oak Forest homes. Fully insured.",
+    url: "https://kathycleanhouston.com/service-areas/oak-forest",
+  },
 };
 
 export default function OakForestServiceAreaPage() {

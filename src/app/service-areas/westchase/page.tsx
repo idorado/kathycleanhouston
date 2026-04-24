@@ -13,6 +13,11 @@ export const metadata = {
   alternates: {
     canonical: "/service-areas/westchase",
   },
+  openGraph: {
+    title: "House Cleaning Services in Westchase, Houston TX | Kathy Clean",
+    description: "Professional house cleaning in Westchase, Houston (77042, 77077). Recurring, deep & move-out cleaning for Westchase households. Fully insured.",
+    url: "https://kathycleanhouston.com/service-areas/westchase",
+  },
 };
 
 export default function WestchaseServiceAreaPage() {

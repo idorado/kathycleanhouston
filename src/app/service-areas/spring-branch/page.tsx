@@ -17,6 +17,11 @@ export const metadata = {
   alternates: {
     canonical,
   },
+  openGraph: {
+    title: `House Cleaning in ${locationName}, Houston`,
+    description: `Reliable house cleaning in ${locationName}. Kathy Clean Houston offers recurring, deep & move-out cleaning with insured pros. Get a fast quote.`,
+    url: `https://kathycleanhouston.com${canonical}`,
+  },
 };
 
 export default async function SpringBranchServiceAreaPage() {

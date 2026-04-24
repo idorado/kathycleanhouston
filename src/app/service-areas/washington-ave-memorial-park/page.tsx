@@ -17,6 +17,11 @@ export const metadata = {
   alternates: {
     canonical,
   },
+  openGraph: {
+    title: `House Cleaning in Memorial Park`,
+    description: `Reliable house cleaning in ${locationName}. Kathy Clean Houston offers deep & move-out cleaning with insured pros. Get a fast quote.`,
+    url: `https://kathycleanhouston.com${canonical}`,
+  },
 };
 
 export default async function WashingtonAveMemorialParkServiceAreaPage() {

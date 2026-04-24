@@ -13,6 +13,11 @@ export const metadata = {
   alternates: {
     canonical: "/service-areas/rice-military",
   },
+  openGraph: {
+    title: "House Cleaning Services in Rice Military, Houston TX | Kathy Clean",
+    description: "Professional house cleaning in Rice Military, Houston (77007). Recurring, deep & move-out cleaning for Rice Military townhomes and condos. Fully insured.",
+    url: "https://kathycleanhouston.com/service-areas/rice-military",
+  },
 };
 
 export default function RiceMilitaryServiceAreaPage() {
