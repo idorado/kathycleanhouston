@@ -20,32 +20,30 @@
 - **Schema JSON-LD**: centralizado en `src/config/json-ld.ts`
 - **Imágenes externas**: allowlisted en `next.config.ts` → `r2kd0cre8z.ufs.sh`, `tv7odam5so.ufs.sh`, `upload.wikimedia.org`
 - **Analytics**: PostHog (ruteado por proxy `/ingest/` para evitar ad blockers)
+- **GBP URL**: via env var `NEXT_PUBLIC_GBP_URL` (setear en Vercel si no está)
 
 ---
 
 ## Zonas target — Análisis de mercado
 
-### Contexto
-La estrategia inicial apuntaba a Memorial Villages (alto poder adquisitivo). Ese mercado es difícil online porque es "dinero viejo" — los clientes tienen cleaners de confianza de años y no buscan en Google.
-
 ### Zonas de tracción real (validadas con datos de clientes)
 
 | ZIP | Barrio | Por qué funciona |
 |---|---|---|
-| **77007** | Rice Military / Heights | Profesionales jóvenes, dual-income, digitalmente activos. Mayor cluster de clientes. |
+| **77007** | Rice Military | Profesionales jóvenes, dual-income, digitalmente activos. Mayor cluster de clientes Ads. |
 | **77008** | Houston Heights | Mismo perfil que 77007. Alta CVR en Google Ads (17%). |
-| **77024** | Memorial / Katy Fwy | Zona de la oficina. Funciona bien orgánico y directo, NO en Ads (CVR 1%). |
+| **77024** | Memorial / Katy Fwy | Zona de la oficina. Funciona orgánico/directo, NO en Ads (CVR 1%). |
 | **77079** | Energy Corridor | Expats corporativos (BP, Shell, ConocoPhillips). CVR 15% en Ads. |
 | **77080** | Spring Branch | Produjo el cliente de mayor valor ($15,496, weekly). |
-| **77018/77092** | Oak Forest / Garden Oaks | Clientes existentes, sin páginas dedicadas aún. |
+| **77018/77092** | Oak Forest / Garden Oaks | Clientes existentes. Página live. |
 
-### Zonas de largo plazo (buen mercado, sin tracción aún)
-- Sugar Land (77478/79) — Fort Bend, dual-income, muy activos online
-- Katy / Cinco Ranch (77449/77494) — Volumen alto, cleaners operan cerca
-- The Woodlands (77380+) — Lejos, corporate relocation, largo plazo
+### Zonas de largo plazo
+- Sugar Land (77478/79) — Fort Bend, dual-income
+- Katy / Cinco Ranch (77449/77494) — cleaners operan cerca
+- The Woodlands (77380+) — corporate relocation
 
 ### Evitar para adquisición online
-- River Oaks, Memorial Villages (viejo dinero, sin búsqueda online)
+- River Oaks, Memorial Villages (viejo dinero, sin búsqueda activa en Google)
 
 ---
 
@@ -53,9 +51,9 @@ La estrategia inicial apuntaba a Memorial Villages (alto poder adquisitivo). Ese
 
 **Campaña**: PMAX HOUSTON
 - **Budget**: $60/día
-- **Bidding**: Maximize Conversions (sin Target CPA — esperar 40-50 conv. totales antes de setearlo, estimado ~$68-75)
+- **Bidding**: Maximize Conversions (sin Target CPA — setear ~$68-75 cuando llegue a 40-50 conv. totales)
 - **Targeting geográfico**: Washington Ave/Memorial Park, ZIP 77008, 77079, 77007, 77092
-  - ZIP 77024 **excluido** (CVR 1.1%, $223/conv — gasta sin retorno)
+  - ZIP 77024 **excluido** (CVR 1.1%, $223/conv)
 - **Exclusión demográfica**: 18-24 años
 
 ### Asset Groups
@@ -63,66 +61,81 @@ La estrategia inicial apuntaba a Memorial Villages (alto poder adquisitivo). Ese
 **1. Recurrent Group**
 - Final URL: `https://kathycleanhouston.com/house-cleaning-houston`
 - Audience signals: PERSONALIZADA + In-market (Home Cleaning, Professional Cleaning)
-- Sitelinks recomendados: incluir Energy Corridor-specific
 
 **2. Heights Group** *(creado Abril 2026)*
 - Final URL: `https://kathycleanhouston.com/service-areas/greater-heights`
 - Messaging: bungalows to townhomes, dual-income Heights professionals, 77007/77008
-- Sitelinks: Heights-specific + generales (sin Memorial ni West U)
+
+**3. Energy Corridor Group** *(pendiente de crear)*
+- Final URL propuesta: `https://kathycleanhouston.com/service-areas/energy-corridor`
+- Audience: corporate expats, BP/Shell/ConocoPhillips employees, 77079
+- ZIP 77079 tiene CVR 15% — buen candidato para asset group propio
 
 ### Performance benchmark (Mar-Abr 2026)
-- CVR promedio: 5.26%
-- Cost/conv promedio: $61.39
+- CVR promedio: 5.26% | Cost/conv: $61.39
 - Mejor zona: Heights (77008) → 17% CVR, $53/conv
+- Energy Corridor (77079) → 15% CVR
 
 ### Señal de alerta
-Si el CPC cae por debajo de $3 y el CTR baja de 2%, PMax está derivando a Display/YouTube de baja intención. Revisar y considerar setear Target CPA.
+Si CPC < $3 y CTR < 2%, PMax está derivando a Display/YouTube de baja intención.
 
 ---
 
-## SEO / GEO — Estado de páginas
+## SEO / GEO — Estado de páginas (al 24 Abr 2026)
 
-### Páginas de service area existentes
-`/service-areas/` + los siguientes slugs:
-
-| Slug | Estado | Notas |
+### Páginas de service area — todas live
+| Slug | ZIP | Notas |
 |---|---|---|
-| `greater-heights` | ✅ Live | Principal zona de conversión |
-| `spring-branch` | ✅ Live | Zona de alto valor ($15k cliente) |
-| `memorial` | ✅ Live | |
-| `briar-forest` | ✅ Live | |
-| `bellaire` | ✅ Live | |
-| `west-university` | ✅ Live | |
-| `galleria` | ✅ Live | |
-| `medical-center-area` | ✅ Live | |
-| `energy-corridor` | ✅ Creada, pendiente deploy | ZIP 77079, corporate angle |
-| `katy` | ✅ Creada, pendiente deploy | Cinco Ranch, Grand Pkwy |
-| `sugar-land` | ✅ Creada, pendiente deploy | First Colony, Riverstone |
-| `the-woodlands` | ✅ Creada, pendiente deploy | Villages, Waterway |
-| `westchase` | ✅ Creada, pendiente deploy | Apartments, corporate housing |
+| `greater-heights` | 77007/08/09 | Principal zona de conversión. Reescrita con contenido local. |
+| `rice-military` | 77007 | Nueva. Mayor cluster de clientes Ads. |
+| `oak-forest` | 77018/92 | Nueva. Garden Oaks, clientes existentes. |
+| `spring-branch` | 77080 | Zona de mayor LTV ($15k cliente). |
+| `energy-corridor` | 77079 | Nueva. Corporate angle, CVR 15% Ads. |
+| `memorial` | 77024 | Live. |
+| `westchase` | 77042/77 | Nueva. Corporate housing, apartments. |
+| `katy` | 77449/94 | Nueva. Cinco Ranch, Grand Pkwy. |
+| `sugar-land` | 77478/79 | Nueva. First Colony, Riverstone. |
+| `the-woodlands` | 77380+ | Nueva. Villages, Waterway, ExxonMobil. |
+| `briar-forest` | — | Live. |
+| `bellaire` | — | Live. |
+| `west-university-place` | — | Live. |
+| `medical-center-area` | — | Live. |
+| `galleria` | — | Live (ver `/greater-uptown`). |
 
-### Páginas pendientes de crear (alta prioridad)
-- `/service-areas/rice-military` — ZIP 77007, mayor cluster de clientes
-- `/service-areas/oak-forest` — ZIP 77018/77092, clientes existentes
+### Páginas de recursos — todas live
+| Slug | Tema |
+|---|---|
+| `house-cleaning-cost-houston` | Precios y factores de costo |
+| `how-often-house-cleaning-houston` | Frecuencia de limpieza |
+| `deep-cleaning-houston` | Deep clean: qué es y cuándo |
+| `move-in-move-out-cleaning-houston` | Move-in/out: guía completa |
+| `post-construction-cleaning-houston` | Post-construcción |
+| `what-is-included-house-cleaning` | Qué incluye cada servicio |
 
-### Patrón de páginas
-Todas las páginas de service area usan el componente `LocationServiceAreaPage` en `src/components/service-areas/LocationServiceAreaPage.tsx`. Las imágenes y mapas se configuran en `src/lib/service-areas/houstonLocations.ts`.
+### Otras páginas clave
+- `/house-cleaning-houston` — página principal del servicio
+- `/about-us` — página creada con E-E-A-T signals (equipo, experiencia)
+- `/request-quote` — formulario de cotización (CTA principal)
 
 ---
 
-## Mejoras GEO/SEO implementadas (Abril 2026)
+## GEO/SEO implementado (Abril 2026)
 
-- ✅ Schema JSON-LD centralizado y mejorado (`src/config/json-ld.ts`): `@type: ["LocalBusiness", "CleaningService"]`, AggregateRating, GeoCoordinates correctas (Katy Fwy, no downtown)
-- ✅ `public/llms.txt` creado — visibilidad para AI crawlers
-- ✅ `robots.txt` actualizado — permite GPTBot, ClaudeBot, PerplexityBot, etc.
-- ✅ FAQ sections: reemplazadas de Radix UI Accordion → `<details>/<summary>` HTML nativo (visible para AI crawlers)
+- ✅ Schema JSON-LD centralizado (`src/config/json-ld.ts`): `LocalBusiness + CleaningService`, AggregateRating, GeoCoordinates (Katy Fwy), Review schema (5 reseñas), WebSite schema, speakable
+- ✅ `public/llms.txt` — visibilidad para AI crawlers (GPTBot, ClaudeBot, Perplexity, etc.)
+- ✅ `robots.txt` — permite todos los AI crawlers relevantes
+- ✅ FAQ: HTML nativo `<details>/<summary>` (visible para crawlers, no JS)
+- ✅ Testimonios estáticos en homepage (5 reseñas reales, server-rendered)
 - ✅ Security headers en `vercel.json`
 - ✅ Canonical URLs corregidas
-- ✅ Imágenes de service areas: Wikimedia Commons, específicas por zona (no repetidas)
+- ✅ Breadcrumbs schema en service area pages
+- ✅ BlogPosting schema en resource pages
+- ✅ sameAs links (Yelp, Facebook, Instagram, GBP via env var)
+- ✅ Imágenes Wikimedia Commons específicas por zona
 
 ---
 
-## Clientes actuales — Resumen de data (al 23 Abr 2026)
+## Clientes actuales — Resumen (al 23 Abr 2026)
 
 19 deals ganados, casi todos vía Google Ads.
 
@@ -134,15 +147,32 @@ Todas las páginas de service area usan el componente `LocationServiceAreaPage` 
 
 **Productos más comunes**: Bi-weekly recurring, Move-In, Deep Clean
 
-**Cliente de mayor valor**: Tamara East, 77080, Weekly, $15,496
-
 ---
 
 ## Decisiones tomadas / Aprendizajes
 
-1. **Memorial Villages no es target online** — dinero viejo, sin búsqueda activa en Google
-2. **El Heights-Rice Military corridor es el sweet spot** — CVR más alto, perfil ideal
+1. **Memorial Villages no es target online** — dinero viejo, sin búsqueda activa
+2. **Heights-Rice Military es el sweet spot** — CVR más alto, perfil digital ideal
 3. **77024 excluido de Ads** — funciona orgánico/directo, no pago
-4. **PMax sin tCPA hasta ~50 conversiones** — después setear en $68-75
-5. **Asset group por zona** — mejor que un solo grupo genérico
-6. **Imágenes deben ser de la zona específica** — no reutilizar entre páginas de distintas áreas
+4. **PMax sin tCPA hasta ~50 conversiones** — target ~$68-75
+5. **Asset group por zona** — mejor que un grupo genérico único
+6. **Imágenes deben ser específicas por zona** — Wikimedia Commons, no reutilizar
+7. **Testimonios deben ser server-rendered** — Trustindex JS no lo ven los crawlers
+
+---
+
+## Próximos pasos sugeridos
+
+### Ads (alto impacto inmediato)
+- [ ] Crear **Energy Corridor asset group** en PMax — ZIP 77079 tiene 15% CVR y ahora tiene landing page dedicada
+- [ ] Monitorear Heights Group performance vs Recurrent Group (comparar en ~2 semanas)
+- [ ] Cuando se llegue a 40-50 conv. totales → setear Target CPA en $68-75
+
+### SEO/Orgánico (medio plazo)
+- [ ] Verificar `NEXT_PUBLIC_GBP_URL` en Vercel env vars (para sameAs schema)
+- [ ] Internal linking: conectar resource pages con service area pages relevantes
+- [ ] Agregar reseñas de Google a homepage cuando lleguen nuevas (actualizar REVIEWS en json-ld.ts)
+
+### Conversión
+- [ ] A/B test: hero copy en `/house-cleaning-houston` vs `/service-areas/greater-heights`
+- [ ] Revisar tasa de conversión del formulario `/request-quote`
