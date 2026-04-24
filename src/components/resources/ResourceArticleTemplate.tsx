@@ -70,7 +70,7 @@ export default function ResourceArticleTemplate({ children, schema }: ResourceAr
     ]
   };
 
-  const [y, m, d] = schema.dateModified.split("-").map(Number);
+  const [y = 0, m = 1, d = 1] = schema.dateModified.split("-").map(Number);
   const formattedDate = new Date(y, m - 1, d).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
