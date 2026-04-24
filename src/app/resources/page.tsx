@@ -5,101 +5,173 @@ import { getAllResourceArticles } from "@/config/resources";
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 
 export const metadata: Metadata = {
-  title: "House Cleaning Resources for Houston Homes",
+  title: "House Cleaning Resources & Guides for Houston Homeowners",
   description:
-    "Comprehensive guides about house cleaning costs, pricing, and services for Houston homeowners. Learn about recurring cleaning schedules and what affects cleaning prices.",
+    "Practical guides on house cleaning costs, service types, and scheduling for Houston homeowners. Includes real flat-rate pricing data.",
   alternates: {
     canonical: canonicalPath("resources"),
   },
+  openGraph: {
+    title: "House Cleaning Resources & Guides for Houston Homeowners",
+    description:
+      "Practical guides on house cleaning costs, service types, and scheduling for Houston homeowners. Includes real flat-rate pricing data.",
+    url: "https://kathycleanhouston.com/resources",
+  },
+};
+
+const categoryLabel: Record<string, string> = {
+  pricing: "Pricing Guide",
+  guide: "How-To Guide",
+  tips: "Tips & Advice",
+};
+
+const categoryStyle: Record<string, string> = {
+  pricing: "bg-emerald-100 text-emerald-700",
+  guide: "bg-blue-100 text-blue-700",
+  tips: "bg-amber-100 text-amber-700",
+};
+
+const categoryIcon: Record<string, string> = {
+  pricing: "💲",
+  guide: "📋",
+  tips: "💡",
 };
 
 export default function ResourcesPage() {
-  const articles = getAllResourceArticles();
+  const all = getAllResourceArticles();
+  const featured = all.find((a) => a.featured);
+  const rest = all.filter((a) => !a.featured);
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-12">
-      {/* Intro Section */}
-      <div className="max-w-3xl mx-auto mb-16 text-center">
-        <h1 className="text-4xl font-bold mb-6 text-gray-900">House Cleaning Guides for Houston Homes</h1>
-        
-        <p className="text-lg text-gray-600 leading-relaxed">
-          Houston homeowners use these comprehensive guides to understand house cleaning costs, determine the right cleaning frequency, and choose between different service types. Whether you're a busy professional in Memorial or a growing family in West University Place, these resources help you make informed decisions about maintaining your home.
-        </p>
-      </div>
+    <>
+      {/* Hero */}
+      <section className="bg-accent py-16 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-primary text-xs font-bold uppercase tracking-widest mb-4">
+            Houston Cleaning Resources
+          </p>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+            Cleaning Guides for{" "}
+            <span className="text-primary">Houston Homeowners</span>
+          </h1>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            Practical answers on pricing, service types, and scheduling — based
+            on real data from Houston homes.
+          </p>
+        </div>
+      </section>
 
-      {/* Articles Section */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold text-center mb-10 text-gray-900">Cleaning Guides & Articles</h2>
-        
-        <div className="grid gap-8 max-w-2xl mx-auto">
-          {articles.map((article) => (
-            <div key={article.slug} className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all duration-200 hover:border-primary/20">
-              <h3 className="text-xl font-bold mb-4">
-                <Link 
-                  href={`/resources/${article.slug}`}
-                  className="text-primary hover:text-primary/80 no-underline"
-                >
-                  {article.title}
-                </Link>
-              </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                {article.description}
-              </p>
-              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                <span className="text-sm text-gray-500">
-                  Published {new Date(article.publishDate).toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}
-                </span>
-                <Link 
-                  href={`/resources/${article.slug}`}
-                  className="text-primary hover:text-primary/80 font-medium transition-colors"
-                >
-                  Read More →
-                </Link>
+      <main className="max-w-6xl mx-auto px-4 py-14">
+
+        {/* Featured Article */}
+        {featured && (
+          <div className="mb-12">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-4">
+              Most Popular Guide
+            </p>
+            <Link
+              href={`/resources/${featured.slug}`}
+              className="group block bg-white rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+            >
+              <div className="flex flex-col md:flex-row">
+                {/* Left accent bar */}
+                <div className="hidden md:block w-2 bg-primary shrink-0" />
+
+                <div className="p-8 md:p-10 flex flex-col justify-between flex-1">
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full ${categoryStyle[featured.category]}`}>
+                        {categoryIcon[featured.category]} {categoryLabel[featured.category]}
+                      </span>
+                      <span className="text-gray-400 text-xs">{featured.readTime} min read</span>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
+                      {featured.title}
+                    </h2>
+                    <p className="text-gray-600 text-base leading-relaxed mb-6 max-w-2xl">
+                      {featured.description}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4 text-xs text-gray-400">
+                      <span>
+                        {new Date(featured.publishDate + "T12:00:00").toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </span>
+                      <span className="inline-flex items-center gap-1 bg-primary/10 text-primary font-semibold px-2 py-0.5 rounded text-xs">
+                        Includes full pricing table
+                      </span>
+                    </div>
+                    <span className="text-primary font-semibold text-sm group-hover:translate-x-1 transition-transform inline-block">
+                      Read guide →
+                    </span>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </div>
+            </Link>
+          </div>
+        )}
 
-      {/* Bottom Content Section */}
-      <div className="max-w-2xl mx-auto space-y-8">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900">How Often Should You Clean Your Home?</h2>
-          
-          <p className="text-gray-600 leading-relaxed mb-4">
-            The ideal cleaning frequency depends on your household size, lifestyle, and personal standards. Most Houston homes benefit from biweekly cleaning, which maintains cleanliness while managing costs effectively. Weekly service works well for families with children, pets, or heavy foot traffic, while monthly cleaning might suit single professionals or smaller homes.
+        {/* Grid */}
+        <div>
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">
+            All Guides
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {rest.map((article) => (
+              <Link
+                key={article.slug}
+                href={`/resources/${article.slug}`}
+                className="group flex flex-col bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-200 overflow-hidden"
+              >
+                {/* Top color stripe */}
+                <div className={`h-1 w-full ${article.category === "pricing" ? "bg-emerald-400" : article.category === "tips" ? "bg-amber-400" : "bg-blue-400"}`} />
+
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className={`inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full ${categoryStyle[article.category]}`}>
+                      {categoryIcon[article.category]} {categoryLabel[article.category]}
+                    </span>
+                  </div>
+
+                  <h3 className="text-base font-bold text-gray-900 mb-2 leading-snug group-hover:text-primary transition-colors line-clamp-2">
+                    {article.title}
+                  </h3>
+
+                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 flex-1">
+                    {article.description}
+                  </p>
+
+                  <div className="flex items-center justify-between mt-5 pt-4 border-t border-gray-100">
+                    <span className="text-xs text-gray-400">{article.readTime} min read</span>
+                    <span className="text-primary font-semibold text-sm group-hover:translate-x-1 transition-transform inline-block">
+                      Read →
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
 
-        <div className="text-center">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900">Understanding Houston Cleaning Pricing</h2>
-          
-          <p className="text-gray-600 leading-relaxed mb-4">
-            House cleaning costs in Houston typically range from $120-$400 per visit, with prices varying based on home size, number of bathrooms, and cleaning frequency. Flat-rate pricing provides better value than hourly billing because you know the exact cost upfront. Recurring cleaning services usually cost 15-25% less per visit than one-time cleanings.
+        {/* Bottom CTA */}
+        <div className="mt-16 bg-accent rounded-2xl p-10 text-center">
+          <p className="text-primary text-xs font-bold uppercase tracking-widest mb-3">
+            Ready to book?
           </p>
-        </div>
-
-        <div className="text-center">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900">Deep Cleaning vs Recurring Cleaning</h2>
-          
-          <p className="text-gray-600 leading-relaxed">
-            Deep cleaning addresses accumulated dirt and grime that regular maintenance might miss, making it ideal for first-time cleanings or seasonal refreshes. Deep cleaning typically costs 30-50% more than standard cleaning but provides a thorough foundation for ongoing maintenance. Recurring cleaning focuses on maintaining your home's condition through regular visits.
+          <h2 className="text-3xl font-bold text-white mb-3">
+            Get a Flat-Rate Quote for Your Home
+          </h2>
+          <p className="text-gray-300 mb-8 max-w-lg mx-auto">
+            Pricing is based on your home's square footage. Most Houston homes get a response within a few hours.
           </p>
+          <RequestQuoteButton className="bg-primary text-accent hover:brightness-110 font-semibold px-8 py-3 text-base" />
         </div>
-
-        {/* CTA Section */}
-        <div className="bg-primary text-white p-10 rounded-2xl text-center">
-          <h3 className="text-2xl font-bold mb-4">Get Personalized Cleaning Advice</h3>
-          <p className="mb-6 text-lg">
-            Not sure which cleaning schedule or service type is right for your Houston home? Get a personalized consultation and quote based on your specific needs.
-          </p>
-          <RequestQuoteButton className="bg-white text-primary hover:bg-gray-100" />
-        </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

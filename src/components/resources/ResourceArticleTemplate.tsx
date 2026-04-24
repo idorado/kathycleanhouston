@@ -70,11 +70,23 @@ export default function ResourceArticleTemplate({ children, schema }: ResourceAr
     ]
   };
 
+  const [y, m, d] = schema.dateModified.split("-").map(Number);
+  const formattedDate = new Date(y, m - 1, d).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <>
       <JsonLd data={schemaData} />
       <main className="max-w-3xl mx-auto px-4 py-12">
         <article className="prose prose-lg max-w-none">
+          <p className="not-prose text-sm text-gray-500 mb-6">
+            By <span className="font-medium text-gray-700">Kathy Clean Houston Team</span>
+            {" · "}
+            <time dateTime={schema.dateModified}>Updated {formattedDate}</time>
+          </p>
           {children}
         </article>
       </main>

@@ -13,6 +13,12 @@ export const metadata = {
   alternates: {
     canonical: "/service-areas/the-woodlands",
   },
+  openGraph: {
+    title: "House Cleaning Services in The Woodlands TX | Kathy Clean Houston",
+    description:
+      "Professional house cleaning in The Woodlands, TX (77380–77389). Recurring, deep & move-out cleaning for The Woodlands villages and communities. Fully insured.",
+    url: "https://kathycleanhouston.com/service-areas/the-woodlands",
+  },
 };
 
 export default function TheWoodlandsServiceAreaPage() {

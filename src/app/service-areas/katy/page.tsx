@@ -13,6 +13,12 @@ export const metadata = {
   alternates: {
     canonical: "/service-areas/katy",
   },
+  openGraph: {
+    title: "House Cleaning Services in Katy TX | Kathy Clean Houston",
+    description:
+      "Professional house cleaning in Katy, TX (77449, 77450, 77494). Recurring, deep & move-out cleaning for Katy and Cinco Ranch households. Fully insured.",
+    url: "https://kathycleanhouston.com/service-areas/katy",
+  },
 };
 
 export default function KatyServiceAreaPage() {

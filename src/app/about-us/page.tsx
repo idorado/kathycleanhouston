@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/json-ld";
+import { home } from "@/config/json-ld";
 
 export const metadata: Metadata = {
+  title: "About Kathy Clean Houston | Local House Cleaning Company",
+  description:
+    "Kathy Clean Houston is a locally operated residential cleaning company serving Houston, TX. Fully insured, bonded, and background-checked professionals with a 48-hour satisfaction guarantee.",
   alternates: {
     canonical: "/about-us",
+  },
+  openGraph: {
+    title: "About Kathy Clean Houston | Local House Cleaning Company",
+    description:
+      "Kathy Clean Houston is a locally operated residential cleaning company serving Houston, TX. Fully insured, bonded, and background-checked professionals with a 48-hour satisfaction guarantee.",
+    url: "https://kathycleanhouston.com/about-us",
   },
 };
 
 export default function About() {
   return (
+    <>
+      <JsonLd data={home()} />
     <section className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-4xl font-extrabold text-center text-accent mb-2">
         About Us — Kathy Clean Houston
@@ -95,9 +108,37 @@ export default function About() {
           <li>respectful care of your home.</li>
         </ul>
       </div>
+      <div className="space-y-6 mb-8">
+        <h2 className="text-2xl font-bold text-accent">Where We Operate in Houston</h2>
+        <p>
+          Our cleaners are based near the Katy Freeway corridor, which gives us practical reach across West Houston and the inner loop without the long drive times that affect service reliability. We serve homeowners across a wide range of Houston neighborhoods, including:
+        </p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li><strong>Inner Loop:</strong> Greater Heights, Rice Military, Spring Branch, Memorial, River Oaks, Bellaire, West University Place</li>
+          <li><strong>West Houston:</strong> Energy Corridor, Briar Forest, Westchase, Memorial Villages</li>
+          <li><strong>Suburbs:</strong> Katy, Sugar Land, The Woodlands, Oak Forest</li>
+        </ul>
+        <p>
+          Our office is located at 9219 Katy Fwy #136, Houston, TX 77024. Service is available Monday through Friday, 7 AM–8 PM, and weekends 9 AM–8 PM.
+        </p>
+      </div>
+
+      <div className="space-y-6 mb-8">
+        <h2 className="text-2xl font-bold text-accent">A Brand Built to Grow — Without Losing the Local Touch</h2>
+        <p>
+          Kathy Clean is expanding to multiple cities, but every location operates with a strong local presence. When you book Kathy Clean Houston, you're not calling a national call center — you're working with a Houston-based service that understands the area and takes pride in serving it.
+        </p>
+        <p>As we grow, our commitment remains the same:</p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>local service,</li>
+          <li>consistent quality, and</li>
+          <li>respectful care of your home.</li>
+        </ul>
+      </div>
       <div className="flex justify-center mt-8">
         <img src="/images/logo-nav.webp" alt="Kathy Clean Houston logo" width={200} height={100} className="rounded" />
       </div>
     </section>
+    </>
   );
 }

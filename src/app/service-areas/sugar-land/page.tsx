@@ -13,6 +13,12 @@ export const metadata = {
   alternates: {
     canonical: "/service-areas/sugar-land",
   },
+  openGraph: {
+    title: "House Cleaning Services in Sugar Land TX | Kathy Clean Houston",
+    description:
+      "Professional house cleaning in Sugar Land, TX (77478, 77479, 77498). Recurring, deep & move-out cleaning for First Colony, Riverstone, and Sugar Land households. Fully insured.",
+    url: "https://kathycleanhouston.com/service-areas/sugar-land",
+  },
 };
 
 export default function SugarLandServiceAreaPage() {

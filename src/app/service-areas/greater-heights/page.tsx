@@ -13,6 +13,12 @@ export const metadata = {
   alternates: {
     canonical: "/service-areas/greater-heights",
   },
+  openGraph: {
+    title: "House Cleaning Services in Houston Heights TX | Kathy Clean",
+    description:
+      "Professional house cleaning in Houston Heights (77007, 77008). Recurring, deep & move-out cleaning for Heights bungalows and townhomes. Fully insured.",
+    url: "https://kathycleanhouston.com/service-areas/greater-heights",
+  },
 };
 
 export default function GreaterHeightsServiceAreaPage() {

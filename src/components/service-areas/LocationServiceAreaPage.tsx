@@ -73,11 +73,7 @@ export default function LocationServiceAreaPage({
   mapEmbedUrl,
   children,
 }: LocationServiceAreaPageProps & { children?: React.ReactNode }) {
-  const normalizeBrandText = (value: string) =>
-    value
-      .replaceAll("Lucho’s Cleaning", "Kathy Clean Houston")
-      .replaceAll("Lucho's Cleaning", "Kathy Clean Houston")
-      .replaceAll("Luchos Cleaning", "Kathy Clean Houston");
+  const normalizeBrandText = (value: string) => value;
 
   const finalHeroImage =
     heroImage ?? {
