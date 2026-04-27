@@ -9,7 +9,7 @@ export default function StickyCtaMobile() {
     const heroCta = document.getElementById("hero-cta");
     if (!heroCta) return;
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible(!entry.isIntersecting),
+      (entries) => setVisible(!(entries[0]?.isIntersecting ?? true)),
       { threshold: 0 }
     );
     observer.observe(heroCta);
