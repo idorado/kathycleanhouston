@@ -24,18 +24,17 @@
 
 ---
 
-## Zonas target — Análisis de mercado
+## Zonas target — Performance real por ZIP (Apr 2026)
 
-### Zonas de tracción real (validadas con datos de clientes)
-
-| ZIP | Barrio | Por qué funciona |
-|---|---|---|
-| **77007** | Rice Military | Profesionales jóvenes, dual-income, digitalmente activos. Mayor cluster de clientes Ads. |
-| **77008** | Houston Heights | Mismo perfil que 77007. Alta CVR en Google Ads (17%). |
-| **77024** | Memorial / Katy Fwy | Zona de la oficina. Funciona orgánico/directo, NO en Ads (CVR 1%). |
-| **77079** | Energy Corridor | Expats corporativos (BP, Shell, ConocoPhillips). CVR 15% en Ads. |
-| **77080** | Spring Branch | Produjo el cliente de mayor valor ($15,496, weekly). |
-| **77018/77092** | Oak Forest / Garden Oaks | Clientes existentes. Página live. |
+| ZIP | Barrio | CVR Ads | Cost/conv | Notas |
+|---|---|---|---|---|
+| **77007** | Rice Military | **15.79%** | $38.25 | Más eficiente. Subservido (pocas impresiones). |
+| **77008** | Houston Heights | **12.86%** | $42.82 | Más volumen. 9 conv. en abril. |
+| **77079** | Energy Corridor | **12.20%** | $59.38 | Expats corporativos (BP, Shell, ConocoPhillips). Sólido. |
+| Washington Ave/Memorial | Memorial Park | 8.89% | $55.83 | Decent, recibe mucho presupuesto. |
+| **77024** | Memorial / Katy Fwy | 0.92% | $167.21 | ❌ Excluido de Ads (Apr 27). Funciona orgánico/directo. |
+| **77080** | Spring Branch | — | — | Mayor LTV ($15,496, weekly). Sin datos Ads aún. |
+| 77018/77092 | Oak Forest / Garden Oaks | 0% | — | Sin conversiones. Clientes existentes. |
 
 ### Zonas de largo plazo
 - Sugar Land (77478/79) — Fort Bend, dual-income
@@ -44,16 +43,17 @@
 
 ### Evitar para adquisición online
 - River Oaks, Memorial Villages (viejo dinero, sin búsqueda activa en Google)
+- 77024 (funciona orgánico, no Ads — excluido de campaña el 27 Apr 2026)
 
 ---
 
-## Google Ads — Estado actual
+## Google Ads — Estado actual (al 27 Apr 2026)
 
 **Campaña**: PMAX HOUSTON
-- **Budget**: $60/día
+- **Budget**: $80/día *(subido desde $60 el 27 Apr 2026)*
 - **Bidding**: Maximize Conversions (sin Target CPA — setear ~$68-75 cuando llegue a 40-50 conv. totales)
 - **Targeting geográfico**: Washington Ave/Memorial Park, ZIP 77008, 77079, 77007, 77092
-  - ZIP 77024 **excluido** (CVR 1.1%, $223/conv)
+- **Exclusiones geográficas**: ZIP 77024 excluido como location el 27 Apr 2026 (CVR 0.92%, $167/conv)
 - **Exclusión demográfica**: 18-24 años
 
 ### Asset Groups
@@ -62,26 +62,46 @@
 - Final URL: `https://kathycleanhouston.com/house-cleaning-houston`
 - Audience signals: PERSONALIZADA + In-market (Home Cleaning, Professional Cleaning)
 
-**2. Heights Group** *(creado Abril 2026)*
+**2. Heights Group** *(creado Abril 2026 — datos insuficientes aún)*
 - Final URL: `https://kathycleanhouston.com/service-areas/greater-heights`
 - Messaging: bungalows to townhomes, dual-income Heights professionals, 77007/77008
+- Monitorear en semana 6-8 para evaluar si es incremental vs Recurrent Group
 
-**3. Energy Corridor Group** *(pendiente de crear)*
+**3. Energy Corridor Group** *(evaluar después de semana 6-8 de Heights)*
+- Decisión: esperar más datos antes de crear. 77079 ya convierte bien desde Recurrent Group (12.20% CVR).
 - Final URL propuesta: `https://kathycleanhouston.com/service-areas/energy-corridor`
-- Audience: corporate expats, BP/Shell/ConocoPhillips employees, 77079
-- ZIP 77079 tiene CVR 15% — buen candidato para asset group propio
 
-### Performance benchmark (Mar-Abr 2026)
-- CVR promedio: 5.26% | Cost/conv: $61.39
-- Mejor zona: Heights (77008) → 17% CVR, $53/conv
-- Energy Corridor (77079) → 15% CVR
+### Performance acumulado Abril 2026
+- **Conversiones**: 27 (al 27 Apr) — umbral para Target CPA: 40-50
+- **CVR promedio**: 7.67% | Cost/conv: $56.63
+- **Mejor zona**: 77007 Rice Military → 15.79% CVR, $38.25/conv
+- **Mayor volumen**: 77008 Heights → 12.86% CVR, 9 conv.
+- **Drain de presupuesto resuelto**: 77024 excluido (81 clics, 1 conv., $167/conv)
 
 ### Señal de alerta
 Si CPC < $3 y CTR < 2%, PMax está derivando a Display/YouTube de baja intención.
 
 ---
 
-## SEO / GEO — Estado de páginas (al 24 Abr 2026)
+## CRO — Cambios implementados (27 Apr 2026)
+
+### `/house-cleaning-houston` (landing principal de Ads)
+- ✅ **Hero subtext reposicionado**: de feature list a diferenciador vs plataformas gig
+  - Antes: "Flat-rate pricing. Background-checked cleaners. Recurring, deep clean..."
+  - Ahora: "The same trusted team, every visit — not a different stranger from an app. Background-checked, insured, and serving Memorial, Heights, Spring Branch, and West Houston."
+- ✅ **Pricing section eliminada**: se removieron las cards "From $109 / $119 / $225". Decisión estratégica: no competir en precio, posicionarse en confianza/consistencia.
+- ✅ **CTA**: "REQUEST A QUOTE" → "GET A QUOTE"
+- ✅ **Sticky CTA mobile**: aparece al scrollear (IntersectionObserver), oculto en desktop. Componente: `src/components/ui/StickyCtaMobile.tsx`
+
+### Contexto de decisión CRO
+- Funnel de /house-cleaning-houston: 250 visitas → 15 CTA clicks (6%) → 6 leads. El 82% del tráfico es mobile.
+- El bottleneck es el CTA click rate (6%), no el form completion (45-72% de quienes llegan al form).
+- No mostrar precios: evita atraer leads price-sensitive. El cliente objetivo busca confianza, no precio bajo.
+- KPI a monitorear en 2 semanas: CTA click rate en /house-cleaning-houston (objetivo: subir de 6% a 8-9%).
+
+---
+
+## SEO / GEO — Estado de páginas (al 27 Abr 2026)
 
 ### Páginas de service area — todas live
 | Slug | ZIP | Notas |
@@ -90,7 +110,7 @@ Si CPC < $3 y CTR < 2%, PMax está derivando a Display/YouTube de baja intenció
 | `rice-military` | 77007 | Nueva. Mayor cluster de clientes Ads. |
 | `oak-forest` | 77018/92 | Nueva. Garden Oaks, clientes existentes. |
 | `spring-branch` | 77080 | Zona de mayor LTV ($15k cliente). |
-| `energy-corridor` | 77079 | Nueva. Corporate angle, CVR 15% Ads. |
+| `energy-corridor` | 77079 | Nueva. Corporate angle, CVR 12.2% Ads. |
 | `memorial` | 77024 | Live. |
 | `westchase` | 77042/77 | Nueva. Corporate housing, apartments. |
 | `katy` | 77449/94 | Nueva. Cinco Ranch, Grand Pkwy. |
@@ -113,9 +133,9 @@ Si CPC < $3 y CTR < 2%, PMax está derivando a Display/YouTube de baja intenció
 | `what-is-included-house-cleaning` | Qué incluye cada servicio |
 
 ### Otras páginas clave
-- `/house-cleaning-houston` — página principal del servicio
+- `/house-cleaning-houston` — página principal del servicio (landing Ads principal)
 - `/about-us` — página creada con E-E-A-T signals (equipo, experiencia)
-- `/request-quote` — formulario de cotización (CTA principal)
+- `/request-quote` — formulario de cotización (CTA principal, Tally embed)
 
 ---
 
@@ -135,9 +155,9 @@ Si CPC < $3 y CTR < 2%, PMax está derivando a Display/YouTube de baja intenció
 
 ---
 
-## Clientes actuales — Resumen (al 23 Abr 2026)
+## Clientes actuales — Resumen (al 27 Abr 2026)
 
-19 deals ganados, casi todos vía Google Ads.
+~22 deals ganados, casi todos vía Google Ads.
 
 **Top ZIP clusters:**
 - 77024: 5 clientes (Memorial/Katy Fwy — orgánico + directo)
@@ -147,32 +167,37 @@ Si CPC < $3 y CTR < 2%, PMax está derivando a Display/YouTube de baja intenció
 
 **Productos más comunes**: Bi-weekly recurring, Move-In, Deep Clean
 
+**Tasa de cierre**: ~50% (semana Apr 8-14, con Tamara East weekly $15.5k + Sarah Sneesby $4.7k)
+
 ---
 
 ## Decisiones tomadas / Aprendizajes
 
 1. **Memorial Villages no es target online** — dinero viejo, sin búsqueda activa
 2. **Heights-Rice Military es el sweet spot** — CVR más alto, perfil digital ideal
-3. **77024 excluido de Ads** — funciona orgánico/directo, no pago
-4. **PMax sin tCPA hasta ~50 conversiones** — target ~$68-75
-5. **Asset group por zona** — mejor que un grupo genérico único
-6. **Imágenes deben ser específicas por zona** — Wikimedia Commons, no reutilizar
-7. **Testimonios deben ser server-rendered** — Trustindex JS no lo ven los crawlers
+3. **77024 excluido de Ads** — funcionaba orgánico/directo, no pago. CPA $167 confirmó la exclusión.
+4. **PMax sin tCPA hasta ~40-50 conversiones** — target ~$68-75
+5. **No crear tercer asset group apresuradamente** — Heights tiene <4 semanas. Esperar señal clara de que es incremental antes de agregar Energy Corridor.
+6. **No mostrar precios en landing de Ads** — el cliente objetivo busca confianza, no precio. Mostrar precio atrae el segmento incorrecto.
+7. **El bottleneck del funnel está en CTA click rate (6%), no en el form** — form completion es 45-72%, excelente.
+8. **Imágenes deben ser específicas por zona** — Wikimedia Commons, no reutilizar
+9. **Testimonios deben ser server-rendered** — Trustindex JS no lo ven los crawlers
 
 ---
 
-## Próximos pasos sugeridos
+## Próximos pasos
 
-### Ads (alto impacto inmediato)
-- [ ] Crear **Energy Corridor asset group** en PMax — ZIP 77079 tiene 15% CVR y ahora tiene landing page dedicada
-- [ ] Monitorear Heights Group performance vs Recurrent Group (comparar en ~2 semanas)
+### Ads
+- [ ] Monitorear Heights Group performance vs Recurrent Group (semana 6-8, ~10 May)
 - [ ] Cuando se llegue a 40-50 conv. totales → setear Target CPA en $68-75
+- [ ] Evaluar Energy Corridor asset group después de tener datos de Heights (~10 May)
+- [ ] Monitorear impacto de exclusión de 77024 en distribución de presupuesto (~1 semana)
 
-### SEO/Orgánico (medio plazo)
+### CRO
+- [ ] Monitorear CTA click rate en `/house-cleaning-houston` en PostHog (~2 semanas, objetivo: 8-9%)
+- [ ] Campaña de reviews: SMS/email post-servicio con link a Google review (objetivo: 25+ reviews)
+
+### SEO/Orgánico
 - [ ] Verificar `NEXT_PUBLIC_GBP_URL` en Vercel env vars (para sameAs schema)
 - [ ] Internal linking: conectar resource pages con service area pages relevantes
 - [ ] Agregar reseñas de Google a homepage cuando lleguen nuevas (actualizar REVIEWS en json-ld.ts)
-
-### Conversión
-- [ ] A/B test: hero copy en `/house-cleaning-houston` vs `/service-areas/greater-heights`
-- [ ] Revisar tasa de conversión del formulario `/request-quote`
