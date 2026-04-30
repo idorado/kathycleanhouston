@@ -471,7 +471,9 @@ function QuoteContent() {
   };
 
   // ── Invalid / missing params ────────────────────────────────────────────
-  if (!service || !validSqft) {
+  // For manual-quote services (commercial/windows/postconstruction), sqft is optional —
+  // those flows always go to a custom-quote handoff so we don't need it.
+  if (!service || (!isManualQuote && !validSqft)) {
     return (
       <div className="min-h-screen bg-blue-50 flex items-center justify-center px-4">
         <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full text-center">
