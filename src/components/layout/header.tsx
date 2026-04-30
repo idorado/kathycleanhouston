@@ -20,29 +20,11 @@ import {
 import { Menu } from "lucide-react";
 import PhoneButton from "@/components/PhoneButton";
 import { houstonServiceAreas } from "@/lib/service-areas/houstonLocations";
-import { getAttribution, toQueryParams } from "@/lib/attribution";
 
 import React, { useState } from "react";
 
 export function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-	const injectAttributionIntoUrlTemporarily = () => {
-		try {
-			const attr = getAttribution();
-			if (!attr) return;
-
-			const original = window.location.pathname + window.location.search;
-			const qsWithMaybeQuestion = toQueryParams(attr);
-			const qs = qsWithMaybeQuestion.startsWith("?")
-				? qsWithMaybeQuestion.slice(1)
-				: qsWithMaybeQuestion;
-
-			if (!qs) return;
-
-			history.replaceState(null, "", window.location.pathname + "?" + qs);
-			setTimeout(() => history.replaceState(null, "", original), 500);
-		} catch {}
-	};
 	const services = [
 		{ href: '/house-cleaning-houston', title: 'House Cleaning', description: 'Professional home cleaning services' },
 		{ href: '/commercial-cleaning-houston', title: 'Commercial Cleaning', description: 'Office and business cleaning solutions' },
@@ -134,21 +116,13 @@ export function Header() {
 									<Link href="/about-us" className="text-white text-lg" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
 									<div className="mt-2"><PhoneButton /></div>
 									<div className="mt-4 lg:hidden">
-										<button
-											type="button"
+										<Link
+											href="/request-quote"
 											className="py-2 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-10 rounded-md px-6 w-full sm:w-auto min-w-[180px] bg-primary text-primary-foreground shadow-xs hover:bg-primary/90"
-											data-tally-open="wMkPWA"
-											data-tally-layout="modal"
-											data-tally-width="600"
-											data-tally-hide-title="1"
-											data-tally-form-events-forwarding="1"
-											onClick={() => {
-												injectAttributionIntoUrlTemporarily();
-												setTimeout(() => setMobileMenuOpen(false), 0);
-											}}
+											onClick={() => setMobileMenuOpen(false)}
 										>
 											REQUEST A QUOTE
-										</button>
+										</Link>
 									</div>
 								</nav>
 							</div>
@@ -238,18 +212,12 @@ export function Header() {
 						{/* Right: Desktop actions */}
 						<div className="flex items-center gap-3">
 							<div className="hidden xl:block">
-								<button
-									type="button"
+								<Link
+									href="/request-quote"
 									className="py-2 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-10 rounded-md px-6 w-full sm:w-auto min-w-[180px] bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 shrink-0"
-									data-tally-open="wMkPWA"
-									data-tally-layout="modal"
-									data-tally-width="600"
-									data-tally-hide-title="1"
-									data-tally-form-events-forwarding="1"
-									onClick={injectAttributionIntoUrlTemporarily}
 								>
 									REQUEST A QUOTE
-								</button>
+								</Link>
 							</div>
 							<PhoneButton />
 						</div>
