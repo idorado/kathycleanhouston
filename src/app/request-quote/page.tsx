@@ -384,7 +384,7 @@ export default function RequestQuote() {
                 </svg>
               </div>
               <span className="font-medium text-gray-900">
-                Happy Customers
+                500+ Happy Customers
               </span>
             </div>
 
