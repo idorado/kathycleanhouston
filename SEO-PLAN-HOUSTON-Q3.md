@@ -294,6 +294,8 @@ Known: GBP live (4.9★/15). Everything below to be audited via the skill's L1 c
 - **Reviews → one row + 2026 dates (site-wide):** new `ReviewsCarousel` (shadcn/embla, 1 card mobile / 2 sm / 3 lg, arrows + swipe) replaces the multi-row review grids on the home page (5 reviews) and house-cleaning pages (3). All visible review dates and schema `datePublished` moved 2025 → 2026.
 - **`/house-cleaning-houston` enhancements (owner: "romperla"):** it was missing the `BreadcrumbList` the neighborhood pages have. Added `BreadcrumbList`, and added `review[]` to the `houseCleaning` schema → the main page now carries **Breadcrumb + FAQPage + Review snippets + AggregateRating + ReserveAction** (a richer enhancement set than the neighborhood/engine pages). Verified all present in the rendered HTML.
 
+**2026-06-12 — house-cleaning-houston → service pages interlink.** Now that the Houston service pages exist, the 3 service cards on `/house-cleaning-houston` link their titles to `/recurring-house-cleaning-houston`, `/deep-cleaning-houston`, `/move-in-move-out-houston` (guide "learn more" + Get a Quote kept). Reverse links already exist (service pages → /house-cleaning-houston). Build green.
+
 **REMAINING / NEXT (no more code this session):**
 - **Monitor GSC indexation** weekly: watch the 6 requested + overall Pages report as the sitemap re-processes (recovery takes 1–3 weeks). Request indexing for more flagship pages on following days (quota resets daily).
 - **Reviews engine (15 → 40+)** + **off-site authority** (Yelp/BBB/Reddit r/houston/Apple) — the biggest non-code levers; SoLV won't move much until reviews do.
