@@ -63,7 +63,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
       <JsonLd data={houseCleaning(location, schemaCanonicalPath)} />
       <JsonLd data={buildFaqPageSchema(faqForSchema, schemaCanonicalPath)} />
       <HeroSection>
-        <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
+        <div className="on-dark space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
             {displayLocation === 'Houston' ? 'Professional House Cleaning Services in Houston' : `House Cleaning in ${displayLocation}`}
           </h1>
@@ -147,6 +147,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
               <div className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Recurring Cleaning</h3>
                 <p className="text-gray-600 text-sm mb-4 flex-1">Weekly &amp; biweekly service with flat-rate pricing. Save up to 20% vs one-time cleans.</p>
+                <Link href="/resources/how-often-house-cleaning-houston" className="text-sm font-medium underline mb-3 text-[var(--blue-ribbon)] hover:text-[var(--space-cadet)]">How often should you clean? →</Link>
                 <CtaButton href="/request-quote" className="block text-center bg-primary text-white font-medium px-4 py-2 rounded-md hover:bg-primary/90 transition-colors text-sm">
                   Get a Quote
                 </CtaButton>
@@ -154,6 +155,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
               <div className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">One-Time Deep Clean</h3>
                 <p className="text-gray-600 text-sm mb-4 flex-1">Thorough top-to-bottom cleaning for first-time or occasional clients.</p>
+                <Link href="/resources/deep-cleaning-houston" className="text-sm font-medium underline mb-3 text-[var(--blue-ribbon)] hover:text-[var(--space-cadet)]">What a deep clean includes →</Link>
                 <CtaButton href="/request-quote" className="block text-center bg-primary text-white font-medium px-4 py-2 rounded-md hover:bg-primary/90 transition-colors text-sm">
                   Get a Quote
                 </CtaButton>
@@ -161,6 +163,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
               <div className="bg-white rounded-xl border border-gray-200 p-6 flex flex-col">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Move-In / Move-Out</h3>
                 <p className="text-gray-600 text-sm mb-4 flex-1">Deposit-ready results for tenants, landlords, and homeowners in transition.</p>
+                <Link href="/resources/move-in-move-out-cleaning-houston" className="text-sm font-medium underline mb-3 text-[var(--blue-ribbon)] hover:text-[var(--space-cadet)]">Move-in/out cleaning guide →</Link>
                 <CtaButton href="/request-quote" className="block text-center bg-primary text-white font-medium px-4 py-2 rounded-md hover:bg-primary/90 transition-colors text-sm">
                   Get a Quote
                 </CtaButton>

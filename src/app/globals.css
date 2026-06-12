@@ -207,3 +207,36 @@
     @apply font-all-round-gothic;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Link legibility (UNLAYERED on purpose).
+   The brand cyan (text-primary) failed contrast on light backgrounds, and
+   unstyled <a> in rich-text content looked like plain body text. These rules
+   are intentionally OUTSIDE @layer so they beat Tailwind's `text-primary`
+   utility (in CSS cascade layers, unlayered styles win over all layered ones).
+   Buttons are unaffected — they use bg-primary / text-primary-foreground.
+   Dark sections (navy footer + hero marked .on-dark) keep cyan, which reads
+   well there.
+--------------------------------------------------------------------------- */
+.prose a,
+.rich-text a {
+  color: var(--blue-ribbon);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose a:hover,
+.rich-text a:hover {
+  color: var(--space-cadet);
+}
+a.text-primary {
+  color: var(--blue-ribbon);
+}
+a.text-primary:hover {
+  color: var(--space-cadet);
+}
+footer a.text-primary,
+.on-dark a.text-primary,
+.on-dark a.text-primary:hover,
+.on-dark .prose a {
+  color: var(--fluorescent-cyan);
+}
