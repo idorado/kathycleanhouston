@@ -31,6 +31,34 @@ const SERVICE_LABEL: Record<EngineServiceId, string> = {
   "move-in-move-out": "Move-In / Move-Out Cleaning",
 };
 
+// Service-relevant resource/guide links surfaced on each engine page.
+const RESOURCE_LINKS: Record<EngineServiceId, { href: string; title: string }[]> = {
+  "house-cleaning": [
+    { href: "/resources/house-cleaning-cost-houston", title: "House Cleaning Cost in Houston" },
+    { href: "/resources/what-is-included-house-cleaning", title: "What's Included in a Cleaning" },
+    { href: "/resources/how-often-house-cleaning-houston", title: "How Often to Schedule Cleaning" },
+    { href: "/resources/best-house-cleaning-service-houston", title: "Best House Cleaning Service in Houston" },
+  ],
+  "recurring-house-cleaning": [
+    { href: "/resources/how-often-house-cleaning-houston", title: "How Often to Schedule Cleaning" },
+    { href: "/resources/house-cleaning-cost-houston", title: "House Cleaning Cost in Houston" },
+    { href: "/resources/hard-water-cleaning-houston", title: "Hard Water Spots in Houston Homes" },
+    { href: "/resources/what-is-included-house-cleaning", title: "What's Included in a Cleaning" },
+  ],
+  "deep-cleaning": [
+    { href: "/resources/deep-cleaning-houston", title: "Deep Cleaning: What to Expect & Cost" },
+    { href: "/resources/humidity-mold-cleaning-houston", title: "Houston Humidity & Mildew Guide" },
+    { href: "/resources/what-is-included-house-cleaning", title: "What's Included in a Cleaning" },
+    { href: "/resources/allergy-pollen-cleaning-houston", title: "Allergy & Pollen Season Cleaning" },
+  ],
+  "move-in-move-out": [
+    { href: "/resources/move-in-move-out-cleaning-houston", title: "Move-In / Move-Out Cleaning Guide" },
+    { href: "/resources/move-out-cleaning-checklist-houston", title: "Move-Out Cleaning Checklist" },
+    { href: "/resources/storm-move-out-cleaning-houston", title: "Storm-Season Move-Out Cleaning" },
+    { href: "/resources/house-cleaning-cost-houston", title: "House Cleaning Cost in Houston" },
+  ],
+};
+
 function zipList(p: LocationProfile): string {
   const z = p.zips;
   if (z.length === 1) return z[0] ?? "";
@@ -149,6 +177,7 @@ export function buildServiceLocationProps(
         mapTitle: `Serving ${name} and Surrounding Houston`,
         mapParagraph: `House cleaning across ${name} (${zips})${subAreas ? `, including ${subAreas}` : ""}.`,
         mapEmbedUrl,
+        relatedResources: RESOURCE_LINKS[serviceId],
       };
 
     case "recurring-house-cleaning":
@@ -224,6 +253,7 @@ export function buildServiceLocationProps(
         mapTitle: `Recurring Cleaning Across ${name}`,
         mapParagraph: `Weekly, bi-weekly, and monthly cleaning throughout ${name} (${zips}).`,
         mapEmbedUrl,
+        relatedResources: RESOURCE_LINKS[serviceId],
       };
 
     case "deep-cleaning":
@@ -299,6 +329,7 @@ export function buildServiceLocationProps(
         mapTitle: `Deep Cleaning Across ${name}`,
         mapParagraph: `One-time deep cleaning throughout ${name} (${zips}).`,
         mapEmbedUrl,
+        relatedResources: RESOURCE_LINKS[serviceId],
       };
 
     case "move-in-move-out":
@@ -374,6 +405,7 @@ export function buildServiceLocationProps(
         mapTitle: `Move Cleaning Across ${name}`,
         mapParagraph: `Move-in and move-out cleaning throughout ${name} (${zips}).`,
         mapEmbedUrl,
+        relatedResources: RESOURCE_LINKS[serviceId],
       };
   }
 }

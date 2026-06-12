@@ -13,7 +13,7 @@ export default function FormTcsPage() {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-xl mx-auto text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-            Request a Quote
+            Get a Quote
           </h1>
 
           <button
@@ -25,7 +25,7 @@ export default function FormTcsPage() {
             data-tally-hide-title="1"
             data-tally-form-events-forwarding="1"
           >
-            Request a Quote
+            Get a Quote
           </button>
         </div>
       </div>

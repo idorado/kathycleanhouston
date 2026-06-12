@@ -143,7 +143,7 @@ export function Footer() {
               </a>
               <div className="mt-2 w-full h-48 rounded-lg overflow-hidden">
                 <iframe
-                  src="https://maps.google.com/maps?q=9219+Katy+Fwy+%23136,+Houston,+TX+77024&z=15&output=embed"
+                  src="https://maps.google.com/maps?q=Kathy+Clean+Houston,+9219+Katy+Fwy+%23136,+Houston,+TX+77024&z=15&output=embed"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}

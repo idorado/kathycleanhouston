@@ -8,11 +8,13 @@ import WhyTrustUsSection from "@/components/sections/why-trust-us";
 import ReadyForHouseCleaning from "@/components/sections/ready-for-house-cleaning";
 import ThreeStepProcess from "@/components/sections/three-step-process";
 import FeatureBar from "@/components/ui/FeatureBar";
-import {houseCleaning} from "@/config/json-ld";
+import {houseCleaning, buildFaqPageSchema} from "@/config/json-ld";
 import { HouseCleaningFAQ } from "@/components/sections/house-cleaning-faq";
+import { houseCleaningFaqItems } from "@/config/house-cleaning-faq-data";
 import JsonLd from "@/components/json-ld";
 import { ensureHttps } from "@/lib/images";
 import StickyCtaMobile from "@/components/ui/StickyCtaMobile";
+import Link from "next/link";
 
 // Accept location as prop
 interface ResidentialServiceComponentProps {
@@ -51,9 +53,15 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
     },
   ];
   
+  const faqForSchema = houseCleaningFaqItems.map((i) => ({
+    question: i.question.replace(/{Location}/g, displayLocation),
+    answer: i.answer.replace(/{Location}/g, displayLocation),
+  }));
+
   return (
     <main className="flex flex-col min-h-screen pb-16 md:pb-0">
       <JsonLd data={houseCleaning(location, schemaCanonicalPath)} />
+      <JsonLd data={buildFaqPageSchema(faqForSchema, schemaCanonicalPath)} />
       <HeroSection>
         <div className="space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
@@ -160,6 +168,72 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
             </div>
           </div>
         </section>
+      )}
+
+      {displayLocation === 'Houston' && (
+        <>
+          {/* By the numbers — extractable facts for AI/GEO citability */}
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-900">Kathy Clean Houston by the Numbers</h2>
+              <p className="text-gray-600 text-center max-w-3xl mx-auto mb-10">
+                Kathy Clean has cleaned homes for over 15 years and serves 25+ Houston-metro neighborhoods across Harris County. We hold a 4.9-star Google rating, price every job flat-rate (recurring bi-weekly cleaning starts at $119 per visit), and back every visit with a 48-hour satisfaction guarantee — with insured, bonded, and background-checked cleaning teams.
+              </p>
+              <dl className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div><dt className="text-3xl font-bold text-primary">15+</dt><dd className="text-sm text-gray-600">Years of experience</dd></div>
+                <div><dt className="text-3xl font-bold text-primary">4.9★</dt><dd className="text-sm text-gray-600">Google rating</dd></div>
+                <div><dt className="text-3xl font-bold text-primary">25+</dt><dd className="text-sm text-gray-600">Neighborhoods served</dd></div>
+                <div><dt className="text-3xl font-bold text-primary">48-hr</dt><dd className="text-sm text-gray-600">Satisfaction guarantee</dd></div>
+              </dl>
+            </div>
+          </section>
+
+          {/* Neighborhoods we serve — internal links */}
+          <section className="py-16 bg-gray-50">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 text-gray-900">House Cleaning Across Houston</h2>
+              <p className="text-gray-600 text-center mb-8">We serve homes throughout Harris County. Explore your neighborhood:</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {[
+                  { name: "Memorial", href: "/service-areas/memorial" },
+                  { name: "Greater Heights", href: "/service-areas/greater-heights" },
+                  { name: "Rice Military", href: "/service-areas/rice-military" },
+                  { name: "Energy Corridor", href: "/service-areas/energy-corridor" },
+                  { name: "Spring Branch", href: "/service-areas/spring-branch" },
+                  { name: "Bellaire", href: "/service-areas/bellaire" },
+                  { name: "West University Place", href: "/service-areas/west-university-place" },
+                  { name: "River Oaks", href: "/service-areas/river-oaks" },
+                  { name: "Galleria / Uptown", href: "/service-areas/greater-uptown" },
+                  { name: "Medical Center", href: "/service-areas/medical-center-area" },
+                  { name: "Montrose", href: "/house-cleaning-montrose" },
+                  { name: "Midtown", href: "/house-cleaning-midtown" },
+                ].map((n) => (
+                  <Link key={n.href} href={n.href} className="inline-block rounded-lg border bg-white px-4 py-2 text-sm font-medium text-gray-800 shadow-sm transition-colors hover:border-primary hover:text-primary">{n.name}</Link>
+                ))}
+              </div>
+              <p className="text-center mt-6"><Link href="/service-areas" className="text-primary font-medium underline">View all Houston service areas →</Link></p>
+            </div>
+          </section>
+
+          {/* Houston cleaning guides — resource internal links */}
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900">Houston Cleaning Guides</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { title: "How much does house cleaning cost in Houston?", href: "/resources/house-cleaning-cost-houston" },
+                  { title: "What's included in a house cleaning?", href: "/resources/what-is-included-house-cleaning" },
+                  { title: "How often should you schedule cleaning?", href: "/resources/how-often-house-cleaning-houston" },
+                  { title: "How to choose the best cleaning service", href: "/resources/best-house-cleaning-service-houston" },
+                  { title: "Deep cleaning: what to expect & cost", href: "/resources/deep-cleaning-houston" },
+                  { title: "Move-in / move-out cleaning guide", href: "/resources/move-in-move-out-cleaning-houston" },
+                ].map((g) => (
+                  <Link key={g.href} href={g.href} className="block rounded-lg border border-gray-200 bg-white px-5 py-3 text-gray-800 shadow-sm transition-colors hover:border-primary hover:text-primary">{g.title} →</Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
       )}
 
       {/* FAQ Section */}

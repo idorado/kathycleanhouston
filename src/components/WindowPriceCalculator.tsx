@@ -268,7 +268,7 @@ const WindowPriceCalculator = () => {
             </div>
 
             <Button type="submit" className="w-full" disabled={isSubmitting}>
-              Request Quote
+              Get a Quote
             </Button>
           </form>
         </Form>

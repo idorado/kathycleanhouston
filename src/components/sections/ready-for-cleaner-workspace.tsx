@@ -13,7 +13,7 @@ export default function ReadyForCleanerWorkspaceSection() {
           Our Houston-based service provides reliable, high-quality commercial cleaning tailored to your business needs. We keep your space clean, safe, and presentable, so you can focus on running your business.
         </p>
         <Button size="lg" className="font-bold mt-2" asChild>
-          <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>
+          <CtaButton href="/request-quote">GET A QUOTE</CtaButton>
         </Button>
       </div>
     </section>

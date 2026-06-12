@@ -142,7 +142,7 @@ export default function EmergencyPage() {
       <section id="request-quote" className="py-12 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Request a Quote</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">Get a Quote</h2>
             <p className="text-gray-600 mb-8">
               For more than a decade, we've been delivering spotless, streak-free results to homes and businesses. Today, we operate as Kathy Clean Houston, continuing our commitment to excellence with the same trusted quality and expertise across Houston and Harris County.
             </p>

@@ -6,7 +6,7 @@ export default function ThreeStepProcess() {
         {/* Step 1 */}
         <div className="bg-[#F5F7FB] rounded-lg p-8 w-full md:w-1/3 flex flex-col items-center shadow-sm">
           <span className="text-6xl font-bold text-navy-800 mb-2 drop-shadow-sm" style={{ WebkitTextStroke: '2px #17224D', color: 'white' }}>1</span>
-          <h3 className="text-lg font-bold text-navy-800 mb-2">Request a Quote</h3>
+          <h3 className="text-lg font-bold text-navy-800 mb-2">Get a Quote</h3>
           <p className="text-base text-navy-800 text-center">Fill out our form or call us. We'll reach out to understand what you need.</p>
         </div>
         {/* Step 2 */}

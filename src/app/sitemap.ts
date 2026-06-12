@@ -20,7 +20,6 @@ const staticRoutes: string[] = [
   "/house-cleaning-houston",
   "/commercial-cleaning-houston",
   "/our-services",
-  "/our-services/house-cleaning-and-maid-service-with-satisfaction-guarantee",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

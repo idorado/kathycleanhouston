@@ -40,7 +40,7 @@ const WindowsServiceComponent: React.FC<WindowsServiceComponentProps> = async ({
               asChild
             >
               <CtaButton href="/request-quote">
-                REQUEST A QUOTE
+                GET A QUOTE
               </CtaButton>
             </Button>
             <div className="w-full sm:w-auto min-w-[180px] h-10">
