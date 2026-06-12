@@ -89,7 +89,7 @@ export default function RequestQuote() {
                 </svg>
               </div>
               <span className="font-medium text-gray-900">
-                4.8/5 Rating
+                4.9/5 Rating
               </span>
             </div>
 

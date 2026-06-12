@@ -21,6 +21,11 @@ export interface LocationProfile {
   subAreas?: string[];
   /** Genuine, area-specific Houston cleaning challenge. */
   climateAngle: string;
+  /** Image + map for neighborhoods NOT in houstonLocations (batch 2). When set,
+   *  the [slug] engine uses these instead of a HoustonServiceArea entry — so
+   *  these neighborhoods get service pages without a /service-areas hub. */
+  image?: { url: string; alt: string };
+  mapEmbedUrl?: string;
 }
 
 export const locationProfiles: Record<string, LocationProfile> = {
@@ -254,6 +259,87 @@ export const locationProfiles: Record<string, LocationProfile> = {
     subAreas: ["Grogan's Mill", "Cochran's Crossing", "Sterling Ridge", "Creekside Park"],
     climateAngle:
       "The dense pine forest the community is built around brings heavy pollen and needle litter indoors year-round, and humidity calls for steady mildew control",
+  },
+  montrose: {
+    id: "montrose",
+    name: "Montrose",
+    zips: ["77006", "77019"],
+    persona: "young professionals, artists, and a walkable-urban crowd",
+    housing:
+      "historic bungalows and converted multi-family homes alongside modern townhomes and mid-rise condos",
+    context:
+      "Houston's eclectic, walkable arts district, home to the Menil Collection, the Rothko Chapel, and the Westheimer corridor",
+    climateAngle:
+      "Montrose's older bungalows and converted homes have original woodwork and less ventilation, so Houston humidity drives bathroom mildew, while hard water spots the glass and fixtures in its newer townhomes",
+    image: {
+      url: "https://upload.wikimedia.org/wikipedia/commons/6/63/MenilCollection.JPG",
+      alt: "The Menil Collection in Montrose, Houston TX — professional house cleaning services",
+    },
+    mapEmbedUrl: "https://maps.google.com/maps?q=Montrose,+Houston,+TX+77006&z=14&output=embed",
+  },
+  midtown: {
+    id: "midtown",
+    name: "Midtown",
+    zips: ["77002", "77004"],
+    persona: "young professionals and urban renters",
+    housing: "high-rise and mid-rise condos, apartments, and new townhomes",
+    context:
+      "a dense, walkable district between Downtown and the Museum District, centered on Midtown Park and the Main Street corridor",
+    climateAngle:
+      "Midtown's high-rise and townhome living means lots of glass and stainless where Houston's hard water spots quickly, and tight schedules make reliable recurring cleaning valuable",
+    image: {
+      url: "https://upload.wikimedia.org/wikipedia/commons/f/f6/MidtownHoustonscene001.jpg",
+      alt: "Midtown Houston street scene — professional house cleaning services",
+    },
+    mapEmbedUrl: "https://maps.google.com/maps?q=Midtown,+Houston,+TX+77002&z=14&output=embed",
+  },
+  "museum-district": {
+    id: "museum-district",
+    name: "Museum District",
+    zips: ["77004", "77005", "77006"],
+    persona: "professionals, academics, and families near the museums and Rice University",
+    housing: "historic homes, low-rise condos, and townhomes",
+    context:
+      "the cluster of neighborhoods around Hermann Park and Houston's major museums, including the Museum of Fine Arts and the Houston Museum of Natural Science",
+    climateAngle:
+      "Older Museum District homes need humidity-aware care of woodwork and bathrooms, and the mature trees around Hermann Park bring heavy pollen indoors",
+    image: {
+      url: "https://upload.wikimedia.org/wikipedia/commons/2/2b/HoustonMuseumDistrictSign.JPG",
+      alt: "Houston Museum District sign near Hermann Park — professional house cleaning services",
+    },
+    mapEmbedUrl: "https://maps.google.com/maps?q=Museum+District,+Houston,+TX+77004&z=14&output=embed",
+  },
+  eado: {
+    id: "eado",
+    name: "EaDo",
+    zips: ["77003"],
+    persona: "young professionals and creatives",
+    housing: "converted warehouse lofts and new-construction townhomes",
+    context:
+      "East Downtown Houston, a fast-growing district of lofts, murals, and stadiums just east of the central business district",
+    climateAngle:
+      "EaDo's loft conversions and townhomes have large industrial windows and exposed surfaces where Houston's hard water and humidity show quickly",
+    image: {
+      url: "https://upload.wikimedia.org/wikipedia/commons/8/87/EaDoBuildingStart.jpg",
+      alt: "EaDo (East Downtown) Houston development — professional house cleaning services",
+    },
+    mapEmbedUrl: "https://maps.google.com/maps?q=EaDo,+Houston,+TX+77003&z=14&output=embed",
+  },
+  tanglewood: {
+    id: "tanglewood",
+    name: "Tanglewood",
+    zips: ["77056", "77057"],
+    persona: "established families and executives",
+    housing: "large single-family homes on wooded lots",
+    context:
+      "an affluent, heavily treed neighborhood just west of the Galleria and Uptown",
+    climateAngle:
+      "Tanglewood's mature tree canopy brings heavy pollen and leaf litter indoors, and its large homes with hard water show mineral buildup on glass and fixtures",
+    image: {
+      url: "https://upload.wikimedia.org/wikipedia/commons/4/4e/TanglewoodHoustonSign.JPG",
+      alt: "Tanglewood neighborhood sign in Houston TX — professional house cleaning services",
+    },
+    mapEmbedUrl: "https://maps.google.com/maps?q=Tanglewood,+Houston,+TX+77056&z=14&output=embed",
   },
 };
 

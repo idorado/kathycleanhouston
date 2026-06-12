@@ -23,7 +23,6 @@ export const ENGINE_SERVICE_IDS: EngineServiceId[] = [
 ];
 
 const CTA_PHONE = "(346) 488-6044";
-const BRAND_IMAGE = "/images/hero-image.webp";
 
 const SERVICE_LABEL: Record<EngineServiceId, string> = {
   "house-cleaning": "House Cleaning",
@@ -60,10 +59,6 @@ export function buildServiceLocationProps(
   const subAreas = subAreaList(profile);
   const canonical = `/${serviceLocationSlug(serviceId, profile.id)}`;
   const benefitsImage = { url: area.imageUrl, alt: area.imageAlt };
-  const whyImage = {
-    url: BRAND_IMAGE,
-    alt: `Kathy Clean Houston cleaning professional serving ${name}, TX`,
-  };
   const mapEmbedUrl = area.mapEmbedUrl;
   const baseFaq = {
     question: `Do you serve ${name} (${zips})?`,
@@ -123,7 +118,6 @@ export function buildServiceLocationProps(
             body: "Every visit is backed by our 48-hour satisfaction guarantee — if something isn't right, we re-clean it at no cost.",
           },
         ],
-        whyImage,
         locationSpecificContent: {
           title: `House Cleaning in ${name} for Houston Households`,
           content: `<p>${name} — spanning ${zips} — is ${profile.context}. Our house cleaning service has become a dependable choice for ${profile.persona} who want professional, consistent cleaning without coordinating with an individual cleaner.${subAreas ? ` We serve neighborhoods throughout the area including ${subAreas}.` : ""}</p>
@@ -204,7 +198,6 @@ export function buildServiceLocationProps(
             body: "Flexible rescheduling is always available — your calendar doesn't follow a fixed schedule, and neither do we.",
           },
         ],
-        whyImage,
         locationSpecificContent: {
           title: `Recurring House Cleaning for ${name} Homes`,
           content: `<p>Bi-weekly cleaning is by far the most popular choice among ${name} clients — it keeps ${profile.housing} consistently clean and guest-ready without the frequency of weekly service. Households with children, pets, or heavy kitchen use often choose weekly to keep pace, while smaller households and frequent travelers do well with monthly visits.</p>
@@ -280,7 +273,6 @@ export function buildServiceLocationProps(
             body: `Holidays, events, or a long stretch without help — a one-time deep clean gets a ${name} home back to baseline.`,
           },
         ],
-        whyImage,
         locationSpecificContent: {
           title: `Deep Cleaning for ${name} Homes`,
           content: `<p>Our deep cleaning service gives ${name} homes a thorough, one-time reset. We work through ${profile.housing} methodically — kitchens and bathrooms in detail, baseboards and trim, vents and fixtures, glass, and the spots a quick clean never reaches.</p>
@@ -356,7 +348,6 @@ export function buildServiceLocationProps(
             body: "Priced like a deep clean by square footage, not hourly — you know the cost before we start.",
           },
         ],
-        whyImage,
         locationSpecificContent: {
           title: `Move-In & Move-Out Cleaning in ${name}`,
           content: `<p>Moving in or out of a ${name} home (${zips}) is stressful enough without the final clean. Our move-out service is landlord-ready — inside appliances, cabinet and drawer interiors, baseboards, bathrooms, and floors, covering everything required for a full deposit return. Move-in cleans make a new home feel genuinely fresh before you unpack.</p>

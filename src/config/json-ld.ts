@@ -5,7 +5,7 @@ const CONTACT_EMAIL = "info@kathyclean.com";
 // so the sameAs link is guaranteed in production — previously this relied on
 // NEXT_PUBLIC_GBP_URL, which is unset, so the GBP link silently dropped out.
 const GBP_URL =
-  process.env.NEXT_PUBLIC_GBP_URL ?? "https://maps.app.goo.gl/Cdb6ev9bjX2KPA6R6";
+  process.env.NEXT_PUBLIC_GBP_URL ?? "https://maps.app.goo.gl/fHcfZ3iL2R4RFAf98";
 
 const SAME_AS_URLS: string[] = [
   GBP_URL,
@@ -53,6 +53,11 @@ const AREA_SERVED = [
   { "@type": "Place", "name": "The Memorial Villages" },
   { "@type": "Place", "name": "River Oaks" },
   { "@type": "Place", "name": "Washington Ave. / Memorial Park" },
+  { "@type": "Place", "name": "Montrose" },
+  { "@type": "Place", "name": "Midtown" },
+  { "@type": "Place", "name": "Museum District" },
+  { "@type": "Place", "name": "EaDo" },
+  { "@type": "Place", "name": "Tanglewood" },
 ];
 
 const REVIEWS = [

@@ -49,7 +49,7 @@ export default function ReviewHighlight({ location }: ReviewHighlightProps) {
 )}
           <div className="bg-white rounded-lg shadow-md px-3 py-2 flex items-center gap-2 w-[210px] absolute right-5 bottom-5 z-20">
             <span className="text-yellow-400 text-base">★★★★★</span>
-            <span className="font-semibold text-gray-900 text-sm">4.7/5</span>
+            <span className="font-semibold text-gray-900 text-sm">4.9/5</span>
 <span className="text-gray-500 text-xs ml-2">Based on Verified Customer Reviews</span>
           </div>
         </div>
