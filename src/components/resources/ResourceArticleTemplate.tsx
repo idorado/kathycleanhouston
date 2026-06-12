@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Link from "next/link";
 import JsonLd from "@/components/json-ld";
 
 const SITE_URL = "https://kathycleanhouston.com";
@@ -88,6 +89,29 @@ export default function ResourceArticleTemplate({ children, schema }: ResourceAr
           </p>
           {children}
         </article>
+
+        <nav className="mt-12 border-t border-gray-200 pt-8">
+          <h2 className="text-lg font-bold mb-4 text-gray-900">Explore Kathy Clean Houston</h2>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
+            {[
+              { href: "/house-cleaning-houston", title: "House Cleaning in Houston" },
+              { href: "/resources/house-cleaning-cost-houston", title: "House Cleaning Cost in Houston" },
+              { href: "/resources/deep-cleaning-houston", title: "Deep Cleaning Guide" },
+              { href: "/resources/move-in-move-out-cleaning-houston", title: "Move-In / Move-Out Cleaning" },
+              { href: "/resources/how-often-house-cleaning-houston", title: "How Often to Schedule Cleaning" },
+              { href: "/request-quote", title: "Get a Free Quote" },
+            ].map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="text-[var(--blue-ribbon)] underline underline-offset-2 hover:text-[var(--space-cadet)]"
+                >
+                  {l.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </main>
     </>
   );

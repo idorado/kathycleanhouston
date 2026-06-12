@@ -279,6 +279,12 @@ Known: GBP live (4.9★/15). Everything below to be audited via the skill's L1 c
 - Hygiene: moved FAQ data to a server-safe module (`house-cleaning-faq-data.ts`) so the page can emit FAQPage schema; removed stray `service-areas/page.tsx.backup`.
 - Verified on dev: title/fact-block/guides/FAQPage/OG/CTA/footer-map/canonical all render. Shipping now.
 
+**2026-06-12 — Link legibility + service interlinking + mobile-image perf. `pnpm build` GREEN.**
+- **Link legibility (site-wide):** brand cyan (`text-primary`) failed contrast on light bg, and rich-text `<a>` were unstyled (no typography plugin). Added **unlayered** CSS in globals (beats Tailwind's `text-primary` utility — cascade layers): content/`.prose` + `a.text-primary` links → legible blue (`--blue-ribbon`), underlined; dark surfaces (footer + hero marked `.on-dark`) keep cyan. Fixes the illegible "View all…" and all content links.
+- **Service interlinking (Denver pattern):** `/house-cleaning-houston` service cards now link to their guides (recurring→how-often, deep→deep-clean, move→move-in/out) alongside Get a Quote; and a reverse **"Explore Kathy Clean Houston"** cross-link block added to the resource template (every guide → main page + sibling guides + quote).
+- **Mobile perf:** converted the benefits image on all 121 location pages from raw `<img>` (full-res remote) to **`next/image`** (responsive AVIF/WebP + fixed aspect → no CLS). _Note: couldn't pull the live PSI report (Google keyless API daily quota exhausted); this is the standard high-impact image win — recommend re-running PSI after deploy._
+- Verified build green (165 pages) + structure on dev; link color confirmed unlayered-wins deterministically (will spot-check on live).
+
 **REMAINING / NEXT (no more code this session):**
 - **Monitor GSC indexation** weekly: watch the 6 requested + overall Pages report as the sitemap re-processes (recovery takes 1–3 weeks). Request indexing for more flagship pages on following days (quota resets daily).
 - **Reviews engine (15 → 40+)** + **off-site authority** (Yelp/BBB/Reddit r/houston/Apple) — the biggest non-code levers; SoLV won't move much until reviews do.

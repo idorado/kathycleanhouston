@@ -240,12 +240,13 @@ export default function LocationServiceAreaPage({
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto">
             <div className="w-full md:w-1/2">
-              <div className="overflow-hidden rounded-lg shadow-lg">
-                <img
+              <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+                <Image
                   src={benefitsImage.url}
                   alt={benefitsImage.alt}
-                  className="w-full h-auto"
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
                 />
               </div>
             </div>
