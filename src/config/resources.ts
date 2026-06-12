@@ -58,6 +58,31 @@ export const resourceArticles: ResourceArticle[] = [
     category: "guide",
     readTime: 4,
   },
+  {
+    slug: "best-house-cleaning-service-houston",
+    title: "Best House Cleaning Service in Houston: How to Choose (2026)",
+    description: "How to choose the best house cleaning service in Houston — insurance, consistency, flat-rate pricing, reviews, and the questions to ask before you book.",
+    publishDate: "2026-06-12",
+    category: "guide",
+    readTime: 6,
+    featured: true,
+  },
+  {
+    slug: "humidity-mold-cleaning-houston",
+    title: "Houston Humidity, Mildew & Your Home: A Cleaning Guide",
+    description: "How Houston's Gulf humidity drives bathroom and window mildew, what regular cleaning prevents, and when it becomes a job for a remediation specialist.",
+    publishDate: "2026-06-12",
+    category: "tips",
+    readTime: 5,
+  },
+  {
+    slug: "storm-move-out-cleaning-houston",
+    title: "Move-Out & Turnover Cleaning in Houston After Storm Season",
+    description: "Houston's storm season drives moves and turnovers. What move-out cleaning covers, what's a job for a restoration company, and how to plan around a move date.",
+    publishDate: "2026-06-12",
+    category: "guide",
+    readTime: 5,
+  },
 ];
 
 export function getResourceArticle(slug: string): ResourceArticle | undefined {

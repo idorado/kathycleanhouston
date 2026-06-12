@@ -6,14 +6,31 @@ import Image from "next/image";
 import PhoneButton from "@/components/PhoneButton";
 import Link from "next/link";
 import JsonLd from "@/components/json-ld";
+import { buildFaqPageSchema } from "@/config/json-ld";
+import { PROFILE_LOCATION_IDS } from "@/config/location-profiles";
+import { ENGINE_SERVICE_IDS, serviceLocationSlug } from "@/config/service-content";
 
 const SITE_URL = "https://kathycleanhouston.com";
+
+const ENGINE_SERVICE_LABELS: Record<string, string> = {
+  "house-cleaning": "House Cleaning",
+  "recurring-house-cleaning": "Recurring Cleaning",
+  "deep-cleaning": "Deep Cleaning",
+  "move-in-move-out": "Move-In / Move-Out",
+};
 
 export interface LocationServiceAreaPageProps {
   title: string;
   description: string;
   canonical: string;
   robotsIndex?: boolean;
+  /** Overrides the 3rd breadcrumb crumb. Defaults to "House Cleaning in {derived location}".
+   *  Programmatic service×location pages pass e.g. "Deep Cleaning in Rice Military". */
+  breadcrumbName?: string;
+  /** When set (or derivable from a /service-areas/{slug} canonical), renders a
+   *  "related services" block linking the 4 programmatic service pages for that
+   *  neighborhood. Distributes internal authority into the engine pages. */
+  relatedServicesLocationId?: string;
 
   heroTitle: string;
   heroSubtitle: string;
@@ -51,6 +68,8 @@ export interface LocationServiceAreaPageProps {
 
 export default function LocationServiceAreaPage({
   canonical,
+  breadcrumbName,
+  relatedServicesLocationId,
   heroTitle,
   heroSubtitle,
   heroParagraphs,
@@ -96,6 +115,28 @@ export default function LocationServiceAreaPage({
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
+  // Related-services internal links: explicit prop wins; otherwise derive from a
+  // /service-areas/{slug} canonical. Only render for neighborhoods that have a
+  // profile (i.e. generated engine pages exist).
+  const relLocId =
+    relatedServicesLocationId ??
+    (canonicalPath.startsWith("/service-areas/")
+      ? canonicalPath.replace("/service-areas/", "").split("/")[0]
+      : undefined);
+  const relLocName = relLocId
+    ? relLocId
+        .split("-")
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ")
+    : "";
+  const relatedLinks =
+    relLocId && (PROFILE_LOCATION_IDS as string[]).includes(relLocId)
+      ? ENGINE_SERVICE_IDS.map((sid) => ({
+          href: `/${serviceLocationSlug(sid, relLocId)}`,
+          label: `${ENGINE_SERVICE_LABELS[sid]} in ${relLocName}`,
+        })).filter((l) => l.href !== canonicalPath)
+      : [];
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -115,7 +156,7 @@ export default function LocationServiceAreaPage({
       {
         "@type": "ListItem",
         "position": 3,
-        "name": `House Cleaning in ${locationName}`,
+        "name": breadcrumbName ?? `House Cleaning in ${locationName}`,
         "item": `${SITE_URL}${canonicalPath}`
       }
     ]
@@ -124,6 +165,11 @@ export default function LocationServiceAreaPage({
   return (
     <main className="flex flex-col min-h-screen">
       <JsonLd data={breadcrumbSchema} />
+      {/* FAQPage mirrors the on-page <details> Q&As so AI Overviews + rich
+          results can extract them. Applies to all pages using this template. */}
+      {faqItems.length > 0 && (
+        <JsonLd data={buildFaqPageSchema(faqItems, canonicalPath)} />
+      )}
       {children}
 
       <HeroSection>
@@ -277,6 +323,30 @@ export default function LocationServiceAreaPage({
               <h2 className="text-3xl font-bold text-center mb-12">{normalizeBrandText(recurringCleaningContent.title)}</h2>
               <div className="prose prose-lg max-w-none">
                 <div dangerouslySetInnerHTML={{ __html: normalizeBrandText(recurringCleaningContent.content) }} />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Services Internal Links */}
+      {relatedLinks.length > 0 && (
+        <section className="py-12 bg-gray-50">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-2xl font-bold mb-6">
+                Explore Our {relLocName} Cleaning Services
+              </h2>
+              <div className="flex flex-wrap justify-center gap-3">
+                {relatedLinks.map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className="inline-block rounded-lg border bg-white px-4 py-2 text-sm font-medium text-gray-800 shadow-sm transition-colors hover:border-primary hover:text-primary"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
