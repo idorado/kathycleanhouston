@@ -6,6 +6,7 @@ import HomeHero from "@/components/sections/home-hero"
 import { ServicesSection } from "@/components/sections/services-section"
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton"
 import { FAQ } from "@/components/sections/faq"
+import ReviewsCarousel from "@/components/sections/reviews-carousel"
 import FeatureBar from "@/components/ui/FeatureBar"
 import JsonLd from "@/components/json-ld";
 import { home, website } from "@/config/json-ld";
@@ -34,57 +35,40 @@ export default async function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl font-bold text-center mb-4">What Houston Homeowners Say About Kathy Clean</h2>
           <p className="text-center text-gray-500 mb-12">5-star rated on Google · Houston, TX</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
+          <ReviewsCarousel
+            reviews={[
               {
                 quote: "Service is outstanding, the help is professional, courteous and always on time for scheduled cleaning. I would give Kathy Clean Houston my highest recommendation, you'll be very pleased!",
                 author: "Steve M.",
-                date: "April 2025",
+                service: "Verified Customer",
+                date: "April 2026",
               },
               {
                 quote: "Nubia does an amazing job. She is meticulous and always willing to do anything we ask. We enjoy her great work as well as efficiency. We highly recommend Kathy Clean Houston!",
                 author: "Ximena V.",
-                date: "March 2025",
+                service: "Verified Customer",
+                date: "March 2026",
               },
               {
                 quote: "I was referred to Kathy Clean Houston by a neighbor. They were very professional, and I was able to schedule an appointment within just a few days. The person who came did an absolutely AMAZING job. Very professional, and I was truly impressed.",
                 author: "Donna W.",
-                date: "March 2025",
+                service: "Verified Customer",
+                date: "March 2026",
               },
               {
                 quote: "I've used Kathy Clean Houston and am impressed with how the service professionals are personable and have a high attention to detail. The scheduling support is great and works hard to accommodate special requests. Highly recommend.",
                 author: "Rik W.",
-                date: "March 2025",
+                service: "Verified Customer",
+                date: "March 2026",
               },
               {
                 quote: "Want the best cleaning service in town? Then you want to call Kathy Clean Houston!! They will provide you with outstanding service, and they are very easy to work with.",
                 author: "Kerri N.",
-                date: "March 2025",
+                service: "Verified Customer",
+                date: "March 2026",
               },
-            ].map((review) => (
-              <div key={review.author} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex flex-col">
-                <div className="flex gap-0.5 mb-3" aria-label="5 out of 5 stars">
-                  {[1,2,3,4,5].map((s) => (
-                    <svg key={s} className="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-gray-700 text-sm leading-relaxed flex-1 mb-4">
-                  &ldquo;{review.quote}&rdquo;
-                </blockquote>
-                <div className="flex items-center gap-3 mt-auto">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-primary font-semibold text-sm">{review.author[0]}</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-sm text-gray-900">{review.author}</p>
-                    <p className="text-xs text-gray-500">Verified Customer · {review.date}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+            ]}
+          />
         </div>
       </section>
 

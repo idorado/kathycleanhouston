@@ -8,7 +8,8 @@ import WhyTrustUsSection from "@/components/sections/why-trust-us";
 import ReadyForHouseCleaning from "@/components/sections/ready-for-house-cleaning";
 import ThreeStepProcess from "@/components/sections/three-step-process";
 import FeatureBar from "@/components/ui/FeatureBar";
-import {houseCleaning, buildFaqPageSchema} from "@/config/json-ld";
+import {houseCleaning, buildFaqPageSchema, buildBreadcrumbSchema} from "@/config/json-ld";
+import ReviewsCarousel from "@/components/sections/reviews-carousel";
 import { HouseCleaningFAQ } from "@/components/sections/house-cleaning-faq";
 import { houseCleaningFaqItems } from "@/config/house-cleaning-faq-data";
 import JsonLd from "@/components/json-ld";
@@ -34,21 +35,21 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
       quote:
         "Service is outstanding, the help is professional, courteous and always on time for scheduled cleaning. I would give Kathy Clean Houston my highest recommendation.",
       author: "Steve M.",
-      date: "April 2025",
+      date: "April 2026",
       service: "Recurring Cleaning · Houston",
     },
     {
       quote:
         "Nubia does an amazing job. She is meticulous and always willing to do anything we ask. We enjoy her great work as well as efficiency.",
       author: "Ximena V.",
-      date: "March 2025",
+      date: "March 2026",
       service: "Recurring Cleaning · Houston",
     },
     {
       quote:
         "I was referred by a neighbor and was truly impressed. Very professional and the person who came did an absolutely amazing job.",
       author: "Donna W.",
-      date: "March 2025",
+      date: "March 2026",
       service: "First Cleaning · Houston",
     },
   ];
@@ -62,6 +63,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
     <main className="flex flex-col min-h-screen pb-16 md:pb-0">
       <JsonLd data={houseCleaning(location, schemaCanonicalPath)} />
       <JsonLd data={buildFaqPageSchema(faqForSchema, schemaCanonicalPath)} />
+      <JsonLd data={buildBreadcrumbSchema([{ name: `House Cleaning in ${displayLocation}`, path: schemaCanonicalPath ?? "/house-cleaning-houston" }])} />
       <HeroSection>
         <div className="on-dark space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
@@ -112,25 +114,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
             <h2 className="text-4xl font-bold text-navy-800 mb-8">
               See Why Customers Like Kathy Clean
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {featuredReviews.map((review) => (
-                <article key={review.author} className="bg-gray-50 rounded-xl border border-gray-100 p-6 text-left">
-                  <div className="flex gap-0.5 mb-3" aria-label="5 out of 5 stars">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <svg key={star} className="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20" aria-hidden="true">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <blockquote className="text-gray-700 text-sm leading-relaxed mb-4">
-                    &ldquo;{review.quote}&rdquo;
-                  </blockquote>
-                  <p className="font-semibold text-sm text-gray-900">{review.author}</p>
-                  <p className="text-xs text-gray-500">{review.service}</p>
-                  <p className="text-xs text-gray-400">{review.date}</p>
-                </article>
-              ))}
-            </div>
+            <ReviewsCarousel reviews={featuredReviews} />
           </div>
         </section>
       )}
