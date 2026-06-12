@@ -108,7 +108,7 @@ export default function WestchaseServiceAreaPage() {
         {
           question: "How much does house cleaning cost in Westchase?",
           answer:
-            "Pricing depends on your space size and number of bathrooms. A 1-bed/1-bath Westchase apartment typically runs $110–$140 per biweekly visit. A 2-bed/2-bath runs $145–$185. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your specific unit.",
+            "Pricing depends on your space size and number of bathrooms. A 1-bed/1-bath Westchase apartment typically runs $139–$145 per biweekly visit. A 2-bed/2-bath runs $145–$159. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your specific unit.",
         },
         {
           question: "Do you offer service for short-term and corporate housing in Westchase?",

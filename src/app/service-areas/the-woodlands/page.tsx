@@ -109,7 +109,7 @@ export default function TheWoodlandsServiceAreaPage() {
         {
           question: "How much does house cleaning cost in The Woodlands?",
           answer:
-            "Pricing depends on your home's square footage and number of bathrooms. Most 3-bed/2-bath Woodlands homes run $185–$240 per biweekly visit. Larger 4-5 bedroom homes in Carlton Woods and College Park typically range $240–$340. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your specific address.",
+            "Pricing depends on your home's square footage and number of bathrooms. Most 3-bed/2-bath Woodlands homes run $159–$195 per biweekly visit. Larger 4-5 bedroom homes in Carlton Woods and College Park typically range $225–$325. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your specific address.",
         },
         {
           question: "Do you use eco-friendly products in The Woodlands?",

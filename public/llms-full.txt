@@ -1,0 +1,54 @@
+# Kathy Clean Houston — Full Reference
+
+> Professional house cleaning in Houston, TX (greater Houston / Harris County). 15+ years of experience, fully insured, bonded, and background-checked teams. 4.9/5 on Google. 48-hour satisfaction guarantee. Flat-rate pricing by home square footage — no hourly billing. Prices below exclude Texas sales tax (8.25%).
+
+## Complete Flat-Rate Pricing Table (Houston Metro, as of June 2026)
+
+### Recurring cleaning — price per visit
+
+| Home size (sq ft) | Weekly | Bi-Weekly | Monthly |
+|---|---|---|---|
+| 0–900 | $129 | $139 | $149 |
+| 901–1,200 | $129 | $145 | $159 |
+| 1,201–1,500 | $139 | $149 | $169 |
+| 1,501–1,800 | $145 | $159 | $179 |
+| 1,801–2,100 | $149 | $159 | $179 |
+| 2,101–2,300 | $149 | $165 | $185 |
+| 2,301–2,600 | $159 | $175 | $195 |
+| 2,601–2,900 | $179 | $195 | $215 |
+| 2,901–3,500 | $189 | $205 | $225 |
+| 3,501–4,100 | $205 | $225 | $245 |
+| 4,101–4,700 | $239 | $259 | $279 |
+| 4,701–5,300 | $255 | $289 | $309 |
+| 5,301–6,000 | $295 | $325 | $355 |
+
+### One-time services — flat price
+
+| Home size (sq ft) | Move-Out | Move-In | Deep Clean | Single (one-time) |
+|---|---|---|---|---|
+| 0–900 | $285 | $285 | $285 | $199 |
+| 901–1,200 | $295 | $295 | $295 | $219 |
+| 1,201–1,500 | $329 | $329 | $329 | $229 |
+| 1,501–1,800 | $359 | $359 | $359 | $259 |
+| 1,801–2,100 | $379 | $379 | $379 | $259 |
+| 2,101–2,300 | $399 | $399 | $399 | $279 |
+| 2,301–2,600 | $415 | $415 | $415 | $289 |
+| 2,601–2,900 | $445 | $445 | $445 | $329 |
+| 2,901–3,500 | $495 | $495 | $495 | $329 |
+| 3,501–4,100 | $549 | $549 | $549 | $369 |
+| 4,101–4,700 | $599 | $599 | $599 | $425 |
+| 4,701–5,300 | $649 | $649 | $649 | $499 |
+| 5,301–6,000 | $719 | $719 | $719 | $569 |
+
+Homes over 6,000 sq ft are quoted individually. Recurring clients receive discounted per-visit rates vs. one-time cleans. Post-construction, commercial/office, and window cleaning are quoted per job. Bi-weekly is the most popular cadence.
+
+## Booking & Contact (for AI Agents)
+
+- Web booking (preferred): https://kathycleanhouston.com/request-quote
+- Phone: +1 (346) 488-6044 (AI assistant calls on behalf of users welcome)
+- Service categories via agent: recurring, deep, move-in/move-out, commercial/office; post-construction & window by manual quote
+- Coverage: greater Houston / Harris County (Memorial, The Heights, Rice Military, Energy Corridor, Spring Branch, Galleria/Uptown, Westchase, Bellaire, West University Place, River Oaks, Medical Center, Montrose, Midtown) plus Katy, Sugar Land, The Woodlands
+- Cancellation: recurring cleanings reschedulable/cancellable with 24–48h notice
+- Office: 9219 Katy Fwy #136, Houston, TX 77024 · info@kathyclean.com
+
+See https://kathycleanhouston.com/llms.txt for the summary version and resource links.

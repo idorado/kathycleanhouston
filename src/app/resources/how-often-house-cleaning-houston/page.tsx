@@ -78,7 +78,7 @@ export default function HowOftenHouseCleaningHoustonArticle() {
       <ul>
         <li>Prevents allergen buildup — dust, pet dander, pollen — that accumulates quickly in Houston's year-round humidity</li>
         <li>Kitchens and bathrooms stay sanitized week-to-week, not just every two weeks</li>
-        <li>Lowest per-visit cost of any frequency: a 2,000–2,500 sq ft home runs <strong>$145/visit</strong> weekly vs $299 for a single clean</li>
+        <li>Lowest per-visit cost of any frequency: a 2,200 sq ft home runs <strong>$149/visit</strong> weekly vs $279 for a single clean</li>
         <li>Visits are shorter per session since less accumulates between them</li>
       </ul>
 
@@ -91,7 +91,7 @@ export default function HowOftenHouseCleaningHoustonArticle() {
         <li>Approximately <strong>60% of Kathy Clean Houston's recurring clients</strong> are on a bi-weekly schedule</li>
         <li>Keeps the home in a consistently maintained state without the higher cost of weekly service</li>
         <li>Right for dual-income households where weekends are too busy for thorough cleaning</li>
-        <li>A 2,000–2,500 sq ft home runs <strong>$165/visit</strong> bi-weekly — about 45% less than a single one-time clean</li>
+        <li>A 2,200 sq ft home runs <strong>$165/visit</strong> bi-weekly — about 41% less than a single one-time clean</li>
       </ul>
 
       <h2>Monthly Cleaning</h2>
@@ -101,7 +101,7 @@ export default function HowOftenHouseCleaningHoustonArticle() {
       </p>
       <ul>
         <li>Best for: single occupants, couples without children or pets, second homes</li>
-        <li>A 2,000–2,500 sq ft home runs <strong>$199/visit</strong> monthly</li>
+        <li>A 2,200 sq ft home runs <strong>$185/visit</strong> monthly</li>
         <li>Some Houston homeowners start on monthly and upgrade to bi-weekly after seeing the difference</li>
       </ul>
 

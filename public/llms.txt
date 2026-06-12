@@ -16,23 +16,11 @@ Note: post-construction, commercial, and window cleaning are quoted manually (re
 
 Flat-rate pricing based on home square footage. No hourly billing. Prices below exclude Texas sales tax (8.25%).
 
-Recurring cleaning (bi-weekly, most common):
-- Under 1,000 sq ft: $119/visit
-- 1,000–1,500 sq ft: $129/visit
-- 1,501–2,000 sq ft: $145/visit
-- 2,001–2,500 sq ft: $165/visit
-- 2,501–3,000 sq ft: $185/visit
-- 3,001–3,500 sq ft: $205/visit
+Recurring cleaning (bi-weekly is most common): from $139/visit for the smallest homes (under 900 sq ft) up to $325/visit for 5,301–6,000 sq ft. Weekly runs slightly lower per visit; monthly slightly higher.
 
-Weekly recurring runs slightly lower per visit; monthly runs slightly higher. Deep clean / first visit:
-- Under 1,000 sq ft: $345
-- 1,000–1,500 sq ft: $369
-- 1,501–2,000 sq ft: $415
-- 2,001–2,500 sq ft: $459
-- 2,501–3,000 sq ft: $525
-- 3,001–3,500 sq ft: $545
+Deep clean, move-in, and move-out cleaning: from $285 up to $719 by home size. One-time single cleaning: from $199. Homes over 6,000 sq ft are quoted individually.
 
-Move-in / move-out cleaning is priced like a deep clean by square footage. Larger homes (4,000+ sq ft) are quoted on request.
+Full flat-rate pricing table (every home size and service): https://kathycleanhouston.com/llms-full.txt
 
 ## FAQ & Policies
 

@@ -119,7 +119,7 @@ export default function EnergyCorridorServiceAreaPage() {
         {
           question: "How much does recurring house cleaning cost in the Energy Corridor?",
           answer:
-            "Pricing depends on your home's square footage and number of bathrooms. Most 3-bed/2-bath Energy Corridor homes run $175–$230 per biweekly visit. Recurring clients save compared to one-time rates. Request a free quote for pricing specific to your address.",
+            "Pricing depends on your home's square footage and number of bathrooms. Most 3-bed/2-bath Energy Corridor homes run $159–$195 per biweekly visit. Recurring clients save compared to one-time rates. Request a free quote for pricing specific to your address.",
         },
         {
           question: "Do you clean apartment complexes and townhomes in the Energy Corridor?",

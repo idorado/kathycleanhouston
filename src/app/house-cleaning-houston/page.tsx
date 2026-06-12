@@ -5,9 +5,11 @@ const OG_IMAGE =
   "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu";
 
 export const metadata: Metadata = {
-  title: "House Cleaning Houston, TX — Recurring, Deep & Move-Out",
+  // `absolute` bypasses the "| Kathy Clean Houston" template so the full title
+  // stays under ~60 chars for SERP/AI display.
+  title: { absolute: "House Cleaning Houston TX | Recurring, Deep & Move-Out" },
   description:
-    "Professional house cleaning in Houston, TX and across Harris County — the same trusted, insured team every visit. Recurring, deep, and move-in/out cleaning, flat-rate from $109/visit. Get a free quote.",
+    "Professional house cleaning in Houston, TX and across Harris County — the same trusted, insured team every visit. Recurring, deep, and move-in/out cleaning, flat-rate from $129/visit. Get a free quote.",
   openGraph: {
     title: "House Cleaning Houston, TX — Recurring, Deep & Move-Out",
     description:

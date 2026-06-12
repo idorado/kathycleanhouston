@@ -6,7 +6,7 @@ import ResourceArticleTemplate from "@/components/resources/ResourceArticleTempl
 const articlePath = canonicalPath("resources/deep-cleaning-houston");
 const articleTitle = "Deep Cleaning Services in Houston: What to Expect and What It Costs";
 const articleDescription =
-  "Learn what a deep cleaning includes, when you need one, and what it costs in Houston. Prices start at $345 for homes under 1,000 sq ft.";
+  "Learn what a deep cleaning includes, when you need one, and what it costs in Houston. Prices start at $285 for homes under 900 sq ft.";
 
 export const metadata: Metadata = {
   title: "Deep Cleaning Services in Houston: What to Expect and What It Costs",
@@ -38,7 +38,7 @@ export default function DeepCleaningHoustonArticle() {
       <h1>Deep Cleaning Services in Houston: What to Expect and What It Costs</h1>
 
       <p>
-        Deep cleaning in Houston starts at <strong>$345 for homes under 1,000 sq ft</strong> and goes up to <strong>$945 for homes over 6,000 sq ft</strong>. These prices do not include Texas sales tax (8.25%). Unlike a standard recurring clean, a deep cleaning covers every surface in the home — including areas that are usually skipped between regular visits.
+        Deep cleaning in Houston starts at <strong>$285 for homes under 900 sq ft</strong> and goes up to <strong>$719 for homes up to 6,000 sq ft</strong>. Homes over 6,000 sq ft are quoted individually. These prices do not include Texas sales tax (8.25%). Unlike a standard recurring clean, a deep cleaning covers every surface in the home — including areas that are usually skipped between regular visits.
       </p>
 
       <h2>What Is a Deep Cleaning?</h2>
@@ -176,59 +176,63 @@ export default function DeepCleaningHoustonArticle() {
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 px-4 py-2">0–999</td>
-              <td className="border border-gray-300 px-4 py-2">$345</td>
+              <td className="border border-gray-300 px-4 py-2">0–900</td>
+              <td className="border border-gray-300 px-4 py-2">$285</td>
             </tr>
             <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">1,000–1,500</td>
-              <td className="border border-gray-300 px-4 py-2">$369</td>
+              <td className="border border-gray-300 px-4 py-2">901–1,200</td>
+              <td className="border border-gray-300 px-4 py-2">$295</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-2">1,500–2,000</td>
+              <td className="border border-gray-300 px-4 py-2">1,201–1,500</td>
+              <td className="border border-gray-300 px-4 py-2">$329</td>
+            </tr>
+            <tr className="bg-gray-50">
+              <td className="border border-gray-300 px-4 py-2">1,501–1,800</td>
+              <td className="border border-gray-300 px-4 py-2">$359</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-300 px-4 py-2">1,801–2,100</td>
+              <td className="border border-gray-300 px-4 py-2">$379</td>
+            </tr>
+            <tr className="bg-gray-50">
+              <td className="border border-gray-300 px-4 py-2">2,101–2,300</td>
+              <td className="border border-gray-300 px-4 py-2">$399</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-300 px-4 py-2">2,301–2,600</td>
               <td className="border border-gray-300 px-4 py-2">$415</td>
             </tr>
             <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">2,000–2,500</td>
-              <td className="border border-gray-300 px-4 py-2">$459</td>
+              <td className="border border-gray-300 px-4 py-2">2,601–2,900</td>
+              <td className="border border-gray-300 px-4 py-2">$445</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-2">2,500–3,000</td>
-              <td className="border border-gray-300 px-4 py-2">$525</td>
+              <td className="border border-gray-300 px-4 py-2">2,901–3,500</td>
+              <td className="border border-gray-300 px-4 py-2">$495</td>
             </tr>
             <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">3,000–3,500</td>
-              <td className="border border-gray-300 px-4 py-2">$545</td>
+              <td className="border border-gray-300 px-4 py-2">3,501–4,100</td>
+              <td className="border border-gray-300 px-4 py-2">$549</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-2">3,500–4,000</td>
-              <td className="border border-gray-300 px-4 py-2">$625</td>
+              <td className="border border-gray-300 px-4 py-2">4,101–4,700</td>
+              <td className="border border-gray-300 px-4 py-2">$599</td>
             </tr>
             <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">4,000–4,500</td>
-              <td className="border border-gray-300 px-4 py-2">$665</td>
+              <td className="border border-gray-300 px-4 py-2">4,701–5,300</td>
+              <td className="border border-gray-300 px-4 py-2">$649</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-2">4,500–5,000</td>
-              <td className="border border-gray-300 px-4 py-2">$715</td>
-            </tr>
-            <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">5,000–5,500</td>
-              <td className="border border-gray-300 px-4 py-2">$742</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 px-4 py-2">5,500–6,000</td>
-              <td className="border border-gray-300 px-4 py-2">$786</td>
-            </tr>
-            <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">6,000+</td>
-              <td className="border border-gray-300 px-4 py-2">$945</td>
+              <td className="border border-gray-300 px-4 py-2">5,301–6,000</td>
+              <td className="border border-gray-300 px-4 py-2">$719</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p>
-        All prices are flat-rate — no hidden fees. Texas sales tax (8.25%) is added at booking. For most Houston homes in the 1,500–2,500 sq ft range, a deep clean runs between $415 and $459.
+        All prices are flat-rate — no hidden fees. Texas sales tax (8.25%) is added at booking. For most Houston homes in the 1,500–2,500 sq ft range, a deep clean runs between $359 and $415.
       </p>
 
       <h2>When Do You Need a Deep Cleaning?</h2>
@@ -267,7 +271,7 @@ export default function DeepCleaningHoustonArticle() {
       </p>
 
       <p>
-        The most common path for new clients: <strong>start with a deep clean → switch to biweekly recurring</strong>. For a 2,000 sq ft home in <a href="/service-areas/greater-heights">Greater Heights</a> or <a href="/service-areas/spring-branch">Spring Branch</a>, that means $459 for the initial deep clean, then $165 per biweekly visit to maintain it.
+        The most common path for new clients: <strong>start with a deep clean → switch to biweekly recurring</strong>. For a 2,000 sq ft home in <a href="/service-areas/greater-heights">Greater Heights</a> or <a href="/service-areas/spring-branch">Spring Branch</a>, that means $379 for the initial deep clean, then $159 per biweekly visit to maintain it.
       </p>
 
       <div className="my-8">

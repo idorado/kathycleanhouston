@@ -8,7 +8,7 @@ import WhyTrustUsSection from "@/components/sections/why-trust-us";
 import ReadyForHouseCleaning from "@/components/sections/ready-for-house-cleaning";
 import ThreeStepProcess from "@/components/sections/three-step-process";
 import FeatureBar from "@/components/ui/FeatureBar";
-import {houseCleaning, buildFaqPageSchema, buildBreadcrumbSchema} from "@/config/json-ld";
+import {houseCleaning, buildFaqPageSchema, buildBreadcrumbSchema, houseProcessHowToJsonLd} from "@/config/json-ld";
 import ReviewsCarousel from "@/components/sections/reviews-carousel";
 import { HouseCleaningFAQ } from "@/components/sections/house-cleaning-faq";
 import { houseCleaningFaqItems } from "@/config/house-cleaning-faq-data";
@@ -64,6 +64,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
       <JsonLd data={houseCleaning(location, schemaCanonicalPath)} />
       <JsonLd data={buildFaqPageSchema(faqForSchema, schemaCanonicalPath)} />
       <JsonLd data={buildBreadcrumbSchema([{ name: `House Cleaning in ${displayLocation}`, path: schemaCanonicalPath ?? "/house-cleaning-houston" }])} />
+      <JsonLd data={houseProcessHowToJsonLd()} />
       <HeroSection>
         <div className="on-dark space-y-4 md:space-y-6 py-16 text-white text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
@@ -164,7 +165,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
             <div className="container mx-auto px-4 max-w-4xl">
               <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-gray-900">Kathy Clean Houston by the Numbers</h2>
               <p className="text-gray-600 text-center max-w-3xl mx-auto mb-10">
-                Kathy Clean has cleaned homes for over 15 years and serves 25+ Houston-metro neighborhoods across Harris County. We hold a 4.9-star Google rating, price every job flat-rate (recurring bi-weekly cleaning starts at $119 per visit), and back every visit with a 48-hour satisfaction guarantee — with insured, bonded, and background-checked cleaning teams.
+                Kathy Clean has cleaned homes for over 15 years and serves 25+ Houston-metro neighborhoods across Harris County. We hold a 4.9-star Google rating, price every job flat-rate (recurring bi-weekly cleaning starts at $139 per visit), and back every visit with a 48-hour satisfaction guarantee — with insured, bonded, and background-checked cleaning teams.
               </p>
               <dl className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
                 <div><dt className="text-3xl font-bold text-primary">15+</dt><dd className="text-sm text-gray-600">Years of experience</dd></div>

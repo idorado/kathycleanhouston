@@ -45,7 +45,7 @@ export default function StormMoveOutCleaningHoustonArticle() {
 
       <h2>What move-out cleaning covers</h2>
       <p>
-        Our move-out service is landlord- and sale-ready, priced flat-rate by home size (it starts at $345, the same as a <a href="/resources/deep-cleaning-houston">deep clean</a>). A standard scope includes:
+        Our move-out service is landlord- and sale-ready, priced flat-rate by home size (it starts at $285, the same as a <a href="/resources/deep-cleaning-houston">deep clean</a>). A standard scope includes:
       </p>
       <ul>
         <li>Inside the oven, refrigerator, and other reachable appliances on request.</li>

@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import OurServices from "@/components/sections/our-services"
 import WhyChooseUs from "@/components/sections/why-choose-us"
 import HomeHero from "@/components/sections/home-hero"
-import { ServicesSection } from "@/components/sections/services-section"
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton"
 import { FAQ } from "@/components/sections/faq"
 import ReviewsCarousel from "@/components/sections/reviews-carousel"

@@ -109,7 +109,7 @@ export default function GreaterHeightsServiceAreaPage() {
         {
           question: "How much does house cleaning cost in the Heights?",
           answer:
-            "Most 2-bed/1-bath Heights bungalows run $140–$175 per biweekly visit. Larger 3-bed/2-bath homes and 3-story townhomes range $175–$230. Recurring clients save 15–20% vs. one-time rates. Request a free quote for your specific home.",
+            "Most 2-bed/1-bath Heights bungalows run $139–$149 per biweekly visit. Larger 3-bed/2-bath homes and 3-story townhomes range $159–$195. Recurring clients save 15–20% vs. one-time rates. Request a free quote for your specific home.",
         },
         {
           question: "Do you offer move-out cleaning for Heights rentals?",

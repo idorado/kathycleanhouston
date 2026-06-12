@@ -1,6 +1,8 @@
 // Houston Pricing Grid — Single source of truth
 // Used by /quote page and Zapier webhook
 // Prices do NOT include Sales Tax (Texas 8.25%).
+// Grid tops out at 6,000 sq ft. Homes over 6,000 sq ft return null from
+// calculateQuotePrice and are routed to the custom/manual-quote flow in /quote.
 
 export type ServiceType =
   | "recurring"
@@ -36,18 +38,19 @@ type OneTimeTier = {
 };
 
 export const HOUSTON_ONE_TIME_PRICES: OneTimeTier[] = [
-  { minSqFt: 0,    maxSqFt: 999,   moveOut: 345, moveIn: 345, deepClean: 345, singleClean: 225 },
-  { minSqFt: 1000, maxSqFt: 1500,  moveOut: 369, moveIn: 369, deepClean: 369, singleClean: 259 },
-  { minSqFt: 1501, maxSqFt: 2000,  moveOut: 415, moveIn: 415, deepClean: 415, singleClean: 285 },
-  { minSqFt: 2001, maxSqFt: 2500,  moveOut: 459, moveIn: 459, deepClean: 459, singleClean: 299 },
-  { minSqFt: 2501, maxSqFt: 3000,  moveOut: 525, moveIn: 525, deepClean: 525, singleClean: 329 },
-  { minSqFt: 3001, maxSqFt: 3500,  moveOut: 579, moveIn: 579, deepClean: 545, singleClean: 359 },
-  { minSqFt: 3501, maxSqFt: 4000,  moveOut: 625, moveIn: 625, deepClean: 625, singleClean: 415 },
-  { minSqFt: 4001, maxSqFt: 4500,  moveOut: 665, moveIn: 665, deepClean: 665, singleClean: 449 },
-  { minSqFt: 4501, maxSqFt: 5000,  moveOut: 715, moveIn: 715, deepClean: 715, singleClean: 495 },
-  { minSqFt: 5001, maxSqFt: 5500,  moveOut: 789, moveIn: 789, deepClean: 742, singleClean: 539 },
-  { minSqFt: 5501, maxSqFt: 6000,  moveOut: 835, moveIn: 835, deepClean: 786, singleClean: 585 },
-  { minSqFt: 6001, maxSqFt: 99999, moveOut: 945, moveIn: 885, deepClean: 945, singleClean: 629 },
+  { minSqFt: 0,    maxSqFt: 900,  moveOut: 285, moveIn: 285, deepClean: 285, singleClean: 199 },
+  { minSqFt: 901,  maxSqFt: 1200, moveOut: 295, moveIn: 295, deepClean: 295, singleClean: 219 },
+  { minSqFt: 1201, maxSqFt: 1500, moveOut: 329, moveIn: 329, deepClean: 329, singleClean: 229 },
+  { minSqFt: 1501, maxSqFt: 1800, moveOut: 359, moveIn: 359, deepClean: 359, singleClean: 259 },
+  { minSqFt: 1801, maxSqFt: 2100, moveOut: 379, moveIn: 379, deepClean: 379, singleClean: 259 },
+  { minSqFt: 2101, maxSqFt: 2300, moveOut: 399, moveIn: 399, deepClean: 399, singleClean: 279 },
+  { minSqFt: 2301, maxSqFt: 2600, moveOut: 415, moveIn: 415, deepClean: 415, singleClean: 289 },
+  { minSqFt: 2601, maxSqFt: 2900, moveOut: 445, moveIn: 445, deepClean: 445, singleClean: 329 },
+  { minSqFt: 2901, maxSqFt: 3500, moveOut: 495, moveIn: 495, deepClean: 495, singleClean: 329 },
+  { minSqFt: 3501, maxSqFt: 4100, moveOut: 549, moveIn: 549, deepClean: 549, singleClean: 369 },
+  { minSqFt: 4101, maxSqFt: 4700, moveOut: 599, moveIn: 599, deepClean: 599, singleClean: 425 },
+  { minSqFt: 4701, maxSqFt: 5300, moveOut: 649, moveIn: 649, deepClean: 649, singleClean: 499 },
+  { minSqFt: 5301, maxSqFt: 6000, moveOut: 719, moveIn: 719, deepClean: 719, singleClean: 569 },
 ];
 
 // ---------------------------------------------------------------------------
@@ -62,18 +65,19 @@ type RecurringTier = {
 };
 
 export const HOUSTON_RECURRING_PRICES: RecurringTier[] = [
-  { minSqFt: 0,    maxSqFt: 999,   weekly: 109, biweekly: 119, monthly: 149 },
-  { minSqFt: 1000, maxSqFt: 1500,  weekly: 119, biweekly: 129, monthly: 159 },
-  { minSqFt: 1501, maxSqFt: 2000,  weekly: 129, biweekly: 145, monthly: 179 },
-  { minSqFt: 2001, maxSqFt: 2500,  weekly: 145, biweekly: 165, monthly: 199 },
-  { minSqFt: 2501, maxSqFt: 3000,  weekly: 169, biweekly: 185, monthly: 229 },
-  { minSqFt: 3001, maxSqFt: 3500,  weekly: 185, biweekly: 205, monthly: 249 },
-  { minSqFt: 3501, maxSqFt: 4000,  weekly: 205, biweekly: 229, monthly: 269 },
-  { minSqFt: 4001, maxSqFt: 4500,  weekly: 225, biweekly: 249, monthly: 289 },
-  { minSqFt: 4501, maxSqFt: 5000,  weekly: 245, biweekly: 279, monthly: 309 },
-  { minSqFt: 5001, maxSqFt: 5500,  weekly: 269, biweekly: 309, monthly: 339 },
-  { minSqFt: 5501, maxSqFt: 6000,  weekly: 295, biweekly: 339, monthly: 359 },
-  { minSqFt: 6001, maxSqFt: 99999, weekly: 325, biweekly: 375, monthly: 379 },
+  { minSqFt: 0,    maxSqFt: 900,  weekly: 129, biweekly: 139, monthly: 149 },
+  { minSqFt: 901,  maxSqFt: 1200, weekly: 129, biweekly: 145, monthly: 159 },
+  { minSqFt: 1201, maxSqFt: 1500, weekly: 139, biweekly: 149, monthly: 169 },
+  { minSqFt: 1501, maxSqFt: 1800, weekly: 145, biweekly: 159, monthly: 179 },
+  { minSqFt: 1801, maxSqFt: 2100, weekly: 149, biweekly: 159, monthly: 179 },
+  { minSqFt: 2101, maxSqFt: 2300, weekly: 149, biweekly: 165, monthly: 185 },
+  { minSqFt: 2301, maxSqFt: 2600, weekly: 159, biweekly: 175, monthly: 195 },
+  { minSqFt: 2601, maxSqFt: 2900, weekly: 179, biweekly: 195, monthly: 215 },
+  { minSqFt: 2901, maxSqFt: 3500, weekly: 189, biweekly: 205, monthly: 225 },
+  { minSqFt: 3501, maxSqFt: 4100, weekly: 205, biweekly: 225, monthly: 245 },
+  { minSqFt: 4101, maxSqFt: 4700, weekly: 239, biweekly: 259, monthly: 279 },
+  { minSqFt: 4701, maxSqFt: 5300, weekly: 255, biweekly: 289, monthly: 309 },
+  { minSqFt: 5301, maxSqFt: 6000, weekly: 295, biweekly: 325, monthly: 355 },
 ];
 
 // ---------------------------------------------------------------------------

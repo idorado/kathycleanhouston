@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import { canonicalPath } from "@/lib/canonical";
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton";
 import ResourceArticleTemplate from "@/components/resources/ResourceArticleTemplate";
+import JsonLd from "@/components/json-ld";
+import { housePricingJsonLd } from "@/config/json-ld";
 
 const articlePath = canonicalPath("resources/house-cleaning-cost-houston");
 const articleTitle = "How Much Does House Cleaning Cost in Houston?";
 const articleDescription =
-  "Exact flat-rate pricing for house cleaning in Houston by home size and service type — recurring, deep clean, move-in/out. Prices start at $109/visit.";
+  "Exact flat-rate pricing for house cleaning in Houston by home size and service type — recurring, deep clean, move-in/out. Prices start at $129/visit.";
 
 export const metadata: Metadata = {
   title: "How Much Does House Cleaning Cost in Houston? Pricing Guide 2026",
@@ -32,10 +34,11 @@ export default function HouseCleaningCostHoustonArticle() {
         dateModified: "2026-04-23",
       }}
     >
+      <JsonLd data={housePricingJsonLd()} />
       <h1>How Much Does House Cleaning Cost in Houston?</h1>
 
       <p>
-        House cleaning in Houston starts at <strong>$109 per weekly visit</strong> for homes under 1,000 sq ft and goes up to <strong>$325/week</strong> for homes over 6,000 sq ft. One-time and deep cleans run higher. All prices below are flat-rate and <strong>do not include Texas sales tax (8.25%)</strong>.
+        House cleaning in Houston starts at <strong>$129 per weekly visit</strong> for homes under 900 sq ft and goes up to <strong>$295/week</strong> for homes up to 6,000 sq ft. One-time and deep cleans run higher, and homes over 6,000 sq ft are quoted individually. All prices below are flat-rate and <strong>do not include Texas sales tax (8.25%)</strong>.
       </p>
 
       <h2>Full Pricing Table: All Service Types by Home Size</h2>
@@ -60,18 +63,19 @@ export default function HouseCleaningCostHoustonArticle() {
           </thead>
           <tbody>
             {[
-              ["0–999", "$345", "$345", "$345", "$225", "$149", "$119", "$109"],
-              ["1,000–1,500", "$369", "$369", "$369", "$259", "$159", "$129", "$119"],
-              ["1,500–2,000", "$415", "$415", "$415", "$285", "$179", "$145", "$129"],
-              ["2,000–2,500", "$459", "$459", "$459", "$299", "$199", "$165", "$145"],
-              ["2,500–3,000", "$525", "$525", "$525", "$329", "$229", "$185", "$169"],
-              ["3,000–3,500", "$579", "$579", "$545", "$359", "$249", "$205", "$185"],
-              ["3,500–4,000", "$625", "$625", "$625", "$415", "$269", "$229", "$205"],
-              ["4,000–4,500", "$665", "$665", "$665", "$449", "$289", "$249", "$225"],
-              ["4,500–5,000", "$715", "$715", "$715", "$495", "$309", "$279", "$245"],
-              ["5,000–5,500", "$789", "$789", "$742", "$539", "$339", "$309", "$269"],
-              ["5,500–6,000", "$835", "$835", "$786", "$585", "$359", "$339", "$295"],
-              ["6,000+", "$945", "$885", "$945", "$629", "$379", "$375", "$325"],
+              ["0–900", "$285", "$285", "$285", "$199", "$149", "$139", "$129"],
+              ["901–1,200", "$295", "$295", "$295", "$219", "$159", "$145", "$129"],
+              ["1,201–1,500", "$329", "$329", "$329", "$229", "$169", "$149", "$139"],
+              ["1,501–1,800", "$359", "$359", "$359", "$259", "$179", "$159", "$145"],
+              ["1,801–2,100", "$379", "$379", "$379", "$259", "$179", "$159", "$149"],
+              ["2,101–2,300", "$399", "$399", "$399", "$279", "$185", "$165", "$149"],
+              ["2,301–2,600", "$415", "$415", "$415", "$289", "$195", "$175", "$159"],
+              ["2,601–2,900", "$445", "$445", "$445", "$329", "$215", "$195", "$179"],
+              ["2,901–3,500", "$495", "$495", "$495", "$329", "$225", "$205", "$189"],
+              ["3,501–4,100", "$549", "$549", "$549", "$369", "$245", "$225", "$205"],
+              ["4,101–4,700", "$599", "$599", "$599", "$425", "$279", "$259", "$239"],
+              ["4,701–5,300", "$649", "$649", "$649", "$499", "$309", "$289", "$255"],
+              ["5,301–6,000", "$719", "$719", "$719", "$569", "$355", "$325", "$295"],
             ].map(([size, moveOut, moveIn, deep, single, monthly, biweekly, weekly], i) => (
               <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                 <td className="px-3 py-2 font-medium whitespace-nowrap">{size}</td>
@@ -86,7 +90,7 @@ export default function HouseCleaningCostHoustonArticle() {
             ))}
           </tbody>
         </table>
-        <p className="text-xs text-gray-500 mt-2">Prices do not include Texas sales tax (8.25%). Bi-weekly highlighted as most popular option.</p>
+        <p className="text-xs text-gray-500 mt-2">Prices do not include Texas sales tax (8.25%). Bi-weekly highlighted as most popular option. Homes over 6,000 sq ft are quoted individually.</p>
       </div>
 
       <div className="not-prose bg-blue-50 p-6 rounded-lg my-8">
@@ -138,13 +142,13 @@ export default function HouseCleaningCostHoustonArticle() {
       <h2>Does Recurring Service Save Money?</h2>
 
       <p>
-        Yes — significantly. For a 2,000–2,500 sq ft Houston home:
+        Yes — significantly. For a 2,200 sq ft Houston home:
       </p>
       <ul>
-        <li>Single clean: <strong>$299</strong> per visit</li>
-        <li>Monthly recurring: <strong>$199</strong> per visit (33% less)</li>
-        <li>Bi-weekly recurring: <strong>$165</strong> per visit (45% less)</li>
-        <li>Weekly recurring: <strong>$145</strong> per visit (52% less)</li>
+        <li>Single clean: <strong>$279</strong> per visit</li>
+        <li>Monthly recurring: <strong>$185</strong> per visit (34% less)</li>
+        <li>Bi-weekly recurring: <strong>$165</strong> per visit (41% less)</li>
+        <li>Weekly recurring: <strong>$149</strong> per visit (47% less)</li>
       </ul>
       <p>
         Switching from periodic one-time cleans to a bi-weekly plan typically cuts cost per visit nearly in half while keeping the home in consistently better condition.
@@ -159,7 +163,7 @@ export default function HouseCleaningCostHoustonArticle() {
 
       <details className="border rounded-lg p-4 my-3">
         <summary className="font-semibold cursor-pointer">How much does it cost to clean an apartment in Houston?</summary>
-        <p className="mt-2 text-gray-700">Apartments are priced the same way as houses — by square footage. A 900 sq ft apartment bi-weekly runs $119; a 1,200 sq ft apartment runs $129 bi-weekly. Prices exclude 8.25% sales tax.</p>
+        <p className="mt-2 text-gray-700">Apartments are priced the same way as houses — by square footage. A 900 sq ft apartment bi-weekly runs $139; a 1,200 sq ft apartment runs $145 bi-weekly. Prices exclude 8.25% sales tax.</p>
       </details>
 
       <details className="border rounded-lg p-4 my-3">

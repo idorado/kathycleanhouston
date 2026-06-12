@@ -161,7 +161,7 @@ export function buildServiceLocationProps(
           {
             question: `How much does house cleaning cost in ${name}?`,
             answer:
-              "Pricing is flat-rate by square footage, not hourly. Recurring bi-weekly cleaning starts at $119 for smaller homes and scales with size; deep cleans start at $345. Recurring clients save vs. one-time rates. Request a free quote for an exact price.",
+              "Pricing is flat-rate by square footage, not hourly. Recurring bi-weekly cleaning starts at $139 for smaller homes and scales with size; deep cleans start at $285. Recurring clients save vs. one-time rates. Request a free quote for an exact price.",
           },
           {
             question: `Can you clean my ${name} home while I'm at work?`,
@@ -234,7 +234,7 @@ export function buildServiceLocationProps(
         },
         recurringCleaningContent: {
           title: "How Recurring Pricing Works",
-          content: `<p>Recurring pricing is flat-rate by home square footage, not hourly — so you know the cost before each visit. Bi-weekly rates start at $119 for smaller ${name} homes and scale with size; weekly runs slightly lower per visit and monthly slightly higher. There's no contract: keep a card on file for automatic billing after each visit, and pause or adjust anytime.</p>`,
+          content: `<p>Recurring pricing is flat-rate by home square footage, not hourly — so you know the cost before each visit. Bi-weekly rates start at $139 for smaller ${name} homes and scale with size; weekly runs slightly lower per visit and monthly slightly higher. There's no contract: keep a card on file for automatic billing after each visit, and pause or adjust anytime.</p>`,
         },
         faqItems: [
           baseFaq,
@@ -310,7 +310,7 @@ export function buildServiceLocationProps(
         },
         recurringCleaningContent: {
           title: "Deep Clean Pricing",
-          content: `<p>Deep cleans are flat-rate by home size, not hourly. Pricing starts at $345 for smaller ${name} homes and scales with square footage. Inside-oven and inside-fridge cleaning are available on request. We confirm your home size and any add-ons up front so the quote is exact.</p>`,
+          content: `<p>Deep cleans are flat-rate by home size, not hourly. Pricing starts at $285 for smaller ${name} homes and scales with square footage. Inside-oven and inside-fridge cleaning are available on request. We confirm your home size and any add-ons up front so the quote is exact.</p>`,
         },
         faqItems: [
           baseFaq,
@@ -322,7 +322,7 @@ export function buildServiceLocationProps(
           {
             question: `How much does a deep clean cost in ${name}?`,
             answer:
-              "Flat-rate by square footage, starting at $345 for smaller homes and scaling with size. Inside-oven and inside-fridge add-ons are available. Request a free quote for an exact price.",
+              "Flat-rate by square footage, starting at $285 for smaller homes and scaling with size. Inside-oven and inside-fridge add-ons are available. Request a free quote for an exact price.",
           },
           insuranceFaq,
         ],
@@ -386,7 +386,7 @@ export function buildServiceLocationProps(
         },
         recurringCleaningContent: {
           title: "Move Cleaning Pricing",
-          content: `<p>Move-in and move-out cleans are priced like a deep clean — flat-rate by square footage, starting at $345 for smaller ${name} homes and scaling with size. Larger homes are quoted on request. Let us know your move date and we'll schedule around it.</p>`,
+          content: `<p>Move-in and move-out cleans are priced like a deep clean — flat-rate by square footage, starting at $285 for smaller ${name} homes and scaling with size. Larger homes are quoted on request. Let us know your move date and we'll schedule around it.</p>`,
         },
         faqItems: [
           baseFaq,
@@ -398,7 +398,7 @@ export function buildServiceLocationProps(
           {
             question: `How much does move-out cleaning cost in ${name}?`,
             answer:
-              "Flat-rate by square footage, like a deep clean — starting at $345 for smaller homes and scaling with size. Request a free quote with your home size and move date.",
+              "Flat-rate by square footage, like a deep clean — starting at $285 for smaller homes and scaling with size. Request a free quote with your home size and move date.",
           },
           insuranceFaq,
         ],

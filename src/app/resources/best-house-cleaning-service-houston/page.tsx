@@ -52,7 +52,7 @@ export default function BestHouseCleaningServiceHoustonArticle() {
 
       <h3>3. Flat-rate pricing, not hourly</h3>
       <p>
-        Flat-rate pricing based on your home&apos;s square footage means you know the cost before the team arrives, with no clock-watching and no surprise charges. See real Houston numbers in our <a href="/resources/house-cleaning-cost-houston">house cleaning cost guide</a> — recurring bi-weekly service starts at $119 per visit and scales with home size.
+        Flat-rate pricing based on your home&apos;s square footage means you know the cost before the team arrives, with no clock-watching and no surprise charges. See real Houston numbers in our <a href="/resources/house-cleaning-cost-houston">house cleaning cost guide</a> — recurring bi-weekly service starts at $139 per visit and scales with home size.
       </p>
 
       <h3>4. Genuine local reviews</h3>

@@ -108,7 +108,7 @@ export default function OakForestServiceAreaPage() {
         {
           question: "How much does house cleaning cost in Oak Forest?",
           answer:
-            "Most 3-bed/2-bath Oak Forest ranch homes run $155–$195 per biweekly visit. Larger or fully renovated homes range $190–$245. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your specific home.",
+            "Most 3-bed/2-bath Oak Forest ranch homes run $149–$175 per biweekly visit. Larger or fully renovated homes range $175–$225. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your specific home.",
         },
         {
           question: "Do you offer move-out cleaning for Oak Forest rentals and home sales?",

@@ -109,7 +109,7 @@ export default function KatyServiceAreaPage() {
         {
           question: "How much does recurring house cleaning cost in Katy?",
           answer:
-            "Pricing depends on your home's square footage and number of bathrooms. Most 3-bed/2-bath Katy homes run $165–$215 per biweekly visit. Larger 4-bed/3-bath homes in Cinco Ranch typically range $210–$270. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your exact address.",
+            "Pricing depends on your home's square footage and number of bathrooms. Most 3-bed/2-bath Katy homes run $159–$175 per biweekly visit. Larger 4-bed/3-bath homes in Cinco Ranch typically range $205–$259. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your exact address.",
         },
         {
           question: "Do you offer move-in cleaning for Katy relocations?",

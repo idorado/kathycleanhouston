@@ -6,7 +6,7 @@ export const houseCleaningFaqItems = [
   {
     question: "How much does house cleaning cost in {Location}?",
     answer:
-      "Pricing is flat-rate and depends on your home's size and cleaning type. For reference, a 1,500–2,000 sq ft home in {Location} typically costs $129/visit for weekly service, $145/visit for bi-weekly, or $179/visit for monthly. Deep cleans and move-in/out services start at $415 for the same size. Prices do not include Sales Tax (8.25%). Get your exact quote free at kathycleanhouston.com/request-quote.",
+      "Pricing is flat-rate and depends on your home's size and cleaning type. For reference, a 1,500–2,000 sq ft home in {Location} typically costs $145/visit for weekly service, $159/visit for bi-weekly, or $179/visit for monthly. Deep cleans and move-in/out services start at $359 for the same size. Prices do not include Sales Tax (8.25%). Get your exact quote free at kathycleanhouston.com/request-quote.",
   },
   {
     question: "What cleaning services do you offer in {Location}?",

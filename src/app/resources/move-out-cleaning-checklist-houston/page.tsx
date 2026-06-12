@@ -78,7 +78,7 @@ export default function MoveOutChecklistHoustonArticle() {
 
       <h2>DIY or hire a pro?</h2>
       <p>
-        A full move-out clean on a 2-bedroom takes most people the better part of a day — and a missed oven or grout line can cost part of a deposit. A professional move-out clean is flat-rate by home size (starting at $345, the same as a <a href="/resources/deep-cleaning-houston">deep clean</a>), covers everything on this list, and we coordinate with your landlord or property manager on request. Areas with heavy rental turnover — like <a href="/house-cleaning-westchase">Westchase</a> and the <a href="/house-cleaning-medical-center-area">Medical Center area</a> — book this routinely, especially in summer.
+        A full move-out clean on a 2-bedroom takes most people the better part of a day — and a missed oven or grout line can cost part of a deposit. A professional move-out clean is flat-rate by home size (starting at $285, the same as a <a href="/resources/deep-cleaning-houston">deep clean</a>), covers everything on this list, and we coordinate with your landlord or property manager on request. Areas with heavy rental turnover — like <a href="/house-cleaning-westchase">Westchase</a> and the <a href="/house-cleaning-medical-center-area">Medical Center area</a> — book this routinely, especially in summer.
       </p>
 
       <div className="not-prose bg-blue-50 p-6 rounded-lg my-8">

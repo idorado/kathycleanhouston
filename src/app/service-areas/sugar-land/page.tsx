@@ -104,7 +104,7 @@ export default function SugarLandServiceAreaPage() {
         {
           question: "How much does recurring house cleaning cost in Sugar Land?",
           answer:
-            "Pricing depends on your home's square footage and number of bathrooms. Most 3-bed/2-bath Sugar Land homes run $175–$225 per biweekly visit. Larger homes in Riverstone and First Colony typically range $230–$300. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your exact address.",
+            "Pricing depends on your home's square footage and number of bathrooms. Most 3-bed/2-bath Sugar Land homes run $159–$195 per biweekly visit. Larger homes in Riverstone and First Colony typically range $205–$289. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your exact address.",
         },
         {
           question: "Do you offer move-out cleaning for Sugar Land homes?",

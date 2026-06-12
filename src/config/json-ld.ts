@@ -158,7 +158,8 @@ export const home = () => ({
   "sameAs": SAME_AS_URLS,
   "aggregateRating": AGGREGATE_RATING,
   "review": REVIEWS,
-  "potentialAction": RESERVE_ACTION
+  "potentialAction": RESERVE_ACTION,
+  "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "h2"] }
 });
 
 export const website = () => ({
@@ -214,7 +215,8 @@ export const houseCleaning = (location: string, canonicalPath?: string) => {
     },
     "aggregateRating": AGGREGATE_RATING,
     "review": REVIEWS,
-    "potentialAction": RESERVE_ACTION
+    "potentialAction": RESERVE_ACTION,
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "h2"] }
   }
 };
 
@@ -559,8 +561,10 @@ export const organization = (founder?: {
   sameAs?: string[];
 }) => ({
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": `${SITE_URL}/#organization`,
+  // Same @id as the homepage LocalBusiness node so AI/Google resolve ONE entity
+  // (was a separate #organization node = entity split).
+  "@type": ["Organization", "LocalBusiness", "CleaningService"],
+  "@id": `${SITE_URL}/#business`,
   "name": "Kathy Clean Houston",
   "url": SITE_URL,
   "logo": LOGO_URL,
@@ -582,4 +586,70 @@ export const organization = (founder?: {
         }
       }
     : {})
+});
+
+// ---------------------------------------------------------------------------
+// Pricing (Offer + UnitPriceSpecification) — makes flat-rate prices extractable
+// by AI for "how much does house cleaning cost in Houston" queries. Ranges are
+// per-visit and exclude TX sales tax; kept in sync with src/lib/pricing.ts.
+// ---------------------------------------------------------------------------
+const priceOffer = (name: string, minPrice: number, maxPrice: number) => ({
+  "@type": "Offer",
+  "name": name,
+  "priceCurrency": "USD",
+  "priceSpecification": {
+    "@type": "UnitPriceSpecification",
+    "priceCurrency": "USD",
+    "minPrice": minPrice,
+    "maxPrice": maxPrice,
+    "unitText": "per visit"
+  },
+  "availability": "https://schema.org/InStock"
+});
+
+export const housePricingJsonLd = () => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${SITE_URL}/resources/house-cleaning-cost-houston#pricing`,
+  "name": "House Cleaning in Houston",
+  "serviceType": "Residential Cleaning Services",
+  "provider": { "@id": `${SITE_URL}/#business` },
+  "areaServed": { "@type": "Place", "name": "Houston, TX" },
+  "offers": [
+    priceOffer("Recurring Weekly House Cleaning", 129, 295),
+    priceOffer("Recurring Bi-Weekly House Cleaning", 139, 325),
+    priceOffer("Recurring Monthly House Cleaning", 149, 355),
+    priceOffer("One-Time / Single Cleaning", 199, 569),
+    priceOffer("Deep Cleaning", 285, 719),
+    priceOffer("Move-In / Move-Out Cleaning", 285, 719)
+  ]
+});
+
+// HowTo for the 3-step booking process shown on /house-cleaning-houston.
+export const houseProcessHowToJsonLd = () => ({
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to book house cleaning with Kathy Clean Houston",
+  "description":
+    "Three simple steps to schedule professional house cleaning in Houston.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Get a Quote",
+      "text": "Request a free flat-rate quote online or by phone. We confirm your home size and service type to give an exact price."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Get Matched",
+      "text": "We schedule your trusted cleaning team and confirm a date and time that works for you."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Enjoy a Clean Home",
+      "text": "Your team cleans while you're home or away. Every visit is backed by a 48-hour satisfaction guarantee."
+    }
+  ]
 });

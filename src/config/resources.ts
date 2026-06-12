@@ -12,7 +12,7 @@ export const resourceArticles: ResourceArticle[] = [
   {
     slug: "house-cleaning-cost-houston",
     title: "How Much Does House Cleaning Cost in Houston?",
-    description: "Exact flat-rate pricing for house cleaning in Houston by home size and service type — recurring, deep clean, move-in/out. Prices start at $109/visit.",
+    description: "Exact flat-rate pricing for house cleaning in Houston by home size and service type — recurring, deep clean, move-in/out. Prices start at $129/visit.",
     publishDate: "2026-04-23",
     category: "pricing",
     readTime: 5,
@@ -29,7 +29,7 @@ export const resourceArticles: ResourceArticle[] = [
   {
     slug: "deep-cleaning-houston",
     title: "Deep Cleaning Services in Houston: What to Expect and What It Costs",
-    description: "Deep cleaning in Houston starts at $345 for homes under 1,000 sq ft. Learn what's included, how it differs from standard cleaning, and when you need it.",
+    description: "Deep cleaning in Houston starts at $285 for homes under 900 sq ft. Learn what's included, how it differs from standard cleaning, and when you need it.",
     publishDate: "2026-04-23",
     category: "guide",
     readTime: 4,
@@ -37,7 +37,7 @@ export const resourceArticles: ResourceArticle[] = [
   {
     slug: "move-in-move-out-cleaning-houston",
     title: "Move-In and Move-Out Cleaning in Houston: Cost, Checklist & What to Expect",
-    description: "Move-in and move-out cleaning in Houston starts at $345. Full pricing by home size, complete scope checklist, and scheduling tips for a smooth transition.",
+    description: "Move-in and move-out cleaning in Houston starts at $285. Full pricing by home size, complete scope checklist, and scheduling tips for a smooth transition.",
     publishDate: "2026-04-23",
     category: "guide",
     readTime: 5,

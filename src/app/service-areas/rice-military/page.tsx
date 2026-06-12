@@ -108,7 +108,7 @@ export default function RiceMilitaryServiceAreaPage() {
         {
           question: "How much does recurring house cleaning cost in Rice Military?",
           answer:
-            "A 2-bed/2-bath Rice Military townhome typically runs $150–$190 per biweekly visit. Larger 3-story townhomes range $185–$240. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your specific address and layout.",
+            "A 2-bed/2-bath Rice Military townhome typically runs $145–$159 per biweekly visit. Larger 3-story townhomes range $159–$195. Recurring clients save 15–20% compared to one-time rates. Request a free quote for your specific address and layout.",
         },
         {
           question: "Do you clean condos in Rice Military high-rises?",

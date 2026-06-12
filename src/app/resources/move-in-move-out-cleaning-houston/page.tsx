@@ -6,7 +6,7 @@ import ResourceArticleTemplate from "@/components/resources/ResourceArticleTempl
 const articlePath = canonicalPath("resources/move-in-move-out-cleaning-houston");
 const articleTitle = "Move-In and Move-Out Cleaning in Houston: Cost, Checklist & What to Expect";
 const articleDescription =
-  "Move-in cleaning starts at $345 in Houston. Move-out cleaning starts at $345. Learn what's included, when to schedule, and how to prepare.";
+  "Move-in cleaning starts at $285 in Houston. Move-out cleaning starts at $285. Learn what's included, when to schedule, and how to prepare.";
 
 export const metadata: Metadata = {
   title: "Move-In and Move-Out Cleaning in Houston: Cost, Checklist & What to Expect",
@@ -38,7 +38,7 @@ export default function MoveInMoveOutCleaningHoustonArticle() {
       <h1>Move-In and Move-Out Cleaning in Houston</h1>
 
       <p>
-        Moving is already one of the most stressful life events. Professional cleaning is the one task you don&#39;t need to DIY. Move-out and move-in cleaning in Houston starts at <strong>$345 for homes under 1,000 sq ft</strong>, up to <strong>$885–$945 for 6,000+ sq ft homes</strong>. Prices do not include Texas sales tax (8.25%).
+        Moving is already one of the most stressful life events. Professional cleaning is the one task you don&#39;t need to DIY. Move-out and move-in cleaning in Houston starts at <strong>$285 for homes under 900 sq ft</strong>, up to <strong>$719 for homes up to 6,000 sq ft</strong>. Homes over 6,000 sq ft are quoted individually. Prices do not include Texas sales tax (8.25%).
       </p>
 
       <p>
@@ -78,64 +78,69 @@ export default function MoveInMoveOutCleaningHoustonArticle() {
           </thead>
           <tbody>
             <tr>
-              <td className="border border-gray-300 px-4 py-2">0–999</td>
-              <td className="border border-gray-300 px-4 py-2">$345</td>
-              <td className="border border-gray-300 px-4 py-2">$345</td>
+              <td className="border border-gray-300 px-4 py-2">0–900</td>
+              <td className="border border-gray-300 px-4 py-2">$285</td>
+              <td className="border border-gray-300 px-4 py-2">$285</td>
             </tr>
             <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">1,000–1,500</td>
-              <td className="border border-gray-300 px-4 py-2">$369</td>
-              <td className="border border-gray-300 px-4 py-2">$369</td>
+              <td className="border border-gray-300 px-4 py-2">901–1,200</td>
+              <td className="border border-gray-300 px-4 py-2">$295</td>
+              <td className="border border-gray-300 px-4 py-2">$295</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-2">1,500–2,000</td>
+              <td className="border border-gray-300 px-4 py-2">1,201–1,500</td>
+              <td className="border border-gray-300 px-4 py-2">$329</td>
+              <td className="border border-gray-300 px-4 py-2">$329</td>
+            </tr>
+            <tr className="bg-gray-50">
+              <td className="border border-gray-300 px-4 py-2">1,501–1,800</td>
+              <td className="border border-gray-300 px-4 py-2">$359</td>
+              <td className="border border-gray-300 px-4 py-2">$359</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-300 px-4 py-2">1,801–2,100</td>
+              <td className="border border-gray-300 px-4 py-2">$379</td>
+              <td className="border border-gray-300 px-4 py-2">$379</td>
+            </tr>
+            <tr className="bg-gray-50">
+              <td className="border border-gray-300 px-4 py-2">2,101–2,300</td>
+              <td className="border border-gray-300 px-4 py-2">$399</td>
+              <td className="border border-gray-300 px-4 py-2">$399</td>
+            </tr>
+            <tr>
+              <td className="border border-gray-300 px-4 py-2">2,301–2,600</td>
               <td className="border border-gray-300 px-4 py-2">$415</td>
               <td className="border border-gray-300 px-4 py-2">$415</td>
             </tr>
             <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">2,000–2,500</td>
-              <td className="border border-gray-300 px-4 py-2">$459</td>
-              <td className="border border-gray-300 px-4 py-2">$459</td>
+              <td className="border border-gray-300 px-4 py-2">2,601–2,900</td>
+              <td className="border border-gray-300 px-4 py-2">$445</td>
+              <td className="border border-gray-300 px-4 py-2">$445</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-2">2,500–3,000</td>
-              <td className="border border-gray-300 px-4 py-2">$525</td>
-              <td className="border border-gray-300 px-4 py-2">$525</td>
+              <td className="border border-gray-300 px-4 py-2">2,901–3,500</td>
+              <td className="border border-gray-300 px-4 py-2">$495</td>
+              <td className="border border-gray-300 px-4 py-2">$495</td>
             </tr>
             <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">3,000–3,500</td>
-              <td className="border border-gray-300 px-4 py-2">$579</td>
-              <td className="border border-gray-300 px-4 py-2">$579</td>
+              <td className="border border-gray-300 px-4 py-2">3,501–4,100</td>
+              <td className="border border-gray-300 px-4 py-2">$549</td>
+              <td className="border border-gray-300 px-4 py-2">$549</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-2">3,500–4,000</td>
-              <td className="border border-gray-300 px-4 py-2">$625</td>
-              <td className="border border-gray-300 px-4 py-2">$625</td>
+              <td className="border border-gray-300 px-4 py-2">4,101–4,700</td>
+              <td className="border border-gray-300 px-4 py-2">$599</td>
+              <td className="border border-gray-300 px-4 py-2">$599</td>
             </tr>
             <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">4,000–4,500</td>
-              <td className="border border-gray-300 px-4 py-2">$665</td>
-              <td className="border border-gray-300 px-4 py-2">$665</td>
+              <td className="border border-gray-300 px-4 py-2">4,701–5,300</td>
+              <td className="border border-gray-300 px-4 py-2">$649</td>
+              <td className="border border-gray-300 px-4 py-2">$649</td>
             </tr>
             <tr>
-              <td className="border border-gray-300 px-4 py-2">4,500–5,000</td>
-              <td className="border border-gray-300 px-4 py-2">$715</td>
-              <td className="border border-gray-300 px-4 py-2">$715</td>
-            </tr>
-            <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">5,000–5,500</td>
-              <td className="border border-gray-300 px-4 py-2">$789</td>
-              <td className="border border-gray-300 px-4 py-2">$789</td>
-            </tr>
-            <tr>
-              <td className="border border-gray-300 px-4 py-2">5,500–6,000</td>
-              <td className="border border-gray-300 px-4 py-2">$835</td>
-              <td className="border border-gray-300 px-4 py-2">$835</td>
-            </tr>
-            <tr className="bg-gray-50">
-              <td className="border border-gray-300 px-4 py-2">6,000+</td>
-              <td className="border border-gray-300 px-4 py-2">$945</td>
-              <td className="border border-gray-300 px-4 py-2">$885</td>
+              <td className="border border-gray-300 px-4 py-2">5,301–6,000</td>
+              <td className="border border-gray-300 px-4 py-2">$719</td>
+              <td className="border border-gray-300 px-4 py-2">$719</td>
             </tr>
           </tbody>
         </table>
