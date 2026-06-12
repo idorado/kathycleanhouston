@@ -130,7 +130,7 @@ export function Footer() {
             </h3>
             <div className="space-y-4">
               <a
-                href="https://www.google.com/maps/search/?api=1&query=9219+Katy+Fwy+%23136+Houston+TX+77024"
+                href="https://maps.app.goo.gl/fHcfZ3iL2R4RFAf98"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-cyan-500 block"

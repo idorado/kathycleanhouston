@@ -37,7 +37,19 @@ function resolve(slug: string) {
   try {
     area = getHoustonServiceArea(combo.locationId as HoustonServiceAreaSlug);
   } catch {
-    return null;
+    // Batch-2 neighborhoods aren't in houstonLocations — synthesize the
+    // image/map from the profile so they still render (no /service-areas hub).
+    if (profile.image && profile.mapEmbedUrl) {
+      area = {
+        name: profile.name,
+        slug: combo.locationId as HoustonServiceAreaSlug,
+        imageUrl: profile.image.url,
+        imageAlt: profile.image.alt,
+        mapEmbedUrl: profile.mapEmbedUrl,
+      };
+    } else {
+      return null;
+    }
   }
   return { combo, profile, area };
 }

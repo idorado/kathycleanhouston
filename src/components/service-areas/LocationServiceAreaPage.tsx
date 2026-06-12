@@ -47,7 +47,9 @@ export interface LocationServiceAreaPageProps {
   whyTitle: string;
   whyParagraph: string;
   whyItems: { title: string; body: string; href?: string }[];
-  whyImage: { url: string; alt: string };
+  /** Optional. When omitted, the Why section renders full-width text (no image)
+   *  — used by the programmatic engine to avoid an out-of-place stock image. */
+  whyImage?: { url: string; alt: string };
 
   locationSpecificContent?: {
     title: string;
@@ -264,7 +266,7 @@ export default function LocationServiceAreaPage({
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row items-start gap-8 max-w-6xl mx-auto">
-            <div className="w-full md:w-1/2">
+            <div className={whyImage ? "w-full md:w-1/2" : "w-full"}>
               <h2 className="text-3xl font-bold mb-6">{normalizeBrandText(whyTitle)}</h2>
               <p className="text-gray-600 mb-6">{normalizeBrandText(whyParagraph)}</p>
               <dl className="max-w-xl mt-6 space-y-3 text-base leading-7 text-gray-600 lg:max-w-none">
@@ -287,16 +289,18 @@ export default function LocationServiceAreaPage({
               </dl>
               <RequestQuoteButton />
             </div>
-            <div className="w-full md:w-1/2">
-              <div className="overflow-hidden rounded-lg shadow-lg">
-                <img
-                  src={whyImage.url}
-                  alt={normalizeBrandText(whyImage.alt)}
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
+            {whyImage && (
+              <div className="w-full md:w-1/2">
+                <div className="overflow-hidden rounded-lg shadow-lg">
+                  <img
+                    src={whyImage.url}
+                    alt={normalizeBrandText(whyImage.alt)}
+                    className="w-full h-auto"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

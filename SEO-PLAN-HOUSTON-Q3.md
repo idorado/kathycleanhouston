@@ -258,13 +258,18 @@ Known: GBP live (4.9★/15). Everything below to be audited via the skill's L1 c
 - PR [#6](https://github.com/idorado/kathycleanhouston/pull/6) squash-merged to `main` → Vercel prod deploy `dpl_BtH4d1…` **READY**, live on `kathycleanhouston.com` + `www`. Verified `kathycleanhouston.com/deep-cleaning-rice-military` → 200 in prod.
 - Then built **4 more resources** (all 3 tracks now complete): `hard-water-cleaning-houston`, `allergy-pollen-cleaning-houston`, `move-out-cleaning-checklist-houston`, `medical-office-cleaning-houston`. Guardrail-scanned (no hospital-grade/OSHA/biohazard/medical-grade claims; remediation/biohazard only as "see a licensed specialist" referrals; medical-office = commercial/manual-quote). `pnpm build` GREEN, **145 pages**. Resource count: 6 → **10**.
 
-**REMAINING:**
-- Deploy batch 2 (the 4 new resources) — committing now.
-- **GSC: request indexing** for the new pages (browser, u/1) once deployed — this starts the crawl/index clock.
-- Batch 2 neighborhoods (montrose, midtown, museum-district, eado, tanglewood) — need verified real images/maps first (+ /service-areas hubs).
-- Trailing-slash normalization (Phase 1E).
-- Reviews engine (15 → 40+) + off-site authority sprint (Yelp/BBB/Reddit/Apple) — the biggest non-code levers.
-- Local Falcon: re-scan SoLV in ~4–6 weeks to measure movement.
+**2026-06-12 — Owner-requested fixes + batch-2 neighborhoods. `pnpm build` GREEN, 165 pages.**
+- **Rating → 4.9/5 everywhere** (was stale 4.8/4.7): FeatureBar (all pages), /quote, /request-quote, customer-reviews, review-highlight, review-highlight-commercial. (Schema + llms already 4.9.)
+- **GBP profile link corrected** to the real one `maps.app.goo.gl/fHcfZ3iL2R4RFAf98` (owner-provided) in footer "Our Location" link + `json-ld.ts` sameAs. (Previous `Cdb6…` from the skill was wrong.)
+- **Engine `whyImage` fixed**: was reusing the hero image in the "When to book…" content section (owner flagged it). Made `whyImage` optional in the template; engine pages now omit it → text-only why section, no out-of-place image. Hero section image unchanged.
+- **Batch-2 neighborhoods (5)**: Montrose, Midtown, Museum District, EaDo, Tanglewood added as profiles with **verified real Wikimedia images** (web-fetched + curl-checked 200/image) + maps embeds. Profile type extended to carry image/map so these get the 4 service pages each **without** a /service-areas hub (avoids sitemap 404). Matrix: 80 → **100 engine pages** (25 × 4). Added to home `areaServed`.
+- Verified on dev: 5 new neighborhoods 200 w/ correct images; rating 4.9; GBP link correct; why-section image gone.
+
+**REMAINING (then GSC):**
+- Ship this batch (committing now) → then **GSC request-indexing** (browser, u/1) per owner ("cuando terminemos con todo").
+- Trailing-slash normalization (Phase 1E, low-risk).
+- Reviews engine (15 → 40+) + off-site authority (Yelp/BBB/Reddit/Apple) — biggest non-code levers.
+- Local Falcon: re-scan SoLV in ~4–6 weeks.
 
 ## Notes
 
