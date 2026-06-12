@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { houstonServiceAreas } from "@/lib/service-areas/houstonLocations";
+import { SERVICE_LOCATION_SLUGS } from "@/lib/location-seo";
+import { getAllResourceArticles } from "@/config/resources";
 
 const baseUrl = "https://kathycleanhouston.com";
 
@@ -10,9 +12,11 @@ const staticRoutes: string[] = [
   "/faq",
   "/service-areas",
   "/resources",
-  "/resources/house-cleaning-cost-houston",
-  "/resources/how-often-house-cleaning-houston",
+  // Derived from the resource registry so new articles are always included.
+  ...getAllResourceArticles().map((a) => `/resources/${a.slug}`),
   ...houstonServiceAreas.map((area) => `/service-areas/${area.slug}`),
+  // Programmatic service×location matrix (4 services × 20 Harris neighborhoods).
+  ...SERVICE_LOCATION_SLUGS.map((slug) => `/${slug}`),
   "/house-cleaning-houston",
   "/commercial-cleaning-houston",
   "/our-services",
@@ -33,11 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       route === "/request-quote"
     ) {
       priority = 0.9;
-    } else if (
-      route === "/resources" ||
-      route === "/resources/house-cleaning-cost-houston" ||
-      route === "/resources/how-often-house-cleaning-houston"
-    ) {
+    } else if (route.startsWith("/resources")) {
       priority = 0.8;
     } else if (route.startsWith("/service-areas/")) {
       priority = 0.8;

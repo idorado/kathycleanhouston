@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/json-ld";
-import { home } from "@/config/json-ld";
+import { home, organization } from "@/config/json-ld";
 
 export const metadata: Metadata = {
   title: "About Kathy Clean Houston | Local House Cleaning Company",
@@ -21,6 +21,7 @@ export default function About() {
   return (
     <>
       <JsonLd data={home()} />
+      <JsonLd data={organization()} />
     <section className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-4xl font-extrabold text-center text-accent mb-2">
         About Us — Kathy Clean Houston
@@ -123,18 +124,6 @@ export default function About() {
         </p>
       </div>
 
-      <div className="space-y-6 mb-8">
-        <h2 className="text-2xl font-bold text-accent">A Brand Built to Grow — Without Losing the Local Touch</h2>
-        <p>
-          Kathy Clean is expanding to multiple cities, but every location operates with a strong local presence. When you book Kathy Clean Houston, you're not calling a national call center — you're working with a Houston-based service that understands the area and takes pride in serving it.
-        </p>
-        <p>As we grow, our commitment remains the same:</p>
-        <ul className="list-disc pl-6 space-y-1">
-          <li>local service,</li>
-          <li>consistent quality, and</li>
-          <li>respectful care of your home.</li>
-        </ul>
-      </div>
       <div className="flex justify-center mt-8">
         <img src="/images/logo-nav.webp" alt="Kathy Clean Houston logo" width={200} height={100} className="rounded" />
       </div>

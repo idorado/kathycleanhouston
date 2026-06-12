@@ -1,7 +1,11 @@
 const SITE_URL = "https://kathycleanhouston.com";
 const LOGO_URL = `${SITE_URL}/images/logo-nav.webp`;
 const CONTACT_EMAIL = "info@kathyclean.com";
-const GBP_URL = process.env.NEXT_PUBLIC_GBP_URL;
+// Canonical Google Business Profile URL. Hardcoded (with optional env override)
+// so the sameAs link is guaranteed in production — previously this relied on
+// NEXT_PUBLIC_GBP_URL, which is unset, so the GBP link silently dropped out.
+const GBP_URL =
+  process.env.NEXT_PUBLIC_GBP_URL ?? "https://maps.app.goo.gl/Cdb6ev9bjX2KPA6R6";
 
 const SAME_AS_URLS: string[] = [
   GBP_URL,
@@ -9,6 +13,26 @@ const SAME_AS_URLS: string[] = [
   "https://www.facebook.com/kathycleanhouston",
   "https://www.instagram.com/kathycleanhouston",
 ].filter((url): url is string => Boolean(url));
+
+// ReserveAction = the explicit opt-in to Google Search Agents / AI-assistant
+// booking on behalf of users. Points at the online quote intake (preferred path).
+const RESERVE_ACTION = {
+  "@type": "ReserveAction",
+  "target": {
+    "@type": "EntryPoint",
+    "urlTemplate": `${SITE_URL}/request-quote`,
+    "inLanguage": "en-US",
+    "actionPlatform": [
+      "http://schema.org/DesktopWebPlatform",
+      "http://schema.org/IOSPlatform",
+      "http://schema.org/AndroidPlatform"
+    ]
+  },
+  "result": {
+    "@type": "Reservation",
+    "name": "House cleaning quote request"
+  }
+};
 
 const AREA_SERVED = [
   { "@type": "Place", "name": "Houston, TX" },
@@ -69,10 +93,12 @@ const REVIEWS = [
   }
 ];
 
+// Source of truth = live GBP (Place ID ChIJnfJyzzHFQIYRpcobYKYNZCw).
+// Keep in sync with the Google Business Profile rating/review count.
 const AGGREGATE_RATING = {
   "@type": "AggregateRating",
-  "ratingValue": "4.8",
-  "reviewCount": "14",
+  "ratingValue": "4.9",
+  "reviewCount": "15",
   "bestRating": "5",
   "worstRating": "1"
 };
@@ -126,7 +152,8 @@ export const home = () => ({
   "areaServed": AREA_SERVED,
   "sameAs": SAME_AS_URLS,
   "aggregateRating": AGGREGATE_RATING,
-  "review": REVIEWS
+  "review": REVIEWS,
+  "potentialAction": RESERVE_ACTION
 });
 
 export const website = () => ({
@@ -135,12 +162,7 @@ export const website = () => ({
   "@id": `${SITE_URL}/#website`,
   "url": SITE_URL,
   "name": "Kathy Clean Houston",
-  "publisher": { "@id": `${SITE_URL}/#business` },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": `${SITE_URL}/search?q={search_term_string}`,
-    "query-input": "required name=search_term_string"
-  }
+  "publisher": { "@id": `${SITE_URL}/#business` }
 });
 
 export const houseCleaning = (location: string, canonicalPath?: string) => {
@@ -185,7 +207,8 @@ export const houseCleaning = (location: string, canonicalPath?: string) => {
         }
       ]
     },
-    "aggregateRating": AGGREGATE_RATING
+    "aggregateRating": AGGREGATE_RATING,
+    "potentialAction": RESERVE_ACTION
   }
 };
 
@@ -225,7 +248,8 @@ export const commercialCleaning = (location: string) => {
         }
       ]
     },
-    "aggregateRating": AGGREGATE_RATING
+    "aggregateRating": AGGREGATE_RATING,
+    "potentialAction": RESERVE_ACTION
   }
 };
 
@@ -265,7 +289,8 @@ export const windowCleaning = (location: string) => {
         }
       ]
     },
-    "aggregateRating": AGGREGATE_RATING
+    "aggregateRating": AGGREGATE_RATING,
+    "potentialAction": RESERVE_ACTION
   }
 };
 
@@ -321,7 +346,8 @@ export const cleaningServices = (location: string) => {
         }
       ]
     },
-    "aggregateRating": AGGREGATE_RATING
+    "aggregateRating": AGGREGATE_RATING,
+    "potentialAction": RESERVE_ACTION
   }
 };
 
@@ -361,7 +387,8 @@ export const moveInOutCleaning = (location: string) => {
         }
       ]
     },
-    "aggregateRating": AGGREGATE_RATING
+    "aggregateRating": AGGREGATE_RATING,
+    "potentialAction": RESERVE_ACTION
   }
 };
 
@@ -401,6 +428,152 @@ export const postConstructionCleaning = (location: string) => {
         }
       ]
     },
-    "aggregateRating": AGGREGATE_RATING
+    "aggregateRating": AGGREGATE_RATING,
+    "potentialAction": RESERVE_ACTION
   }
 };
+
+export const recurringHouseCleaning = (location: string) => {
+  const slug = `recurring-house-cleaning-${location.toLowerCase().replace(/ /g, "-")}`;
+  const locationTitleCase = location.replace(/\b\w/g, (l) => l.toUpperCase());
+
+  return {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "CleaningService"],
+    "@id": `${SITE_URL}/${slug}#service`,
+    "name": `Kathy Clean Houston — Recurring House Cleaning in ${locationTitleCase}`,
+    "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
+    "logo": LOGO_URL,
+    "email": CONTACT_EMAIL,
+    "serviceType": "Recurring House Cleaning Services",
+    "telephone": "+1 346-488-6044",
+    "address": ADDRESS,
+    "geo": GEO_COORDINATES,
+    "openingHoursSpecification": OPENING_HOURS,
+    "priceRange": "$$",
+    "sameAs": SAME_AS_URLS,
+    "url": `${SITE_URL}/${slug}`,
+    "parentOrganization": { "@id": `${SITE_URL}/#business` },
+    "areaServed": { "@type": "Place", "name": locationTitleCase },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": `Recurring House Cleaning in ${locationTitleCase}`,
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Weekly House Cleaning", "areaServed": { "@type": "Place", "name": locationTitleCase } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bi-Weekly House Cleaning", "areaServed": { "@type": "Place", "name": locationTitleCase } } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Monthly House Cleaning", "areaServed": { "@type": "Place", "name": locationTitleCase } } }
+      ]
+    },
+    "aggregateRating": AGGREGATE_RATING,
+    "potentialAction": RESERVE_ACTION
+  };
+};
+
+export const deepCleaning = (location: string) => {
+  const slug = `deep-cleaning-${location.toLowerCase().replace(/ /g, "-")}`;
+  const locationTitleCase = location.replace(/\b\w/g, (l) => l.toUpperCase());
+
+  return {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "CleaningService"],
+    "@id": `${SITE_URL}/${slug}#service`,
+    "name": `Kathy Clean Houston — Deep Cleaning in ${locationTitleCase}`,
+    "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
+    "logo": LOGO_URL,
+    "email": CONTACT_EMAIL,
+    "serviceType": "Deep Cleaning Services",
+    "telephone": "+1 346-488-6044",
+    "address": ADDRESS,
+    "geo": GEO_COORDINATES,
+    "openingHoursSpecification": OPENING_HOURS,
+    "priceRange": "$$",
+    "sameAs": SAME_AS_URLS,
+    "url": `${SITE_URL}/${slug}`,
+    "parentOrganization": { "@id": `${SITE_URL}/#business` },
+    "areaServed": { "@type": "Place", "name": locationTitleCase },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": `Deep Cleaning in ${locationTitleCase}`,
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Deep Cleaning", "areaServed": { "@type": "Place", "name": locationTitleCase } } }
+      ]
+    },
+    "aggregateRating": AGGREGATE_RATING,
+    "potentialAction": RESERVE_ACTION
+  };
+};
+
+// ---------------------------------------------------------------------------
+// Shared builders — breadcrumbs, FAQ, organization entity
+// ---------------------------------------------------------------------------
+
+type BreadcrumbItem = { name: string; path: string };
+
+/** BreadcrumbList. "Home" is prepended automatically; pass the rest in order. */
+export const buildBreadcrumbSchema = (items: BreadcrumbItem[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{ name: "Home", path: "/" }, ...items].map(
+    (item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": `${SITE_URL}${item.path}`
+    })
+  )
+});
+
+type FaqItem = { question: string; answer: string };
+
+/** FAQPage. Mirror the on-page <details>/<summary> Q&As so AI Overviews and
+ *  rich results can extract them. Pass the page path/URL for mainEntityOfPage. */
+export const buildFaqPageSchema = (items: FaqItem[], pageUrl?: string) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  ...(pageUrl
+    ? {
+        "mainEntityOfPage": pageUrl.startsWith("http")
+          ? pageUrl
+          : `${SITE_URL}${pageUrl}`
+      }
+    : {}),
+  "mainEntity": items.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": { "@type": "Answer", "text": item.answer }
+  }))
+});
+
+/** Organization entity for the About page — the page LLMs read to "know" the
+ *  business. `founder` is optional and only emitted once the owner confirms a
+ *  real name/title/LinkedIn (never fabricate a person). */
+export const organization = (founder?: {
+  name: string;
+  jobTitle?: string;
+  sameAs?: string[];
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  "name": "Kathy Clean Houston",
+  "url": SITE_URL,
+  "logo": LOGO_URL,
+  "image": "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOPRZ6SALSiAq1CzRhFvEn4ayoQ0bUZewBp3g",
+  "email": CONTACT_EMAIL,
+  "telephone": "+1 346-488-6044",
+  "address": ADDRESS,
+  "description":
+    "Kathy Clean is a professional residential cleaning company with over 15 years of experience, serving the greater Houston area. Fully insured, bonded, and background-checked cleaning teams. 48-hour satisfaction guarantee.",
+  "sameAs": SAME_AS_URLS,
+  "aggregateRating": AGGREGATE_RATING,
+  ...(founder
+    ? {
+        "founder": {
+          "@type": "Person",
+          "name": founder.name,
+          ...(founder.jobTitle ? { "jobTitle": founder.jobTitle } : {}),
+          ...(founder.sameAs ? { "sameAs": founder.sameAs } : {})
+        }
+      }
+    : {})
+});
