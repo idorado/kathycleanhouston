@@ -325,6 +325,18 @@ export const locationProfiles: Record<string, LocationProfile> = {
     },
     mapEmbedUrl: "https://maps.google.com/maps?q=EaDo,+Houston,+TX+77003&z=14&output=embed",
   },
+  houston: {
+    id: "houston",
+    name: "Houston",
+    zips: ["77002", "77007", "77019", "77024", "77056"],
+    persona: "busy professionals and families across the Houston metro",
+    housing:
+      "everything from inner-loop bungalows and high-rise condos to suburban single-family homes",
+    context:
+      "the greater Houston metro across Harris County — from the inner loop and Memorial to the western suburbs",
+    climateAngle:
+      "Houston's Gulf humidity drives bathroom and window mildew, hard water spots glass and fixtures, and heavy pollen and storm seasons add to the load, so consistent cleaning matters across the metro",
+  },
   tanglewood: {
     id: "tanglewood",
     name: "Tanglewood",

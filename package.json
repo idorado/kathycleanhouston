@@ -66,5 +66,10 @@
 		"onlyBuiltDependencies": [
 			"@biomejs/biome"
 		]
-	}
+	},
+	"browserslist": [
+		"last 2 years",
+		"not dead",
+		"not op_mini all"
+	]
 }
