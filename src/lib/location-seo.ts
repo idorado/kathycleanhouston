@@ -12,6 +12,10 @@ import { PROFILE_LOCATION_IDS } from "@/config/location-profiles";
 
 export const ENGINE_LOCATION_IDS = PROFILE_LOCATION_IDS;
 
+// Combos handled by an explicit static route, so the engine must NOT generate them
+// (and must not claim the slug). /house-cleaning-houston is the hand-written main page.
+const EXCLUDED_SLUGS = new Set<string>(["house-cleaning-houston"]);
+
 export interface ServiceLocationCombo {
   serviceId: EngineServiceId;
   locationId: string;
@@ -25,7 +29,7 @@ export function serviceLocationMatrix(): ServiceLocationCombo[] {
       locationId,
       slug: serviceLocationSlug(serviceId, locationId),
     })),
-  );
+  ).filter((c) => !EXCLUDED_SLUGS.has(c.slug));
 }
 
 export const SERVICE_LOCATION_SLUGS = serviceLocationMatrix().map((c) => c.slug);
@@ -34,6 +38,7 @@ export const SERVICE_LOCATION_SLUGS = serviceLocationMatrix().map((c) => c.slug)
  *  a generated engine page. Service ids are distinct at position 0, so prefix
  *  matching is unambiguous. */
 export function parseServiceLocationSlug(slug: string): ServiceLocationCombo | null {
+  if (EXCLUDED_SLUGS.has(slug)) return null;
   for (const serviceId of ENGINE_SERVICE_IDS) {
     const prefix = `${serviceId}-`;
     if (slug.startsWith(prefix)) {

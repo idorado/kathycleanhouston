@@ -1,6 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Tree-shake heavy libs so unused exports don't ship — cuts the JS the mobile
+  // main thread has to parse/execute (PageSpeed: "reduce unused JavaScript").
+  experimental: {
+    optimizePackageImports: [
+      "lucide-react",
+      "framer-motion",
+      "embla-carousel-react",
+      "embla-carousel-autoplay",
+      "@radix-ui/react-accordion",
+      "@radix-ui/react-dialog",
+      "@radix-ui/react-navigation-menu",
+      "@radix-ui/react-dropdown-menu",
+      "@radix-ui/react-select",
+      "@radix-ui/react-tabs",
+    ],
+  },
   async rewrites() {
     return [
       {
