@@ -65,35 +65,35 @@ const REVIEWS = [
     "@type": "Review",
     "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
     "author": { "@type": "Person", "name": "Steve M." },
-    "datePublished": "2025-04-22",
+    "datePublished": "2026-04-22",
     "reviewBody": "Service is outstanding, the help is professional, courteous and always on time for scheduled cleaning. I would give Kathy Clean Houston my highest recommendation, you'll be very pleased!"
   },
   {
     "@type": "Review",
     "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
     "author": { "@type": "Person", "name": "Ximena V." },
-    "datePublished": "2025-03-10",
+    "datePublished": "2026-03-10",
     "reviewBody": "Nubia does an amazing job. She is meticulous and always willing to do anything we ask. We enjoy her great work as well as efficiency. We highly recommend Kathy Clean Houston!"
   },
   {
     "@type": "Review",
     "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
     "author": { "@type": "Person", "name": "Donna W." },
-    "datePublished": "2025-03-10",
+    "datePublished": "2026-03-10",
     "reviewBody": "I was referred to Kathy Clean Houston by a neighbor. They were very professional, and I was able to schedule an appointment within just a few days. The person who came did an absolutely AMAZING job. Very professional, and I was truly impressed."
   },
   {
     "@type": "Review",
     "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
     "author": { "@type": "Person", "name": "Rik W." },
-    "datePublished": "2025-03-10",
+    "datePublished": "2026-03-10",
     "reviewBody": "I've used Kathy Clean Houston and am impressed with how the service professionals are personable and have a high attention to detail. The scheduling support is great and works hard to accommodate special requests. Highly recommend Kathy Clean Houston."
   },
   {
     "@type": "Review",
     "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
     "author": { "@type": "Person", "name": "Kerri N." },
-    "datePublished": "2025-03-10",
+    "datePublished": "2026-03-10",
     "reviewBody": "Want the best cleaning service in town? Then you want to call Kathy Clean Houston!! They will provide you with outstanding service, and they are very easy to work with."
   }
 ];
@@ -213,6 +213,7 @@ export const houseCleaning = (location: string, canonicalPath?: string) => {
       ]
     },
     "aggregateRating": AGGREGATE_RATING,
+    "review": REVIEWS,
     "potentialAction": RESERVE_ACTION
   }
 };
