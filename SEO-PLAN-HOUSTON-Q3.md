@@ -254,11 +254,17 @@ Known: GBP live (4.9★/15). Everything below to be audited via the skill's L1 c
 - **Sitemap hardened:** now derives resource URLs from the registry (`getAllResourceArticles`) so future articles are auto-included.
 - Verified: new resources 200 + schema; resources index lists them; About has Organization schema + single section; no regressions.
 
+**2026-06-12 — SHIPPED TO PRODUCTION (owner OK'd commit + deploy).**
+- PR [#6](https://github.com/idorado/kathycleanhouston/pull/6) squash-merged to `main` → Vercel prod deploy `dpl_BtH4d1…` **READY**, live on `kathycleanhouston.com` + `www`. Verified `kathycleanhouston.com/deep-cleaning-rice-military` → 200 in prod.
+- Then built **4 more resources** (all 3 tracks now complete): `hard-water-cleaning-houston`, `allergy-pollen-cleaning-houston`, `move-out-cleaning-checklist-houston`, `medical-office-cleaning-houston`. Guardrail-scanned (no hospital-grade/OSHA/biohazard/medical-grade claims; remediation/biohazard only as "see a licensed specialist" referrals; medical-office = commercial/manual-quote). `pnpm build` GREEN, **145 pages**. Resource count: 6 → **10**.
+
 **REMAINING:**
-- Remaining resources (track 1 + 3): `hard-water-cleaning-houston`, allergy/pollen deep-clean guide, move-out checklist, medical-office cleaning guide.
-- Batch 2 neighborhoods (montrose, midtown, museum-district, eado, tanglewood) — need real images/maps first (+ service-area hub pages).
-- Trailing-slash normalization (resources use canonicalPath w/ slash; rest don't) — standardize globally (Phase 1E).
-- Then: **commit → deploy (await OK) → GSC request-indexing → measure recovery.**
+- Deploy batch 2 (the 4 new resources) — committing now.
+- **GSC: request indexing** for the new pages (browser, u/1) once deployed — this starts the crawl/index clock.
+- Batch 2 neighborhoods (montrose, midtown, museum-district, eado, tanglewood) — need verified real images/maps first (+ /service-areas hubs).
+- Trailing-slash normalization (Phase 1E).
+- Reviews engine (15 → 40+) + off-site authority sprint (Yelp/BBB/Reddit/Apple) — the biggest non-code levers.
+- Local Falcon: re-scan SoLV in ~4–6 weeks to measure movement.
 
 ## Notes
 

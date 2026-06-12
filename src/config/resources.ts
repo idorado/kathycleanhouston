@@ -83,6 +83,38 @@ export const resourceArticles: ResourceArticle[] = [
     category: "guide",
     readTime: 5,
   },
+  {
+    slug: "hard-water-cleaning-houston",
+    title: "Hard Water Spots in Houston Homes: How to Clean & Prevent Them",
+    description: "Houston has notably hard water that leaves mineral spots on glass, fixtures, and tile. How to remove hard-water buildup and how regular cleaning keeps it from coming back.",
+    publishDate: "2026-06-12",
+    category: "tips",
+    readTime: 4,
+  },
+  {
+    slug: "allergy-pollen-cleaning-houston",
+    title: "Cleaning for Houston Allergy & Pollen Season: A Practical Guide",
+    description: "Houston's long pollen season and year-round dust load tracks allergens indoors. How cleaning reduces pollen, dust, and dander, and when a deep clean helps most.",
+    publishDate: "2026-06-12",
+    category: "tips",
+    readTime: 5,
+  },
+  {
+    slug: "move-out-cleaning-checklist-houston",
+    title: "Move-Out Cleaning Checklist for Houston Renters (Deposit-Ready)",
+    description: "A room-by-room move-out cleaning checklist for Houston rentals — exactly what landlords check for a full deposit return, plus what a pro service covers.",
+    publishDate: "2026-06-12",
+    category: "guide",
+    readTime: 5,
+  },
+  {
+    slug: "medical-office-cleaning-houston",
+    title: "Medical Office Cleaning in Houston: What to Look For",
+    description: "What professional medical and dental office cleaning covers in Houston — waiting rooms, exam rooms, restrooms, and floors — and how to choose a discreet, reliable service.",
+    publishDate: "2026-06-12",
+    category: "guide",
+    readTime: 5,
+  },
 ];
 
 export function getResourceArticle(slug: string): ResourceArticle | undefined {
