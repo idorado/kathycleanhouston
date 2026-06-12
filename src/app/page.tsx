@@ -6,7 +6,6 @@ import HomeHero from "@/components/sections/home-hero"
 import RequestQuoteButton from "@/components/sections/RequestQuoteButton"
 import { FAQ } from "@/components/sections/faq"
 import ReviewsCarousel from "@/components/sections/reviews-carousel"
-import FeatureBar from "@/components/ui/FeatureBar"
 import JsonLd from "@/components/json-ld";
 import { home, website } from "@/config/json-ld";
 import Link from "next/link";

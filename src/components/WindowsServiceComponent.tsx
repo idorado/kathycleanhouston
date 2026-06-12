@@ -55,9 +55,9 @@ const WindowsServiceComponent: React.FC<WindowsServiceComponentProps> = async ({
               src={ensureHttps("https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomkroY4QBMKEtR4Y9c3GgQrxuo7N6XZ2LnleTp")}
               alt="Professional window cleaning service"
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+              sizes="(max-width: 768px) 0px, (max-width: 1200px) 50vw, 40vw"
               className="object-cover rounded-lg shadow-md"
-              priority
+              loading="lazy"
             />
           </div>
         </div>

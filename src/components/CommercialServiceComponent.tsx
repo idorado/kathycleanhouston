@@ -93,9 +93,9 @@ const CommercialServiceComponent = async ({
               )}
               alt="Professional commercial cleaning service"
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+              sizes="(max-width: 768px) 0px, (max-width: 1200px) 50vw, 40vw"
               className="object-cover rounded-lg shadow-md"
-              priority
+              loading="lazy"
             />
           </div>
         </div>

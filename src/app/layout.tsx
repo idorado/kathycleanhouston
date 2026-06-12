@@ -93,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
         {/* End Google Tag Manager (noscript) */}
-        <Script src="https://tally.so/widgets/embed.js" strategy="afterInteractive" />
+        <Script src="https://tally.so/widgets/embed.js" strategy="lazyOnload" />
         <PostHogProvider>
           <div className="min-h-screen flex flex-col">
             <Header />

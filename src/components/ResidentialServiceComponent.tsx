@@ -98,8 +98,7 @@ const ResidentialServiceComponent: React.FC<ResidentialServiceComponentProps> = 
             alt="Professional cleaner from Kathy Clean Houston holding cleaning supplies"
             width={400}
             height={400}
-            priority
-            fetchPriority="high"
+            loading="lazy"
             sizes="(max-width: 768px) 0px, (max-width: 1280px) 50vw, 600px"
             quality={75}
             className="relative w-full h-full object-cover rounded-lg"
