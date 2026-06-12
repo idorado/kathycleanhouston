@@ -492,7 +492,7 @@ function QuoteContent() {
             href="/request-quote"
             className="inline-block bg-[hsla(177,98%,50%,1)] text-[hsla(227,47%,21%,1)] font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
           >
-            Request a Quote
+            Get a Quote
           </a>
         </div>
       </div>

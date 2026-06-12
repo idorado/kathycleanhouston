@@ -31,6 +31,9 @@ export interface LocationServiceAreaPageProps {
    *  "related services" block linking the 4 programmatic service pages for that
    *  neighborhood. Distributes internal authority into the engine pages. */
   relatedServicesLocationId?: string;
+  /** Resource/guide links shown in a "Houston Cleaning Guides" block. Falls back
+   *  to a default curated set when omitted. Improves internal linking to resources. */
+  relatedResources?: { href: string; title: string }[];
 
   heroTitle: string;
   heroSubtitle: string;
@@ -72,6 +75,7 @@ export default function LocationServiceAreaPage({
   canonical,
   breadcrumbName,
   relatedServicesLocationId,
+  relatedResources,
   heroTitle,
   heroSubtitle,
   heroParagraphs,
@@ -138,6 +142,16 @@ export default function LocationServiceAreaPage({
           label: `${ENGINE_SERVICE_LABELS[sid]} in ${relLocName}`,
         })).filter((l) => l.href !== canonicalPath)
       : [];
+
+  const resourceLinks =
+    relatedResources && relatedResources.length > 0
+      ? relatedResources
+      : [
+          { href: "/resources/house-cleaning-cost-houston", title: "House Cleaning Cost in Houston" },
+          { href: "/resources/how-often-house-cleaning-houston", title: "How Often to Schedule Cleaning" },
+          { href: "/resources/what-is-included-house-cleaning", title: "What's Included in a Cleaning" },
+          { href: "/resources/best-house-cleaning-service-houston", title: "Best House Cleaning Service in Houston" },
+        ];
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -375,6 +389,26 @@ export default function LocationServiceAreaPage({
                   </summary>
                   <div className="px-4 pb-4 text-gray-700 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: item.answer }} />
                 </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Houston Cleaning Guides — resource internal links */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-bold text-center mb-6">Houston Cleaning Guides</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {resourceLinks.map((r) => (
+                <Link
+                  key={r.href}
+                  href={r.href}
+                  className="block rounded-lg border border-gray-200 bg-white px-5 py-3 text-gray-800 shadow-sm transition-colors hover:border-primary hover:text-primary"
+                >
+                  {r.title} →
+                </Link>
               ))}
             </div>
           </div>

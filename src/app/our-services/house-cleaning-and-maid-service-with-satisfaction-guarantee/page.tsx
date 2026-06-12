@@ -22,6 +22,8 @@ export const metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: canonicalPath('our-services', 'house-cleaning-and-maid-service-with-satisfaction-guarantee'),
+    // Same content as the primary /house-cleaning-houston page — canonicalize to it
+    // to consolidate signals and avoid duplicate-content competition.
+    canonical: "/house-cleaning-houston",
   },
 };

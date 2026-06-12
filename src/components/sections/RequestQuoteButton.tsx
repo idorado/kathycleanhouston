@@ -44,7 +44,7 @@ export default function RequestQuoteButton({
         className
       )}
     >
-      REQUEST A QUOTE
+      GET A QUOTE
     </Link>
   );
 }

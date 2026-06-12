@@ -265,11 +265,26 @@ Known: GBP live (4.9★/15). Everything below to be audited via the skill's L1 c
 - **Batch-2 neighborhoods (5)**: Montrose, Midtown, Museum District, EaDo, Tanglewood added as profiles with **verified real Wikimedia images** (web-fetched + curl-checked 200/image) + maps embeds. Profile type extended to carry image/map so these get the 4 service pages each **without** a /service-areas hub (avoids sitemap 404). Matrix: 80 → **100 engine pages** (25 × 4). Added to home `areaServed`.
 - Verified on dev: 5 new neighborhoods 200 w/ correct images; rating 4.9; GBP link correct; why-section image gone.
 
-**REMAINING (then GSC):**
-- Ship this batch (committing now) → then **GSC request-indexing** (browser, u/1) per owner ("cuando terminemos con todo").
-- Trailing-slash normalization (Phase 1E, low-risk).
-- Reviews engine (15 → 40+) + off-site authority (Yelp/BBB/Reddit/Apple) — biggest non-code levers.
-- Local Falcon: re-scan SoLV in ~4–6 weeks.
+**2026-06-12 — GSC submitted (drove owner's Chrome, property `kathycleanhouston.com`, u/1).**
+- **Re-submitted `sitemap.xml`** → "submitted successfully" (was last read Jun 10 / 33 pages; now 165 — Google will re-process).
+- **Requested indexing (priority crawl queue) for 6 flagship new pages:** `/resources/best-house-cleaning-service-houston`, `/deep-cleaning-rice-military`, `/recurring-house-cleaning-energy-corridor`, `/house-cleaning-greater-heights`, `/house-cleaning-montrose`, `/recurring-house-cleaning-spring-branch`. All were "Discovered/unknown – not indexed" (expected for day-0 pages). Stopped at 6 to stay within the ~10/day manual quota.
+
+**2026-06-12 — On-site completeness pass (owner-requested). `pnpm build` GREEN, 165 pages.**
+- **CTA "Request a Quote" → "Get a Quote" everywhere**: `RequestQuoteButton` (used 34×), header navbar (2×), and 12 other buttons/CTA headings across service/area/calculator/quote/formtcs/emergency components.
+- **Footer map fixed**: the embed's "Open in Maps" followed the `q=` (street address → generic pin); changed `q` to the business name + address so it resolves to the GBP listing. (Address link already → real GBP profile.)
+- **`/house-cleaning-houston` enriched** (was thin): added `FAQPage` schema, a GEO "by the numbers" extractable fact block, a "House Cleaning Across Houston" neighborhood-links section (12 links), a "Houston Cleaning Guides" resource-links section (6 links), a stronger title, and the OG image (was dropping via Next's shallow openGraph merge).
+- **Internal linking to resources**: added a "Houston Cleaning Guides" block to `LocationServiceAreaPage` (all 21 hubs + 100 engine pages) — engine pages get **service-specific** guide links (deep→deep+humidity, move→checklist+storm, etc.); hubs get a curated default.
+- **OG images** added to all engine pages (`[slug]` generateMetadata).
+- **Duplicate route fixed**: `/our-services/house-cleaning-and-maid-service-…` now canonicalizes to `/house-cleaning-houston` + removed from sitemap (was a self-canonical duplicate of the main page). `/services/…` already redirects+noindex.
+- Hygiene: moved FAQ data to a server-safe module (`house-cleaning-faq-data.ts`) so the page can emit FAQPage schema; removed stray `service-areas/page.tsx.backup`.
+- Verified on dev: title/fact-block/guides/FAQPage/OG/CTA/footer-map/canonical all render. Shipping now.
+
+**REMAINING / NEXT (no more code this session):**
+- **Monitor GSC indexation** weekly: watch the 6 requested + overall Pages report as the sitemap re-processes (recovery takes 1–3 weeks). Request indexing for more flagship pages on following days (quota resets daily).
+- **Reviews engine (15 → 40+)** + **off-site authority** (Yelp/BBB/Reddit r/houston/Apple) — the biggest non-code levers; SoLV won't move much until reviews do.
+- **Local Falcon: re-scan SoLV in ~4–6 weeks** (baseline 4.08%, target >20%).
+- Trailing-slash normalization (Phase 1E, low-risk hygiene).
+- _(This 2026-06-12 GSC log entry is local-only; not committed to avoid an unnecessary prod rebuild for a doc change.)_
 
 ## Notes
 

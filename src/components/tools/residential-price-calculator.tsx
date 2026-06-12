@@ -924,7 +924,7 @@ export function ResidentialPriceCalculator() {
 								<DialogContent>
 									<DialogHeader>
 										<DialogTitle className="text-foreground">
-											Request a Quote
+											Get a Quote
 										</DialogTitle>
 									</DialogHeader>
 									<FormField

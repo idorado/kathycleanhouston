@@ -74,6 +74,16 @@ export async function generateMetadata({
       siteName: "Kathy Clean Houston",
       locale: "en_US",
       type: "website",
+      // Inline OG image — Next merges openGraph shallowly, so setting it here
+      // (rather than inheriting the layout's) ensures social/AI previews render.
+      images: [
+        {
+          url: "https://r2kd0cre8z.ufs.sh/f/4fYOWO5dAlomOs088CLSiAq1CzRhFvEn4ayoQ0bUZewBp3gu",
+          width: 1200,
+          height: 630,
+          alt: `Kathy Clean Houston — ${props.breadcrumbName ?? "house cleaning"}`,
+        },
+      ],
     },
   };
 }

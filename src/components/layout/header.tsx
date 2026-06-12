@@ -121,7 +121,7 @@ export function Header() {
 											className="py-2 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-10 rounded-md px-6 w-full sm:w-auto min-w-[180px] bg-primary text-primary-foreground shadow-xs hover:bg-primary/90"
 											onClick={() => setMobileMenuOpen(false)}
 										>
-											REQUEST A QUOTE
+											GET A QUOTE
 										</Link>
 									</div>
 								</nav>
@@ -216,7 +216,7 @@ export function Header() {
 									href="/request-quote"
 									className="py-2 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium h-10 rounded-md px-6 w-full sm:w-auto min-w-[180px] bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 shrink-0"
 								>
-									REQUEST A QUOTE
+									GET A QUOTE
 								</Link>
 							</div>
 							<PhoneButton />

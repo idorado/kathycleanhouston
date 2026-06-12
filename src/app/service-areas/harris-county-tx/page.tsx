@@ -71,7 +71,7 @@ export default async function Home() {
               </p>
               <div className="pt-4 flex flex-col md:flex-row gap-4">
                 <Button variant="default" className="font-medium" asChild>
-                  <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>
+                  <CtaButton href="/request-quote">GET A QUOTE</CtaButton>
                 </Button>
                 <PhoneButton />
               </div>

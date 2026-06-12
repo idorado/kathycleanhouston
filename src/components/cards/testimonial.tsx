@@ -108,7 +108,7 @@ export function Testimonial() {
         className="mt-6 font-medium mx-auto"
         asChild
       >
-        <CtaButton href="/request-quote">REQUEST A QUOTE</CtaButton>
+        <CtaButton href="/request-quote">GET A QUOTE</CtaButton>
       </Button>
     </div>
   )
