@@ -96,6 +96,8 @@ export default function ResourceArticleTemplate({ children, schema }: ResourceAr
             {[
               { href: "/house-cleaning-houston", title: "House Cleaning in Houston" },
               { href: "/resources/house-cleaning-cost-houston", title: "House Cleaning Cost in Houston" },
+              { href: "/resources/recurring-cleaning-cost-houston", title: "Recurring Cleaning Cost" },
+              { href: "/resources/apartment-cleaning-cost-houston", title: "Apartment Cleaning Cost" },
               { href: "/resources/deep-cleaning-houston", title: "Deep Cleaning Guide" },
               { href: "/resources/move-in-move-out-cleaning-houston", title: "Move-In / Move-Out Cleaning" },
               { href: "/resources/how-often-house-cleaning-houston", title: "How Often to Schedule Cleaning" },
