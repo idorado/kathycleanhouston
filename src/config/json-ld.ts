@@ -625,6 +625,66 @@ export const housePricingJsonLd = () => ({
   ]
 });
 
+// Per-resource pricing Service schemas (spokes off the cost hub). Each makes its
+// slice of the flat-rate grid extractable for the long-tail cost query it targets.
+// Ranges per-visit, ex-TX-tax, synced with src/lib/pricing.ts.
+const pricingService = (
+  pagePath: string,
+  name: string,
+  areaName: string,
+  offers: ReturnType<typeof priceOffer>[]
+) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${SITE_URL}${pagePath}#pricing`,
+  "name": name,
+  "serviceType": "Residential Cleaning Services",
+  "provider": { "@id": `${SITE_URL}/#business` },
+  "areaServed": { "@type": "Place", "name": areaName },
+  "offers": offers
+});
+
+export const recurringPricingJsonLd = () =>
+  pricingService(
+    "/resources/recurring-cleaning-cost-houston",
+    "Recurring House Cleaning in Houston",
+    "Houston, TX",
+    [
+      priceOffer("Weekly Recurring Cleaning", 129, 295),
+      priceOffer("Bi-Weekly Recurring Cleaning", 139, 325),
+      priceOffer("Monthly Recurring Cleaning", 149, 355)
+    ]
+  );
+
+export const apartmentPricingJsonLd = () =>
+  pricingService(
+    "/resources/apartment-cleaning-cost-houston",
+    "Apartment Cleaning in Houston",
+    "Houston, TX",
+    [
+      priceOffer("Bi-Weekly Apartment Cleaning", 139, 149),
+      priceOffer("Weekly Apartment Cleaning", 129, 139),
+      priceOffer("One-Time Apartment Cleaning", 199, 229),
+      priceOffer("Apartment Deep Cleaning", 285, 329),
+      priceOffer("Apartment Move-Out Cleaning", 285, 329)
+    ]
+  );
+
+export const katyPricingJsonLd = () =>
+  pricingService(
+    "/resources/house-cleaning-cost-katy",
+    "House Cleaning in Katy, TX",
+    "Katy, TX",
+    [
+      priceOffer("Recurring Weekly House Cleaning", 129, 295),
+      priceOffer("Recurring Bi-Weekly House Cleaning", 139, 325),
+      priceOffer("Recurring Monthly House Cleaning", 149, 355),
+      priceOffer("One-Time / Single Cleaning", 199, 569),
+      priceOffer("Deep Cleaning", 285, 719),
+      priceOffer("Move-In / Move-Out Cleaning", 285, 719)
+    ]
+  );
+
 // HowTo for the 3-step booking process shown on /house-cleaning-houston.
 export const houseProcessHowToJsonLd = () => ({
   "@context": "https://schema.org",

@@ -11,13 +11,13 @@ const articleDescription =
   "Exact flat-rate pricing for house cleaning in Houston by home size and service type — recurring, deep clean, move-in/out. Prices start at $129/visit.";
 
 export const metadata: Metadata = {
-  title: "How Much Does House Cleaning Cost in Houston? Pricing Guide 2026",
+  title: "House Cleaning Cost in Houston 2026: Prices from $129/Visit by Home Size",
   description: articleDescription,
   alternates: {
     canonical: articlePath,
   },
   openGraph: {
-    title: "How Much Does House Cleaning Cost in Houston? Pricing Guide 2026",
+    title: "House Cleaning Cost in Houston 2026: Prices from $129/Visit by Home Size",
     description: articleDescription,
     url: "https://kathycleanhouston.com/resources/house-cleaning-cost-houston",
   },
@@ -180,6 +180,15 @@ export default function HouseCleaningCostHoustonArticle() {
         <summary className="font-semibold cursor-pointer">Do you require a contract for recurring service?</summary>
         <p className="mt-2 text-gray-700">No long-term contract is required. Recurring plans can be paused or adjusted. If you cancel after only one cleaning from a recurring plan, the one-time rate applies to that visit.</p>
       </details>
+
+      <h2>Cost Guides by Service & Area</h2>
+      <p>Dig into pricing for the service or location you need:</p>
+      <ul>
+        <li><a href="/resources/recurring-cleaning-cost-houston">Recurring cleaning cost</a> — weekly, bi-weekly &amp; monthly per-visit pricing and annual cost math.</li>
+        <li><a href="/resources/apartment-cleaning-cost-houston">Apartment cleaning cost</a> — pricing for studios to 1,500 sq ft units.</li>
+        <li><a href="/resources/house-cleaning-cost-katy">House cleaning cost in Katy</a> — flat-rate pricing for Katy &amp; Cinco Ranch homes.</li>
+        <li><a href="/resources/deep-cleaning-houston">Deep cleaning cost</a> and <a href="/resources/move-in-move-out-cleaning-houston">move-in/move-out cost</a> — one-time service pricing and scope.</li>
+      </ul>
 
       <div className="not-prose bg-primary text-white p-8 rounded-lg my-8 text-center">
         <h3 className="text-2xl font-bold mb-4">Get Your Exact Quote</h3>
