@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/json-ld";
-import { home, organization } from "@/config/json-ld";
+import { organization } from "@/config/json-ld";
 
 export const metadata: Metadata = {
   title: "About Kathy Clean Houston | Local House Cleaning Company",
@@ -20,7 +20,6 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
-      <JsonLd data={home()} />
       <JsonLd data={organization()} />
     <section className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-4xl font-extrabold text-center text-accent mb-2">
